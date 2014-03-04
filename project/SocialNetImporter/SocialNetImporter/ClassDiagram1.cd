@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="new FacebookDialog();">
+    <Position X="6.102" Y="2.401" Height="0.396" Width="1.7" />
+  </Comment>
+  <Comment CommentText="o_fcbLoginDialog.LogIn();">
+    <Position X="8.602" Y="3.964" Height="0.396" Width="1.7" />
+  </Comment>
+  <Comment CommentText="CreateDialog();">
+    <Position X="5.393" Y="3.87" Height="0.396" Width="1.7" />
+  </Comment>
+  <Class Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookDialog" Collapsed="true">
+    <Position X="6.5" Y="3" Width="2.5" />
+    <NestedTypes>
+      <Struct Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookDialog.Attribute" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Dialogs\Facebook\FacebookDialog.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <AssociationLine Name="FacebookLoginDialog" Type="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookLoginDialog">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.661" Y="0.247" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="sdcsd" Type="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookUserNetworkAnalyzer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.134" Y="0.308" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAQQCTgAAAUMCLSQEIoSAAAuMkgKAFAAAAIEAAE=</HashCode>
+      <FileName>Dialogs\Facebook\FacebookDialog.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FacebookLoginDialog" />
+      <Property Name="sdcsd" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookLoginDialog" Collapsed="true">
+    <Position X="8" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAgAAAAAgSAAgQCACIAAHAAAACAAAAAAAA=</HashCode>
+      <FileName>Dialogs\Facebook\FacebookLoginDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookGraphDataProvider" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="2.25" />
+    <AssociationLine Name="FacebookDialog" Type="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookDialog">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.091" Y="0.318" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAACAAAAQAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GraphDataProviders\Facebook\FacebookGraphDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FacebookDialog" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookUserNetworkAnalyzer" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="2.5" />
+    <NestedTypes>
+      <Enum Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookUserNetworkAnalyzer.WhatToInclude" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>NetworkAnalyzers\Facebook\FacebookUserNetworkAnalyzer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="Microsoft.NodeXL.GraphDataProviders.Facebook.FacebookUserNetworkAnalyzer.GetNetworkAsyncArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>NetworkAnalyzers\Facebook\FacebookUserNetworkAnalyzer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BAAIACAAAAAEAAARiCAQEAgQACAIAQBAAAABEAABAAA=</HashCode>
+      <FileName>NetworkAnalyzers\Facebook\FacebookUserNetworkAnalyzer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.NodeXL.GraphDataProviders.GraphDataProviderBase" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAAAACAAAAQQAAAAAAAAgAAAQAAAAAAA=</HashCode>
+      <FileName>GraphDataProviders\GraphDataProviderBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

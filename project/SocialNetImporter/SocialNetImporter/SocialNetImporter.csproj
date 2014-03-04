@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35AADBDD-F0D7-4D38-BB4A-941DF4897944}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SocialNetImporter</RootNamespace>
+    <AssemblyName>SocialNetImporter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FacebookAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\FacebookAPI\facebook\bin\Debug\FacebookAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.NodeXL.ExcelTemplatePlugIns, Version=1.0.1.226, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\NodeXLClassLibraries\Microsoft.NodeXL.ExcelTemplatePlugIns.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ProgressIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgressIndicator.Designer.cs">
+      <DependentUpon>ProgressIndicator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RotationType.cs" />
+    <Compile Include="Controls\SearchResultsComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchResultsComboBox.Designer.cs">
+      <DependentUpon>SearchResultsComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextDisplayModes.cs" />
+    <Compile Include="Dialogs\Facebook\FacebookGroupDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookGroupDialog.Designer.cs">
+      <DependentUpon>FacebookGroupDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookDialog.Designer.cs">
+      <DependentUpon>FacebookDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookFanPageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookFanPageDialog.Designer.cs">
+      <DependentUpon>FacebookFanPageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookGraphDataProviderDialogBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Facebook\FacebookLoginDialog.Designer.cs">
+      <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GraphDataProviderDialogBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PartialNetwork\PartialNetworkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PartialNetwork\PartialNetworkDialog.Designer.cs">
+      <DependentUpon>PartialNetworkDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphDataProviders\Facebook\FacebookGroupGraphDataProvider.cs" />
+    <Compile Include="GraphDataProviders\Facebook\FacebookFanPageGraphDataProvider.cs" />
+    <Compile Include="GraphDataProviders\Facebook\FacebookGraphDataProvider.cs" />
+    <Compile Include="GraphDataProviders\GraphDataProviderBase.cs" />
+    <Compile Include="NetworkAnalyzers\Exceptions\CancellationPendingException.cs" />
+    <Compile Include="NetworkAnalyzers\Exceptions\PartialNetworkException.cs" />
+    <Compile Include="NetworkAnalyzers\Facebook\FacebookGroupNetworkAnalyzer.cs" />
+    <Compile Include="NetworkAnalyzers\Facebook\FacebookFanPageNetworkAnalyzer.cs" />
+    <Compile Include="NetworkAnalyzers\Facebook\FacebookNetworkAnalyzerBase.cs" />
+    <Compile Include="NetworkAnalyzers\Facebook\FacebookUserNetworkAnalyzer.cs" />
+    <Compile Include="NetworkAnalyzers\HttpNetworkAnalyzerBase.cs" />
+    <Compile Include="NetworkAnalyzers\RequestStatistics.cs" />
+    <Compile Include="NetworkAnalyzers\UserAttributes.cs" />
+    <Compile Include="Network\Edge.cs" />
+    <Compile Include="Network\EdgeCollection.cs" />
+    <Compile Include="Network\EdgeDirection.cs" />
+    <Compile Include="Network\Vertex.cs" />
+    <Compile Include="Network\VertexCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\AttributesDictionary.cs" />
+    <Compile Include="Utilities\AttributeUtils.cs" />
+    <Compile Include="Utilities\DateUtil.cs" />
+    <Compile Include="Utilities\ExceptionUtil.cs" />
+    <Compile Include="Utilities\FormPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\GraphMLXmlDocument.cs" />
+    <Compile Include="Utilities\MathUtil.cs" />
+    <Compile Include="Utilities\NetworkDescriber.cs" />
+    <Compile Include="Utilities\NetworkLevel.cs" />
+    <Compile Include="Utilities\NetworkType.cs" />
+    <Compile Include="Utilities\PreventRateLimit.cs" />
+    <Compile Include="Utilities\SentenceConcatenator.cs" />
+    <Compile Include="Utilities\StringUtil.cs" />
+    <Compile Include="Utilities\XmlUtil2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+    <None Include="Resources\search.png" />
+    <Content Include="Utilities\FacebookAPI.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ProgressIndicator.resx">
+      <DependentUpon>ProgressIndicator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchResultsComboBox.resx">
+      <DependentUpon>SearchResultsComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Facebook\FacebookGroupDialog.resx">
+      <DependentUpon>FacebookGroupDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Facebook\FacebookDialog.resx">
+      <DependentUpon>FacebookDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Facebook\FacebookFanPageDialog.resx">
+      <DependentUpon>FacebookFanPageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Facebook\FacebookLoginDialog.resx">
+      <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PartialNetwork\PartialNetworkDialog.resx">
+      <DependentUpon>PartialNetworkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
