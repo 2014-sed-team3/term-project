@@ -1,0 +1,201 @@
+<html>
+
+<head>
+<title>The NodeXL Worksheets</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">The NodeXL Worksheets</div>
+
+<p>
+There are five worksheets built into a NodeXL workbook.  With a simple graph, the Edges worksheet may be the only one you work with.  The other worksheets offer customization options for more advanced scenarios.
+</p>
+
+<p>
+The following table describes the NodeXL worksheets.
+</p>
+
+<table>
+    <tr>
+        <th>
+        Worksheet
+        </th>
+        <th>
+        Description
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="EdgesWorksheet"></a>
+        Edges
+        </td>
+        <td>
+        <p>
+        Contains the graph's edges, which you specify as Vertex 1/Vertex 2 name pairs, along with optional edge attributes.
+        </p>
+        
+        <p>
+        The vertex name pairs are the only columns in the entire workbook that are required.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="VerticesWorksheet"></a>
+        Vertices
+        </td>
+        <td>
+        <p>
+        Contains the graph's vertices, along with optional vertex attributes.
+        </p>
+
+        <p>
+        When you <a href="../SimpleGraph/Overview.htm#ShowGraph">show the graph</a>, NodeXL automatically creates a row in this worksheet for each vertex in the Edges worksheet.  The only vertices you have to enter manually are <a href="../Isolates/Overview.htm">isolated vertices</a> that are not connected to edges.  (You must set the Visibility cell for an isolated vertex to Show to get the vertex to show up in the Graph Pane.)  If your graph has no isolated vertices and you do not want to customize any vertices, you can ignore the Vertices worksheet.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="GroupsWorksheet"></a>
+        Groups
+        </td>
+        <td>
+        <p>
+        Contains the names of the graph's groups, along with the groups'
+        attributes.
+        </p>
+
+        <p>
+        See <a href="../Groups/GroupWorksheets.htm">Understanding the Group Worksheets</a> for more information.  If your graph does not have groups, you can ignore the Groups worksheet.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="GroupVerticesWorksheet"></a>
+        Group Vertices
+        </td>
+        <td>
+        <p>
+        Contains the names of the vertices in each of the graph's groups.
+        </p>
+
+        <p>
+        See <a href="../Groups/GroupWorksheets.htm">Understanding the Group Worksheets</a> for more information.  You can usually ignore the Group Vertices worksheet, even if your graph has groups.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="OverallMetricsWorksheet"></a>
+        Overall Metrics
+        </td>
+        <td>
+        <p>
+        Contains the graph's overall metrics, which you can calculate on
+        demand.
+        </p>
+
+        <p>
+        See <a href="../Analysis/GraphMetrics.htm">Calculating Graph Metrics</a> for more information.  If you do not calculate graph metrics, you can ignore the Overall Metrics worksheet.
+        </p>
+        </td>
+    </tr>
+
+</table>
+
+<p>
+If you <a href="../Analysis/GraphMetrics.htm">calculate group metrics</a>, a <a name="GroupEdgesWorksheet">Group Edges worksheet</a> gets added to the workbook.  This worksheet lists the number of edges within each group and the number of edges between group pairs.
+</p>
+
+<div class="HowToTitle">
+<a name="SelectWorksheet">To select a worksheet:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    Click the worksheet's tab at the lower left corner of the worksheet area of the Excel window, as shown below.  You might have to scroll the tabs to the left or right to see them all.  You can do that with the arrow buttons to the left of the tabs.
+
+    <img class="IndentedImage" src="../../Images/WorksheetTabs.png" />
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="WorksheetInformation">To learn more about a worksheet:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    Hover the mouse over the first header cell on the worksheet.  For example, to find out more about the Edges worksheet, hover the mouse over the "Vertex 1" header cell.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="ColumnInformation">To learn more about a worksheet column:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    Hover the mouse over the column's header cell.
+    </li>
+
+</ol>
+
+<p>
+You may want to add columns to a worksheet or add a new worksheet to the workbook to hold your own data.
+</p>
+
+<div class="HowToTitle">
+<a name="AddColumn">To add a column to a worksheet:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    Hover the mouse over the "Add Your Own Columns Here" column header for instructions.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="AddWorksheet">To add a worksheet to the workbook:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    Click the "Insert Worksheet" button to the immediate right of the Overall Metrics tab at the lower left corner of the worksheet area of the Excel window.  If you cannot see the Overall Metrics tab, click the small right-arrow to the left of the tabs until the Overall Metrics tab and the "Insert Worksheet" button are visible.
+
+    <img class="IndentedImage" src="../../Images/AddWorksheet.png" />
+    </li>
+
+    <li class="HowToItem">
+    <b>Important Note:</b> Always add worksheets to the right of the built-in NodeXL worksheets.  In some versions of Excel, inserting a worksheet between the built-in NodeXL worksheets can lead to unpredictable results.
+    </li>
+
+</ol>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />A Quick Tour of the NodeXL Workbook</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

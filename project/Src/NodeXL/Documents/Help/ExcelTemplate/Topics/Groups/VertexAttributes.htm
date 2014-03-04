@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<title>Creating Groups by Vertex Attribute</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Creating Groups by Vertex Attribute</div>
+
+<p>
+You can tell NodeXL to create groups using the values in a column on the <a href="../WorkbookTour/Worksheets.htm">Vertices worksheet</a>.  For example, if your vertices represent people and you have a "Country" column on the Vertices worksheet, NodeXL can create a group for each country.  Or if you have a "Salary" column that contains numbers, NodeXL can create a group for each salary range that you specify.  Groups can also be created using a column that contains dates, times, or dates with times.
+</p>
+
+<div class="HowToTitle">
+To remove any existing groups and create new groups based on a vertex attribute:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Groups, Group by Vertex Attribute.
+    </li>
+
+    <li class="HowToItem">
+    In the Group by Vertex Attribute dialog box, select the column that contains the vertex attribute values.
+    </li>
+
+    <li class="HowToItem">
+Specify whether the vertex attribute values are categories (such as "Country" in the above example), numbers, dates, times, or dates with times.
+    </li>
+
+    <li class="HowToItem">
+    If the vertex attribute values are numbers, dates, times, or dates with times, specify the group value ranges.
+    </li>
+
+    <li class="HowToItem">
+    Click OK.
+    </li>
+
+    <li class="HowToItem">
+    <a href="../SimpleGraph/Overview.htm#ShowGraph">Show the graph</a> to see the groups.
+    </li>
+
+</ol>
+
+<p>
+Note that some vertices might be left "ungrouped."  If a cell in the vertex attribute column is empty, or its value doesn't fall within one of the ranges you specify, the vertex will not be put into a group.
+</p>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+
+    <li class="MoreInformationItem">
+    <a href="CreatingGroups.htm"><img src="../../Images/Back.png" />Creating Groups</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

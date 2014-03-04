@@ -1,0 +1,232 @@
+<html>
+
+<head>
+<title>Layout Algorithms</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Layout Algorithms</div>
+
+<p>
+NodeXL uses the selected layout algorithm to lay out the graph's vertices when the graph is <a href="../SimpleGraph/Overview.htm#ShowGraph">shown</a>, and when some or all of the graph's vertices are <a href="SelectiveLayout.htm">laid out again</a>.  The available layout algorithms are listed in the table below.
+</p>
+
+<div class="HowToTitle">
+To select the layout algorithm that NodeXL uses, do one of the following:
+</div>
+
+<ul>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Graph, Layout, or...
+    </li>
+
+    <li class="HowToItem">
+    At the top of the <a href="../WorkbookTour/GraphPane.htm">Graph Pane</a>, select from the Layout drop-down list (<img style="vertical-align:middle;" src="../../Images/LayoutAlgorithm.png" />), or...
+    </li>
+
+    <li class="HowToItem">
+    Right-click anywhere in the Graph Pane and select Layout from the right-click menu.
+    </li>
+
+</ul>
+
+<table>
+    <col width="150em" />
+    <col width="500em" />
+    <tr>
+        <th>
+        Layout Algorithm
+        </th>
+        <th>
+        Description
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+        Fruchterman-Reingold
+        </td>
+        <td>
+        <p>
+        This is a force-directed algorithm that attempts to minimize edge crossings.
+        </p>
+        
+        <p>
+        This algorithm is <span class="Definition">iterative</span>, which means that if you <a href="SelectiveLayout.htm">lay out the graph again</a>, the current vertex locations are used as starting points for the new calculations.
+        </p>
+
+        <p>
+        You can set various options for the Fruchterman-Reingold layout algorithm using <a href="LayoutOptions.htm">Layout Options</a>.
+        </p>
+
+        <p>
+        If the <a href="../WorkbookTour/Worksheets.htm">Edges worksheet</a> has an Edge Weight column, the Fruchterman-Reingold layout algorithm uses the column's values to determine the attractive forces between vertices.  An edge with a larger Edge Weight exerts a stronger attractive force on its vertices.
+        </p>
+        
+        <p>
+        Edge Weight column values should be greater than zero.  If a value is zero or less, it is ignored and 1.0 is used instead.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Harel-Koren Fast Multiscale
+        </td>
+        <td>
+        <p>
+        This is a force-directed algorithm that attempts to minimize edge crossings.
+        </p>
+        
+        <p>
+        This algorithm is faster than Fruchterman-Reingold when used with graphs that have a large number of vertices.  It is not iterative, which means that the current vertex locations are ignored when calculating new locations.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Circle
+        </td>
+        <td>
+        Evenly places the vertices on the circumference of a circle.
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Spiral
+        </td>
+        <td>
+        Evenly places the vertices along a spiral.
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Horizontal Size Wave
+        </td>
+        <td>
+        Evenly places the vertices along a sine wave that runs from left to right.
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Vertcal Sine Wave
+        </td>
+        <td>
+        Evenly places the vertices along a sine wave that runs from top to bottom.
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Grid
+        </td>
+        <td>
+        <p>
+        Places the vertices on an evenly-spaced grid.
+        </p>
+        
+        <p>
+        The grid dimensions are selected to optimally fill the Graph Pane.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Polar
+        </td>
+        <td>
+        <p>
+        Each vertex's location is specified by polar coordinate columns on the <a href="../WorkbookTour/Worksheets.htm">Vertices worksheet</a>.
+        </p>
+        <p>
+        To lay out the graph using polar coordinates that you specify, do the following:
+        <p>
+
+        <ol>
+
+            <li class="HowToItem">
+            Select the Polar layout algorithm.
+            </li>
+
+            <li class="HowToItem">
+            <a href="../ShowHideColumns/Overview.htm">Show</a> the Layout column group.  This makes the Polar R and Polar Angle columns visible on the Vertices worksheet.
+            </li>
+
+            <li class="HowToItem">
+            Hover the mouse over the Polar R column header for instructions on how to use the columns.
+            </li>
+
+        </ol>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Polar Absolute
+        </td>
+        <td>
+        The Polar Absolute layout algorithm is similar to the Polar layout algorithm, but the units of the Polar R column are different.  The instructions that pop up when you hover the mouse over the Polar R column (see Polar, above) explain the difference.
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Sugiyama
+        </td>
+        <td>
+        Attempts to minimize edge crossings by arranging the vertices in layers.
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        Random
+        </td>
+        <td>
+        <p>
+        Places the vertices at random locations.
+        </p>
+
+        <p>
+        Randomizing the vertex locations can be useful when used in conjunction with the Fruchterman-Reingold layout algorithm, which uses the current vertex locations as a starting point for its calculations.  If you want the Fruchterman-Reingold algorithm to start from scratch, lay out the graph with the Random layout algorithm, then switch to Fruchterman-Reingold and lay it out again.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        None
+        </td>
+        <td>
+        <p>
+        Leaves each vertex exactly where it is.
+        </p>
+        <p>
+        The None layout algorithm is useful if you are happy with the graph's current vertex locations, but you need to edit the workbook and refresh the graph.  Normally, refreshing the graph reads the workbook and lays out the graph.  If you select the None layout algorithm, you can edit a vertex color, for example, and then refresh the graph without affecting the vertex locations.
+        </p>
+        </td>
+    </tr>
+
+</table>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Changing How the Graph is Laid Out</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

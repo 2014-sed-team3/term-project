@@ -1,0 +1,72 @@
+
+How to Publish the NodeXL Excel Template Project
+
+
+The following instructions use several placeholders that must be replaced:
+
+    {NNN}: A version number.  Sample: 309
+
+    {NodeXLPath}: Path to the NodeXL solution.  Sample: C:\
+
+    {SomePath\AuthenticodeCertificate.pfx}: Full path and file name of an
+        Authenticode code-signing certificate.  This must be issued by a
+        trusted root certificate authority provider, such as Comodo.
+
+    {CertificatePassword}: The certificate's password.
+
+
+1. Delete the NodeXL\ExcelTemplate\Publish folder if it exists.
+
+2. Clean the solution using Build, Clean Solution.
+
+3. Rebuild the solution using Build, Rebuild Solution.
+
+4. If the NodeXLGraph.xltx template file has been updated since the last
+   publication, copy NodeXL\ExcelTemplate\bin\Debug\NodeXLGraph.xltx to the
+   NodeXL\ExcelTemplate\DeployedTemplate folder.
+
+5. Open the Properties for the ExcelTemplate project, select Publish from the
+   list on the left, and click the Publish Now button.  This creates a number
+   of files in NodeXL\ExcelTemplate\Publish.
+
+6. In Notepad, open NodeXL\ExcelTemplate\Publish\Application Files\
+   Smrf.NodeXL.ExcelTemplate_1_0_1_{NNN}\Smrf.NodeXL.ExcelTemplate.dll.manifest.
+
+7. After the closing element for the "<vstav3:update" element, insert the
+   following XML and then save the file.  (This causes a custom post-deployment
+   action to run on the user's computer.)
+
+      <vstav3:postActions>
+        <vstav3:postAction>
+          <vstav3:entryPoint
+            class="Smrf.NodeXL.ExcelTemplatePostDeploymentAction.PostDeploymentAction">
+            <assemblyIdentity
+              name="PostDeploymentAction"
+              version="1.0.1.{NNN}"
+              language="neutral"
+              processorArchitecture="msil" />
+          </vstav3:entryPoint>
+          <vstav3:postActionData>
+          </vstav3:postActionData>
+        </vstav3:postAction>
+      </vstav3:postActions>
+
+8. Open a Visual Studio command prompt.
+
+9. Run the following commands.  (These commands re-sign the deployment and
+   application manifests.)
+
+      cd {NodeXLPath}\NodeXL\ExcelTemplate\Publish\Application Files\Smrf.NodeXL.ExcelTemplate_1_0_1_{NNN}
+
+      mage -sign Smrf.NodeXL.ExcelTemplate.dll.manifest -certfile "{SomePath\AuthenticodeCertificate.pfx}" -Publisher "Social Media Research Foundation" -Password {CertificatePassword}
+
+      cd ..\..
+
+      mage -update Smrf.NodeXL.ExcelTemplate.vsto -appmanifest "Application Files\Smrf.NodeXL.ExcelTemplate_1_0_1_{NNN}\Smrf.NodeXL.ExcelTemplate.dll.manifest" -certfile "{SomePath\AuthenticodeCertificate.pfx}" -Publisher "Social Media Research Foundation" -Password {CertificatePassword}
+
+      xcopy Smrf.NodeXL.ExcelTemplate.vsto "Application Files\Smrf.NodeXL.ExcelTemplate_1_0_1_{NNN}" /y
+
+10. Rename the NodeXL\ExcelTemplate\Publish\setup.exe file to NodeXLExcelTemplate2014Setup.exe.
+
+11. Copy the contents of NodeXL\ExcelTemplate\Publish to a web server.
+

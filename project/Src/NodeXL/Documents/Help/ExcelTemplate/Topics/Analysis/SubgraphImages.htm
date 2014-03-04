@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<title>Creating Subgraph Images</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Creating Subgraph Images</div>
+
+<p>
+NodeXL will create an image of a <span class="Definition">subgraph</span> for each of the graph's vertices.  A vertex's subgraph consists of the vertex, its incident edges, and optionally its adjacent vertices, <i>their</i> incident edges, and so on, out to a specified level.  Here is a sample 1.5-level subgraph image:
+</p>
+
+<div style="margin-left: 10em;">
+    <img src="../../Images/SubgraphImage.png" />
+</div>
+
+<p>
+Note that the complete graph had many more vertices and edges than are shown here.  All the other vertices and edges were removed to create the vertex's subgraph image.
+</p>
+
+<p>
+The subgraph images can be saved as files in a specified folder or as thumbnails inserted into the <a href="../WorkbookTour/Worksheets.htm">Vertices worksheet</a>.
+</p>
+
+<p>
+If you save the subgraph images in a folder, each image file is named after the vertex.  The JPEG image file for a vertex named "Vertex 123" will be "Vertex 123.jpg," for example.  If a vertex name includes characters that aren't valid in file names, those characters get replaced with hexadecimal representations.  The JPEG image file for a vertex named "A\B" will be "A%5CB.jpg," for example.  (The backslash, which is not valid in file names, gets replaced with %5C, its hexadecimal representation.)
+</p>
+
+<p>
+The "X", "Y" and "Locked?" columns on the <a href="../WorkbookTour/Worksheets.htm">Vertices worksheet</a> are ignored when the subgraph images are created.
+</p>
+
+<div class="HowToTitle">
+To create subgraph images for all of the graph's vertices:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Subgraph Images.
+    </li>
+
+    <li class="HowToItem">
+    In the Subgraph Images dialog box, uncheck "Create subgraph images for selected vertices only."
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+To create subgraph images for the selected vertices only:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../Selection/SelectingVertices.htm">Select one or more vertices.</a>
+    </li>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Subgraph Images.
+    </li>
+
+    <li class="HowToItem">
+    In the Subgraph Images dialog box, check "Create subgraph images for selected vertices only."
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="Delete">To delete any subgraph image thumbnails that were inserted into the Vertices worksheet:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Subgraph Images, Delete Thumbnails.  Note that this does not delete any subgraph images files that were saved in a folder.
+    </li>
+
+</ol>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Analyzing the Graph</a>
+    </li>
+
+<ul>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=NodeXLExcelTemplate.chm
+Contents file=TableOfContents.hhc
+Default topic=Topics\NetworkGraphs\Overview.htm
+Display compile progress=No
+Full text search stop list file=NodeXLExcelTemplate.stp
+Full-text search=Yes
+Index file=NodeXLExcelTemplate.hhk
+Language=0x409 English (United States)
+Title=NodeXL Excel Template
+
+
+[FILES]
+Topics\Groups\Overview.htm
+Topics\Groups\CreatingGroups.htm
+Topics\Groups\ConnectedComponents.htm
+Topics\Groups\Clusters.htm
+Topics\Groups\VertexAttributes.htm
+Topics\Groups\Manual.htm
+Topics\Groups\GroupWorksheets.htm
+Topics\Groups\ShowingGroups.htm
+Topics\Groups\SelectingGroups.htm
+Topics\Groups\CollapseExpand.htm
+Topics\Groups\RemovingGroups.htm
+Topics\Options\Overview.htm
+Topics\Options\UseCurrentForNew.htm
+Topics\Options\ExportImport.htm
+Topics\ShowHideColumns\Overview.htm
+Topics\ShowHideGraphElements\Overview.htm
+Topics\VisualProperties\Overview.htm
+Topics\VisualProperties\GraphOptions.htm
+Topics\VisualProperties\Manual.htm
+Topics\VisualProperties\AutofillColumns.htm
+Topics\ZoomMoveScale\Overview.htm
+Topics\ZoomMoveScale\Zoom.htm
+Topics\ZoomMoveScale\Move.htm
+Topics\ZoomMoveScale\Scale.htm
+Topics\DirectedVsUndirected\Overview.htm
+Topics\NetworkGraphs\Overview.htm
+Topics\WorkbookTour\Overview.htm
+Topics\WorkbookTour\Worksheets.htm
+Topics\WorkbookTour\GraphPane.htm
+Topics\WorkbookTour\Ribbon.htm
+Topics\SimpleGraph\Overview.htm
+Topics\Selection\Overview.htm
+Topics\Options\ResetAll.htm
+Topics\Selection\SelectingVertices.htm
+Topics\Selection\SelectingEdges.htm
+Topics\SaveImage\Overview.htm
+Topics\Layout\Overview.htm
+Topics\Layout\LayoutAlgorithms.htm
+Topics\Layout\SelectiveLayout.htm
+Topics\Layout\SnappingVertices.htm
+Topics\Layout\LayoutOptions.htm
+Topics\Analysis\Overview.htm
+Topics\Analysis\GraphMetrics.htm
+Topics\Analysis\SubgraphImages.htm
+Topics\Analysis\DynamicFilters.htm
+Topics\Import\Overview.htm
+Topics\Import\ImportFromOtherWorkbooks.htm
+Topics\Import\ImportFromOtherPrograms.htm
+Topics\Import\ImportFromEmail.htm
+Topics\Import\ImportFromSocialNetworks.htm
+Topics\Export\Overview.htm
+Topics\Export\ExportToOtherPrograms.htm
+Topics\Export\ExportToOtherWorkbooks.htm
+Topics\MergeDuplicateEdges\Overview.htm
+Topics\Automation\Overview.htm
+Topics\NetworkServer\Overview.htm
+Topics\MoreInformation\Overview.htm
+Topics\VisualProperties\Labels.htm
+Topics\Isolates\Overview.htm
+Topics\Tooltips\Overview.htm
+Topics\KeyboardShortcuts\Overview.htm
+Topics\GraphSummary\Overview.htm
+Topics\Groups\HidingAndSkippingGroups.htm
+Topics\Groups\Motifs.htm
+
+[INFOTYPES]
+

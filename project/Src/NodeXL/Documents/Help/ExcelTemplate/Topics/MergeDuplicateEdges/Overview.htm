@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<title>Counting and Merging Duplicate Edges</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Counting and Merging Duplicate Edges</div>
+
+<p>
+If your graph has duplicate edges, you can tell NodeXL to count them, merge them, or both.  By default, NodeXL uses the two vertex columns on the <a href="../WorkbookTour/Worksheets.htm">Edges worksheet</a> to determine whether two edges are duplicates, but you can specify a third column to use as well.
+</p>
+
+<div class="HowToTitle">
+To count and merge the graph's duplicate edges:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Data, Prepare Data, Count and Merge Duplicate Edges.
+    </li>
+
+</ol>
+
+<div class="BulletTitle">
+Here are some things to know about counting and merging duplicate edges:
+</div>
+
+<ul>
+
+    <li class="BulletItem">
+    <b>If you tell NodeXL to count duplicate edges,</b> it adds an Edge Weight column to the Edges worksheet if the column isn't already there, then fills in the column.  If the worksheet contains these two rows, for example:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Bill</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Bill</td>
+            </tr>
+        </table>
+
+    ...then the Edge Weight for each of the two rows will be set to 2, because there are two instances of each row:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Edge Weight</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Bill</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Bill</td>
+                <td>2</td>
+        </table>
+
+    </li>
+
+    <li class="BulletItem">
+    <b>If the worksheet already has an Edge Weight column,</b> NodeXL uses any existing edge weights when it counts duplicate edges.  If the worksheet contains these two rows, for example:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Edge Weight</th>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Joe</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Joe</td>
+                <td>4</td>
+            </tr>
+        </table>
+
+    ...then the Edge Weight for each of the two duplicate rows will be set to the sum of their edge weights:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Edge Weight</th>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Joe</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Joe</td>
+                <td>7</td>
+        </table>
+
+    </li>
+
+    <li class="BulletItem">
+    <b>NodeXL takes the <a href="../DirectedVsUndirected/Overview.htm">directedness</a> of the graph into account</b> when it checks for duplicate edges.  In a directed graph, a "John,Bill" row and a "Bill,John" row can't be duplicates.  In an undirected graph, "John,Bill" and "Bill,John" <i>can</i> be duplicates.
+    </li>
+
+    <li class="BulletItem">
+    <b>If you specify a third column to use on the Edges worksheet,</b> two edges have to have the same values in that column before they can be considered duplicates.  For example, if you specify the Relationship column when counting duplicate edges in this worksheet:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Relationship</th>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Joe</td>
+                <td>Mentions</td>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Joe</td>
+                <td>Follows</td>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Joe</td>
+                <td>Mentions</td>
+            </tr>
+        </table>
+
+    ...then the results will look like this:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Relationship</th>
+                <th>Edge Weight</th>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Joe</td>
+                <td>Mentions</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Joe</td>
+                <td>Follows</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Joe</td>
+                <td>Mentions</td>
+                <td>2</td>
+            </tr>
+        </table>
+    </li>
+
+    <li class="BulletItem">
+    <b>If you tell NodeXL to merge the duplicate edges,</b> all but the first edge in each set of duplicates is deleted from the Edges worksheet.  For example, merging duplicate edges in this worksheet:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Color</th>
+            </tr>
+            <tr>
+                <td>Jack</td>
+                <td>Jill</td>
+                <td>Blue</td>
+            </tr>
+            <tr>
+                <td>Sally</td>
+                <td>Ralph</td>
+                <td>Orange</td>
+            </tr>
+            <tr>
+                <td>Jack</td>
+                <td>Jill</td>
+                <td>Green</td>
+            </tr>
+            <tr>
+                <td>Sally</td>
+                <td>Ralph</td>
+                <td>Orange</td>
+            </tr>
+        </table>
+
+        ...results in this:
+
+        <table>
+            <tr>
+                <th>Vertex 1</th>
+                <th>Vertex 2</th>
+                <th>Color</th>
+            </tr>
+            <tr>
+                <td>Jack</td>
+                <td>Jill</td>
+                <td>Blue</td>
+            </tr>
+            <tr>
+                <td>Sally</td>
+                <td>Ralph</td>
+                <td>Orange</td>
+            </tr>
+        </table>
+
+        Note that the edge attributes for the first edge in a set of duplicate edges become the edge attributes for the merged edge.  Thus, the two "Jack,Jill" edges get merged into a Blue edge, even though the original edges had different colors.  The Green color of the second edge is lost, along with any other attributes the second edge had.
+    </li>
+
+    <li class="BulletItem">
+    <b>NodeXL automatically counts and merges duplicate edges when you <a href="../Export/Overview.htm">export the graph</a>.</b>  A third column cannot be specified during an export.  If you want more control over how duplicate edges are handled, use Count and Merge Duplicate Edges before exporting the graph.
+    </li>
+
+</body>
+
+</html>

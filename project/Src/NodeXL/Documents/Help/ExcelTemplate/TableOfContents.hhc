@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="An Overview of Network Graphs">
+		<param name="Local" value="Topics\NetworkGraphs\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="A Quick Tour of the NodeXL Workbook">
+		<param name="Local" value="Topics\WorkbookTour\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="The NodeXL Ribbon Tab">
+			<param name="Local" value="Topics\WorkbookTour\Ribbon.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Creating a Simple Graph">
+		<param name="Local" value="Topics\SimpleGraph\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Directed vs. Undirected Graphs">
+		<param name="Local" value="Topics\DirectedVsUndirected\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Graphs with Isolated Vertices">
+		<param name="Local" value="Topics\Isolates\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Zooming, Moving Around and Scaling the Graph">
+		<param name="Local" value="Topics\ZoomMoveScale\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Zooming the Graph">
+			<param name="Local" value="Topics\ZoomMoveScale\Zoom.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Moving Around the Graph">
+			<param name="Local" value="Topics\ZoomMoveScale\Move.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Scaling the Graph">
+			<param name="Local" value="Topics\ZoomMoveScale\Scale.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Selecting Graph Elements">
+		<param name="Local" value="Topics\Selection\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Selecting Vertices">
+			<param name="Local" value="Topics\Selection\SelectingVertices.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Selecting Edges">
+			<param name="Local" value="Topics\Selection\SelectingEdges.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Changing How the Graph Looks">
+		<param name="Local" value="Topics\VisualProperties\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Default Visual Properties: Graph Options">
+			<param name="Local" value="Topics\VisualProperties\GraphOptions.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Setting Visual Properties for Individual Edges, Vertices or Groups">
+			<param name="Local" value="Topics\VisualProperties\Manual.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Automatically Calculating Visual Properties for All Edges, Vertices or Groups">
+			<param name="Local" value="Topics\VisualProperties\AutofillColumns.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Changing How the Graph is Laid Out">
+		<param name="Local" value="Topics\Layout\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Layout Algorithms">
+			<param name="Local" value="Topics\Layout\LayoutAlgorithms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Selectively Laying Out Parts of the Graph Again ">
+			<param name="Local" value="Topics\Layout\SelectiveLayout.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Snapping Vertices to a Grid">
+			<param name="Local" value="Topics\Layout\SnappingVertices.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Layout Options">
+			<param name="Local" value="Topics\Layout\LayoutOptions.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Adding Tooltips to the Graph">
+		<param name="Local" value="Topics\Tooltips\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Saving an Image of the Graph">
+		<param name="Local" value="Topics\SaveImage\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Analyzing the Graph">
+		<param name="Local" value="Topics\Analysis\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Calculating Graph Metrics">
+			<param name="Local" value="Topics\Analysis\GraphMetrics.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Creating Subgraph Images">
+			<param name="Local" value="Topics\Analysis\SubgraphImages.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using Dynamic Filters ">
+			<param name="Local" value="Topics\Analysis\DynamicFilters.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Working with Options">
+		<param name="Local" value="Topics\Options\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using the Current Workbook's Options for New Workbooks ">
+			<param name="Local" value="Topics\Options\UseCurrentForNew.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Exporting and Importing Options">
+			<param name="Local" value="Topics\Options\ExportImport.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Resetting All Options">
+			<param name="Local" value="Topics\Options\ResetAll.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Working with Groups">
+		<param name="Local" value="Topics\Groups\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Creating Groups">
+			<param name="Local" value="Topics\Groups\CreatingGroups.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Creating Groups by Vertex Attribute">
+				<param name="Local" value="Topics\Groups\VertexAttributes.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Creating Groups by Connected Component ">
+				<param name="Local" value="Topics\Groups\ConnectedComponents.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Creating Groups by Cluster">
+				<param name="Local" value="Topics\Groups\Clusters.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Creating Groups by Motif">
+				<param name="Local" value="Topics\Groups\Motifs.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Manually Creating Groups">
+				<param name="Local" value="Topics\Groups\Manual.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Understanding the Group Worksheets">
+			<param name="Local" value="Topics\Groups\GroupWorksheets.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="How Groups Are Shown in the Graph Pane">
+			<param name="Local" value="Topics\Groups\ShowingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Selecting Groups">
+			<param name="Local" value="Topics\Groups\SelectingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Collapsing and Expanding Groups">
+			<param name="Local" value="Topics\Groups\CollapseExpand.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Hiding and Skipping Groups">
+			<param name="Local" value="Topics\Groups\HidingAndSkippingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Removing Groups">
+			<param name="Local" value="Topics\Groups\RemovingGroups.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Showing and Hiding Workbook Columns">
+		<param name="Local" value="Topics\ShowHideColumns\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Showing and Hiding Graph Elements">
+		<param name="Local" value="Topics\ShowHideGraphElements\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Summarizing the Graph">
+		<param name="Local" value="Topics\GraphSummary\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Importing Graph Data">
+		<param name="Local" value="Topics\Import\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="Local" value="Topics\Import\ImportFromOtherPrograms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing Graph Data from Another Workbook">
+			<param name="Local" value="Topics\Import\ImportFromOtherWorkbooks.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing Graph Data from Email">
+			<param name="Local" value="Topics\Import\ImportFromEmail.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing Graph Data from Online Social Networks ">
+			<param name="Local" value="Topics\Import\ImportFromSocialNetworks.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Exporting Graph Data">
+		<param name="Local" value="Topics\Export\Overview.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Exporting Graph Data to Other Programs">
+			<param name="Local" value="Topics\Export\ExportToOtherPrograms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Exporting Graph Data to Another Workbook">
+			<param name="Local" value="Topics\Export\ExportToOtherWorkbooks.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Counting and Merging Duplicate Edges">
+		<param name="Local" value="Topics\MergeDuplicateEdges\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Automating Common Tasks">
+		<param name="Local" value="Topics\Automation\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keyboard Shortcuts in the Graph Pane">
+		<param name="Local" value="Topics\KeyboardShortcuts\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="The NodeXL Network Server">
+		<param name="Local" value="Topics\NetworkServer\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Where to Go for More Information">
+		<param name="Local" value="Topics\MoreInformation\Overview.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

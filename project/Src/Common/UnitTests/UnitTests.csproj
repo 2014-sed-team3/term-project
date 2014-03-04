@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C88AA54B-8480-4974-9273-1AB5DC2B1D0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UnitTests</RootNamespace>
+    <AssemblyName>UnitTests</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\UnitTests.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\UnitTests.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ArgumentChecker.cs">
+      <Link>Util\ArgumentChecker.cs</Link>
+    </Compile>
+    <Compile Include="..\ChartUtil.cs">
+      <Link>Util\ChartUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\ColorUtil.cs">
+      <Link>Util\ColorUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\DateTimeUtil2.cs">
+      <Link>Util\DateTimeUtil2.cs</Link>
+    </Compile>
+    <Compile Include="..\ExceptionUtil.cs">
+      <Link>Util\ExceptionUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\PersistableStringDictionary.cs">
+      <Link>Util\PersistableStringDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\SentenceConcatenator.cs">
+      <Link>Util\SentenceConcatenator.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\HttpSocialNetworkUtil.cs">
+      <Link>Util\SocialNetwork\HttpSocialNetworkUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\RequestStatistics.cs">
+      <Link>Util\SocialNetwork\RequestStatistics.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\Authorization\oAuth.cs">
+      <Link>Util\SocialNetwork\Twitter\Authorization\oAuth.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\Authorization\oAuthTwitter.cs">
+      <Link>Util\SocialNetwork\Twitter\Authorization\oAuthTwitter.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterApiUrlParameters.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterApiUrlParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterApiUrls.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterApiUrls.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterDateParser.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterDateParser.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterJsonUtil.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterJsonUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterStatusParser.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterStatusParser.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterStatusTextParser.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterStatusTextParser.cs</Link>
+    </Compile>
+    <Compile Include="..\SocialNetwork\Twitter\TwitterUtil.cs">
+      <Link>Util\SocialNetwork\Twitter\TwitterUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\StringUtil.cs">
+      <Link>Util\StringUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\TermCounters\CountedTermBase.cs">
+      <Link>Util\TermCounters\CountedTermBase.cs</Link>
+    </Compile>
+    <Compile Include="..\TermCounters\CountedWord.cs">
+      <Link>Util\TermCounters\CountedWord.cs</Link>
+    </Compile>
+    <Compile Include="..\TermCounters\CountedWordPair.cs">
+      <Link>Util\TermCounters\CountedWordPair.cs</Link>
+    </Compile>
+    <Compile Include="..\TermCounters\TermCounterBase.cs">
+      <Link>Util\TermCounters\TermCounterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\TermCounters\WordCounter.cs">
+      <Link>Util\TermCounters\WordCounter.cs</Link>
+    </Compile>
+    <Compile Include="..\TermCounters\WordPairCounter.cs">
+      <Link>Util\TermCounters\WordPairCounter.cs</Link>
+    </Compile>
+    <Compile Include="..\UrlUtil.cs">
+      <Link>Util\UrlUtil.cs</Link>
+    </Compile>
+    <Compile Include="ArgumentCheckerTest.cs" />
+    <Compile Include="ChartUtilTest.cs" />
+    <Compile Include="ColorUtilTest.cs" />
+    <Compile Include="DateTimeUtil2Test.cs" />
+    <Compile Include="ExceptionUtilTest.cs" />
+    <Compile Include="PersistableStringDictionaryTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SentenceConcatenatorTest.cs" />
+    <Compile Include="SocialNetworkTests\Twitter\TwitterDateParserTest.cs" />
+    <Compile Include="SocialNetworkTests\Twitter\TwitterStatusParserTest.cs" />
+    <Compile Include="SocialNetworkTests\Twitter\TwitterStatusTextParserTest.cs" />
+    <Compile Include="StringUtilTest.cs" />
+    <Compile Include="TermCounterTests\WordCounterTest.cs" />
+    <Compile Include="TermCounterTests\WordPairCounterTest.cs" />
+    <Compile Include="UrlUtilTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestFiles\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

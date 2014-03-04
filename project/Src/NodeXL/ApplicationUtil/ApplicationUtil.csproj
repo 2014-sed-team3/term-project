@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7845042-B212-4D74-9343-DA2052F83234}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Smrf.NodeXL.ApplicationUtil</RootNamespace>
+    <AssemblyName>Smrf.NodeXL.ApplicationUtil</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Common\KeyFile.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Smrf.NodeXL.ApplicationUtil.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\ArgumentChecker.cs">
+      <Link>Util\ArgumentChecker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\ColorPicker\ColorPicker.cs">
+      <Link>Controls\ColorPicker\ColorPicker.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\ComboBoxPlus.cs">
+      <Link>Controls\ComboBoxPlus.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\FormPlus.cs">
+      <Link>Controls\FormPlus.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\HelpLinkLabel.cs">
+      <Link>Controls\HelpLinkLabel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\ListControlUtil.cs">
+      <Link>Controls\ListControlUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\StartProcessLinkLabel.cs">
+      <Link>Controls\StartProcessLinkLabel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\ToolStripPlus.cs">
+      <Link>Controls\ToolStripPlus.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Controls\TrackBarWithDelay.cs">
+      <Link>Controls\TrackBarWithDelay.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\Dialogs\OpenFileDialog2.cs">
+      <Link>Dialogs\OpenFileDialog2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Dialogs\SaveFileDialog2.cs">
+      <Link>Dialogs\SaveFileDialog2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Dialogs\SaveImageFileDialog.cs">
+      <Link>Dialogs\SaveImageFileDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\ExceptionUtil.cs">
+      <Link>Util\ExceptionUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\FormSettings.cs">
+      <Link>Util\FormSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\MenuUtil.cs">
+      <Link>Util\MenuUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\ObjectWithText.cs">
+      <Link>Util\ObjectWithText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SaveableImageFormats.cs">
+      <Link>Util\SaveableImageFormats.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SocialNetwork\EmailNetwork\EmailNetworkAnalyzer.cs">
+      <Link>Util\SocialNetwork\EmailNetwork\EmailNetworkAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SocialNetwork\EmailNetwork\EmailParticipantCriteria.cs">
+      <Link>Util\SocialNetwork\EmailNetwork\EmailParticipantCriteria.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SocialNetwork\EmailNetwork\EmailParticipantPair.cs">
+      <Link>Util\SocialNetwork\EmailNetwork\EmailParticipantPair.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SocialNetwork\ParticipantPair.cs">
+      <Link>Util\SocialNetwork\ParticipantPair.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SocialNetwork\WdsConnectionFailureException.cs">
+      <Link>Util\SocialNetwork\WdsConnectionFailureException.cs</Link>
+    </Compile>
+    <Compile Include="Controls\GraphZoomAndScale\GraphZoomAndScaleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GraphZoomAndScale\GraphZoomAndScaleControl.Designer.cs">
+      <DependentUpon>GraphZoomAndScaleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutManagers\LayoutManager.cs" />
+    <Compile Include="LayoutManagers\LayoutManagerForMenu.cs" />
+    <Compile Include="LayoutManagers\LayoutManagerForToolStripSplitButton.cs" />
+    <Compile Include="LayoutManagers\LayoutType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8BA6250F-0771-43A0-8EE7-EBD24FB1ECCE}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9F0DA064-8E3A-45D9-826A-3CCB1A748E47}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layouts\Layouts.csproj">
+      <Project>{76604C5F-9442-4E48-B7A9-212507550A27}</Project>
+      <Name>Layouts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControl\WpfControl.csproj">
+      <Project>{5E12EC39-6EC0-4962-97C6-C8506D0C6C67}</Project>
+      <Name>WpfControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Common\Controls\ColorPicker\ColorPicker.resx">
+      <Link>Controls\ColorPicker\ColorPicker.resx</Link>
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GraphZoomAndScale\GraphZoomAndScaleControl.resx">
+      <DependentUpon>GraphZoomAndScaleControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<title>Selectively Laying Out Parts of the Graph Again</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Selectively Laying Out Parts of the Graph Again</div>
+
+<p>
+When you <a href="../SimpleGraph/Overview.htm#ShowGraph">show the graph</a>, NodeXL reads the workbook and lays out the graph using the selected <a href="LayoutAlgorithms.htm">layout algorithm</a>.  You can then lay out the entire graph again without rereading the workbook, which can save time when the workbook is large.  You can also lay out a subset of the graph's vertices.
+</p>
+
+<p>
+Note that if you edit the workbook (to change a vertex color, for example), you must <a href="../SimpleGraph/Overview.htm#ShowGraph">refresh the graph</a> to get your edits to show up in the <a href="../WorkbookTour/GraphPane.htm">Graph Pane</a>.  If you don't want the graph to be laid out again when you refresh the graph, set the <a href="LayoutAlgorithms.htm">layout algorithm</a> to None.
+</p>
+
+<div class="HowToTitle">
+To lay out the entire graph without rereading the workbook:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the layout menu at the top of the Graph Pane (<img class="VerticallyAlignedImage" src="../../Images/LayoutMenu.png" />), select Lay Out Again.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+To lay out a subset of the graph's vertices without rereading the workbook:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../Selection/SelectingVertices.htm">Select the vertices</a> you want to lay out.
+    </li>
+
+    <li class="HowToItem">
+    In the layout menu at the top of the Graph Pane (<img class="VerticallyAlignedImage" src="../../Images/LayoutMenu.png" />), select Lay Out Selected Vertices Again.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+To lay out a subset of the graph's vertices within their "bounding box" without rereading the workbook:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../Selection/SelectingVertices.htm">Select the vertices</a> you want to lay out.
+    </li>
+
+    <li class="HowToItem">
+    In the layout menu at the top of the Graph Pane (<img class="VerticallyAlignedImage" src="../../Images/LayoutMenu.png" />), select Lay Out Selected Vertices Again, Within Bounds.  This keeps the selected vertices within the bounding box defined by the outermost selected vertices.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+To lay out only the graph's visible vertices without rereading the workbook:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../Selection/SelectingVertices.htm">Select the vertices</a> you want to lay out.
+    </li>
+
+    <li class="HowToItem">
+    In the layout menu at the top of the Graph Pane (<img class="VerticallyAlignedImage" src="../../Images/LayoutMenu.png" />), select Lay Out Visible Vertices Again.  Vertices that have been filtered using NodeXL's <a href="../Analysis/DynamicFilters.htm">Dynamic Filters</a> do not get laid out.
+    </li>
+
+</ol>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Changing How the Graph is Laid Out</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

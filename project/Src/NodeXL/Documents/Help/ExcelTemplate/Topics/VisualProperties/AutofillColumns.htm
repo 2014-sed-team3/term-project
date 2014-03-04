@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<title>Automatically Calculating Visual Properties for All Edges, Vertices or Groups</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Automatically Calculating Visual Properties for All Edges, Vertices or Groups</div>
+
+<p>
+You can tell NodeXL to automatically calculate one or more visual properties for all the graph's edges, vertices and groups based on the values in other workbook columns.  This is called <span class="Definition">autofilling columns</span>.  For example, if you have an Edge Weight column on the <a href="../WorkbookTour/Worksheets.htm">Edges worksheet</a>, NodeXL can calculate and set the width of each of the graph's edges based on the edge's weight.  Edges with a large Edge Weight will then be thicker than edges with a small Edge Weight.
+</p>
+
+<p>
+By default, NodeXL calculates the edge widths, for example, using a linear mapping between the full range of Edge Weight numbers and the full range of available widths, but you can specify various options to change the way NodeXL performs its calculations.
+</p>
+
+<div class="HowToTitle">
+To automatically calculate visual properties:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Visual Properties, Autofill Columns.
+    </li>
+
+    <li class="HowToItem">
+    The Autofill Columns dialog box has one row for each worksheet column that can be autofilled.  Find the name of the worksheet column you want to autofill, then select the "source column" that contains the values NodeXL should use for the calculations.  In the above example, select "Edge Weight" as the source column for the Edge Width column.
+    </li>
+
+    <li class="HowToItem">
+    Repeat step 2 for any additional worksheet columns you want to autofill.
+    </li>
+
+    <li class="HowToItem">
+    Click the Autofill button.  The worksheet columns get filled with the calculated values and the graph refreshes automatically. (If it doesn't refresh automatically, check the "Automatically refresh the graph" checkbox in the <a href="GraphOptions.htm">Graph Options</a> dialog box.) 
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="Options">To change the way NodeXL calculates a visual property:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Autofill Columns dialog box, click the Options button (<img class="VerticallyAlignedImage" src="../../Images/Options.png" />) for the Edge Width worksheet column, for example.
+    </li>
+
+    <li class="HowToItem">
+    Select Edge Width Options from the popup menu.
+    </li>
+
+    <li class="HowToItem">
+    Change the options in the dialog box that appears.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="ClearColumn">To clear a worksheet column that has been autofilled:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Autofill Columns dialog box, click the Options button (<img class="VerticallyAlignedImage" src="../../Images/Options.png" />) for the Edge Width worksheet column, for example.
+    </li>
+
+    <li class="HowToItem">
+    Select Clear Edge Width Worksheet Column Now from the popup menu.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+To clear all worksheet columns that have been autofilled:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Autofill Columns dialog box, click the Clear All Worksheet Columns Now button.
+    </li>
+
+</ol>
+
+<div class="BulletTitle">
+Here are some things to know about Autofill Columns:
+</div>
+
+<ul>
+
+    <li class="BulletItem">
+    If a source column doesn't exist when Autofill is clicked, the corresponding worksheet column does not get autofilled.
+    </li>
+
+    <li class="BulletItem">
+    Autofilling multiple columns in a large workbook can be slow, especially if one of your worksheets is filtered.
+    </li>
+
+</ul>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Changing How the Graph Looks</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,1528 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="analysis  (see analyzing the graph)">
+		<param name="See Also" value="analyzing the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="analyzing the graph">
+		<param name="Name" value="Analyzing the Graph">
+		<param name="See Also" value="analyzing the graph">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="calculating graph metrics  (see graph metrics)">
+			<param name="See Also" value="graph metrics">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating subgraph images  (see subgraph images)">
+			<param name="See Also" value="subgraph images">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Analyzing the Graph">
+			<param name="Local" value="Topics\Analysis\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="using Dynamic Filters  (see Dynamic Filters)">
+			<param name="See Also" value="dynamic filters">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="annotation  (see labels, annotation)">
+		<param name="See Also" value="labels">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="academic publications">
+		<param name="Name" value="Where to Go for More Information">
+		<param name="Local" value="Topics\MoreInformation\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="adjacency matrix  (see matrix)">
+		<param name="See Also" value="matrix">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="automating common tasks">
+		<param name="Name" value="Automating Common Tasks">
+		<param name="See Also" value="automating common tasks">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Automating Common Tasks">
+			<param name="Local" value="Topics\Automation\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="options">
+			<param name="Name" value="Automating Common Tasks">
+			<param name="Local" value="Topics\Automation\Overview.htm#Options">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="automation  (see automating common tasks)">
+		<param name="See Also" value="automating common tasks">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Twitter">
+		<param name="See Also" value="Twitter">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from  (see importing graph data, from Twitter)">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="automating importation from  (see NodeXL Network Server)">
+			<param name="See Also" value="NodeXL Network Server">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Flickr, importing from  (see importing graph data, from Flickr)">
+		<param name="See Also" value="importing graph data">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="YouTube, importing from  (see importing graph data, from YouTube)">
+		<param name="See Also" value="importing graph data">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="appearance  (see visual properties)">
+		<param name="See Also" value="visual properties">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="arrowheads  (see directed vs. undirected graphs, arrowheads)">
+		<param name="See Also" value="directed vs. undirected graphs">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Autofill Columns">
+		<param name="Name" value="Automatically Calculating Visual Properties for All Edges, Vertices or Groups">
+		<param name="See Also" value="Autofill Columns">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clearing autofilled columns">
+			<param name="Name" value="Automatically Calculating Visual Properties for All Edges, Vertices or Groups">
+			<param name="Local" value="Topics\VisualProperties\AutofillColumns.htm#ClearColumn">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="options">
+			<param name="Name" value="Automatically Calculating Visual Properties for All Edges, Vertices or Groups">
+			<param name="Local" value="Topics\VisualProperties\AutofillColumns.htm#Options">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Automatically Calculating Visual Properties for All Edges, Vertices or Groups">
+			<param name="Local" value="Topics\VisualProperties\AutofillColumns.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="autofilling  (see Autofill Columns)">
+		<param name="See Also" value="Autofill Columns">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="axes  (see graph axes)">
+		<param name="See Also" value="graph axes">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bitmap files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="BMP files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="boxes, group  (see groups, laying out in boxes)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Circle  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Clipboard">
+		<param name="See Also" value="Clipboard">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="saving a graph image to  (see saving an image of the graph)">
+			<param name="See Also" value="saving an image of the graph">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="clusters">
+		<param name="See Also" value="clusters">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating groups by  (see groups, creating by cluster)">
+			<param name="See Also" value="groups">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="collapsing groups  (see groups, collapsing)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="column groups">
+		<param name="Name" value="Showing and Hiding Workbook Columns">
+		<param name="Local" value="Topics\ShowHideColumns\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="combining intergroup edges">
+		<param name="Name" value="How Groups Are Shown in the Graph Pane">
+		<param name="Local" value="Topics\Groups\ShowingGroups.htm#Layout">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Connected Action">
+		<param name="Name" value="Where to Go for More Information">
+		<param name="Local" value="Topics\MoreInformation\Overview.htm#ConnectedAction">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="columns">
+		<param name="See Also" value="columns">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adding">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#AddColumn">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="autofilling  (see Autofill Columns)">
+			<param name="See Also" value="Autofill Columns">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="groups  (see column groups)">
+			<param name="See Also" value="column groups">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="learning more about">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#ColumnInformation">
+			</OBJECT>
+	</UL>
+
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="connected components">
+		<param name="See Also" value="connected components">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating groups by  (see groups, creating by connected component)">
+			<param name="See Also" value="groups">
+			</OBJECT>
+	</UL>
+
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="motifs">
+		<param name="See Also" value="motifs">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating groups by  (see groups, creating by motif)">
+			<param name="See Also" value="groups">
+			</OBJECT>
+	</UL>
+
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="creating groups  (see groups, creating)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="deselecting  (see selecting)">
+		<param name="See Also" value="selecting">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="directed graphs  (see directed vs. undirected graphs)">
+		<param name="See Also" value="directed vs. undirected graphs">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="directed vs. undirected graphs">
+		<param name="Name" value="Directed vs. Undirected Graphs">
+		<param name="See Also" value="directed vs. undirected graphs">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Directed vs. Undirected Graphs">
+			<param name="Local" value="Topics\DirectedVsUndirected\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="arrowheads">
+			<param name="Name" value="Directed vs. Undirected Graphs">
+			<param name="Local" value="Topics\DirectedVsUndirected\Overview.htm#Arrowheads">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="effect on counting and merging duplicate edges  (see counting and merging duplicate edges)">
+			<param name="See Also" value="counting and merging duplicate edges">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="counting and merging duplicate edges">
+		<param name="Name" value="Counting and Merging Duplicate Edges">
+		<param name="Local" value="Topics\MergeDuplicateEdges\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="discussion page">
+		<param name="Name" value="Where to Go for More Information">
+		<param name="Local" value="Topics\MoreInformation\Overview.htm#Discussions">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="questions  (see more information)">
+		<param name="See Also" value="more information">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="duplicate edges, counting and merging  (see counting and merging duplicate edges)">
+		<param name="See Also" value="counting and merging duplicate edges">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="counting duplicate edges  (see counting and merging duplicate edges)">
+		<param name="See Also" value="counting and merging duplicate edges">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="merging duplicate edges  (see counting and merging duplicate edges)">
+		<param name="See Also" value="counting and merging duplicate edges">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dynamic Filters">
+		<param name="Name" value="Using Dynamic Filters">
+		<param name="See Also" value="Dynamic Filters">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adjusting opacity of">
+			<param name="Name" value="Using Dynamic Filters">
+			<param name="Local" value="Topics\Analysis\DynamicFilters.htm#Opacity">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Using Dynamic Filters">
+			<param name="Local" value="Topics\Analysis\DynamicFilters.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edge list">
+		<param name="Name" value="Creating a Simple Graph">
+		<param name="See Also" value="edge list">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating">
+			<param name="Local" value="Topics\SimpleGraph\Overview.htm#EdgeList">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from  (see importing graph data, from an edge list)">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edges">
+		<param name="Name" value="An Overview of Network Graphs">
+		<param name="See Also" value="edges">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="arrowheads (see directed vs. undirected graphs, arrowheads)">
+			<param name="Name" value="Directed vs. Undirected Graphs">
+			<param name="See Also" value="directed vs. undirected graphs">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="intergroup  (see intergroup edges)">
+			<param name="See Also" value="intergroup edges">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="labeling  (see labels, edges)">
+			<param name="See Also" value="labels">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="An Overview of Network Graphs">
+			<param name="Local" value="Topics\NetworkGraphs\Overview.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Excel">
+		<param name="See Also" value="Excel">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="add-in">
+			<param name="Name" value="A Quick Tour of the NodeXL Workbook">
+			<param name="Local" value="Topics\WorkbookTour\Overview.htm#AddIn">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="filters vs. Dynamic Filters">
+			<param name="Name" value="Using Dynamic Filters">
+			<param name="Local" value="Topics\Analysis\DynamicFilters.htm#ExcelFilters">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Ribbon">
+			<param name="Name" value="The NodeXL Ribbon Tab">
+			<param name="Local" value="Topics\WorkbookTour\Ribbon.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="template">
+			<param name="Name" value="A Quick Tour of the NodeXL Workbook">
+			<param name="Local" value="Topics\WorkbookTour\Overview.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="expanding groups  (see groups, expanding)">
+		<param name="Name" value="Collapsing and Expanding Groups">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hiding groups  (see groups, hiding)">
+		<param name="Name" value="Skipping and Hiding Groups">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="skipping groups  (see groups, skipping)">
+		<param name="Name" value="Skipping and Hiding Groups">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edge weight">
+		<param name="See Also" value="edge weight">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating by importing from email  (see importing graph data, from email)">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="using in Fruchterman-Reingold layout algorithm">
+			<param name="Name" value="Layout Algorithms">
+			<param name="Local" value="Topics\Layout\LayoutAlgorithms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating by merging duplicate edges">
+			<param name="Name" value="Counting and Merging Duplicate Edges">
+			<param name="Local" value="Topics\MergeDuplicateEdges\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="using in combined intergroup edges">
+			<param name="Name" value="How Groups Are Shown in the Graph Pane">
+			<param name="Local" value="Topics\Groups\ShowingGroups.htm#CombinedIntergroupEdges">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="email, importing from  (see importing graph data, from email)">
+		<param name="See Also" value="importing graph data">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="exporting graph data">
+		<param name="See Also" value="exporting graph data">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Exporting Graph Data">
+			<param name="Local" value="Topics\Export\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to other programs">
+			<param name="Name" value="Exporting Graph Data to Other Programs">
+			<param name="Local" value="Topics\Export\ExportToOtherPrograms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to GraphML">
+			<param name="Name" value="Exporting Graph Data to Other Programs">
+			<param name="Local" value="Topics\Export\ExportToOtherPrograms.htm#GraphML">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to another workbook">
+			<param name="Name" value="Exporting Graph Data to Another Workbook">
+			<param name="Local" value="Topics\Export\ExportToOtherWorkbooks.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to a matrix">
+			<param name="Name" value="Exporting Graph Data to Another Workbook">
+			<param name="Local" value="Topics\Export\ExportToOtherWorkbooks.htm#Matrix">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to UCINET">
+			<param name="Name" value="Exporting Graph Data to Other Programs">
+			<param name="Local" value="Topics\Export\ExportToOtherPrograms.htm#UCINET">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to Pajek">
+			<param name="Name" value="Exporting Graph Data to Other Programs">
+			<param name="Local" value="Topics\Export\ExportToOtherPrograms.htm#Pajek">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="exporting">
+		<param name="See Also" value="exporting">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="options  (see options, exporting)">
+			<param name="See Also" value="options">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="graph data  (see exporting graph data)">
+			<param name="See Also" value="exporting graph data">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="files, image  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="filters, dynamic  (see Dynamic Filters)">
+		<param name="See Also" value="Dynamic Filters">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Fruchterman-Reingold  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="options  (see layout options)">
+			<param name="See Also" value="layout options">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GIF files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="graph axes">
+		<param name="Name" value="The Graph Pane">
+		<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#GraphAxes">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="graph legend">
+		<param name="Name" value="The Graph Pane">
+		<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#GraphLegend">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="graph metrics">
+		<param name="Name" value="Calculating Graph Metrics">
+		<param name="See Also" value="graph metrics">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="aggregating overall metrics">
+			<param name="Name" value="Calculating Graph Metrics">
+			<param name="Local" value="Topics\Analysis\GraphMetrics.htm#Aggregate">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="hiding">
+			<param name="Name" value="Calculating Graph Metrics">
+			<param name="Local" value="Topics\Analysis\GraphMetrics.htm#Hide">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="learning more about">
+			<param name="Name" value="Calculating Graph Metrics">
+			<param name="Local" value="Topics\Analysis\GraphMetrics.htm#LearnMore">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Calculating Graph Metrics">
+			<param name="Local" value="Topics\Analysis\GraphMetrics.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="showing">
+			<param name="Name" value="Calculating Graph Metrics">
+			<param name="Local" value="Topics\Analysis\GraphMetrics.htm#Show">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Graph Options">
+		<param name="Name" value="Default Visual Properties: Graph Options">
+		<param name="Local" value="Topics\VisualProperties\GraphOptions.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Graph Pane">
+		<param name="Name" value="The Graph Pane">
+		<param name="See Also" value="Graph Pane">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="docking">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#Dock">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="hiding">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#Hide">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="keyboard shortcuts  (see keyboard shortcuts in the Graph Pane)">
+			<param name="See Also" value="keyboard shortcuts in the Graph Pane">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="resizing">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#Resize">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="scaling  (see scaling the graph)">
+			<param name="See Also" value="scaling the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="showing">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#Show">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="undocking">
+			<param name="Name" value="The Graph Pane">
+			<param name="Local" value="Topics\WorkbookTour\GraphPane.htm#Undock">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="zooming  (see zooming the graph)">
+			<param name="See Also" value="zooming the graph">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="graph theory">
+		<param name="Name" value="An Overview of Network Graphs">
+		<param name="Local" value="Topics\NetworkGraphs\Overview.htm#GraphTheory">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GraphML">
+		<param name="See Also" value="GraphML">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from  (see importing graph data, from GraphML)">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exporting to  (see exporting graph data, to GraphML)">
+			<param name="See Also" value="exporting graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from Twitter  (see NodeXL Network Server)">
+			<param name="See Also" value="NodeXL Network Server">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="showing and hiding">
+		<param name="See Also" value="showing and hiding">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="graph elements  (see graph elements, showing and hiding)">
+			<param name="See Also" value="graph elements">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="column groups  (see column groups)">
+			<param name="See Also" value="column groups">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="graphs">
+		<param name="Name" value="An Overview of Network Graphs">
+		<param name="See Also" value="graphs">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adding tooltips to  (see tooltips)">
+			<param name="See Also" value="tooltips">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="analyzing  (see analyzing the graph)">
+			<param name="See Also" value="analyzing the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="appearance of  (see visual properties)">
+			<param name="See Also" value="visual properties">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="calculating graph metrics  (see graph metrics)">
+			<param name="See Also" value="graph metrics">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating">
+			<param name="Name" value="Creating a Simple Graph">
+			<param name="Local" value="Topics\SimpleGraph\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating subgraph images for  (see subgraph images)">
+			<param name="See Also" value="subgraph images">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="directed vs. undirected  (see directed vs. undirected graphs)">
+			<param name="Name" value="Directed vs. Undirected Graphs">
+			<param name="See Also" value="directed vs. undirected graphs">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="dynamically filtering  (see Dynamic Filters)">
+			<param name="See Also" value="Dynamic Filters">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="labeling  (see labels)">
+			<param name="See Also" value="labels">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="laying out  (see laying out the graph)">
+			<param name="See Also" value="laying out the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="An Overview of Network Graphs">
+			<param name="Local" value="Topics\NetworkGraphs\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="refreshing">
+			<param name="Name" value="Creating a Simple Graph">
+			<param name="Local" value="Topics\SimpleGraph\Overview.htm#RefreshGraph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sample">
+			<param name="Name" value="An Overview of Network Graphs">
+			<param name="Local" value="Topics\NetworkGraphs\Overview.htm#Sample">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="saving an image of  (see saving an image of the graph)">
+			<param name="See Also" value="saving an image of the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="scaling  (see scaling the graph)">
+			<param name="See Also" value="scaling the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="showing">
+			<param name="Name" value="Creating a Simple Graph">
+			<param name="Local" value="Topics\SimpleGraph\Overview.htm#ShowGraph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="summarizing  (see summarizing the graph)">
+			<param name="See Also" value="summarizing the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="zooming  (see zooming the graph)">
+			<param name="See Also" value="zooming the graph">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Grid  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="group-in-a-box  (see groups, laying out in boxes)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="groups">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="boxes  (see groups, laying out in boxes)">
+			<param name="See Also" value="groups">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="collapsing">
+			<param name="Name" value="Collapsing and Expanding Groups">
+			<param name="Local" value="Topics\Groups\CollapseExpand.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="color and shape">
+			<param name="Name" value="How Groups Are Shown in the Graph Pane">
+			<param name="Local" value="Topics\Groups\ShowingGroups.htm#ColorShape">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating">
+			<param name="Name" value="Creating Groups">
+			<param name="Local" value="Topics\Groups\CreatingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating by cluster">
+			<param name="Name" value="Creating Groups by Cluster">
+			<param name="Local" value="Topics\Groups\Clusters.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating by motif">
+			<param name="Name" value="Creating Groups by Motif">
+			<param name="Local" value="Topics\Groups\Motifs.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating by connected component">
+			<param name="Name" value="Creating Groups by Connected Component">
+			<param name="Local" value="Topics\Groups\ConnectedComponents.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating by vertex attribute">
+			<param name="Name" value="Creating Groups by Vertex Attribute">
+			<param name="Local" value="Topics\Groups\VertexAttributes.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating manually">
+			<param name="Name" value="Manually Creating Groups">
+			<param name="Local" value="Topics\Groups\Manual.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="expanding">
+			<param name="Name" value="Collapsing and Expanding Groups">
+			<param name="Local" value="Topics\Groups\CollapseExpand.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="hiding">
+			<param name="Name" value="Hiding and Skipping Groups">
+			<param name="Local" value="Topics\Groups\HidingAndSkippingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="labeling  (see labels, groups)">
+			<param name="See Also" value="labels">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="laying out in boxes">
+			<param name="Name" value="How Groups Are Shown in the Graph Pane">
+			<param name="Local" value="Topics\Groups\ShowingGroups.htm#Layout">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Working with Groups">
+			<param name="Local" value="Topics\Groups\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="removing">
+			<param name="Name" value="Removing Groups">
+			<param name="Local" value="Topics\Groups\RemovingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="selecting">
+			<param name="Name" value="Selecting Groups">
+			<param name="Local" value="Topics\Groups\SelectingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="showing">
+			<param name="Name" value="How Groups Are Shown in the Graph Pane">
+			<param name="Local" value="Topics\Groups\ShowingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="skipping">
+			<param name="Name" value="Hiding and Skipping Groups">
+			<param name="Local" value="Topics\Groups\HidingAndSkippingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="worksheets">
+			<param name="Name" value="Understanding the Group Worksheets">
+			<param name="Local" value="Topics\Groups\GroupWorksheets.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="groups, column  (see column groups)">
+		<param name="See Also" value="column groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Harel-Koren Fast Multiscale  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hidden columns  (see column groups)">
+		<param name="See Also" value="column groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hiding columns  (see column groups)">
+		<param name="See Also" value="column groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="home page">
+		<param name="Name" value="Where to Go for More Information">
+		<param name="Local" value="Topics\MoreInformation\Overview.htm#HomePage">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Horizontal Sine Wave (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="image files  (see saving an image of the graph)">
+		<param name="Name" value="Saving an Image of the Graph">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="importing graph data">
+		<param name="Name" value="Importing Graph Data">
+		<param name="See Also" value="importing graph data">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Importing Graph Data">
+			<param name="Local" value="Topics\Import\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from other programs">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="Local" value="Topics\Import\ImportFromOtherPrograms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from email">
+			<param name="Name" value="Importing Graph Data from Email">
+			<param name="Local" value="Topics\Import\ImportFromEmail.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from an edge list">
+			<param name="Name" value="Importing Graph Data from Another Workbook">
+			<param name="Local" value="Topics\Import\ImportFromOtherWorkbooks.htm#EdgeList">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from another workbook">
+			<param name="Name" value="Importing Graph Data from Another Workbook">
+			<param name="Local" value="Topics\Import\ImportFromOtherWorkbooks.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from Twitter">
+			<param name="Name" value="Importing Graph Data from Online Social Networks">
+			<param name="Local" value="Topics\Import\ImportFromSocialNetworks.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from Flickr">
+			<param name="Name" value="Importing Graph Data from Online Social Networks">
+			<param name="Local" value="Topics\Import\ImportFromSocialNetworks.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from a matrx">
+			<param name="Name" value="Importing Graph Data from Another Workbook">
+			<param name="Local" value="Topics\Import\ImportFromOtherWorkbooks.htm#Matrix">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from UCINET">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="Local" value="Topics\Import\ImportFromOtherPrograms.htm#UCINET">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from GraphML">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="Local" value="Topics\Import\ImportFromOtherPrograms.htm#GraphML">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from Pajek">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="Local" value="Topics\Import\ImportFromOtherPrograms.htm#Pajek">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="from YouTube">
+			<param name="Name" value="Importing Graph Data from Online Social Networks">
+			<param name="Local" value="Topics\Import\ImportFromSocialNetworks.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="importing">
+		<param name="See Also" value="importing">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="options  (see options, importing)">
+			<param name="See Also" value="options">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="graph data  (see importing graph data)">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="infotips  (see tooltips)">
+		<param name="See Also" value="tooltips">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="intergroup edges">
+		<param name="Name" value="How Groups Are Shown in the Graph Pane">
+		<param name="Local" value="Topics\Groups\ShowingGroups.htm#Layout">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isolated vertices">
+		<param name="Name" value="Graphs with Isolated Vertices">
+		<param name="Local" value="Topics\Isolates\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isolates  (see isolated vertices)">
+		<param name="See Also" value="isolated vertices">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="JPEG files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keyboard shortcuts in the Graph Pane">
+		<param name="Name" value="Keyboard Shortcuts in the Graph Pane">
+		<param name="Local" value="Topics\KeyboardShortcuts\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="labels">
+		<param name="Name" value="Labeling Edges, Vertices and Groups">
+		<param name="See Also" value="labels">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="annotation">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm#Annotation">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="edges">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm#Edges">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="groups">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm#Groups">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Label shape">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm#LabelShape">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="showing and hiding  (see graph elements, showing and hiding)">
+			<param name="See Also" value="graph elements">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="vertices">
+			<param name="Name" value="Labeling Edges, Vertices and Groups">
+			<param name="Local" value="Topics\VisualProperties\Labels.htm#LabelShape">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="laying out the graph">
+		<param name="Name" value="Changing How the Graph is Laid Out">
+		<param name="See Also" value="laying out the graph">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="algorithms  (see layout algorithms)">
+			<param name="See Also" value="layout algorithms">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="options  (see layout options)">
+			<param name="See Also" value="layout options">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Changing How the Graph is Laid Out">
+			<param name="Local" value="Topics\Layout\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="selectively  (see selectively laying out the graph)">
+			<param name="See Also" value="selectively laying out the graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="snapping vertices to a grid  (see vertex snapping)">
+			<param name="See Also" value="vertex snapping">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="layout algorithms">
+		<param name="Name" value="Layout Algorithms">
+		<param name="Local" value="Topics\Layout\LayoutAlgorithms.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="layout options">
+		<param name="Name" value="Layout Options">
+		<param name="Local" value="Topics\Layout\LayoutOptions.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="layout, selective  (see selectively laying out the graph)">
+		<param name="See Also" value="selectively laying out the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="layouts  (see laying out the graph)">
+		<param name="See Also" value="laying out the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="legend  (see graph legend)">
+		<param name="See Also" value="graph legend">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="matrix">
+		<param name="See Also" value="matrix">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from  (see importing graph data, from a matrix)">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exporting to  (see exporting graph data, to a matrix)">
+			<param name="See Also" value="exporting graph data">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="metrics  (see graph metrics)">
+		<param name="See Also" value="graph metrics">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="more information">
+		<param name="Name" value="Where to Go for More Information">
+		<param name="Local" value="Topics\MoreInformation\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="moving around the zoomed-in graph">
+		<param name="Name" value="Moving Around the Graph">
+		<param name="Local" value="Topics\ZoomMoveScale\Move.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="network graphs  (see graphs)">
+		<param name="See Also" value="graphs">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NodeXL Network Server">
+		<param name="Name" value="The NodeXL Network Server">
+		<param name="Local" value="Topics\NetworkServer\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="network server  (see NodeXL Network Server)">
+		<param name="See Also" value="NodeXL Network Server">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="options">
+		<param name="Name" value="Working with Options">
+		<param name="See Also" value="options">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exporting">
+			<param name="Name" value="Exporting and Importing Options">
+			<param name="Local" value="Topics\Options\ExportImport.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing">
+			<param name="Name" value="Exporting and Importing Options">
+			<param name="Local" value="Topics\Options\ExportImport.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Working with Options">
+			<param name="Local" value="Topics\Options\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="resetting">
+			<param name="Name" value="Resetting All Options">
+			<param name="Local" value="Topics\Options\ResetAll.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="using current for new workbooks">
+			<param name="Name" value="Using the Current Workbook's Options for New Workbooks">
+			<param name="Local" value="Topics\Options\UseCurrentForNew.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="overall metrics  (see graph metrics)">
+		<param name="See Also" value="graph metrics">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Outlook, importing from  (see importing graph data, from email)">
+		<param name="See Also" value="importing graph data">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Outlook Express, importing from  (see importing graph data, from email)">
+		<param name="See Also" value="importing graph data">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Pajek">
+		<param name="See Also" value="Pajek">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from  (see importing graph data, from Pajek)">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exporting to  (see exporting graph data, to Pajek)">
+			<param name="See Also" value="exporting graph data">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PNG files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PDF files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Polar  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Polar Absolute  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="graph elements">
+		<param name="See Also" value="graph elements">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="showing and hiding">
+			<param name="Name" value="Showing and Hiding Graph Elements">
+			<param name="Local" value="Topics\ShowHideGraphElements\Overview.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="popup text  (see tooltips)">
+		<param name="See Also" value="tooltips">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="preferences  (see options)">
+		<param name="See Also" value="options">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Random  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="removing groups  (see groups, removing)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="resetting options  (see options, resetting)">
+		<param name="See Also" value="options">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Ribbon, Excel  (see Excel, Ribbon)">
+		<param name="See Also" value="Excel">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="refreshing the graph  (see showing and refreshing the graph)">
+		<param name="See Also" value="showing and refreshing the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="saving an image of the graph">
+		<param name="Name" value="Saving an Image of the Graph">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adding a header or footer">
+			<param name="Name" value="Saving an Image of the Graph">
+			<param name="Local" value="Topics\SaveImage\Overview.htm#SizeHeaderFooter">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Saving an Image of the Graph">
+			<param name="Local" value="Topics\SaveImage\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setting the image size">
+			<param name="Name" value="Saving an Image of the Graph">
+			<param name="Local" value="Topics\SaveImage\Overview.htm#SizeHeaderFooter">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to the Clipboard">
+			<param name="Name" value="Saving an Image of the Graph">
+			<param name="Local" value="Topics\SaveImage\Overview.htm#Clipboard">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scaling the graph">
+		<param name="Name" value="Scaling the Graph">
+		<param name="Local" value="Topics\ZoomMoveScale\Scale.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="selecting">
+		<param name="See Also" value="selecting">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="edges">
+			<param name="Name" value="Selecting Edges">
+			<param name="Local" value="Topics\Selection\SelectingEdges.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="groups">
+			<param name="Name" value="Selecting Groups">
+			<param name="Local" value="Topics\Groups\SelectingGroups.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="vertices">
+			<param name="Name" value="Selecting Vertices">
+			<param name="Local" value="Topics\Selection\SelectingVertices.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="selectively laying out the graph">
+		<param name="Name" value="Selectively Laying Out Parts of the Graph Again">
+		<param name="Local" value="Topics\Layout\SelectiveLayout.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="settings  (see options)">
+		<param name="See Also" value="options">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="showing and refreshing the graph">
+		<param name="Name" value="Creating a Simple Graph">
+		<param name="Local" value="Topics\SimpleGraph\Overview.htm#ShowGraph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Smith, Marc  (see more information)">
+		<param name="See Also" value="more information">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="snapping  (see vertex snapping)">
+		<param name="See Also" value="vertex snapping">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Spiral  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="subgraph images">
+		<param name="Name" value="Creating Subgraph Images">
+		<param name="See Also" value="subgraph images">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="deleting">
+			<param name="Name" value="Creating Subgraph Images">
+			<param name="Local" value="Topics\Analysis\SubgraphImages.htm#Delete">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Creating Subgraph Images">
+			<param name="Local" value="Topics\Analysis\SubgraphImages.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sugiyama  (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TIFF files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="summary, graph  (see summarizing the graph)">
+		<param name="See Also" value="summarizing the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="summarizing the graph">
+		<param name="Name" value="Summarizing the Graph">
+		<param name="Local" value="Topics\GraphSummary\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="tooltips">
+		<param name="Name" value="Adding Tooltips to the Graph">
+		<param name="See Also" value="tooltips">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="multiline">
+			<param name="Name" value="Adding Tooltips to the Graph">
+			<param name="Local" value="Topics\Tooltips\Overview.htm#Multiline">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Adding Tooltips to the Graph">
+			<param name="Local" value="Topics\Tooltips\Overview.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="treemaps  (see groups, laying out in boxes)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="UCINET">
+		<param name="See Also" value="UCINET">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="importing from  (see importing graph data, from UCINET)">
+			<param name="Name" value="Importing Graph Data from Other Programs">
+			<param name="See Also" value="importing graph data">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exporting to  (see exporting graph data, to UCINET)">
+			<param name="See Also" value="exporting graph data">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="undirected graphs  (see directed vs. undirected graphs)">
+		<param name="See Also" value="directed vs. undirected graphs">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="vertex groups  (see groups)">
+		<param name="See Also" value="groups">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="vertex snapping">
+		<param name="Name" value="Snapping Vertices to a Grid">
+		<param name="Local" value="Topics\Layout\SnappingVertices.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Vertical Sine Wave (see layout algorithms)">
+		<param name="See Also" value="layout algorithms">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="vertices">
+		<param name="Name" value="An Overview of Network Graphs">
+		<param name="See Also" value="vertices">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adding tooltips to  (see tooltips)">
+			<param name="See Also" value="tooltips">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating subgraph images of  (see subgraph images)">
+			<param name="See Also" value="subgraph images">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="groups  (see groups)">
+			<param name="See Also" value="groups">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isolated  (see isolated vertices)">
+			<param name="See Also" value="isolated vertices">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="labeling  (see labels, vertices)">
+			<param name="See Also" value="labels">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="An Overview of Network Graphs">
+			<param name="Local" value="Topics\NetworkGraphs\Overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="snapping to a grid  (see vertex snapping)">
+			<param name="See Also" value="vertex snapping">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="visual properties">
+		<param name="Name" value="Changing How the Graph Looks">
+		<param name="See Also" value="visual properties">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="automatically calculating  (see Autofill Columns)">
+			<param name="See Also" value="Autofill Columns">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="default  (see Graph Options)">
+			<param name="Name" value="Default Visual Properties: Graph Options">
+			<param name="See Also" value="Graph Options">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="edge and vertex labels  (see labels)">
+			<param name="See Also" value="labels">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setting for individual edges, vertices or groups">
+			<param name="Name" value="Setting Visual Properties for Individual Edges, Vertices or Groups">
+			<param name="Local" value="Topics\VisualProperties\Manual.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Changing How the Graph Looks">
+			<param name="Local" value="Topics\VisualProperties\Overview.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="workbooks">
+		<param name="Name" value="A Quick Tour of the NodeXL Workbook">
+		<param name="Local" value="Topics\WorkbookTour\Overview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="worksheets">
+		<param name="Name" value="The NodeXL Worksheets">
+		<param name="See Also" value="worksheets">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adding to workbook">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#AddWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Edges">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#EdgesWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Group Edges">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#GroupEdgesWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Group Vertices">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#GroupVerticesWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="group, understanding  (see groups, worksheets)">
+			<param name="See Also" value="groups">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Groups">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#GroupsWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="hiding columns  (see column groups)">
+			<param name="See Also" value="column groups">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="learning more about">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#WorksheetInformation">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Overall Metrics">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#OverallMetricsWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="selecting">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#SelectWorksheet">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Vertices">
+			<param name="Name" value="The NodeXL Worksheets">
+			<param name="Local" value="Topics\WorkbookTour\Worksheets.htm#VerticesWorksheet">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="XPS files  (see saving an image of the graph)">
+		<param name="See Also" value="saving an image of the graph">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="zooming the graph">
+		<param name="Name" value="Zooming the Graph">
+		<param name="See Also" value="zooming the graph">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="moving around  (see moving around the zoomed-in graph)">
+			<param name="See Also" value="moving around the zoomed-in graph">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="overview">
+			<param name="Name" value="Zooming the Graph">
+			<param name="Local" value="Topics\ZoomMoveScale\Zoom.htm">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<title>Exporting Graph Data to Another Workbook</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Exporting Graph Data to Another Workbook</div>
+
+<p>
+NodeXL will export selected edges and vertices to a new NodeXL workbook.  It will also export the entire graph to a new Excel workbook as an adjacency matrix.
+</p>
+
+<div class="HowToTitle">
+To export selected graph data from the NodeXL workbook to a new NodeXL workbook:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../Selection/Overview.htm">Select the edges and vertices</a> you want to export.
+    </li>
+
+    <li class="HowToItem">
+    In the Ribbon, select NodeXL, Data, Export, Selection to New NodeXL Workbook.  This creates a new NodeXL workbook, copies the selected edges and vertices into it, and switches to the new workbook.  All edge and vertex columns are copied.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="Matrix">To export the graph data from the NodeXL workbook to a new Excel workbook as an adjacency matrix:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Ribbon, select NodeXL, Data, Export, To New Matrix Workbook.  This creates a new Excel workbook (<i>not</i> a NodeXL workbook), fills the new workbook with an adjacency matrix whose elements are the graph's edge weights, and switches to the new workbook.
+    </li>
+
+</ol>
+
+<p>
+Note that a graph's adjacency matrix has V rows and V columns, where V is the number of vertices in the graph.  A graph with a large number of vertices will result in a huge workbook, one that Excel may not be able to handle without running out of memory.  Therefore, the Export to New Matrix Workbook feature should be used only with smaller graphs.
+</p>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Exporting Graph Data</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

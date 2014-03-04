@@ -1,0 +1,178 @@
+<html>
+
+<head>
+<title>How Groups Are Shown in the Graph Pane</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">How Groups Are Shown in the Graph Pane</div>
+
+<div class="SectionCaption">
+<a name="ColorShape">Color and Shape</a>
+</div class="SectionCaption">
+
+<p>
+NodeXL assigns a color and shape to each group that you create using one of the techniques discussed in <a href="CreatingGroups.htm">Creating Groups</a>.  When you <a href="../SimpleGraph/Overview.htm#ShowGraph">show the graph</a>, all the vertices in the group will have that color and shape&mdash;group A's vertices might be blue disks, for example, and group B's vertices might be orange spheres.  These group colors and shapes override any individual values you might have entered in the Color and Shape columns on the <a href="../WorkbookTour/Worksheets.htm">Vertices worksheet</a>.  In other words, those columns get ignored.  (You can, however, tell NodeXL to <i>not</i> ignore those columns.  See <a href="#ColorsAndShapes">Changing How Vertex Colors and Shapes are Specified</a>.)
+</p>
+
+<p>
+Most people use the color and shape combinations that NodeXL assigns to the groups, but you can edit the colors and shapes if you are unhappy with them.  Note, however, that if you create groups, edit the group colors and shapes, and then create groups again, your edited colors and shapes will get overwritten and you will have to edit them again.  Therefore you should create all your groups first, then edit the group colors and shapes.
+</p>
+
+<div class="HowToTitle">
+To edit the colors and shapes that NodeXL assigns to groups:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../WorkbookTour/Worksheets.htm#SelectWorksheet">Select the Groups worksheet.</a>
+    </li>
+
+    <li class="HowToItem">
+    Edit the Vertex Color and Vertex Shape columns on the Groups worksheet.
+    </li>
+
+    <li class="HowToItem">
+    <a href="../SimpleGraph/Overview.htm#ShowGraph">Show the graph</a> to see your changes.
+    </li>
+
+</ol>
+
+<hr />
+<div class="SectionCaption">
+<a name="Layout">Group Layout</a>
+</div class="SectionCaption">
+
+<p>
+In addition to using vertex colors and shapes to distinguish groups from one another, NodeXL can lay out each group within its own box in the <a href="../WorkbookTour/GraphPane.htm">Graph Pane</a>.
+</p>
+
+<div class="HowToTitle">
+To lay out each group within its own box in the Graph Pane:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Graph, Layout, Layout Options.
+    </li>
+
+    <li class="HowToItem">
+    In the Layout Options dialog box, check "Lay out each of the graph's groups in its own box and sort the boxes by group size."
+    </li>
+
+    <li class="HowToItem">
+    Optionally set the width of the box outlines; select whether to show, hide or combine intergroup edges (see below); and select whether you want NodeXL to use the Grid layout for groups that don't have many edges.
+    </li>
+
+    <li class="HowToItem">
+    Click OK.
+    </li>
+    <li class="HowToItem">
+    <a href="../SimpleGraph/Overview.htm#ShowGraph">Show the graph</a> or <a href="../Layout/SelectiveLayout.htm">lay it out again</a>.
+    </li>
+
+</ol>
+
+<p>
+NodeXL arranges the group boxes in what is called a <a target="_blank" href="http://www.cs.umd.edu/hcil/treemap-history/index.shtml"><span class="Definition">squarified treemap</span></a>.  The size of each box is proportional to the number of vertices in the box's group.
+</p>
+
+<a name="CombinedIntergroupEdges">
+<p>
+If you choose to combine intergroup edges, all edges between a pair of groups are combined into a single edge whose width reflects the number of combined edges.  This is useful for reducing graph clutter.
+</p>
+
+<p>
+If you combine intergroup edges and the <a href="../WorkbookTour/Worksheets.htm">Edges worksheet</a> has an Edge Weight column, the edge weights are used to determine the width of a combined edge.  Edge Weight column values should be greater than zero.  If a value is zero or less, it is ignored and 1.0 is used instead.
+</p>
+</a>
+
+<hr />
+<div class="SectionCaption">
+<a name="Skip">Skipping All Groups</a>
+</div class="SectionCaption">
+
+<p>
+You can tell NodeXL to temporarily skip all the groups you've created without actually removing the groups from the workbook.
+</p>
+
+<div class="HowToTitle">
+To tell NodeXL to temporarily skip all of the graph's groups:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Groups, Group Options.
+    </li>
+
+    <li class="HowToItem">
+    Check "Skip groups -- don't show them in the Graph Pane."
+    </li>
+
+    <li class="HowToItem">
+    <a href="../SimpleGraph/Overview.htm#ShowGraph">Show the graph</a>.
+    </li>
+
+</ol>
+
+<p>
+When you tell NodeXL to skip all the groups, it completely ignores everything on the <a href="../Groups/GroupWorksheets.htm">Groups and Group Vertices worksheets</a> when the graph is shown.  It also starts paying attention to the Color and Shape columns on the Vertices worksheet again, so the graph's vertices take on any colors and shapes you previously assigned to them.
+</p>
+
+<p>
+You can also skip individual groups.  See <a href="HidingAndSkippingGroups.htm" />Hiding and Skipping Groups</a>.
+</p>
+
+<hr />
+<a name="ColorsAndShapes">
+<div class="SectionCaption">
+Changing How Vertex Colors and Shapes are Specified
+</div class="SectionCaption">
+</a>
+
+<p>
+As explained above, NodeXL assigns a color and shape to each group that you create.  The colors and shapes are stored in the Groups worksheet, and the colors and shapes specified in the Vertices worksheet are ignored.
+</p>
+
+<p>
+Advanced users may want to use the colors or shapes from the Vertices worksheet instead.  For example, you may want to combine the group colors that NodeXL assigns with the individual vertex shapes that you specified on the Vertices worksheet.  This can be particularly useful when the individual vertices have a Shape of Image or Label.
+</p>
+
+<div class="HowToTitle">
+To Change How Vertex Colors and Shapes are Specified:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Groups, Group Options.
+    </li>
+
+    <li class="HowToItem">
+    Select options for "What colors should be used for the groups' vertices?" and "What shapes should be used for the groups' vertices?"
+    </li>
+
+    <li class="HowToItem">
+    <a href="../SimpleGraph/Overview.htm#ShowGraph">Show the graph</a>.
+    </li>
+
+</ol>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Working with Groups</a>
+    </li>
+
+<ul>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BrandesFastCentralities" xml:space="preserve">
+    <value>&lt;p&gt;
+A vertex that occurs on many shortest paths between other vertices has a larger betweenness centrality than vertices that do not.  Betweenness centrality is defined in this article:
+&lt;/p&gt;
+
+&lt;div class="divUrl"&gt;
+&lt;a href="http://en.wikipedia.org/wiki/Centrality#Betweenness_centrality"&gt;
+http://en.wikipedia.org/wiki/Centrality#Betweenness_centrality
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+NodeXL uses the algorithm described in the paper "A Faster Algorithm for Betweenness Centrality," by Ulrik Brandes.  The paper can be found here:
+&lt;/p&gt;
+
+&lt;div class="divUrl"&gt;
+&lt;a href="http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf"&gt;
+http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+The closeness centrality of a vertex is the inverse of the sum of the shortest distances between the vertex and all other vertices reachable from it.
+&lt;/p&gt;</value>
+  </data>
+  <data name="EigenvectorCentrality" xml:space="preserve">
+    <value>&lt;p&gt;
+Eigenvector centrality is defined in this article:
+&lt;/p&gt;
+
+&lt;div class="divUrl"&gt;
+&lt;a href="http://en.wikipedia.org/wiki/Eigenvector_centrality#Eigenvector_centrality"&gt;
+http://en.wikipedia.org/wiki/Eigenvector_centrality#Eigenvector_centrality
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+From the article:
+&lt;/p&gt;
+
+&lt;div class="divQuote"&gt;
+"Eigenvector centrality is a measure of the importance of a node in a network. It assigns relative scores to all nodes in the network based on the principle that connections to high-scoring nodes contribute more to the score of the node in question than equal connections to low-scoring nodes."
+&lt;/div&gt;</value>
+  </data>
+  <data name="PageRank" xml:space="preserve">
+    <value>&lt;p&gt;
+PageRank measures the importance of each vertex within the graph using a link analysis algorithm developed by Larry Page.  It is described here:
+&lt;/p&gt;
+
+&lt;div class="divUrl"&gt;
+&lt;a href="http://en.wikipedia.org/wiki/PageRank"&gt;
+http://en.wikipedia.org/wiki/PageRank
+&lt;/a&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Degree" xml:space="preserve">
+    <value>&lt;p&gt;
+In an undirected graph, a vertex's degree is the number of edges incident to the vertex.  In a directed graph, degree is undefined and is not calculated.
+&lt;/p&gt;
+
+&lt;p&gt;
+A self-loop in an undirected graph is counted twice when a vertex's degree is calculated.
+&lt;/p&gt;</value>
+  </data>
+  <data name="OutDegree" xml:space="preserve">
+    <value>&lt;p&gt;
+In a directed graph, a vertex's out-degree is the number of outgoing edges incident to the vertex.  In an undirected graph, out-degree is undefined and is not calculated.
+&lt;/p&gt;
+
+&lt;p&gt;
+A self-loop in a directed graph is counted once as an outgoing edge (out-degree) and once as an incoming edge (in-degree).
+&lt;/p&gt;</value>
+  </data>
+  <data name="InDegree" xml:space="preserve">
+    <value>&lt;p&gt;
+In a directed graph, a vertex's in-degree is the number of incoming edges incident to the vertex.  In an undirected graph, in-degree is undefined and is not calculated.
+&lt;/p&gt;
+
+&lt;p&gt;
+A self-loop in a directed graph is counted once as an incoming edge (in-degree) and once as an outgoing edge (out-degree).
+&lt;/p&gt;</value>
+  </data>
+  <data name="ReciprocatedVertexPairRatio" xml:space="preserve">
+    <value>&lt;p&gt;
+In a directed graph, this is the number of adjacent vertices that are connected to the vertex with edges in both directions divided by the number of adjacent vertices.  In an undirected graph, this is undefined and is not calculated.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Words" xml:space="preserve">
+    <value>&lt;p&gt;
+&lt;span class="spnOptions"&gt;This metric has options.&lt;/span&gt;  Click the Options button to specify them.
+&lt;/p&gt;
+	
+&lt;p&gt;
+If you have a text column on the Edges or Vertices worksheet, NodeXL will count the words in the column along with the pairs of words that occur next to each other.  The results get inserted into a new Words worksheet and a new Word Pairs worksheet.
+&lt;/p&gt;
+
+&lt;p&gt;
+For example, if your text column has these two cells:
+&lt;/p&gt;
+
+&lt;div style="margin-left: 2em"&gt;
+The quick fox is brown&lt;br /&gt;
+The Quick Fox jumps over
+&lt;/div&gt;
+
+&lt;p&gt;
+...and you uncheck "skip words and word pairs that occur only once" in the Word and Word Pair Metrics dialog box, then NodeXL will create a three-column Words worksheet with the following rows:
+&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Word&lt;/th&gt;
+        &lt;th&gt;Count&lt;/th&gt;
+        &lt;th&gt;Salience&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;quick&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;fox&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;brown&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0.043&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;jumps&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0.043&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;over&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0.043&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+...and a four-column Word Pairs worksheet with the following rows:
+&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Word 1&lt;/th&gt;
+        &lt;th&gt;Word 2&lt;/th&gt;
+        &lt;th&gt;Count&lt;/th&gt;
+        &lt;th&gt;Salience&lt;/th&gt;
+        &lt;th&gt;Mutual Information&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;quick&lt;/td&gt;
+        &lt;td&gt;fox&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;0.000&lt;/td&gt;
+        &lt;td&gt;0.398&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;fox&lt;/td&gt;
+        &lt;td&gt;brown&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0.043&lt;/td&gt;
+        &lt;td&gt;0.398&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;fox&lt;/td&gt;
+        &lt;td&gt;jumps&lt;/td&gt;
+		&lt;td&gt;1&lt;/td&gt;
+		&lt;td&gt;0.043&lt;/td&gt;
+        &lt;td&gt;0.398&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;jumps&lt;/td&gt;
+        &lt;td&gt;over&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0.043&lt;/td&gt;
+        &lt;td&gt;0.699&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;p&gt;
+Note that common "noise" words are ignored ("the" and "is" in this case), and that the count is case-insensitive: "quick" and "Quick" are counted together.  Also, the word order is important when counting word pairs, so that "fox brown" would be counted separately from "brown fox."
+&lt;/p&gt;
+
+&lt;p&gt;
+The "Salience" is a modified form of the tf*idf (term frequency-inverse document frequency) statistic.  It measures how important the word or word pair is within the entire text column.  It is calculated using this formula:
+&lt;/p&gt;
+
+&lt;div style="margin-left: 2em"&gt;
+Salience = ( (count) / (total non-noise words in column) ) * Log10( (non-empty cells in column) / (cells in which word or word pair appears) )
+&lt;/div&gt;
+
+&lt;p&gt;
+The "Mutual Information" measures the mutual dependence or relatedness of a word pair.  Large numbers indicate bigrams, noun phrases, idioms, or colocations.  Small numbers indicate uncommon pairs.  It is calculated using this formula:
+&lt;/p&gt;
+
+&lt;div style="margin-left: 2em"&gt;
+Mutual Information = Log10( P(x,y) / ( P(x,*) * P(*,y) ) )
+&lt;br/&gt;
+&lt;br/&gt;
+...where P(x,y) = (count for this word pair) / (total word pairs)
+&lt;br/&gt;
+and P(x,*) is the number of word pairs that share this word pair's first word
+&lt;br/&gt;
+and P(*,y) is the number of word pairs that share this word pair's second word
+&lt;/div&gt;</value>
+  </data>
+  <data name="TwitterSearchNetworkTopItems" xml:space="preserve">
+    <value>&lt;p&gt;
+If the workbook contains a Twitter search network imported via NodeXL, Data, Import, From Twitter Search Network, you can have NodeXL find the top URLs, domains, hashtags, words, word pairs, replied-to usernames, and mentioned usernames within the network's tweets, and the top tweeters in the network. These items get inserted into the Twitter Search Ntwrk Top Items* worksheet, which gets added to the workbook the first time you calculate Twitter search network top items.
+&lt;/p&gt;
+
+&lt;p&gt;
+Similar top item information gets added to each vertex on the Vertices worksheet, and to each group on the Groups worksheet.
+&lt;/p&gt;
+
+&lt;div style="font-size: 90%;"&gt;
+* The worksheet name is abbreviated due to Excel's maximum worksheet name length.
+&lt;/div&gt;</value>
+  </data>
+  <data name="TopNBy" xml:space="preserve">
+    <value>&lt;p&gt;
+&lt;span class="spnOptions"&gt;This metric has options.&lt;/span&gt;  Click the Options button to specify them.
+&lt;/p&gt;
+	
+&lt;p&gt;
+You can have NodeXL find the top items in a worksheet, ranked by the numbers in a column of your choice.  These items get inserted into the Top Items worksheet, which gets added to the workbook the first time you calculate top items.
+&lt;/p&gt;</value>
+  </data>
+  <data name="EdgeReciprocation" xml:space="preserve">
+    <value>&lt;p&gt;
+In a directed graph, an edge from vertex A to vertex B is reciprocated if the graph also has an edge from vertex B to vertex A.  In an undirected graph, edge reciprocation is undefined and is not calculated.
+&lt;/p&gt;
+
+&lt;p&gt;
+A self-loop is never reciprocated.
+&lt;/p&gt;</value>
+  </data>
+  <data name="GroupMetrics" xml:space="preserve">
+    <value>&lt;p&gt;
+Group metrics include vertex counts, edge counts, geodesic distances and graph density for each of the graph's groups.  They are calculated as if the vertices and edges outside the group do not exist.  These metrics get inserted into the Groups worksheet.
+&lt;/p&gt;
+
+&lt;p&gt;
+Group metrics also include the number of edges within each group and the number of edges between each pair of groups.  These metrics get inserted into the Group Edges worksheet, which gets added to the workbook the first time you calculate group metrics.
+&lt;/p&gt;
+	</value>
+  </data>
+  <data name="OverallMetrics" xml:space="preserve">
+    <value>&lt;p&gt;
+The following overall metrics get inserted into the Overall Metrics worksheet:
+&lt;/p&gt;
+
+&lt;table&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Graph Type&lt;/td&gt;
+	&lt;td&gt;Directed or undirected.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Vertices&lt;/td&gt;
+	&lt;td&gt;The number of vertices in the graph.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Unique Edges&lt;/td&gt;
+	&lt;td&gt;The number of edges that do not have duplicates.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Edges With Duplicates&lt;/td&gt;
+	&lt;td&gt;The number of edges that have duplicates.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Total Edges&lt;/td&gt;
+	&lt;td&gt;The number of edges in the graph.  This is the sum of Unique Edges and Edges With Duplicates.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Self-Loops&lt;/td&gt;
+	&lt;td&gt;The number of edges that connect a vertex to itself.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Reciprocated Vertex Pair Ratio&lt;/td&gt;
+	&lt;td&gt;In a directed graph, this is the number of vertex pairs that have edges in both directions divided by the number of vertex pairs that are connected by any edge.  Duplicate edges and self-loops are ignored.  In an undirected graph, this is undefined and is not calculated.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Reciprocated Edge Ratio&lt;/td&gt;
+	&lt;td&gt;In a directed graph, this is the number of edges that are reciprocated divided by the total number of edges.  Duplicate edges and self-loops are ignored.  In an undirected graph, this is undefined and is not calculated.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Connected Components&lt;/td&gt;
+	&lt;td&gt;The number of connected components in the graph.  A connected component is a set of vertices that are connected to each other but not to the rest of the graph.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Single-Vertex Connected Components&lt;/td&gt;
+	&lt;td&gt;The number of connected components that have only one vertex.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Maximum Vertices in a Connected Component&lt;/td&gt;
+	&lt;td&gt;The number of vertices in the connected component that has the most vertices.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Maximum Edges in a Connected Component&lt;/td&gt;
+	&lt;td&gt;The number of edges in the connected component that has the most edges.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Maximum Geodesic Distance (Diameter)&lt;/td&gt;
+	&lt;td&gt;The maximum geodesic distance among all vertex pairs, where geodesic distance is the distance between two vertices along the shortest path between them.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Average Geodesic Distance&lt;/td&gt;
+	&lt;td&gt;The average geodesic distance among all vertex pairs, where geodesic distance is the distance between two vertices along the shortest path between them.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Graph Density&lt;/td&gt;
+	&lt;td&gt;This is a ratio that compares the number of edges in the graph with the maximum number of edges the graph would have if all the vertices were connected to each other.  Duplicate edges and self-loops are ignored.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+	&lt;td&gt;Modularity&lt;/td&gt;
+	&lt;td&gt;When the graph has groups, this is a measure of the "quality" of the grouping.  Graphs with high modularity have dense connections among the vertices within the same group but sparse connections among vertices in different groups.  When the graph does not have groups, this is undefi</value>
+  </data>
+  <data name="ClusteringCoefficient" xml:space="preserve">
+    <value>&lt;p&gt;
+Clustering coefficient is defined in this article:
+&lt;/p&gt;
+
+&lt;div class="divUrl"&gt;
+&lt;a href="http://en.wikipedia.org/wiki/Clustering_coefficient"&gt;
+http://en.wikipedia.org/wiki/Clustering_coefficient
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+From the article:
+&lt;/p&gt;
+
+&lt;div class="divQuote"&gt;
+"The clustering coefficient of a vertex in a graph quantifies how close the vertex and its neighbors are to being a clique (complete graph)."
+&lt;/div&gt;
+
+&lt;p&gt;
+Self-loops, which would render the clustering coefficients invalid, are skipped.
+&lt;/p&gt;</value>
+  </data>
+</root>

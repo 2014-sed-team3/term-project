@@ -1,0 +1,120 @@
+<html>
+
+<head>
+<title>Calculating Graph Metrics</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Calculating Graph Metrics</div>
+
+<p>
+NodeXL will calculate a variety of <span class="Definition">graph metrics</span> for you.  Some are calculated for each vertex&mdash; degree, for example; some are calculated for each of the graph's <a href="../Groups/Overview.htm">groups</a>&mdash; vertex and edge counts, for example; and some are calculated for the graph as a whole&mdash;maximum geodesic distance and graph density, for example.
+</p>
+
+<p>
+The calculated graph metrics get inserted into the <a href="../WorkbookTour/Worksheets.htm">Vertices, Groups, Group Edges or Overall Metrics worksheets</a>, depending on the metric.  For the Vertices, Groups and Group Edges worksheets, the graph metrics get inserted into columns that are normally hidden.  Calculating the metrics causes those columns to be shown, but you can hide them again to reduce worksheet clutter.
+</p>
+
+<p>
+If you add or remove vertices or edges in the workbook, you have to calculate graph metrics again.  The calculated graph metrics do <i>not</i> get updated automatically.
+</p>
+
+<p>
+You do not have to <a href="../SimpleGraph/Overview.htm#ShowGraph">show the graph</a> before calculating graph metrics.  NodeXL will calculate them even if the <a href="../WorkbookTour/GraphPane.htm">Graph Pane</a> is empty.
+</p>
+
+<div class="HowToTitle">
+To calculate graph metrics:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Graph Metrics.
+    </li>
+
+    <li class="HowToItem">
+    In the Graph Metrics dialog box, check the graph metrics you want to calculate.
+    </li>
+
+    <li class="HowToItem">
+    Select Calculate Metrics.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="LearnMore">To learn more about a specific graph metric:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Graph Metrics.
+    </li>
+
+    <li class="HowToItem">
+    In the Graph Metrics dialog box, select the Details link next to the graph metric.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="Hide">To hide the graph metric columns on the Vertices, Groups and Group Edges worksheets:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Show/Hide, Workbook Columns.
+    </li>
+
+    <li class="HowToItem">
+    Uncheck Graph Metrics.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="Show">To show the graph metric columns on the Vertices, Groups and Group Edges worksheets:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Show/Hide, Workbook Columns.
+    </li>
+
+    <li class="HowToItem">
+    Check Graph Metrics.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+<a name="Aggregate">To aggregate the overall metrics from multiple NodeXL workbooks into a new Excel workbook:</a>
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Graph Metrics, Aggregate Overall Metrics.  This reads the overall metrics from each NodeXL workbook in a specified folder (or calculates them if necessary) and stores the aggregated metrics in a new Excel workbook.
+    </li>
+
+</ol>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Analyzing the Graph</a>
+    </li>
+
+<ul>
+
+</body>
+</html>

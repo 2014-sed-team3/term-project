@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<title>Graphs with Isolated Vertices</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Graphs with Isolated Vertices</div>
+
+<p>
+Some graphs have isolated vertices, or <span class="Definition">isolates</span>, which are vertices that are not connected to any edges.  If your graph has isolates, you have to take special action to get them to appear in the <a href="../WorkbookTour/GraphPane.htm">Graph Pane</a>.
+</p>
+
+<div class="HowToTitle">
+To add an isolated vertex to the graph:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    <a href="../WorkbookTour/Worksheets.htm#SelectWorksheet">Select the Vertices worksheet</a>.
+    </li>
+
+    <li class="HowToItem">
+    Enter the name of the vertex in the first empty cell in the Vertex column.
+    </li>
+
+    <li class="HowToItem">
+    Set the Visibility cell for the new vertex row to Show.
+    If you don't see a Visibility column on the Vertices worksheet, <a
+    href="../ShowHideColumns/Overview.htm">show the Visual Properties column group</a>.
+    </li>
+
+</ol>
+
+<p>
+Step 3 is required because by default, a vertex on the Vertices worksheet is shown in the Graph Pane only if it is connected to at least one edge.
+</p>
+
+<p>
+(There is a reason why NodeXL works this way.  If every vertex listed in the <a href="../WorkbookTour/Worksheets.htm">Vertices worksheet</a> appeared in the Graph Pane, even those not connected to edges, then you would not be able to delete an edge from the Edges worksheet without checking whether the edge's vertices were now isolated, and then removing the isolates from the Vertices worksheet if necessary.  That would be quite burdensome.)
+</p>
+
+</body>
+
+</html>

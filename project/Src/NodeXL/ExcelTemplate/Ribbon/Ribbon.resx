@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnImportFromGraphMLFile.SuperTip" xml:space="preserve">
+    <value>Optionally clear the NodeXL workbook, then import edges and vertices from a GraphML file.
+
+This imports the "edge" and "node" elements from a GraphML file, along with any attributes specified for those elements.  If an attribute has the same name as a NodeXL worksheet column, the attribute is imported into that column.  Otherwise, a new column is added to the worksheet and the attribute is imported into the new column.</value>
+  </data>
+  <data name="btnImportFromPajekFile.SuperTip" xml:space="preserve">
+    <value>Optionally clear the NodeXL workbook, then import edges and vertices from a Pajek text file.
+
+This imports the "vertices," "edges," "edgeslist," "arcs," and "arcslist" sections of a Pajek text file into the workbook.  Only the vertex names and edge weights are imported; all other edge and vertex properties are ignored.</value>
+  </data>
+  <data name="btnImportFromWorkbook.SuperTip" xml:space="preserve">
+    <value>Optionally clear the NodeXL workbook, then import edges and vertices from another open workbook that contains at least two edge columns: one for Vertex 1 and one for Vertex 2.  You can import additional edge and vertex columns as well.
+
+Excel can read comma-delimited, tab-delimited, and various other file formats, so this feature can be used to import edges and vertices from a wide variety of sources.</value>
+  </data>
+  <data name="btnAnalyzeEmailNetwork.SuperTip" xml:space="preserve">
+    <value>Optionally clear the NodeXL workbook, then analyze the relationships between the people in my email network.
+
+If your computer has Windows Desktop Search and you use Outlook, Outlook Express, or Windows Mail, you can use this feature to analyze the relationships between the people you communicate with via email.  (Windows Desktop Search is included with Windows 7 and Vista.  It can also be downloaded and installed on Windows XP.)</value>
+  </data>
+  <data name="btnPopulateVertexWorksheet.SuperTip" xml:space="preserve">
+    <value>Copy each unique vertex name from the Edges worksheet to the Vertices worksheet.
+
+This occurs automatically when you refresh the graph, but you can click this to copy the vertex names at any time.
+
+Vertex names that are already in the Vertices worksheet do not get overwritten.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReadWorkbook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btnReadWorkbook.SuperTip" xml:space="preserve">
+    <value>Show or refresh the graph in the graph pane.
+
+The NodeXL graph pane appears at the right edge of the Excel window by default.  You can move it by clicking and dragging the pane's title bar.  (The title bar says "Document Actions.")  The dragging behavior is finicky, so it might take some practice.</value>
+  </data>
+  <data name="rddGraphDirectedness.SuperTip" xml:space="preserve">
+    <value>Specify whether the graph is directed or undirected.
+
+In a directed graph, "A,B" and "B,A" are different edges.  In an undirected graph, they are the same edge.
+
+Arrows are included on the edges in a directed graph.  You can set the arrow size by clicking Options in the NodeXL graph pane.
+
+Graph metrics are calculated differently for directed and undirected graphs.</value>
+  </data>
+  <data name="rddLayout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAN5JREFUOE+Njz0KAjEQhXMNQdDGwmotlFVEV0SwFH8WxUawsbXTxhuIp/Ba9h7Bbswb
+        zJrNvoUtvjfJzEtmxogIpTNaPnqTtdiYsrqDJgEev94fiYeJvXIPUGHdcMZjY4yfK/hUqnZjPhXWDcz2
+        Nxv+d+bLij7uYRgZdC8w3lzEEiH6+dBf2AvdkvQq8eJcj+YnaSWHZ6O/lVp3pfXQX7q//UDa0+PdfmCv
+        uQly/qzggwkQm4OdRkyAyFAJ93K4sR3MpxLuVQbzqYR7/XKFbsynwqg6FU0C1o1Bk9UR8wWsiIBJV1Vm
+        DQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAutoFillWorkbook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        TkSuQmCC
+</value>
+  </data>
+  <data name="btnSetVertexVisibilityHide.SuperTip" xml:space="preserve">
+    <value>Set the visibility of the selected vertices to Hide.
+
+If the vertices are part of an edge, they will be used to lay out the graph but will then be hidden.  Otherwise, the vertex rows will be ignored.</value>
+  </data>
+  <data name="btnSetVertexShapeCircle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAXhJREFUOE+lkltLAlEQx4WgbxAIfameew0EIahvET0ERUREhA8VSUR0QYxIMZYuUikk
+        WNaDSaSr7tV11b3ANLMeZTdPkPTwg93Z+f1nlnNCAPAvuMVxGCnMLK5OIFEkhViIi2SQBWTyZ3/gBRvC
+        SHbzMAX5UgW6loXYkHv9gK2jNOC3Z2Ta7/hlmpyNJ+/AcV2wHQcs2/ZCOr0etLtd2EvcDEKGm/gDIhvx
+        q6HcY7LJ5JZpgt5uw/rBJYXM8wKEwvsnWEymqSaKRqfjyRrKSqsF94U3ChB4AY2mqgdWJpmmqobhyZKu
+        Q02SKcDiBtQVrb+ybyrJMoqSpkFDVaEiNijA4AUIuZdyfyrJbCrJTZTrKIuyDEK++OsvRNb2L4Irs6l1
+        RYEaylVJgpXdBAVEeQF0jLexk8xwKskik79Q3j727sIjMnqMLGQKOV3aOYPrpyKUq6JH+qEAy7FzkpNI
+        2O8EAgZg0yxCV1lDDPY8x+sdKYwLt/h3IPQNEIwLhddB18cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSetVertexShapeDisk.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAbFJREFUOE+l0usrQ2EABvCV8h8o5Z/ycfkilGytmFCMkZFLM8zmstpkYuS2WS4Hs3FC
+        Ls1ccwm55fpB7ZNSj+dlNHYU+fB0znnP+3vO+/YeFYB/RXHwL0kYSC9oSWI0TIB5Zl6YEJPPJH+f/+WB
+        E1KZ1UK7hEbvPjpCd7AFrlHlCUNrGQffbTNp8SYeiy+vlrpkuFae4JAfYJ+/Qat0AfPECeq8B9A2+z9K
+        PlcSX5Crt03H8CPaBZ4R+JT4ENVDO6joDyOrdkCU6JQKZLP/8B0Hb4kv0URcT2wa2oWxfxOlPWvQWSVR
+        ICsV3NsDV2/YOks8SewjHib2ELvXUORcQn5HUBQ8Kxa0SufEV8RnaPAdoWZ4D5WeCMrc6yh2LqOgcwFa
+        64woiCoVyKbBCCxTxOPEI8QDxL3ELuKuBehsc8iuH/txC7kas5f4mHifeOsNlxDruxaJA8hrmYa6vFsU
+        aJQKxDEuay1+VBEbejeIV6B3ENsFlpBhdAu8wSQeY6wkhfFlVvdB1yZxz0FexbJHoTa4BJ5iUuPNl4KP
+        cFIGI37lJyYau89Rmpsw8NcoDv4+UL0CYMTJvMs3ZIsAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSetVertexShapeSphere.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAX9JREFUOE+lkl1LAlEQhoWgfxAI/amCPiAklUAwAsUgSu9SQagswiUvRLO6KCNK+lCp
+        SJSKRSEIgoJIoa7SQDQII3ibOViteaKki4fZOTvvOzN7VgfgX0gP26HloMe+0EFYiWOiTrwRacJGdH6v
+        b0qoQE+odiWF2b1bhM6rCJyU4FzJweyNgd5dEt1ajVbMnVXn8iniN8BRESKuXdShpMtwb13D9GXyOYnW
+        wGILJIXoqgQUnl5F5DysPmNmv4iJiIpBV5hNxmQGWf9BQXRmcaVaFZHzaP4Fc8l7TEZzMHo32SArM3gM
+        Zsq/TmD27bBBXWown3oQO7NI9g1swQwMbjFBTWaQda3mRTF35LE5cu7bvRPjW/wJ9DsjP65gMXnWRSce
+        l3fmyDmLRxcPYZimW3AobGCVGfA1nhk9G2JXFnHksbkzi3vHl1icJ1qvsWHSRcQHpkIY9sRg8m2Lnft4
+        bEeAxQlCr9U0GXxARUME/8oVotZ4HpHVthy0i/Tw70D3Djnn1oK/xnHCAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSetVertexShapeSquare.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAALZJREFUOE+ljVsOgjAQRVmiS3Ep7tEnUB5tebRQuEwN+iMzEW1ykmaSc24C4C82j3t4
+        fw7HE/awGYhvnmdMRJgmjCFgGEf4YYDzHp1zaPueDzxlEgOJUfYkO5L7VW5Itl3HB6TVKJq2hW4aPiCt
+        apJra1Eawwek1WqVldZ8QFotSFR1jayq+IC0mpOckvwoSz4graYk3osCN6X4gLT6kq95zgek1Shesgxn
+        gg3s4SPwK5vH70GyAKIKNZNL69DsAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSetVertexShapeSolidSquare.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAVJJREFUOE+lzOsvgnEYxvH+RH+AFzY2Nky2amKOySlatRWF6LFyPiWjySqHHIomhySn
+        YVgZm43ZvLjcvx71xvPbxItru3dvn68MwL8m+cxnuaNAbkA+kwyMxT7hjH7AEX6DffsV1o1nmP0pGFbu
+        oVu6QZv7As3TCX6AYSEiYhvDgRSMhLsJt7sv0TKTQP34MT8gRN5z2BJIw+h7EPECw2cZXOM84AeGGN58
+        yeGe5Vt0ENYQbpg4gZqwYniPH+hnOJiGaTWLr6CZzeIYFI59VA3s8AO9wSfCjyL2MJwkHIfaFYOSsHxw
+        F+V9IX6AYb33Dp2ea7TOJdE4GUet6xBK4RtbQyg1r/EDGbzI8LmIRxmOoppwRQavo9jo5we6CGsJN02d
+        oo6wimF7mPAWygiXEC7S+/gB7XwWH0E1IuJKG2ELYZOIC3VefiCf/Qj8dZLP3w+yL50d5NJS3fxBAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSetVertexShapeDiamond.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAPtJREFUOE+lke1qwjAYRr3E/R70HnYp3tOKMgTpNrB2Y05/6uz3l8LgWZ4sjYmmFvTH
+        CaXpOW/ajgDchVwensZ9PCpce4MBir8KZ+RaQMqvHxsE0Rq8Vves5/oCUg6E3B6PaA4HzMNvZ8QVsORa
+        yFXbomwazBZfF5HzwL8sjsyptRKLukZeVUjLEi/vn1bEDFhyN5VypuS4KLDPc0zfIh0xA14XqIypmRAT
+        IcZC3GcZdmlqBjwzoCPzcKWnUubUHyVPDJnOeUBH+K7m1G2SwA9CSyauAJHfg0ft5OeTrP8A6QsQGfGD
+        Za9MrgWIjCguZDIUIBSdMtGB28HoD8EOZniQ0G88AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSetVertexShapeSolidDiamond.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAVBJREFUOE+lkVtLAkEYhv2JXQdedYAuMiljCztKKhWtkhFEiYmGJqklGWom0UVkaVjm
+        lnSUzv8heOsbpm1XdxXy4hmGb+Z5LmYMANqCLR1mtx6dHK2zlgESvziakWYBJtujEmyRMmjPZ6p7egEm
+        O2ISFrPvWEg9wxooaEa0An/ywQfE9Atmdx8xE7+FxXvcEKkPMNkZl+DJcTn5BPv2Haa2bmANldG/fKiK
+        KANcvsZS7hOuzCvmkjXYd7gcvoIQKGHQd4Zed0aOKANGGtKjufffML9XgyNxj+loFWPhCoQgyQWYVk/Q
+        JaZ+A0ZlQI5MhkpwJh5gi1UxvlnBSPACQ+tFmNby6BbTskxOfUCOCL48JiISRjcuYfEXMfAj97jUMqEV
+        INh7mFeOMOw/h9l7qpTlHyD0AgSL9HmyujLRLECwCKdBJloFCBI1ZUIO/B8YvgGthjlI/g7bDAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSetVertexShapeTriangle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAThJREFUOE+lkb9KA0EQhwOClZWtrQ/gA/gGNtZ5A8HCzi5tsBCuiliINgeKihiCGFAJ
+        ggopFCGFoAjCRb3bu71/SSAg/Jw5ziVZz0skxbcsM/P7ppgCgIlInuU1I4+pjFrCOIIisaLVFKMEM4RF
+        eMRsWhtilKC0c9LAXvUa9N/Uegl5gjkibgsJGcUs6BPzaU+RJzDNsxvEvR6ibhcH9TuW1LSZPwWL68a+
+        CgedDvw4RqlyzJKlwdksAZ/soX77iJCCAQVlFMELQ1w1Wyx4JqbT2UxBcWO3prZy2KWwCAI4vg/DPGfJ
+        6s+8LkjO1my9qK1uGrSlxKfn4f7plQXqrLqgvH10+Wsrhz8o/O66aAuBrcMLllR0AZ+ob9lieKsWthwH
+        b7bNgi9iYVBwSnDjPzSUYBIyi+ODwjc45Wn/fBTn5QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSetVertexShapeSolidTriangle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAK9gAA
+        CvYBwq9wAwAAAXBJREFUOE+lkU1LQkEUhoWgVau2bfsB/YD+QZuWIVIQGWgqFiVlqdykxECyLhgUFmlq
+        X1Y3jCIhDISiRMkwKy1atG3VSgjezgx2sYup4eIZhnPO+zDDUQFoCn70mr21aKlS4zQiUBM6RU2mnqCN
+        eCc+iPZy7Rf1BHaTeArj8hno7lH0OLUEHcSnSyrAdVxkghLRWe7J1BKEzL443LE3zB0VMbLEXxFTzPwp
+        6B4QtrBwQmGpCCH6iJntHDSOIJP0VM5WE7CVZSz+JOalFwo/wbaTw2ToDjoxzgQForU8W1Wg1rqj9O9X
+        zB48w7b7gKlQFuObaZj9N9AIESYx/MwrBXxt1mAKTgrbKWwNZzERSGN0/RaG1SsMefkr5LUqBS79YgzO
+        wwIce3lYI/ewBDI8bKSwzpeEVkygzxFmEp9SwFZUEvbzPDzNwsEMxjZSMK1dQ7+SxLB4iUHvBfo950zw
+        RXRVCiSCNf5DQhY0Q9Vi40D1DXyyQAXnSF6qAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSetVertexShapeLabel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAXdJREFUOE+lkDlLA1EUhfPrLKxUiI24pHMrBAUbUbRSEIkWCUgKF9AihYJCioCWoqDY
+        qpBMlkkmyySZLJM9x3sfvofhWcWBM8WD77vnXg+Af0X8Jtb8GCVDAv4GgwH6nH4fPUq310On20W700GL
+        0my34bZaaDSbukDCCqQcHQcx51sZAuuUmuvqgr+mTk0vYGzci6eXVwVWGw049bouUCCF697eRZQgeHom
+        YIfgCsHlWk0XqF2pLlc+9AdweRUWglnfspjKYKlahe04uuD3kWJGQsBfMUMIOJHoA2yCiwQXKhVd4BLc
+        IJh3vfiBue765o4QbO8doEhgvlxGrlTSBXxheSSuLCfLTHrnEU+bArZsWxdIOBJ9RPjmXu1qmBkBsyR0
+        fo0swZliURfwkUzLwuLqBpKZrNqVK2/t7gvBzMISPhNJpAsFXcAXlpM4z2/vou5JIKTeZD7ihi7gunwk
+        OdUiWNY1aSJPTeXzSOVySFI0wShRgtEDzzfEGw/PH8KckAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSetVertexShapeImage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAWdJREFUOE+lky1ywzAUhHMEH8FHMAw0LDQsNAwUDDQsFCwULBQ0FAwUNDQMFCzb7j7X
+        iZ3OtJ1WMxt7Jtnv/WhzAPAv2Yd/y9grwYeE4ZXyCe4lwg0R/TmYOkedAq0bwHenvFMFmKUrkGegeRr0
+        1c+AMmXkvll04TvNYZxR/wagyjLimoDkkLsaaSIgfgHwBw9nbdsAMvsWSQDWCjGjbrcALmx7tjNb2zJS
+        kcZ4gS16B9C21zPT5YZgylOxmdW2KstsABbcA3hVOqt5vtJIc9v11q6ey/sMNetZsD5uALrnrdkAuSCO
+        Gd2zQ2R56cCfh7EwHxHVDsCQyFw4uC2OMFWLvC7NK0iwcEWDDP4BoHRh3brMn0YfJCaR8Kbt+PRwZ2+Q
+        qnkAqLrmjulu1nKXGDO6/WAQdaN9VI27A5TtpfJiuuef2Xce/ckbQMbm2Jn2AP4xlG2ly8Qruomzal4T
+        25Zx1Q3wd+HwAWCB9NcI+6bdAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnGroupByVertexAttribute.SuperTip" xml:space="preserve">
+    <value>Group the graph's vertices using the values in a column on the Vertices worksheet.
+	
+The groups are usually indicated by vertex color and shape when the graph is refreshed.  All the vertices in one group might be blue disks, for example.
+
+The group information is stored in the Groups and Group Vertices worksheets.
+
+You can control how groups are shown using NodeXL, Analysis, Groups, Group Options.
+</value>
+  </data>
+  <data name="btnCalculateConnectedComponents.SuperTip" xml:space="preserve">
+    <value>Group the graph's vertices into connected components.
+	
+The components are usually indicated by vertex color and shape when the graph is refreshed.  All the vertices in one component might be blue disks, for example.
+
+The component information is stored in the Groups and Group Vertices worksheets.
+
+You can control how groups are shown using NodeXL, Analysis, Groups, Group Options.
+</value>
+  </data>
+  <data name="btnGroupByCluster.SuperTip" xml:space="preserve">
+    <value>Group the graph's vertices into clusters using an algorithm that looks at how the vertices are connected to one another.
+	
+The clusters are usually indicated by vertex color and shape when the graph is refreshed.  All the vertices in one cluster might be blue disks, for example.
+
+The cluster information is stored in the Groups and Group Vertices worksheets.
+
+You can control how groups are shown using NodeXL, Analysis, Groups, Group Options.
+</value>
+  </data>
+  <data name="btnGroupByMotif.SuperTip" xml:space="preserve">
+    <value>Group the graph's vertices by motif.
+	
+A motif is a set of vertices connected in a specific way.  For example, a fan motif consists of a head vertex that is connected to two or more vertices, each of which is connected only to the head vertex.
+
+Motifs are collapsed into simple, compact representations when the graph is shown.  Grouping by motif can be an effective way to simplify a dense, complicated graph to make it easier to understand.
+
+The motif information is stored in the Groups and Group Vertices worksheets.
+</value>
+  </data>
+  <data name="btnAddSelectedVerticesToGroup.SuperTip" xml:space="preserve">
+    <value>Add the selected vertices to a new group or an existing group.
+	
+The vertices are automatically removed from any groups they already belong to.
+
+The group changes aren't shown until the graph is refreshed.</value>
+  </data>
+  <data name="mnuShowGraphElements.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaNJREFUOE+Nkc1K
+        AlEcxXukNr1DvkXQCwRRlGAFYZZguSjchRBUixaDSZoV5ahllqVOjjZ+pJb2bWo5aql1rv9xsl1wYODy
+        O+f+uNPHOUNWNRxy9CebLOaesEKm9I3cvCHtdLGdem0HpJJYaEhPzevHZuz+Syx8RvOfwm2jf3BIKYAG
+        2qFbyZeWzrQ7Omuz8Rmir+4YHcnVlQLdhWGgiecWhhdXfQaLW79yqF85smwEx+fsa9tiKFNjBaiThkpD
+        I/6gaGztJ0dmuGJJnpjfuUh3C700UFU6nK2Zrf7ppT10rJxwnpSVAinRcFe6QTRykZaDKRn0WaLaKXCh
+        Ho0vpz8/tejCqsHCm60nQDt0NSBVT68/qMC2VY3JBYcQv4/ECmP6baIxTPRJ7F0pkBK9ndbojEoP6OhM
+        LtIISB/+OKOPxW4Bw5AGHc7W7d4cLtEaHTY+R8Mq7b2qdApsGz+F0XhpvF2vBmigvmgFtEcoKwVS+k9Y
+        AZ9Qpn55w4ZJGsM4JA11m4+Ufwukob4dNHDoizJpj1ABirjDJaWwvH4woBn+bzTDP8cIOnPUykVGAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="chkShowGraphAxes.SuperTip" xml:space="preserve">
+    <value>Show or hide the x- and y-axes in the graph pane.
+
+The axes initially show the numbers in the X and Y columns in the Vertices worksheet.  If you use Autofill Columns to autofill the X and Y columns using source columns, the axes will show the values in those source columns.
+</value>
+  </data>
+</root>

@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<title>Importing Graph Data from Other Programs</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Importing Graph Data from Other Programs</div>
+
+<p>
+NodeXL can import graph data in a number of file formats that are used by other graph programs, so that you can, for example, create a graph in <a target="_blank" href="http://www.analytictech.com/ucinet/">UCINET</a> and then import and view the graph in NodeXL.  The supported formats are shown in the table below.
+</p>
+
+<table>
+    <col width="100em" />
+    <col width="500em" />
+    <tr>
+        <th>
+        File Format
+        </th>
+        <th>
+        Description
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="UCINET"></a>
+        UCINET Full Matrix DL
+        </td>
+        <td>
+        <p>
+        This is the only <a target="blank" href="http://www.analytictech.com/ucinet/">UCINET</a> file format that can be imported into NodeXL.  If you have a UCINET file in a different format, such as nodelist1, rankedlist1 or dataset, select the "What if my UCINET file is not in full matrix DL format" link in the Import from UCINET Full Matrix DL File dialog box for instructions.
+        </p>
+
+        <p>
+        Importing a UCINET full matrix DL file into NodeXL adds an Edge Weight column to the <a href="../WorkbookTour/Worksheets.htm">Edges worksheet</a>.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="GraphML"></a>
+        GraphML
+        </td>
+        <td>
+        <p>
+        <a target="_blank" href="http://graphml.graphdrawing.org/">GraphML</a> is an industry-standard graph file format supported by a number of graph programs.
+        </p>
+        <p>
+        GraphML supports arbitrary vertex and edge attributes.  When importing a GraphML file, NodeXL adds a column to the <a href="../WorkbookTour/Worksheets.htm">Vertices or Edges worksheet</a> for each attribute in the file.
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <a name="Pajek"></a>
+        Pajek
+        </td>
+        <td>
+        <p>
+        NodeXL can import files created by the <a target="_blank" href="http://pajek.imfm.si/doku.php?id=pajek">Pajek</a> program.  Importing a Pajek file adds an Edge Weight column to the <a href="../WorkbookTour/Worksheets.htm">Edges worksheet</a>.  Any other edge or vertex attributes in the Pajek file are ignored.
+        </p>
+        </td>
+    </tr>
+
+</table>
+
+<div class="HowToTitle">
+To import graph data from another program:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Ribbon, select NodeXL, Data, Import.
+    </li>
+
+    <li class="HowToItem">
+    Select from the second group of items on the Import menu.
+    </li>
+
+</ol>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Importing Graph Data</a>
+    </li>
+
+</ul>
+
+</body>
+</html>

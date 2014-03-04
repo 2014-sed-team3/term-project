@@ -1,0 +1,117 @@
+<!--
+
+Styles.css
+
+Contains styles shared by all the topic files.
+-->
+
+<style>
+<!--
+
+BODY, TD
+{
+	font-family: Arial;
+	font-size: 10.5pt;
+	margin: 2em;
+}
+
+IMG
+{
+	border: 0;
+}
+
+TABLE, TH, TD
+{
+	border: 1px solid black;
+}
+
+TABLE
+{
+	border-collapse:collapse;
+	margin-top: 1.5em;
+	margin-bottom: 2em;
+}
+
+TH, TD
+{
+	text-align: left;
+	vertical-align: top;
+	padding: 0.5em;
+}
+
+TH
+{
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.PageCaption
+{
+	font-size: 1.5em;
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #a9a9a9;
+}
+
+.SectionCaption
+{
+	font-size: 1.2em;
+	margin-top: 0.5em;
+}
+
+.Definition
+{
+	font-style: italic;
+}
+
+.ImportantNote
+{
+	font-weight: bold;
+}
+
+.Footnote
+{
+	font-size: 85%;
+}
+
+.HowToTitle, .BulletTitle
+{
+	font-weight: bold;
+}
+
+.HowToItem, .BulletItem, .MoreInformationItem
+{
+	margin-bottom: 1em;
+}
+
+.MoreInformationTitle
+{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.MoreInformationItem IMG
+{
+	margin-right: 0.5em;
+}
+
+.VerticallyAlignedImage, .EndOfLineImage
+{
+	vertical-align: middle;
+}
+
+.EndOfLineImage
+{
+	margin-left: 0.3em;
+}
+
+.IndentedImage
+{
+	display: block;
+	margin-left: 5em;
+	margin-top: 1.5em;
+	margin-bottom: 2em;
+}
+
+-->
+</style>

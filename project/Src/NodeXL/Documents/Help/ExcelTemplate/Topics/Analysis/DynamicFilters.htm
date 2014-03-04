@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<title>Using Dynamic Filters</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+</head>
+
+<body>
+
+<div class="PageCaption">Using Dynamic Filters</div>
+
+<p>
+NodeXL lets you filter the graph's edges and vertices based on numeric and date/time attribute values.  For example, you can filter the graph so that only vertices with Degree between 0 and 2 are visible in the <a href="../WorkbookTour/GraphPane.htm">Graph Pane</a>.  You specify the filters with a set of sliding <span class="Definition">range bars</span>, and as you adjust the range bars, the filtered edges and vertices disappear immediately from the Graph Pane.  They are still contained in the graph, but they are hidden.
+</p>
+
+<p>
+Dynamic filtering is different from <a name="ExcelFilters">Excel's built-in filter features</a>.  (Excel's built-in features include the Data, Sort & Filter, Filter item in the Ribbon, and the down-arrow menus in the column headers.)  If you filter out edges or vertices using Excel filtering, the filtered edges and vertices are completely ignored by NodeXL and never become a part of the graph.  NodeXL's dynamic filters, on the other hand, hide the filtered vertices and edges but do not remove them from the graph.
+</p>
+
+<p>
+The Dynamic Filters dialog box has one filter for each numeric and date/time column in the <a href="../WorkbookTour/Worksheets.htm" />Edges and Vertices worksheets</a>.  Each filter spans the range of values contained in its respective column, and a histogram shows you the value distribution over the range.
+</p>
+
+<p>
+By default, NodeXL always shows edges and vertices that have empty cells in a column.  For example, if you are filtering on the Degree column on the Vertices worksheet and some vertices have an empty Degree cell, those vertices will be shown in the Graph Pane regardless of your Degree filter settings.  See <a href="#EmptyCells">To
+specify how empty cells are handled</a> for information on changing this behavior.
+</p>
+
+<p>
+If you <a href="../SimpleGraph/Overview.htm#ShowGraph">refresh the graph</a> while the Dynamic Filters dialog box is open, the dynamic filters remain applied to the Graph Pane.  If you close the Dynamic Filters dialog box and refresh the graph, the dynamic filters are removed.  You can apply them again by opening the Dynamic Filters dialog box again.
+</p>
+
+<div class="HowToTitle">
+To dynamically filter the graph's vertices and edges:
+</div>
+
+<ol>
+
+    <li class="HowToItem">
+    In the Excel Ribbon, select NodeXL, Analysis, Dynamic Filters.
+    </li>
+
+    <li class="HowToItem">
+    In the Dynamic Filters dialog box, adjust the filters for the edge and vertex attributes you want to filter on.  See the sections below for details on how adjustments can be made.
+    </li>
+
+</ol>
+
+<div class="HowToTitle">
+To adjust the lower end of a dynamic filter's range, do one of the following:
+</div>
+
+<ul>
+
+    <li class="HowToItem">
+    Drag the slider at the left end of the filter's range bar, or...
+    </li>
+
+    <li class="HowToItem">
+    Enter a value into the text box at the left end of the filter, or...
+    </li>
+
+    <li class="HowToItem">
+    Use the up/down arrows in the text box at the left end of the filter, or...
+    </li>
+
+    <li class="HowToItem">
+    Select the filter's range bar and use the Left Arrow and Up Arrow keys.
+    </li>
+
+</ul>
+
+<div class="HowToTitle">
+To adjust the upper end of a dynamic filter's range, do one of the following:
+</div>
+
+<ul>
+
+    <li class="HowToItem">
+    Drag the slider at the right end of the filter's range bar, or...
+    </li>
+
+    <li class="HowToItem">
+    Enter a value into the text box at the right end of the filter, or...
+    </li>
+
+    <li class="HowToItem">
+    Use the up/down arrows in the text box at the right end of the filter, or...
+    </li>
+
+    <li class="HowToItem">
+    Select the filter's range bar and use the Down Arrow and Right Arrow keys.
+    </li>
+
+</ul>
+
+<div class="HowToTitle">
+To shift the dynamic filter's range to the left or right, do one of the following:
+</div>
+
+<ul>
+
+    <li class="HowToItem">
+    Drag the filter's range bar, or...
+    </li>
+
+    <li class="HowToItem">
+    Select the filter's range bar and use the Page Up and Page Down keys.
+    </li>
+
+</ul>
+
+<div class="HowToTitle">
+<a name="EmptyCells">
+To specify how empty cells are handled:
+</a>
+</div>
+
+<ul>
+
+    <li class="HowToItem">
+    Check or uncheck the "show edges and vertices if cells are empty" checkbox.
+    </li>
+
+</ul>
+
+<div class="HowToTitle">
+<a name="Opacity">To adjust the opacity of the dynamically filtered vertices and edges:</a>
+</div>
+
+<ul>
+
+    <li class="HowToItem">
+    Adjust the "filter opacity" setting.
+    </li>
+
+</ul>
+
+<hr />
+<div class="MoreInformationTitle">More Information</div>
+
+<ul>
+
+    <li class="MoreInformationItem">
+    <a href="Overview.htm"><img src="../../Images/Back.png" />Analyzing the Graph</a>
+    </li>
+
+<ul>
+
+</body>
+</html>
