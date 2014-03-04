@@ -1,0 +1,9 @@
+
+NodeXL Release Notes, Version 1.0.1.251 (2014-01-14)
+
+* Bug fix: If you attempted to import a Twitter network on January 14, 2014 or later, you would get an error message that included the text "The remote server returned an error: (403) Forbidden."
+
+* It now takes significantly less time to import a graph from the NodeXL Graph Server. (This is a server-side change, so you don't need version 1.0.1.251 to notice the difference.)
+
+* Graphs imported from the NodeXL Graph Server now include vertices for people who were replied to or mentioned by the people who tweeted the specified term but who didn't tweet the term themselves. (Note 1: Collection of the additional vertices started on 2013-08-21. Networks that span earlier dates might include some additional vertices if they happen to already be in the collection database. Note 2: This is a server-side change, so you don't need version 1.0.1.251 to notice the difference.)
+
