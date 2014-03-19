@@ -1,0 +1,21 @@
+ExcelTemplate.csproj 修改:
+
+For Office 2013 (原本的內容)
+
+<ProjectProperties HostName="NodeXLGraph.xltx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\Office15\Excel.exe" DebugInfoCommandLine="/t /x &quot;[$OUTPUT]NodeXLGraph.xltx&quot;" />
+
+
+For Office 2010
+
+<ProjectProperties HostName="NodeXLGraph.xltx" HostPackage="{825100CF-0BA7-47EA-A084-DCF3308DAF74}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\Office14\Excel.exe" DebugInfoCommandLine="/t /x &quot;[$OUTPUT]NodeXLGraph.xltx&quot;" />
+
+
+For Office 2007
+
+<ProjectProperties HostName="NodeXLGraph.xltx" HostPackage="{B284B16A-C42C-4438-BDCD-B72F4AC43CFB}" OfficeVersion="12.0" VstxVersion="3.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="E:\Program Files\Microsoft Office\Office12\Excel.exe" DebugInfoCommandLine="/t /x &quot;[$OUTPUT]NodeXLGraph.xltx&quot;" />
+
+換電腦時可能需要換certificate
+點ExcelTemplate project 右鍵 Properties
+左邊找到Signing
+點選Create Test Certificate 即可!
+
