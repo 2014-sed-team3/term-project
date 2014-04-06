@@ -9,6 +9,7 @@ build.force
 *.resources
 *.exe.config
 *.dll.manifest
+*.lastcodeanalysissucceeded
 Src/NodeXL/*/bin/Debug/*.vsto
 Src/NodeXL/*/bin/Debug/*.xml
 Src/NodeXL/*/bin/Debug/*.xltx
