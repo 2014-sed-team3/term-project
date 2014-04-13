@@ -1,0 +1,33 @@
+1. 大家都繼承自LayoutsBase **注意他有兩個長很像的Layout"s"Base跟LayoutBase @@
+2. 真的有畫圖的 都會另外繼承自LayoutBase這個class,他是繼承LayoutsBase跟implement ILayout.cs這個interface
+     依照他註解的說明 這個interface是只會再rectangle中畫圖的人
+   沒有繼承ILayout應該都是依些setting跟context
+3. 挑了sinusoidalLayout當例子看
+   他是sortableLayout的一種
+   主要去計算畫圖的地方在LayOutGraphCoreSorted這個函數
+   LayOutGraphCoreSorted(
+   			IGraph graph,
+        ICollection<IVertex> verticesToLayOut,
+        LayoutContext layoutContext,
+        BackgroundWorker backgroundWorker
+   )
+   四個input變數
+   中間有access layoutContext.GraphRectangle 估計這東西應該是可以畫東西的畫布的資訊(長寬等等)
+   最後算完以後會去跑回圈 access "verticesToLayOut" 裡面的IVertext
+   修改oVertex.Location 給他一個"PointF"型態的座標
+   如此就完成了
+   
+4.接著看layout跟其他人的溝通
+  看了ExcelTemplate project
+  Excel裡面那個控制視窗相關的東西都寫在TaskPane.cs裡面
+  其中ShowGraph按鈕按下去 
+  會執行ReadWorkbook -->好幾層追下去之後 最後是用WorkbookReader讀完之後output一個IGraph   
+  讀出來的IGraph會存到 oNodeXLControl.Graph
+  然後執行oNodeXLControl.DrawGraph 
+  NodeXLControl的相關資料是寫在WpfControl的NodeXLControl.cs裡面
+  oNodeXLControl.DrawGraph-->LayOutOrDrawGraph()[透過invalidate自動呼叫]-->m_oLayout.LayOutGraphAsync() [主要可以看LayoutBase.cs]
+  透過內建的 m_oBackgroundWorker來做事
+    ** LayoutBase在contruct的時候,就有加入DoWorkEventHandler: BackgroundWorker_DoWork(LayoutBase裡寫的)在m_oBackgroundWorker.DoWork
+       BackgroundWorker_DoWork -->  LayOutGraphInternal (把graph裡的vertex裝到verticesToLayOut裡面) 
+       --> LayOutGraphCore  --> [LayOutGraphCoreSorted (Sortable才會有這一步)]
+    
