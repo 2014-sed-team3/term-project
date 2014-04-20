@@ -31,3 +31,13 @@
        BackgroundWorker_DoWork -->  LayOutGraphInternal (把graph裡的vertex裝到verticesToLayOut裡面) 
        --> LayOutGraphCore  --> [LayOutGraphCoreSorted (Sortable才會有這一步)]
     
+5.Fruchterman-Reingold Layout: 一種Force Directed Layout (理解為使用力學來畫圖)    
+                               應該是vertex跟vertex之間以某種力學關係來決定他們的距離
+  可參考:http://wiki.gephi.org/index.php/Fruchterman-Reingold
+  裡面說 edge是彈簧 vertex是彈簧兩邊的金屬圈
+  
+6.Harel-Koren fast multiscale這種layout 根據NODEXL官網介紹 也是一種force-directed的方式
+  看起來應該是這篇paper:http://www.research.att.com/groups/infovis/res/legacy_papers/DBLP-journals-jgaa-HarelK02.pdf
+  
+此二方法較為複雜 但初步了解 應該 頂多用到edge weight,似乎還未用到其他graph metrics來計算vertex的位置  
+
