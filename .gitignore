@@ -2,3 +2,5 @@ local
 local/*
 .gitignore
 ~*
+project/Build
+project/Src/NodeXL/ExcelTemplate/ExcelTemplate.csproj
