@@ -6,8 +6,8 @@ public class TextView{
         format = _format;
     }
     public void display(String path){
-        String Content = format.read(path);
-        //display Content
+        String text = format.read(path);
+        //display text
         for(int i=0;i<component.length;i++)
             if(component[i] != null)
                 component[i].show();
