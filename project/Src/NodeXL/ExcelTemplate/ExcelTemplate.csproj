@@ -14,8 +14,8 @@
     <OfficeApplication>Excel</OfficeApplication>
     <ProjectGuid>{33AB75F0-43C2-4B1D-A0FC-2E682BC65386}</ProjectGuid>
     <SolutionID>aa51c0f3-62b4-4782-83a8-a15dcdd17698</SolutionID>
-    <ManifestCertificateThumbprint>F41A6BF5D86832F049CDB31EBA26A8DC15B0462E</ManifestCertificateThumbprint>
-    <ManifestKeyFile>AuthenticodeCertificate-2014-01-05.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>8601E781D1176666003BA8D57E313BB1005C9DB5</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ExcelTemplate_1_TemporaryKey.pfx</ManifestKeyFile>
     <SignManifests>true</SignManifests>
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <FileUpgradeFlags>
@@ -765,6 +765,8 @@
       <Link>NodeXLExcelTemplate.chm</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="ExcelTemplate_1_TemporaryKey.pfx" />
+    <None Include="ExcelTemplate_TemporaryKey.pfx" />
     <None Include="NodeXLGraph.xltx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1282,7 +1284,11 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+<<<<<<< HEAD
         <ProjectProperties HostName="NodeXLGraph.xltx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\Office15\Excel.exe" DebugInfoCommandLine="/t /x &quot;[$OUTPUT]NodeXLGraph.xltx&quot;" />
+=======
+        <ProjectProperties HostName="NodeXLGraph.xltx" HostPackage="{825100CF-0BA7-47EA-A084-DCF3308DAF74}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\Office14\Excel.exe" DebugInfoCommandLine="/t &quot;[$OUTPUT]NodeXLGraph.xltx&quot;" />
+>>>>>>> ebf0d73057623a1cd3bfd219e68702ab50f1ea90
         <Host Name="Excel Document" Path=".\NodeXLGraph.xltx" GeneratedCodeNamespace="Microsoft.NodeXL.ExcelTemplate" PublishedHash="4D8E879928CBA270A29ED7FD412557FCA49DBAF9">
           <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="4CF1B25FEF26A603DF87EF96983114D71B65927F" DisplayName="Edges" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
           <HostItem Name="Sheet2" Code="Sheet2.cs" CanonicalName="Sheet2" PublishedHash="413A3833009CA1B9F98E55BF57BA329AD8E17ED9" DisplayName="Vertices" Blueprint="Sheet2.Designer.xml" GeneratedCode="Sheet2.Designer.cs" />
