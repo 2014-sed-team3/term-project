@@ -41,3 +41,32 @@
   
 此二方法較為複雜 但初步了解 應該 頂多用到edge weight,似乎還未用到其他graph metrics來計算vertex的位置  
 
+-----------------------------------------------
+
+Layout Requirement
+
+原本的
+Present graph according to the chosen layout
+Export layout result into image file
+
+新想的
+Layout: 
+NodeXL has a layout view.
+A graph can be presented in various types of layouts, such as, CircleLayout,GridLayout, Random Layout, SinusoidLayout, etc.
+The type of layout is selected by the user. 
+The graph will be plotted in the layout view according to selected layout type.
+We can only plot one type of layout for a graph at one time.
+It is easy to add new types of layouts.
+A graph can be layouted synchronously or asychronously
+Each layout has a background worker to handle the layout job at background. 
+When layouting (what the layout job do), we specify the location of each vertex in the graph according to the layout context and layout type.
+The layout context describe the width,height of the layout view. 
+The location of each vertex contains the x,y coordinates
+When the background layout job is completed, a handler will notify the layout view to update the graph with newly computed vertice locations.
+When the background job is running, the users can freely cancel the job.
+
+Graph:
+A graph consists of one or many vertices.
+Every two vertices forms an edge.
+Every edge has a weight.
+If the edge weight is zero mean there is no edge between the two vertices.
