@@ -22,5 +22,5 @@ Src/NodeXL/*/bin/Debug/*/Images/*.jpg
 Src/NodeXL/*/bin/Debug/*/*.graphml
 Src/NodeXL/*/bin/Debug/*/*/*.graphml
 Src/NodeXL/ExcelTemplate/*.pfx
-Src/NodeXL/ExcelTemplate/ExcelTemplate.csproj
+NodeXL/ExcelTemplate/ExcelTemplate.csproj
 Build/*
