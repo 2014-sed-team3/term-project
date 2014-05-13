@@ -41,6 +41,14 @@
   
 此二方法較為複雜 但初步了解 應該 頂多用到edge weight,似乎還未用到其他graph metrics來計算vertex的位置  
 
+---------------
+
+設顏色的方法
+SetValue<Color>(oEdge, ReservedMetadataKeys.PerColor,
+                    m_oEditedEdgeAttributes.Color);
+Group: 有依照不同的group去畫圖 (跑回圈)
+算完location如何畫: 似乎是layout context本身就是一個system.Drawing.rectangle
+
 -----------------------------------------------
 
 Layout Requirement
