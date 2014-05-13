@@ -21,7 +21,21 @@
   看了ExcelTemplate project
   Excel裡面那個控制視窗相關的東西都寫在TaskPane.cs裡面
   其中ShowGraph按鈕按下去 
-  會執行ReadWorkbook -->好幾層追下去之後 最後是用WorkbookReader讀完之後output一個IGraph   
+  會執行ReadWorkbook 
+   
+     TaskPane有m_oNodeXLWithAxesControl  他有attribute:NodeXLControl  NodeXLControl有attribute: GraphDrawer
+     讀graph之前會用
+          ApplyGeneralUserSettings(oGeneralUserSettings); 
+             //把GeneralUserSettings傳給m_oNodeXLWithAxesControl的NodeXLControl的GraphDrawer
+             //主要是設定vertex顏色 edge顏色等
+        ApplyLayoutUserSettings( new LayoutUserSettings() );
+             //把LayoutUserSettings傳給新create的layout,再把layout設給NodeXLControl
+             //會先檢查taskPane.m_oLayoutManagerForToolStripSplitButton.Layout == taskPane.m_oLayoutManagerForContextMenu.Layout
+             //用LayoutManagerForToolStripSplitButton的createLayout()來create,layout manager會存使用者選了甚麼
+             //layout type與其他layout要用的參數
+     這兩個來取得user設定的setting <UserSettings是在EditGeneralUserSettings()裡面設的 他設完會呼叫oNodeXLControl.DrawGraph();>
+     
+  -->好幾層追下去之後   最後是用WorkbookReader讀完之後output一個IGraph   
   讀出來的IGraph會存到 oNodeXLControl.Graph
   然後執行oNodeXLControl.DrawGraph 
   NodeXLControl的相關資料是寫在WpfControl的NodeXLControl.cs裡面
@@ -30,6 +44,11 @@
     ** LayoutBase在contruct的時候,就有加入DoWorkEventHandler: BackgroundWorker_DoWork(LayoutBase裡寫的)在m_oBackgroundWorker.DoWork
        BackgroundWorker_DoWork -->  LayOutGraphInternal (把graph裡的vertex裝到verticesToLayOut裡面) 
        --> LayOutGraphCore  --> [LayOutGraphCoreSorted (Sortable才會有這一步)]
+  等到LayoutComplete以後 (BackgroundWorker_RunWorkerCompleted-->FireLayOutGraphCompleted-->NodeXLControl.Layout_LayOutGraphCompleted-->LayoutOrDrawGraph)
+  會再呼叫NodeXLControl.DrawGraph(rect) 這跟之前的drawGraph做不同的事情
+  會使用m_oGraphDrawer.DrawGraph(m_oGraph, m_oLastGraphDrawingContext);去畫圖
+  這裡的GraphDrawer便是WpfVisualization裡面的東西
+       
     
 5.Fruchterman-Reingold Layout: 一種Force Directed Layout (理解為使用力學來畫圖)    
                                應該是vertex跟vertex之間以某種力學關係來決定他們的距離
