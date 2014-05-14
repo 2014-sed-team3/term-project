@@ -31,8 +31,8 @@
         ApplyLayoutUserSettings( new LayoutUserSettings() );
              //把LayoutUserSettings傳給新create的layout,再把layout設給NodeXLControl
              //會先檢查taskPane.m_oLayoutManagerForToolStripSplitButton.Layout == taskPane.m_oLayoutManagerForContextMenu.Layout
-             //用LayoutManagerForToolStripSplitButton的createLayout()來create,layout manager會存使用者選了甚麼
-             //layout type與其他layout要用的參數
+             //用LayoutManagerForToolStripSplitButton的createLayout()來create,
+             //他extend from layoutManager 裡面會存使用者選了甚麼layout type與其他layout要用的參數
      這兩個來取得user設定的setting <UserSettings是在EditGeneralUserSettings()裡面設的 他設完會呼叫oNodeXLControl.DrawGraph();>
      
   -->好幾層追下去之後   最後是用WorkbookReader讀完之後output一個IGraph   
