@@ -1,0 +1,1412 @@
+{
+  "data": [
+    {
+      "id": "177308745785713_325938684225527",
+      "from": {
+        "id": "312901488862580",
+        "name": "Cookie Rockie"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "今朝恩恩怨怨、百年滄海桑田\n他日冤家路窄、莫忘血脈相連",
+      "picture": "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q79/s480x480/10391450_325938684225527_6888758333691010882_n.jpg",
+      "link": "https://www.facebook.com/photo.php?fbid=325938684225527&set=o.177308745785713&type=1",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yz/r/StEh3RhPvjk.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/325938684225527"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/325938684225527"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "photo",
+      "object_id": "325938684225527",
+      "application": {
+        "name": "Photos",
+        "id": "2305272732"
+      },
+      "created_time": "2014-05-19T14:07:22+0000",
+      "updated_time": "2014-05-19T14:20:47+0000",
+      "likes": {
+        "data": [
+          {
+            "id": "627450194012597",
+            "name": "Yukihisa Barry Takada"
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "NjI3NDUwMTk0MDEyNTk3",
+            "before": "NjI3NDUwMTk0MDEyNTk3"
+          }
+        }
+      },
+      "comments": {
+        "data": [
+          {
+            "id": "325938684225527_325946440891418",
+            "from": {
+              "id": "312901488862580",
+              "name": "Cookie Rockie"
+            },
+            "message": "https://www.youtube.com/watch?v=WSelAlvz3nM",
+            "can_remove": false,
+            "created_time": "2014-05-19T14:19:55+0000",
+            "like_count": 0,
+            "user_likes": false
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MQ==",
+            "before": "MQ=="
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_262450727271514",
+      "from": {
+        "id": "1412491469016407",
+        "name": "Jeanway Lee"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "張忠謀號稱要吸引國外高科技人員到台就任，但是台灣的環境\n\n如何吸引國外高科技人員，科學園區，高科技老板僅是把員工\n\n當成機器，每日工作 16小時，老板不重員工休假的權利，還是\n\n16小時日操夜操，這些無良的老板僅顧自己賺錢\n\n對台灣控制人民言論自由，地檢署及法院貪污腐化，拒電腦化\n\n吃案嚴重，麻木不仁，僅願說些心疼學生上街頭\n\n民主不能當飯吃，路過浪費。。。。。的話，郭台銘及張忠謀\n\n請問吸引國外的高科技的人員來台的條件是？ 台灣\n\n數十年來蓋了多少的國民住宅， 蓋了多少的停車場\n\n新竹及台北跟本數十年來沒有停車場可停車， 老爺飯店外\n\n違件充斥， 請問台灣的政府，除了蓋違件\n\n開停車場的罰單，用刑事毀謗罪，高額的民事賠償金控制人民\n\n的言論自由，我irene民作了？\n\n我請問為 Apple 代工的 郭台銘先生，你說陳歐泊是\n\n禽獸及禽獸不如的東西，請問郭台銘先生，你清不清楚，你已犯\n\n了中華民國的毀謗刑事罪及公然污辱罪，請問你清不清楚\n\n你在民事上億犯了防害名譽罪，你需要登 4大報道歉\n\n以你的身分條件李Jenny 說句小三 是 300萬\n\n黃越shuei 說句 XXX 是 100萬 李婉鈺說句神經病\n\n是 30萬及 60萬，優秀的 s 哲維記者，\n\n如果待在美國，我相信他不會有這樣的下場\n\n我們想問郭台銘對於你的犯刑你願不願到\n\n台北地檢署及新北地檢署 自首\n\n而張忠謀先生，台北高貴的房價，及新竹及台北毫無停車場\n\n可停也是 20 年 30年的事實，請問 科學園區\n\n一天 16小時的工作時間，不重視高科技人才，控制人民的行動\n\n及言論，不能上 s 哲維的新聞下留下Facebook 的留言\n\n或在各樣議題上不能留言，僅有郭台銘的話，張忠謀的話\n\n記者願意登，民眾的聲音，記者沒辦法報導\n\n法院及地檢署控制言論，政府用網軍 大殺我們的言論\n\n郝龍斌市長不願處理 內湖警員黃新進作假報案記錄\n\n作假報案筆錄，作假犯罪記錄， 跟士林地檢署宿股陳銘鋒曾裕誠滅\n\n證作假，捏造筆錄的問題。這樣的政府拒不改革法院及地檢署\n\n貪腐的情形， 立委廢特偵廢FBI\n\n請問郭台銘及張忠謀先生，台灣如何吸引人才？\n為何最優秀的新聞記者s 哲維選擇無言的死，因為\n\n台灣沒有新聞自由，人民連講一句話都是毀謗刑事罪\n\n幾個民事罪的， 台灣的地檢署及法院專作的就是毀謗刑事罪，惡意\n\n毀謗罪，公然污辱罪等控制言論的罪刑，而代工Apple 的郭台銘\n\n因為富友所以可以逃過地檢署及法院，刑事庭法院及民事庭法院\n\n台灣地檢署及法院為了法官及地檢署檢查官的收入，大量辦理\n\n毀謗刑事罪等。並以洩密罪控訴意圖改革的\n\n黃世銘，換上在高等檢察署作假嚴重，捏造民眾上訴理由。\n\n目前政府大刪我們在記者 s 哲維上的留言，不讓民眾上Facebook\n\n留言。\n\n任高等檢察署重股檢查官吃掉民眾上訴案的顏大和，For example if you said you are a bitch then you are criminal in Taiwan. The prosecutor office in \n\nTaipei will prosecute you as criminal in criminal court. And the judge in Taiwan will charge you \n\ncriminal charge.\n\nIn the civil court if you said you are a bitch . You can go to the civil court to repeatedly sue people three times for civil court and judge may charge you 100,000 USD , 30,000 USD and or 10,0000.\n\nand you need to put advertisement on four mayor newspaper for apology. \n\nSo if you \" you are a Bitch\" You will get 4 cases in Taipei and the judge will give you one or two more criminal case in the future. \n\nBut if you are a rich man like boss of Foxconn GUO TAI MING then he said Chen Ou Bou is an animal\n\nor even worse than an animal. But he is too rich so nobody will sue him so he is not criminal since he is rich. Guo Tai Ming is the person who makes I phone for Apple.\nLike · · Promote",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262450727271514"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262450727271514"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T12:56:07+0000",
+      "updated_time": "2014-05-19T12:56:07+0000"
+    },
+    {
+      "id": "177308745785713_262449377271649",
+      "from": {
+        "id": "610790592343927",
+        "name": "柳淑芳"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "519 柳氏敢言 1. 馬 520就職. 綠卡? 國家主權? 沒有真相.沒有總統\n\n2.還扁清白.還我阿扁\n\n3. 請蔡小姐..宣誓兩岸兩國.才有資格當DPP的主席 台灣的領導人\n\n4.. DPP 誤信媒毒. 本人建議.為了綠色執政.為了黨譽.請速還陳歐珀,清白,公道. 而 郭台銘之 禽獸不如事件, 不能 隨風而逝. 一定要比照319 二顆子彈事件, 沒有真相? 沒有總統 ? 天大地大, 死者怎可排老二.? 什麼天大的理由? 非去不可 ? 秦厚修皇太后五月之喪/ 四天火化, 馬家守喪僅三天,制慈的第二天.我只看見馬家大姐,二者姐如朕親臨..攤在陽光下/ 鏡頭下,.前往凱道現身新五四運動 去捧場/ 與白狼一起共襄盛舉. \n\n敬告全國人民, 馬家大姐,二姐有在乎自己的媽媽,秦厚修死者為大嗎?\n郭台銘口中的天理不容. 禽獸不如..應是誰呢....?\n\n郭董為何要大動肝火.一句, 我出錢. 罷免沒有鬧場..的陳歐珀呢? \n還是要 制衡太陽花割閫尾..採取 的 恐怖平衡呢 ?\n\n馬皇在大街小巷.被庶民開口閉口.尊稱 畜牲.\n所以馬友友郭董..大罵 陳歐珀 禽獸不如..剛好連本帶利.\n幫馬...出了一口鳥氣 ?",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262449377271649"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262449377271649"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T12:49:53+0000",
+      "updated_time": "2014-05-19T12:49:53+0000"
+    },
+    {
+      "id": "177308745785713_262448553938398",
+      "from": {
+        "id": "1412491469016407",
+        "name": "Jeanway Lee"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "張忠謀號稱要吸引國外高科技人員到台就任，但是台灣的環境\n\n如何吸引國外高科技人員，科學園區，高科技老板僅是把員工\n\n當成機器，每日工作 16小時，老板不重員工休假的權利，還是\n\n16小時日操夜操，這些無良的老板僅顧自己賺錢\n\n對台灣控制人民言論自由，地檢署及法院貪污腐化，拒電腦化\n\n吃案嚴重，麻木不仁，僅願說些心疼學生上街頭\n\n民主不能當飯吃，路過浪費。。。。。的話，郭台銘及張忠謀\n\n請問吸引國外的高科技的人員來台的條件是？ 台灣\n\n數十年來蓋了多少的國民住宅， 蓋了多少的停車場\n\n新竹及台北跟本數十年來沒有停車場可停車， 老爺飯店外\n\n違件充斥， 請問台灣的政府，除了蓋違件\n\n開停車場的罰單，用刑事毀謗罪，高額的民事賠償金控制人民\n\n的言論自由，我irene民作了？\n\n我請問為 Apple 代工的 郭台銘先生，你說陳歐泊是\n\n禽獸及禽獸不如的東西，請問郭台銘先生，你清不清楚，你已犯\n\n了中華民國的毀謗刑事罪及公然污辱罪，請問你清不清楚\n\n你在民事上億犯了防害名譽罪，你需要登 4大報道歉\n\n以你的身分條件李Jenny 說句小三 是 300萬\n\n黃越shuei 說句 XXX 是 100萬 李婉鈺說句神經病\n\n是 30萬及 60萬，優秀的 s 哲維記者，\n\n如果待在美國，我相信他不會有這樣的下場\n\n我們想問郭台銘對於你的犯刑你願不願到\n\n台北地檢署及新北地檢署 自首\n\n而張忠謀先生，台北高貴的房價，及新竹及台北毫無停車場\n\n可停也是 20 年 30年的事實，請問 科學園區\n\n一天 16小時的工作時間，不重視高科技人才，控制人民的行動\n\n及言論，不能上 s 哲維的新聞下留下Facebook 的留言\n\n或在各樣議題上不能留言，僅有郭台銘的話，張忠謀的話\n\n記者願意登，民眾的聲音，記者沒辦法報導\n\n法院及地檢署控制言論，政府用網軍 大殺我們的言論\n\n郝龍斌市長不願處理 內湖警員黃新進作假報案記錄\n\n作假報案筆錄，作假犯罪記錄， 跟士林地檢署宿股陳銘鋒曾裕誠滅\n\n證作假，捏造筆錄的問題。這樣的政府拒不改革法院及地檢署\n\n貪腐的情形， 立委廢特偵廢FBI\n\n請問郭台銘及張忠謀先生，台灣如何吸引人才？\n為何最優秀的新聞記者s 哲維選擇無言的死，因為\n\n台灣沒有新聞自由，人民連講一句話都是毀謗刑事罪\n\n幾個民事罪的， 台灣的地檢署及法院專作的就是毀謗刑事罪，惡意\n\n毀謗罪，公然污辱罪等控制言論的罪刑，而代工Apple 的郭台銘\n\n因為富友所以可以逃過地檢署及法院，刑事庭法院及民事庭法院\n\n台灣地檢署及法院為了法官及地檢署檢查官的收入，大量辦理\n\n毀謗刑事罪等。並以洩密罪控訴意圖改革的\n\n黃世銘，換上在高等檢察署作假嚴重，捏造民眾上訴理由。\n\n目前政府大刪我們在記者 s 哲維上的留言，不讓民眾上Facebook\n\n留言。\n\n任高等檢察署重股檢查官吃掉民眾上訴案的顏大和，For example if you said you are a bitch then you are criminal in Taiwan. The prosecutor office in \n\nTaipei will prosecute you as criminal in criminal court. And the judge in Taiwan will charge you \n\ncriminal charge.\n\nIn the civil court if you said you are a bitch . You can go to the civil court to repeatedly sue people three times for civil court and judge may charge you 100,000 USD , 30,000 USD and or 10,0000.\n\nand you need to put advertisement on four mayor newspaper for apology. \n\nSo if you \" you are a Bitch\" You will get 4 cases in Taipei and the judge will give you one or two more criminal case in the future. \n\n \n\nBut if you are a rich man like boss of Foxconn GUO TAI MING then he said Chen Ou Bou is an animal\n\nor even worse than an animal. But he is too rich so nobody will sue him so he is not criminal since he is rich. Guo Tai Ming is the person who makes I phone for Apple.",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262448553938398"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262448553938398"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T12:44:44+0000",
+      "updated_time": "2014-05-19T12:44:44+0000"
+    },
+    {
+      "id": "177308745785713_262446850605235",
+      "from": {
+        "id": "543360452447354",
+        "name": "張志光"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "中越南海油權之爭，不應該殃及無辜，越南應該學習日本嚴厲警告中國。類似於：如果中國膽敢登陸釣魚台，日本將不惜殲滅登陸的匪軍；如果中國膽敢擅自挖油井，越南不惜發射飛彈摧毀。中國就會怕！",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262446850605235"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262446850605235"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T12:36:49+0000",
+      "updated_time": "2014-05-19T12:36:49+0000"
+    },
+    {
+      "id": "177308745785713_560516464065086",
+      "from": {
+        "id": "543360452447354",
+        "name": "張志光"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "越南有能力在兩小時內奪取台灣固守的太平島。（馬正腐有夠腐敗！）\n\nhttp://news.ltn.com.tw/news/focus/paper/780212",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQDVfBY-UwH6vgWR&w=154&h=154&url=http%3A%2F%2Fwww.ltn.com.tw%2F2014%2Fnew%2Fmay%2F19%2Fimages%2FbigPic%2F600_173.jpg",
+      "link": "http://news.ltn.com.tw/news/focus/paper/780212",
+      "name": "越配爆：越網路流傳 台佔太平島 觸怒越南 - 焦點 - 自由時報電子報",
+      "caption": "news.ltn.com.tw",
+      "description": "越南反中，為何殃及台商？高雄市中小企業協會名譽理事長李重德向在台越南外配社群打聽，她們透露，越南網路上流傳台灣佔領了越南的南海國土「太平島」，並指台灣暗助中國佔領「西沙群島」，可能因此導致越南民眾遷怒於台商。李重德表示，前幾年，中越網民曾模擬在南海開戰情況，越南網民曾聲稱，如果沒有中國干預，越南有能力在兩小時內奪取台灣固守的太平島。",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/aS8ecmYRys0.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/560516464065086"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/560516464065086"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T12:15:18+0000",
+      "updated_time": "2014-05-19T12:15:18+0000"
+    },
+    {
+      "id": "177308745785713_262437513939502",
+      "from": {
+        "id": "1412491469016407",
+        "name": "Jeanway Lee"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "為何最優秀的新聞記者s 哲維選擇無言的死，因為\n\n台灣沒有新聞自由，人民連講一句話都是毀謗刑事罪\n\n幾個民事罪的， 台灣的地檢署及法院專作的就是毀謗刑事罪，惡意\n\n毀謗罪，公然污辱罪等控制言論的罪刑，而代工Apple 的郭台銘\n\n因為富友所以可以逃過地檢署及法院，刑事庭法院及民事庭法院\n\n台灣地檢署及法院為了法官及地檢署檢查官的收入，大量辦理\n\n毀謗刑事罪等。並以洩密罪控訴意圖改革的\n\n黃世銘，換上在高等檢察署作假嚴重，捏造民眾上訴理由。\n\n目前政府大刪我們在記者 s 哲維上的留言，不讓民眾上Facebook\n\n留言。\n\n任高等檢察署重股檢查官吃掉民眾上訴案的顏大和，For example if you said you are a bitch then you are criminal in Taiwan. The prosecutor office in \n\nTaipei will prosecute you as criminal in criminal court. And the judge in Taiwan will charge you \n\ncriminal charge.\n\nIn the civil court if you said you are a bitch . You can go to the civil court to repeatedly sue people three times for civil court and judge may charge you 100,000 USD , 30,000 USD and or 10,0000.\n\nand you need to put advertisement on four mayor newspaper for apology. \n\nSo if you \" you are a Bitch\" You will get 4 cases in Taipei and the judge will give you one or two more criminal case in the future. \n\n \n\nBut if you are a rich man like boss of Foxconn GUO TAI MING then he said Chen Ou Bou is an animal\n\nor even worse than an animal. But he is too rich so nobody will sue him so he is not criminal since he is rich. Guo Tai Ming is the person who makes I phone for Apple.",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262437513939502"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262437513939502"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T11:52:17+0000",
+      "updated_time": "2014-05-19T11:52:17+0000"
+    },
+    {
+      "id": "177308745785713_262436837272903",
+      "from": {
+        "id": "1412491469016407",
+        "name": "Jeanway Lee"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "為何最優秀的新聞記者s 哲維選擇無言的死，因為\n\n台灣沒有新聞自由，人民連講一句話都是毀謗刑事罪\n\n幾個民事罪的， 台灣的地檢署及法院專作的就是毀謗刑事罪，惡意\n\n毀謗罪，公然污辱罪等控制言論的罪刑，而代工Apple 的郭台銘\n\n因為富友所以可以逃過地檢署及法院，刑事庭法院及民事庭法院\n\n台灣地檢署及法院為了法官及地檢署檢查官的收入，大量辦理\n\n毀謗刑事罪等。並以洩密罪控訴意圖改革的\n\n黃世銘，換上在高等檢察署作假嚴重，捏造民眾上訴理由。\n\n目前政府大刪我們在記者 s 哲維上的留言，不讓民眾上Facebook\n\n留言。\n\n任高等檢察署重股檢查官吃掉民眾上訴案的顏大和，For example if you said you are a bitch then you are criminal in Taiwan. The prosecutor office in \n\nTaipei will prosecute you as criminal in criminal court. And the judge in Taiwan will charge you \n\ncriminal charge.\n\nIn the civil court if you said you are a bitch . You can go to the civil court to repeatedly sue people three times for civil court and judge may charge you 100,000 USD , 30,000 USD and or 10,0000.\n\nand you need to put advertisement on four mayor newspaper for apology. \n\nSo if you \" you are a Bitch\" You will get 4 cases in Taipei and the judge will give you one or two more criminal case in the future. \n\n \n\nBut if you are a rich man like boss of Foxconn GUO TAI MING then he said Chen Ou Bou is an animal\n\nor even worse than an animal. But he is too rich so nobody will sue him so he is not criminal since he is rich. Guo Tai Ming is the people who makes I phone for Apple.",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262436837272903"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262436837272903"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T11:48:42+0000",
+      "updated_time": "2014-05-19T11:48:42+0000"
+    },
+    {
+      "id": "177308745785713_262432657273321",
+      "from": {
+        "category": "Community",
+        "name": "黑色島國青年陣線",
+        "id": "177308745785713"
+      },
+      "message": "各位有意報名南區工作坊的朋友，請於今日午夜前儘速完成報名與匯款程序。我們將在午夜十二點後關閉南區報名選項。",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262432657273321"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262432657273321"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "status_type": "mobile_status_update",
+      "application": {
+        "name": "Facebook for Android",
+        "namespace": "fbandroid",
+        "id": "350685531728"
+      },
+      "created_time": "2014-05-19T11:32:08+0000",
+      "updated_time": "2014-05-19T14:38:32+0000",
+      "likes": {
+        "data": [
+          {
+            "id": "765191830166504",
+            "name": "Ivy Wu"
+          },
+          {
+            "id": "10152363364075871",
+            "name": "Mindy Hsu"
+          },
+          {
+            "id": "10201641191386043",
+            "name": "珊珊陳"
+          },
+          {
+            "id": "819668234714390",
+            "name": "Kuro Mikan"
+          },
+          {
+            "id": "840846932598779",
+            "name": "Dora Tseng"
+          },
+          {
+            "id": "694405770619945",
+            "name": "Del Chicky Liu"
+          },
+          {
+            "id": "700178393354093",
+            "name": "霈霈"
+          },
+          {
+            "id": "10200806958896878",
+            "name": "王小君"
+          },
+          {
+            "id": "390351067773436",
+            "name": "HoMing Cheng"
+          },
+          {
+            "id": "604674786291267",
+            "name": "楊翠"
+          },
+          {
+            "id": "664322850281478",
+            "name": "程馨儀"
+          },
+          {
+            "id": "269013826610764",
+            "name": "River Tsai"
+          },
+          {
+            "id": "545533932225938",
+            "name": "Dan Lan"
+          },
+          {
+            "id": "848152775208825",
+            "name": "吳坤樺"
+          },
+          {
+            "id": "10152259804967976",
+            "name": "Kenny Hung"
+          },
+          {
+            "id": "685503048162545",
+            "name": "Jennifer Da"
+          },
+          {
+            "id": "693696667364985",
+            "name": "Mara Huang"
+          },
+          {
+            "id": "1410041722599606",
+            "name": "謝宗穎"
+          },
+          {
+            "id": "638068612927912",
+            "name": "Wei You-Ling"
+          },
+          {
+            "id": "756121437739527",
+            "name": "周哲宇"
+          },
+          {
+            "id": "743972938957903",
+            "name": "Sasha Wang"
+          },
+          {
+            "id": "256906224495121",
+            "name": "劉素娥"
+          },
+          {
+            "id": "623664847708844",
+            "name": "王立青"
+          },
+          {
+            "id": "483435618450842",
+            "name": "黃錦妹"
+          },
+          {
+            "id": "228112734054529",
+            "name": "林振銘"
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MjI4MTEyNzM0MDU0NTI5",
+            "before": "NzY1MTkxODMwMTY2NTA0"
+          },
+          "next": "https://graph.facebook.com/v2.0/177308745785713_262432657273321/likes?limit=25&after=MjI4MTEyNzM0MDU0NTI5"
+        }
+      },
+      "comments": {
+        "data": [
+          {
+            "id": "262432657273321_262434910606429",
+            "from": {
+              "id": "442148289254505",
+              "name": "張志齊"
+            },
+            "message": "…黨工入侵",
+            "can_remove": false,
+            "created_time": "2014-05-19T11:39:52+0000",
+            "like_count": 13,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262467427269844",
+            "from": {
+              "id": "10202852465824674",
+              "name": "Jacob Chiang"
+            },
+            "message": "那[島國前進]跟你們是一樣的嗎?",
+            "can_remove": false,
+            "created_time": "2014-05-19T14:19:30+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262464877270099",
+            "from": {
+              "id": "564356587013983",
+              "name": "Lisa Shi"
+            },
+            "message": "，年軽人加油!",
+            "can_remove": false,
+            "created_time": "2014-05-19T14:07:49+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262459367270650",
+            "from": {
+              "id": "680978201972063",
+              "name": "劉葦葦"
+            },
+            "message": "我前幾天有匯款和報名了但我還沒收到email..",
+            "can_remove": false,
+            "created_time": "2014-05-19T13:43:58+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262435610606359",
+            "from": {
+              "id": "10201154907594708",
+              "name": "Celine Lin Csm"
+            },
+            "message": "我要報中部",
+            "can_remove": false,
+            "created_time": "2014-05-19T11:43:10+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262433467273240",
+            "from": {
+              "id": "658684480867221",
+              "name": "吳貝貝"
+            },
+            "message": "我我我我我要報名^_^",
+            "can_remove": false,
+            "created_time": "2014-05-19T11:36:07+0000",
+            "like_count": 3,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262472807269306",
+            "from": {
+              "id": "815598498465527",
+              "name": "賴宜姐"
+            },
+            "message": "小悲悲~是反黑社會的代表！",
+            "can_remove": false,
+            "created_time": "2014-05-19T14:38:32+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262458940604026",
+            "from": {
+              "id": "815598498465527",
+              "name": "賴宜姐"
+            },
+            "message": "畜牲黨非常怕各位壯大，所以！誒驚就好，不要打太累。讓畜牲繼續怕怕到死。哈哈ㄉ",
+            "can_remove": false,
+            "created_time": "2014-05-19T13:42:10+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262436610606259",
+            "from": {
+              "id": "658684480867221",
+              "name": "吳貝貝"
+            },
+            "message": "匯500可以退500賺便當啊^_^",
+            "can_remove": false,
+            "created_time": "2014-05-19T11:47:46+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262435907272996",
+            "from": {
+              "id": "685408144855919",
+              "name": "劉仁德"
+            },
+            "message": "請問有中部工作坊網頁的相關連結嗎? thx!",
+            "can_remove": false,
+            "created_time": "2014-05-19T11:44:16+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262462080603712",
+            "from": {
+              "id": "1412491469016407",
+              "name": "Jeanway Lee"
+            },
+            "message": "一個台灣的記者僅能播報郭台銘講的話，張忠謀講的話\n\n地檢署法官講的話，不能報導 民眾講的話，當然台灣最優秀的記者\n\n史哲維要選擇 死亡， 所有的報道目前就是中天，TVBS 等的記者\n\n痛哭的留言，民眾的留言都被殺光，不能留言，我們寫信\n\n給馬英九President 也是回 54 321 我們要求毀謗去罪化\n\n還新聞自由，建立陪審團。",
+            "can_remove": false,
+            "created_time": "2014-05-19T13:56:53+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262467987269788",
+            "from": {
+              "id": "294261524067190",
+              "name": "何恭奕"
+            },
+            "message": "我本來想找個機會向大家報告我發明的一個計稅法\n但是現在出了一個問題是這樣的\n南海的狀況不排除會引發戰爭\n這關我們什麼事\n石油的問題嗎\n不是\n問題跟食物有關\n吃的東西不夠怎麼辦\n我會下圍棋\n職業棋士的推想可以到一百步以後\n這是真的\n我雖然沒做到過\n但是如果事情想做得周全\n則不得輕慢\n所以聽我一言\n首先必須考慮錢的問題\n當吃的東西不夠的時候\n錢也變不出食物的原料\n考慮完畢\n錢不是問題\n再來如果食物不夠我們用分的這就變成政治問題了\n這有什麼結果\n第一個關鍵\n由誰主導食物的分配\n政府嗎\n政府是誰的\n我們的嗎\n我們能主導食物的分配嗎\n等\n政府是我們的嗎\n請問政府是我們的嗎\n如果那個時候政府還不是我們的\n我們能主導食物的分配嗎\n如果那個時候不是由我們主導食物的分配\n不是由我們主導我們的食物的分配\n那會由誰主導呢\n沒人主導嗎\n不知道\n歸納法結束\n\n如果由不是我們的某些人組成的統治集團來主導食物的分配\n那這個不是我們的某些人即擁有極大的權力\n有鑑於這些人可以控制政府媒體警察\n如果這些人想利用此一情況\n大幅度增加對於民眾的控制\n大有可圖\n\n我想問妳們一個問題\n政府的力量來源為何\n媒體的力量來源為何\n警察的力量來源為何\n\n我給妳們參考資料\n政府的主要從業人員是誰\n妹體的主要從業人員是誰\n警察的主要從業人員是誰\n\n妳們想好了嗎\n\n我的答案是\n我們\n我們\n我們\n\n有跟妳的答案一樣嗎\n\n另外是如果大陸對我們進行供應的問題\n\n另外是如果美國進行介入的問題",
+            "can_remove": false,
+            "created_time": "2014-05-19T14:21:58+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262453877271199",
+            "from": {
+              "id": "797596493586312",
+              "name": "Michael Huang"
+            },
+            "message": "你們偉大黑色力量要鬧能不能到日本去鬧 幫本島國要回釣魚台？",
+            "can_remove": false,
+            "created_time": "2014-05-19T13:14:15+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262460490603871",
+            "from": {
+              "id": "658684480867221",
+              "name": "吳貝貝"
+            },
+            "message": "賴宜姐你是反社會人格的代表^_^",
+            "can_remove": false,
+            "created_time": "2014-05-19T13:49:56+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262432657273321_262457723937481",
+            "from": {
+              "id": "658684480867221",
+              "name": "吳貝貝"
+            },
+            "message": "劉仁德 压抑的来源：http://youtu.be/ubLtxa_ffr0",
+            "can_remove": false,
+            "created_time": "2014-05-19T13:36:21+0000",
+            "like_count": 0,
+            "user_likes": false
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MQ==",
+            "before": "MTY="
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_262432200606700",
+      "from": {
+        "id": "1412491469016407",
+        "name": "Jeanway Lee"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "For example if you said you are a bitch then you are criminal in Taiwan. The prosecutor office in \n\nTaipei will prosecute you as criminal in criminal court. And the judge in Taiwan will charge you \n\ncriminal charge.\n\nIn the civil court if you said you are a bitch . You can go to the civil court to repeatedly sue people three times for civil court and judge may charge you 100,000 USD , 30,000 USD and or 10,0000.\n\nand you need to put advertisement on four mayor newspaper for apology. \n\nSo if you \" you are a Bitch\" You will get 4 cases in Taipei and the judge will give you one or two more criminal case in the future. \n\n \n\nBut if you are a rich man like boss of Foxconn GUO TAI MING then he said Chen Ou Bou is an animal\n\nor even worse than an animal. But he is too rich so nobody will sue him so he is not criminal since he is rich. Guo Tai Ming is the people who do I phone for Apple.",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262432200606700"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262432200606700"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T11:30:15+0000",
+      "updated_time": "2014-05-19T11:30:15+0000"
+    },
+    {
+      "id": "177308745785713_620486984707473",
+      "from": {
+        "id": "620585484697623",
+        "name": "Jian-zhe Jian"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "【求讚文】今天是截止日期了，請大家幫幫忙！\n拜託拜託，請大家幫我點這兩個ＦＢ照片連結進去按讚！拜託大家了！\n\nhttps://www.facebook.com/photo.php?fbid=619000534856118\nhttps://www.facebook.com/photo.php?fbid=647500248677140",
+      "story": "Jian-zhe Jian posted a photo to 黑色島國青年陣線's timeline.",
+      "picture": "https://fbcdn-photos-h-a.akamaihd.net/hphotos-ak-ash4/t1.0-0/10342841_619000534856118_8963891915845775221_s.jpg",
+      "link": "https://www.facebook.com/photo.php?fbid=619000534856118&set=p.619000534856118&type=1",
+      "name": "Jian-zhe Jian's Photos",
+      "properties": [
+        {
+          "name": "By",
+          "text": "Jian-zhe Jian",
+          "href": "https://www.facebook.com/jianzhe.jian.7"
+        }
+      ],
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/aS8ecmYRys0.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/620486984707473"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/620486984707473"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "photo",
+      "object_id": "619000534856118",
+      "created_time": "2014-05-19T10:49:35+0000",
+      "updated_time": "2014-05-19T10:49:35+0000"
+    },
+    {
+      "id": "177308745785713_262412110608709",
+      "from": {
+        "id": "632976360110213",
+        "name": "Black-j Acb"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "各為捍衛民主的鬥士們,最好多準備點\"雞絲麵\",不然到時候正腐又搞黑箱賣台的話,沒\"雞絲麵\"可用,最好多準備點以防萬一",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262412110608709"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262412110608709"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T09:58:06+0000",
+      "updated_time": "2014-05-19T09:58:06+0000"
+    },
+    {
+      "id": "177308745785713_262411760608744",
+      "from": {
+        "id": "565177793595781",
+        "name": "Join Li"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "賴素如要出來選了, 國民黨禮讓一席\nhttps://www.ptt.cc/bbs/Gossiping/M.1399726714.A.791.html",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262411760608744"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262411760608744"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T09:56:14+0000",
+      "updated_time": "2014-05-19T09:56:14+0000"
+    },
+    {
+      "id": "177308745785713_10152254569623649",
+      "from": {
+        "id": "10152178306448649",
+        "name": "王正"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "\n\n這就是超越藍綠、被財團統治的台灣的真實啊！\n\n\n第四權全部都是金錢的走狗，錢夠多的人（政府、財團、XX黨）就可以支配啊！\n\n沒有媒體，沒有第四權，沒有民主\n\n\n台灣其實也和中國一樣是會封鎖消息的地方啊！\nhttp://www.ptt.cc/bbs/Gossiping/M.1400488076.A.E7F.html",
+      "link": "http://www.ptt.cc/bbs/Gossiping/M.1400488076.A.E7F.html",
+      "name": "Fw: [爆卦] 松菸護樹被財團集體下封口令",
+      "caption": "www.ptt.cc",
+      "description": "※ [本文轉錄自 PublicIssue 看板 #1JUS16bx ] 作者: ZMittermeyer (無限期支持手毛) 看板: PublicIssue 標題: [爆卦] 松菸護樹被財團集體下封口令",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/aS8ecmYRys0.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/10152254569623649"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/10152254569623649"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T09:55:17+0000",
+      "updated_time": "2014-05-19T09:55:17+0000"
+    },
+    {
+      "id": "177308745785713_10154149997555114",
+      "from": {
+        "id": "10154067883700114",
+        "name": "Ben Liu"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "馬吉拉",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQC9fvtYVXb2iThs&w=130&h=130&url=http%3A%2F%2Fi1.ytimg.com%2Fvi%2FTJX-kiKvq54%2Fhqdefault.jpg",
+      "link": "https://www.youtube.com/watch?v=TJX-kiKvq54",
+      "source": "http://www.youtube.com/v/TJX-kiKvq54?version=3&autohide=1&autoplay=1",
+      "name": "2014【馬吉拉】",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yj/r/v2OnaTyTQZE.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/10154149997555114"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/10154149997555114"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "video",
+      "created_time": "2014-05-19T09:27:55+0000",
+      "updated_time": "2014-05-19T09:27:55+0000",
+      "likes": {
+        "data": [
+          {
+            "id": "875008439181604",
+            "name": "Jhih-cing Huang"
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "ODc1MDA4NDM5MTgxNjA0",
+            "before": "ODc1MDA4NDM5MTgxNjA0"
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_560423694074363",
+      "from": {
+        "id": "543360452447354",
+        "name": "張志光"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "連印度國會都變天！　台灣國會何時變天？\n\nhttp://www.chinatimes.com/newspapers/20140517000892-260108",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQApK6JXwfKLMlBC&w=154&h=154&url=http%3A%2F%2Fimg.chinatimes.com%2Fnewsphoto%2F2014-05-17%2F656%2FBXMA00_P_01_01.jpg",
+      "link": "http://www.chinatimes.com/newspapers/20140517000892-260108",
+      "name": "印度變天！反對黨壓倒勝 - 中時電子報",
+      "caption": "www.chinatimes.com",
+      "description": "印度變天！印度國會下議院選舉16日開始計票，據初步開票結果，右派反對黨「印度人民黨」贏得比預期亮麗的壓倒性勝利，可望囊括過半議席，單獨執政，該黨總理候選人莫迪也將成為印度新領導人。他振奮地說：「印度贏了，好日子即將到來。」",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/SC2ZmEkfI-X.png",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/560423694074363"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/560423694074363"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T08:14:23+0000",
+      "updated_time": "2014-05-19T08:57:00+0000",
+      "comments": {
+        "data": [
+          {
+            "id": "560423694074363_560434430739956",
+            "from": {
+              "id": "1394919217454180",
+              "name": "林霓兒"
+            },
+            "message": "印度人民黨在對外關係方面，提出「真正的不結盟」政策，反對偏向大國集團，主張鄰國建立良好關係。(印度最大的鄰國是中國)",
+            "can_remove": false,
+            "created_time": "2014-05-19T08:57:00+0000",
+            "like_count": 0,
+            "user_likes": false
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MQ==",
+            "before": "MQ=="
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_714504028601382",
+      "from": {
+        "id": "692730407445411",
+        "name": "Rothler Wu"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "https://www.facebook.com/events/299947410163179/permalink/307130012778252/",
+      "story": "Rothler Wu posted an event to 黑色島國青年陣線's timeline.",
+      "link": "https://www.facebook.com/events/299947410163179/",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/714504028601382"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/714504028601382"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T07:51:35+0000",
+      "updated_time": "2014-05-19T07:51:35+0000",
+      "likes": {
+        "data": [
+          {
+            "id": "744296272258236",
+            "name": "JackPolo Li"
+          },
+          {
+            "id": "1456353457935098",
+            "name": "鍾慧雯"
+          },
+          {
+            "id": "274514582718345",
+            "name": "林立凡"
+          },
+          {
+            "id": "380706632072070",
+            "name": "黃怡仁"
+          },
+          {
+            "id": "1476729889210555",
+            "name": "莊水雲"
+          },
+          {
+            "id": "747617418591771",
+            "name": "江政和"
+          },
+          {
+            "id": "1399439996998559",
+            "name": "林碧蓉"
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MTM5OTQzOTk5Njk5ODU1OQ==",
+            "before": "NzQ0Mjk2MjcyMjU4MjM2"
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_262390887277498",
+      "from": {
+        "id": "692730407445411",
+        "name": "Rothler Wu"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "https://www.facebook.com/groups/124225657749/permalink/10152029281367750/",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262390887277498"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262390887277498"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T07:35:23+0000",
+      "updated_time": "2014-05-19T07:35:23+0000"
+    },
+    {
+      "id": "177308745785713_786605378017248",
+      "from": {
+        "id": "786820947995691",
+        "name": "盧炳宏"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "國防部也一起當機，警報器形同虛設。",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQAWLZv4Ef2YSG6k&w=154&h=154&url=http%3A%2F%2Fsetmoney.blob.core.windows.net%2Fnewsimages%2F2013%2F11%2F13%2F5046-XXL.jpg",
+      "link": "http://www.setnews.net/News.aspx?PageGroupID=6&NewsID=3802",
+      "name": "獨家／共軍艦艇現高雄海域 我軍不知？│三立新聞網 SETNEWS.NET",
+      "caption": "www.setnews.net",
+      "description": "最近在高雄港似乎不太平靜，有民眾發現距離六海浬遠的港口外，出現六艘大型漁船，原以為是海巡署的軍艦在進行演練，沒想到竟是大陸艦艇直接踏入我國領海，甚至還有潛水挺出現在高雄港外頭在海底來回穿梭，詭異的氣氛讓漁民深感不安，質疑大陸艦艇幾乎快侵門踏戶，也抨擊國軍沒有危機意識，反應慢半拍。",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/aS8ecmYRys0.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/786605378017248"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/786605378017248"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T07:20:19+0000",
+      "updated_time": "2014-05-19T07:20:19+0000"
+    },
+    {
+      "id": "177308745785713_786600704684382",
+      "from": {
+        "id": "786820947995691",
+        "name": "盧炳宏"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "現代木馬屠城記，政府再次當機。",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQCbeaNhgCigFQIe&w=154&h=154&url=http%3A%2F%2Fsetmoney.blob.core.windows.net%2Fnewsimages%2F2013%2F11%2F13%2F5045-XXL.jpg",
+      "link": "http://www.setnews.net/News.aspx?PageGroupID=1&NewsID=23806&PageType=2",
+      "name": "國安拉警報　交部擬開放陸軍艦「路過」？學者憂心│三立新聞網 SETNEWS.NET",
+      "caption": "www.setnews.net",
+      "description": "馬政府2008年12月開放「兩岸海運直航」，這樣還不夠，最近交通部又預告，可能進一步開放中國船舶「路過」。專家質疑，條文未定義「船舶」，形同開放所有中國船舶，包含掛五星旗的軍艦與公務船在我國海域暢行無阻，國安風險堪慮。",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/aS8ecmYRys0.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/786600704684382"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/786600704684382"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T07:05:42+0000",
+      "updated_time": "2014-05-19T07:05:42+0000"
+    },
+    {
+      "id": "177308745785713_262385443944709",
+      "from": {
+        "id": "543360452447354",
+        "name": "張志光"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "我們的國會至今為止都是泛藍過半數，也就是說國會至今沒有政黨輪替過；無論總統換誰，當國會永遠都無法「政黨輪替」，台灣就不會有真正的民主。",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262385443944709"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262385443944709"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T07:00:14+0000",
+      "updated_time": "2014-05-19T09:56:21+0000",
+      "likes": {
+        "data": [
+          {
+            "id": "632976360110213",
+            "name": "Black-j Acb"
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "NjMyOTc2MzYwMTEwMjEz",
+            "before": "NjMyOTc2MzYwMTEwMjEz"
+          }
+        }
+      },
+      "comments": {
+        "data": [
+          {
+            "id": "262385443944709_262411780608742",
+            "from": {
+              "id": "632976360110213",
+              "name": "Black-j Acb"
+            },
+            "message": "你以為當初投票給狗鳴黨的都贊成狗鳴黨踐踏民主賣台嗎? 還在用選舉當藉口阿? 哈哈哈哈哈",
+            "can_remove": false,
+            "created_time": "2014-05-19T09:56:21+0000",
+            "like_count": 1,
+            "user_likes": false
+          },
+          {
+            "id": "262385443944709_262405337276053",
+            "from": {
+              "id": "313457212143532",
+              "name": "林月華"
+            },
+            "message": "難道這不是就表示 大多數人支持國民黨嗎",
+            "can_remove": false,
+            "created_time": "2014-05-19T09:13:22+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "262385443944709_262396560610264",
+            "from": {
+              "id": "723346257688123",
+              "name": "Lily Rose"
+            },
+            "message": "誰過半，對國會亂象都沒有意義。問題出在「2大黨的黨鞭密室協商」！",
+            "can_remove": false,
+            "created_time": "2014-05-19T08:10:42+0000",
+            "like_count": 0,
+            "user_likes": false
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MQ==",
+            "before": "Mw=="
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_262383557278231",
+      "from": {
+        "id": "1384165138538656",
+        "name": "郝伟"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "醜陋的呆灣人！佔據中國的土地，說中國的語言，寫中國的文字，姓中國人的姓氏，拜中國的神……呆灣人，這些你可以放棄嗎？\n口口聲聲大談什麼臺灣的民主，殊不知臺灣的亂象已成為亞太地區的笑柄，為人所不齒！\n想當年，臺灣自以為經濟實力超群的時候，嘲笑大陸人窮，經濟水準差。不想沒幾年就為大陸所超越，到現在望塵莫及！比有錢沒戲，那現在就比民主，比素質！那幾年以後，大陸的公民素質普遍提高的時候，臺灣還能比什麼？再說所謂“民主”，世界上根本就沒有所謂“普世價值”，東西方文化、歷史、思想本就不同，中國專制了幾個世紀，也領先了幾個世紀，近一二百年才落後西方，中國人完全可以用東方哲學智慧追趕上來，乃至超越，就像現在做的一樣！對中國人來說，國家強大、領土完整、社會穩定，人民安居樂業比什麼狗屁民主要來的真實得多，有用的多，民主可以有，但要老百姓吃飽肚子以後，說到這裡，有些所謂“臺灣精英”又要談什麼人均GDP了，我只想說你和中國談人均，你是不是有病？！如果中國達到了人均GDP世界第一，那中國早就世界無敵了！\n你可以不做中國人，那請滾出中國的土地，這是祖先留給我們的土地，怎麼可以被你們這種人佔據！\n臺灣獨立？連毛澤東、蔣中正這樣的人都不敢背負分裂國家的歷史駡名！現在有些呆灣人真的不知道自己算什麼東西了！",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/262383557278231"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/262383557278231"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "status",
+      "created_time": "2014-05-19T06:49:33+0000",
+      "updated_time": "2014-05-19T06:49:33+0000"
+    },
+    {
+      "id": "177308745785713_560400744076658",
+      "from": {
+        "id": "543360452447354",
+        "name": "張志光"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "連印度國會都變天！　台灣國會何時變天？\n\nhttp://www.chinatimes.com/newspapers/20140517000892-260108",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQApK6JXwfKLMlBC&w=154&h=154&url=http%3A%2F%2Fimg.chinatimes.com%2Fnewsphoto%2F2014-05-17%2F656%2FBXMA00_P_01_01.jpg",
+      "link": "http://www.chinatimes.com/newspapers/20140517000892-260108",
+      "name": "印度變天！反對黨壓倒勝 - 中時電子報",
+      "caption": "www.chinatimes.com",
+      "description": "印度變天！印度國會下議院選舉16日開始計票，據初步開票結果，右派反對黨「印度人民黨」贏得比預期亮麗的壓倒性勝利，可望囊括過半議席，單獨執政，該黨總理候選人莫迪也將成為印度新領導人。他振奮地說：「印度贏了，好日子即將到來。」",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/SC2ZmEkfI-X.png",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/560400744076658"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/560400744076658"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T06:45:28+0000",
+      "updated_time": "2014-05-19T08:59:27+0000",
+      "comments": {
+        "data": [
+          {
+            "id": "560400744076658_560423720741027",
+            "from": {
+              "id": "723346257688123",
+              "name": "Lily Rose"
+            },
+            "message": "先改掉2黨協商啦！其實是2人協商。這個做不到，即使民進黨取得國會多數，還是2人決定的局面。",
+            "can_remove": false,
+            "created_time": "2014-05-19T08:14:34+0000",
+            "like_count": 0,
+            "user_likes": false
+          },
+          {
+            "id": "560400744076658_560424040740995",
+            "from": {
+              "id": "543360452447354",
+              "name": "張志光"
+            },
+            "message": "我已經受夠了（國民黨立法院永久執政）了！",
+            "can_remove": false,
+            "created_time": "2014-05-19T08:16:14+0000",
+            "like_count": 0,
+            "user_likes": false
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "after": "MQ==",
+            "before": "Mg=="
+          }
+        }
+      }
+    },
+    {
+      "id": "177308745785713_647345968672985",
+      "from": {
+        "category": "Politician",
+        "name": "蔣經國（罷免馬英九，支持請按讚）",
+        "id": "347150408692544"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "想要革命造反，就直接表達出來。\n拐彎抹角說那麼多，找一些議題來炒作，\n用一些東反對西騙騙的議題理由，\n來掩飾骨子裡想要革命造反的意圖，\n騙子和詐欺犯，不是都是這樣幹的？！\n\n這就是我壓根兒看不起 民進黨和黑島青 的最大理由。\n\n台語：『俗啦假流氓，臭雞掰假再色』，聽過沒！\n────────────────────\n林飛帆陳為廷發起　「島國前進」宣言全文\nhttp://www.nownews.com/n/2014/05/18/1238906\n",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQAAESZ4tHpN4l08&w=154&h=154&url=http%3A%2F%2Fimgapi.nownews.com%2F%3Fw%3D640%26q%3D80%26v%3D1400337636000%26src%3Dhttp%253A%252F%252Fs.nownews.com%252F79%252F1f%252F791f627339ac3496b739204e2366e064.jpg",
+      "link": "http://www.nownews.com/n/2014/05/18/1238906",
+      "name": "全文／「島國前進」Taiwan March宣言 | NOWnews 今日新聞",
+      "caption": "www.nownews.com",
+      "description": "318佔領運動的部份參與者，18日共同召開記者會，宣告運動組織「島國前進」正式成立。除持續關注服貿、兩岸協議監督條例立法議題，向馬政府、國會施壓外，島國前進還將聚焦自經區議題，並將於近期展開「修正公投",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/aS8ecmYRys0.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/647345968672985"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/647345968672985"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "link",
+      "created_time": "2014-05-19T06:01:33+0000",
+      "updated_time": "2014-05-19T06:01:33+0000"
+    },
+    {
+      "id": "177308745785713_560382987411767",
+      "from": {
+        "id": "543360452447354",
+        "name": "張志光"
+      },
+      "to": {
+        "data": [
+          {
+            "category": "Community",
+            "name": "黑色島國青年陣線",
+            "id": "177308745785713"
+          }
+        ]
+      },
+      "message": "國民黨裡面的外省人貪污，余文們自動幫主子背黑鍋。（周錫瑋辦公室主任麥安懷）\n\nhttps://www.youtube.com/watch?v=PJFBU5e1Sl8",
+      "picture": "https://fbexternal-a.akamaihd.net/safe_image.php?d=AQDyGqeqsOk7Vhtv&w=130&h=130&url=http%3A%2F%2Fi1.ytimg.com%2Fvi%2FPJFBU5e1Sl8%2Fhqdefault.jpg",
+      "link": "https://www.youtube.com/watch?v=PJFBU5e1Sl8",
+      "source": "http://www.youtube.com/v/PJFBU5e1Sl8?version=3&autohide=1&autoplay=1",
+      "name": "周錫瑋親信麥安懷 涉貪判8年",
+      "description": "台北縣長周錫瑋的前辦公室主任麥安懷，因為涉嫌向「百清停車場」負責人收賄，遭到檢方起訴後，一審判決結果出爐，法官以圖利罪，判處8年徒刑，褫奪公權5年。 2008年9月，周錫瑋的親信麥安懷，因為涉嫌圖利包商，遭到檢方收押禁見、起訴求刑，不過，法院經過一年多的審理後，認定麥安懷的確收受百萬賄款和名車，因此，判刑8年，至...",
+      "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yj/r/v2OnaTyTQZE.gif",
+      "actions": [
+        {
+          "name": "Comment",
+          "link": "https://www.facebook.com/177308745785713/posts/560382987411767"
+        },
+        {
+          "name": "Like",
+          "link": "https://www.facebook.com/177308745785713/posts/560382987411767"
+        }
+      ],
+      "privacy": {
+        "value": ""
+      },
+      "type": "video",
+      "created_time": "2014-05-19T05:33:36+0000",
+      "updated_time": "2014-05-19T05:33:36+0000"
+    }
+  ],
+  "paging": {
+    "previous": "https://graph.facebook.com/v2.0/177308745785713/feed?limit=25&since=1400508442",
+    "next": "https://graph.facebook.com/v2.0/177308745785713/feed?limit=25&until=1400477615"
+  }
+}
