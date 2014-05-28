@@ -1,0 +1,3839 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.NodeXL.Layouts</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.NodeXL.Layouts.ILayout">
+             <summary>
+             Supports laying out a graph within a rectangle.
+             </summary>
+            
+             <remarks>
+             A class that implements this interface is responsible for laying out a
+             graph within a specified rectangle by setting the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's vertices, and
+             optionally adding geometry metadata to the graph, vertices, or edges.
+             Laying out a graph is the first step in drawing it.
+            
+             <para>
+             If the layout is slow, you should consider implementing the <see cref="T:Microsoft.NodeXL.Layouts.IAsyncLayout"/> interface instead.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> by setting the
+             <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's
+             vertices, and optionally adding geometry metadata to the graph,
+             vertices, or edges.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.ILayout.TransformLayout(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Transforms a graph's current layout.
+             </summary>
+            
+             <param name="graph">
+             Graph whose layout needs to be transformed.
+             </param>
+            
+             <param name="originalLayoutContext">
+             <see cref="T:Microsoft.NodeXL.Layouts.LayoutContext"/> object that was passed to the most recent
+             call to <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </param>
+            
+             <param name="newLayoutContext">
+             Provides access to the new graph rectangle.
+             </param>
+            
+             <remarks>
+             After a graph has been laid out by <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>, this
+             method can be used to transform the graph's layout from one rectangle
+             to another.  <paramref name="originalLayoutContext"/> contains the
+             original graph rectangle, and <paramref name="newLayoutContext"/>
+             contains the new graph rectangle.  The implementation should transform
+             all the graph's vertex locations from the original rectangle to the new
+             one.  If <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> added geometry metadata to the
+             graph, the implementation should also transform that metadata.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.ILayout.OnVertexMove(Microsoft.NodeXL.Core.IVertex)">
+             <summary>
+             Processes a vertex that was moved after the graph was laid out.
+             </summary>
+            
+             <param name="vertex">
+             The vertex that was moved.
+             </param>
+            
+             <remarks>
+             An application may allow the user to move a vertex after the graph has
+             been laid out by <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.  This method is called
+             after the application has changed the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/>
+             property on <paramref name="vertex"/>.  If <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             added geometry metadata to the graph, vertices, or edges, <see cref="M:Microsoft.NodeXL.Layouts.ILayout.OnVertexMove(Microsoft.NodeXL.Core.IVertex)"/> should modify the metadata if necessary.
+             </remarks>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.ILayout.Margin">
+             <summary>
+             Gets or sets the margin to subtract from each edge of the graph
+             rectangle before laying out the graph.
+             </summary>
+            
+             <value>
+             The margin to subtract from each edge.  Must be greater than or equal
+             to zero.  The units are determined by the <see cref="T:System.Drawing.Graphics"/>
+             object used to draw the graph.  The default value is 0.
+             </value>
+            
+             <remarks>
+             If the graph rectangle passed to <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> is {L=0,
+             T=0, R=50, B=30} and the <see cref="P:Microsoft.NodeXL.Layouts.ILayout.Margin"/> is 5, for example, then
+             the graph is laid out within the rectangle {L=5, T=5, R=45, B=25}.
+             </remarks>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.ILayout.LayoutRequired">
+             <summary>
+             Occurs when a change occurs that requires the graph to be laid out
+             again.
+             </summary>
+            
+             <remarks>
+             The implementation must fire this event when any change is made to the
+             object that might affect the layout of the graph, such as a property
+             change that affects the layout algorithm.
+            
+             <para>
+             The owner should lay out the graph and redraw it in response to the
+             event.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.RandomLayout">
+             <summary>
+             Lays out a graph by placing the vertices in random locations.
+             </summary>
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <remarks>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with a value of true, it
+             is included in layout calculations but its own location is left unmodified.
+            
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.AsyncLayoutBase">
+             <summary>
+             Base class for asynchronous layouts.
+             </summary>
+            
+             <remarks>
+             This abstract class can serve as a base class for <see cref="T:Microsoft.NodeXL.Layouts.IAsyncLayout"/> implementations.  Its implementations of the <see cref="T:Microsoft.NodeXL.Layouts.IAsyncLayout"/> public methods provide error checking but defer the
+             actual work to protected abstract methods.
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.LayoutBase">
+             <summary>
+             Base class for layouts.
+             </summary>
+            
+             <remarks>
+             This abstract class can serve as a base class for <see cref="T:Microsoft.NodeXL.Layouts.ILayout"/> implementations.  Its implementations of the <see cref="T:Microsoft.NodeXL.Layouts.ILayout"/> public methods provide error checking but defer the
+             actual work to protected abstract methods.
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.LayoutsBase">
+            <summary>
+            Base class for most classes in the <see cref="N:Microsoft.NodeXL.Layouts"/>
+            namespace.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutsBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.NodeXL.Layouts.LayoutsBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutsBase.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.LayoutsBase.ArgumentChecker">
+             <summary>
+             Gets a new initialized <see cref="P:Microsoft.NodeXL.Layouts.LayoutsBase.ArgumentChecker"/> object.
+             </summary>
+            
+             <value>
+             A new initialized <see cref="P:Microsoft.NodeXL.Layouts.LayoutsBase.ArgumentChecker"/> object.
+             </value>
+            
+             <remarks>
+             The returned object can be used to check the validity of property
+             values and method parameters.
+            
+             <para>
+             The <see cref="T:Microsoft.NodeXL.Core.NodeXLBase"/> implementation of this property cannot be
+             used because it's marked as internal.  The reason it's internal is
+             explained in the comments for the <see cref="P:Microsoft.NodeXL.Layouts.LayoutsBase.ArgumentChecker"/> class.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.#ctor">
+            <summary>
+            Initializes a new instance of the LayoutBase class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> by setting the
+             <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's
+             vertices, and optionally adding geometry metadata to the graph,
+             vertices, or edges.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.TransformLayout(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Transforms a graph's current layout.
+             </summary>
+            
+             <param name="graph">
+             Graph whose layout needs to be transformed.
+             </param>
+            
+             <param name="originalLayoutContext">
+             <see cref="T:Microsoft.NodeXL.Layouts.LayoutContext"/> object that was passed to the most recent
+             call to <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </param>
+            
+             <param name="newLayoutContext">
+             Provides access to the new graph rectangle.
+             </param>
+            
+             <remarks>
+             After a graph has been laid out by <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>, this
+             method can be used to transform the graph's layout from the original
+             graph rectangle to another.  <paramref name="originalLayoutContext"/>
+             contains the original graph rectangle, and <paramref name="newLayoutContext"/> contains the new graph rectangle.  This
+             method transforms all the graph's vertex locations from the original
+             rectangle to the new one.  If <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> added geometry
+             metadata to the graph, this method also transforms that metadata.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.OnVertexMove(Microsoft.NodeXL.Core.IVertex)">
+             <summary>
+             Processes a vertex that was moved after the graph was laid out.
+             </summary>
+            
+             <param name="vertex">
+             The vertex that was moved.
+             </param>
+            
+             <remarks>
+             An application may allow the user to move a vertex after the graph has
+             been laid out by <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.  This method is called
+             after the application has changed the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/>
+             property on <paramref name="vertex"/>.  If <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             added geometry metadata to the graph, vertices, or edges, <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.OnVertexMove(Microsoft.NodeXL.Core.IVertex)"/> should modify the metadata if necessary.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> by setting the
+             <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's
+             vertices, and optionally adding geometry metadata to the graph,
+             vertices, or edges.
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.TransformLayoutCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,Microsoft.NodeXL.Layouts.LayoutContext,System.Drawing.Drawing2D.Matrix)">
+             <summary>
+             Transforms a graph's current layout.
+             </summary>
+            
+             <param name="graph">
+             Graph whose layout needs to be transformed.
+             </param>
+            
+             <param name="originalLayoutContext">
+             <see cref="T:Microsoft.NodeXL.Layouts.LayoutContext"/> object that was passed to the most recent
+             call to <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </param>
+            
+             <param name="newLayoutContext">
+             Provides access to objects needed to transform the graph's layout.
+             </param>
+            
+             <param name="transformationMatrix">
+             Matrix that can be used to transform points from the original graph
+             rectangle to the new graph rectangle.
+             </param>
+            
+             <remarks>
+             After a graph has been laid out by <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>, this
+             method may get called to transform the graph's layout from one rectangle
+             to another.  <paramref name="originalLayoutContext"/> contains the
+             original graph rectangle, and <paramref name="newLayoutContext"/>
+             contains the new graph rectangle.  This base-class implementation
+             transforms all the graph's vertex locations from the original rectangle
+             to the new one.  If the derived <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             implementation added geometry metadata to the graph, the derived class
+             should override this method, transform the geometry metadata, and call
+             this base-class implementation to transform the graph's vertex
+             locations.
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.OnVertexMoveCore(Microsoft.NodeXL.Core.IVertex)">
+             <summary>
+             Processes a vertex that was moved after the graph was laid out.
+             </summary>
+            
+             <param name="vertex">
+             The vertex that was moved.
+             </param>
+            
+             <remarks>
+             An application may allow the user to move a vertex after the graph has
+             been laid out by <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.  This method is called
+             after the application has changed the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/>
+             property on <paramref name="vertex"/>.  If <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> added geometry metadata to the graph,
+             vertices, or edges, <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.OnVertexMoveCore(Microsoft.NodeXL.Core.IVertex)"/> should modify the
+             metadata if necessary.
+            
+             <para>
+             This base-class implementation does nothing.
+             </para>
+            
+             <para>
+             The argument has already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.SubtractMarginFromRectangle(Microsoft.NodeXL.Layouts.LayoutContext,Microsoft.NodeXL.Layouts.LayoutContext@)">
+             <summary>
+             Subtracts a margin from each edge of the graph rectangle before laying
+             out the graph.
+             </summary>
+            
+             <param name="oLayoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <param name="oLayoutContext2">
+             If true is returned, this gets set to a copy of <paramref name="oLayoutContext"/> with a modified <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/>.
+             </param>
+            
+             <returns>
+             true if the modified rectangle has positive width and height, false if
+             the modified rectangle can't be used.
+             </returns>
+            
+             <remarks>
+             This method subtracts <see cref="P:Microsoft.NodeXL.Layouts.LayoutBase.Margin"/> from each edge
+             of the <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> stored in <paramref name="oLayoutContext"/>.  If the resulting rectangle has a positive
+             width and height, a new <see cref="T:Microsoft.NodeXL.Layouts.LayoutContext"/> is stored at
+             <paramref name="oLayoutContext2"/> and true is returned.  false is
+             returned otherwise.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.GetRectangleCenterAndHalfSize(System.Drawing.Rectangle,System.Double@,System.Double@,System.Double@)">
+             <summary>
+             Gets the center of a rectangle and the minimum of half its width and
+             half its height.
+             </summary>
+            
+             <param name="rectangle">
+             The rectangle to use.
+             </param>
+            
+             <param name="centerX">
+             The x-coordinate of the center of <paramref name="rectangle" />.
+             </param>
+            
+             <param name="centerY">
+             The y-coordinate of the center of <paramref name="rectangle" />.
+             </param>
+            
+             <param name="halfSize">
+             If the width of <paramref name="rectangle" /> is less than its height,
+             half the width gets stored here.  Otherwise, half the height gets
+             stored here.
+             </param>
+            
+             <remarks>
+             This method can be used by layouts that are centered and symetrical.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.GetVerticesToLayOut(Microsoft.NodeXL.Core.IGraph)">
+             <summary>
+             Gets the vertices to lay out.
+             </summary>
+            
+             <param name="graph">
+             Graph that is being laid out.
+             </param>
+            
+             <returns>
+             The vertices to lay out.
+             </returns>
+            
+             <remarks>
+             If the derived class wants to honor the optional <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/> key on the
+             graph, it should use this method to get the collection of vertices to
+             lay out.  All vertices that are not included in the returned
+             collection should be completely ignored.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.GetEdgesToLayOut(Microsoft.NodeXL.Core.IGraph)">
+             <summary>
+             Gets the edges to lay out.
+             </summary>
+            
+             <param name="graph">
+             Graph that is being laid out.
+             </param>
+            
+             <returns>
+             The edges to lay out.
+             </returns>
+            
+             <remarks>
+             If the derived class wants to honor the optional <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/> key on the
+             graph and it needs a list of the edges that connect only the specified
+             vertices, it should use this method to get the collection of edges to
+             use.  All edges that are not included in the returned collection should
+             be completely ignored.
+            
+             <para>
+             All derived classes that want to honor the optional key should use <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.GetVerticesToLayOut(Microsoft.NodeXL.Core.IGraph)"/>.  Only those derived classes that need an
+             edge list to do layout calculations (such as Fruchterman-Reingold) need
+             to use <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.GetEdgesToLayOut(Microsoft.NodeXL.Core.IGraph)"/> as well.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.MarkGraphAsLaidOut(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Marks a graph as having been laid out.
+             </summary>
+            
+             <param name="graph">
+             Graph that was laid out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects used to lay out the graph.
+             </param>
+            
+             <remarks>
+             This should be called after <paramref name="graph" /> has been
+             successfully laid out.  It adds a metadata key to the graph.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.RandomizeVertexLocations(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <overloads>
+             Randomly distributes the vertex locations in a graph.
+             </overloads>
+            
+             <summary>
+             Randomly distributes the vertex locations in a graph using a
+             time-dependent default seed value.
+             </summary>
+            
+             <param name="graph">
+             Graph whose vertices need to be randomized.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> must have non-zero width and
+             height.
+             </param>
+            
+             <remarks>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with the value true,
+             its location is left unmodified.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.RandomizeVertexLocations(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Int32)">
+             <summary>
+             Randomly distributes the vertex locations in a graph using a specified
+             seed value.
+             </summary>
+            
+             <param name="graph">
+             Graph whose vertices need to be randomized.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> must have non-zero width and
+             height.
+             </param>
+            
+             <param name="seed">
+             A number used to calculate a starting value for the pseudo-random
+             number sequence. If a negative number is specified, the absolute value
+             of the number is used. 
+             </param>
+            
+             <remarks>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with the value true,
+             its location is left unmodified.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.RandomizeVertexLocations(System.Collections.ICollection,Microsoft.NodeXL.Layouts.LayoutContext,System.Random,System.Boolean)">
+             <summary>
+             Randomly distributes the vertex locations in a graph using a specified
+             random number generator.
+             </summary>
+            
+             <param name="vertices">
+             Vertices that need to be randomized.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> must have non-zero width and
+             height.
+             </param>
+            
+             <param name="random">
+             Random number generator.
+             </param>
+            
+             <param name="specifiedVerticesOnly">
+             If true, only those vertices with a location of <see cref="F:Microsoft.NodeXL.Layouts.LayoutBase.RandomizeThisLocation"/> are randomly distributed.
+             </param>
+            
+             <remarks>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with the value true,
+             its location is left unmodified.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.VertexIsLocked(Microsoft.NodeXL.Core.IVertex)">
+             <summary>
+             Returns a flag indicating whether the vertex is locked.
+             </summary>
+            
+             <param name="oVertex">
+             The vertex to check.
+             </param>
+            
+             <returns>
+             true if the vertex is locked.
+             </returns>
+            
+             <remarks>
+             A locked vertex's location should not be modified by the layout,
+             although the vertex may be included in layout calculations.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.FireLayoutRequired">
+            <summary>
+            Fires the <see cref="E:Microsoft.NodeXL.Layouts.LayoutBase.LayoutRequired"/> event if appropriate.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutBase.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.LayoutBase.RandomizeThisLocation">
+            RandomizeVertexLocations() can be instructed to randomly distribute
+            only those vertices with an IVertex.Location set to this special value.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.LayoutBase.m_iMargin">
+            Margin to subtract from the graph rectangle before laying out the
+            graph.
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.LayoutBase.Margin">
+             <summary>
+             Gets or sets the margin to subtract from each edge of the graph
+             rectangle before laying out the graph.
+             </summary>
+            
+             <value>
+             The margin to subtract from each edge.  Must be greater than or equal
+             to zero.  The units are determined by the <see cref="T:System.Drawing.Graphics"/>
+             object used to draw the graph.  The default value is 6.
+             </value>
+            
+             <remarks>
+             If the graph rectangle passed to <see cref="M:Microsoft.NodeXL.Layouts.LayoutBase.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> is {L=0,
+             T=0, R=50, B=30} and the <see cref="P:Microsoft.NodeXL.Layouts.LayoutBase.Margin"/> is 5, for example, then
+             the graph is laid out within the rectangle {L=5, T=5, R=45, B=25}.
+             </remarks>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.LayoutBase.LayoutRequired">
+             <summary>
+             Occurs when a change occurs that requires the graph to be laid out
+             again.
+             </summary>
+            
+             <remarks>
+             The event is fired when any change is made to the object that might
+             affect the layout of the graph, such as a property change that affects
+             the layout algorithm.  The owner should lay out the graph and redraw it
+             in response to the event.
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.IAsyncLayout">
+             <summary>
+             Supports laying out a graph within a rectangle using an event-based
+             asynchronous pattern.
+             </summary>
+            
+             <remarks>
+             This interface adds asynchronous semantics to the <see cref="T:Microsoft.NodeXL.Layouts.ILayout"/>
+             base interface.  A class that implements this interface is responsible for
+             laying out a graph within a specified rectangle by setting the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's vertices in
+             either a synchronous or asynchronous manner, depending on whether <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> or <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> is called.
+             It may also add geometry metadata to the graph, vertices, or edges.
+            
+             <para>
+             The asynchronous semantics follow the guidelines outlined in the article
+             "Multithreaded Programming with the Event-based Asynchronous Pattern" in
+             the .NET Framework Developer's Guide.  <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             starts the layout on a worker thread and returns immediately.  The <see cref="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphIterationCompleted"/> event may fire repeatedly while the
+             layout is occurring.  The <see cref="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphCompleted"/> event fires
+             when the layout is complete, an error occurs, or the layout is cancelled.
+             <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsyncCancel"/> cancels the layout.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph synchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> by setting the
+             <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's
+             vertices, and optionally adding geometry metadata to the graph,
+             vertices, or edges.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <remarks>
+             This method asynchronously lays out the graph <paramref name="graph"/>.  It returns immediately.  A worker thread sets the
+             <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's
+             vertices, and optionally adds geometry metadata to the graph, vertices,
+             or edges.
+            
+             <para>
+             The <see cref="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphIterationCompleted"/> event may fire
+             repeatedly while the layout is occurring.  The <see cref="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphCompleted"/> event fires when the layout is complete,
+             an error occurs, or the layout is cancelled.  <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsyncCancel"/> cancels the layout.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsyncCancel">
+             <summary>
+             Cancels the layout started by <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </summary>
+            
+             <remarks>
+             The layout may or may not cancel, but the <see cref="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphCompleted"/> event is guaranteed to fire.  The <see cref="T:System.ComponentModel.AsyncCompletedEventArgs"/> object passed to the event handler
+             contains a <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled"/> property
+             that indicates whether the cancellation occurred.
+            
+             <para>
+             If a layout is not in progress, this method does nothing.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.IAsyncLayout.IsBusy">
+             <summary>
+             Gets a value indicating whether an asynchronous operation is in
+             progress.
+             </summary>
+            
+             <value>
+             true if an asynchronous operation is in progress.
+             </value>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphIterationCompleted">
+             <summary>
+             Occurs when a layout started by <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             completes one iteration.
+             </summary>
+            
+             <remarks>
+             If the implementation uses an iterative layout algorithm, it should
+             fire this event after each iteration.  The event handler may draw the
+             intermediate graph using the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property
+             on all of the graph's vertices.
+            
+             <para>
+             The event fires on the thread on which <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             was called.  Although the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property is
+             not required to be thread-safe, it is safe to read the property during
+             the event because the implementation's worker thread blocks until the
+             event handler returns.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphCompleted">
+             <summary>
+             Occurs when a layout started by <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             completes, is cancelled, or ends with an error.
+             </summary>
+            
+             <remarks>
+             The event fires on the thread on which <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             was called.
+             </remarks>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.IAsyncLayout.LayoutRequired">
+             <summary>
+             Occurs when a change occurs that requires the graph to be laid out
+             again.
+             </summary>
+            
+             <remarks>
+             The implementation must fire this event when any change is made to the
+             object that might affect the layout of the graph, such as a property
+             change that affects the layout algorithm.
+            
+             <para>
+             The owner should lay out the graph and redraw it in response to the
+             event.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.NodeXL.Layouts.AsyncLayoutBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <remarks>
+             This method asynchronously lays out the graph <paramref name="graph"/>
+             by setting the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the
+             graph's vertices, and optionally adding geometry metadata to the graph,
+             vertices, or edges.  It starts a worker thread and then returns
+             immediately.
+            
+             <para>
+             The <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphIterationCompleted"/> event may fire
+             repeatedly while the layout is occurring.  The <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphCompleted"/> event fires when the layout is complete,
+             an error occurs, or the layout is cancelled.  <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsyncCancel"/> cancels the layout.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsyncCancel">
+             <summary>
+             Cancels the layout started by <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </summary>
+            
+             <remarks>
+             The layout may or may not cancel, but the <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphCompleted"/> event is guaranteed to fire.  The <see cref="T:System.ComponentModel.AsyncCompletedEventArgs"/> object passed to the event handler
+             contains a <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled"/> property
+             that indicates whether the cancellation occurred.
+            
+             <para>
+             If a layout is not in progress, this method does nothing.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Lays out a graph.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> by setting the
+             <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of the graph's
+             vertices, and optionally adding geometry metadata to the graph,
+             vertices, or edges.
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             <para>
+             This is the concrete implementation of an abstract virtual method
+             defined in <see cref="T:Microsoft.NodeXL.Layouts.LayoutBase"/>.  It delegates the work to a new,
+             overloaded abstract virtual method defined in this class.  The new
+             overload takes an additional BackgroundWorker argument.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted">
+             <overloads>
+             Fires the <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphIterationCompleted"/> event if
+             appropriate.
+             </overloads>
+            
+             <summary>
+             Fires the <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphIterationCompleted"/> event if
+             appropriate.
+             </summary>
+            
+             <remarks>
+             This method should be called from <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.BackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)"/> after each layout iteration.  It
+             synchronously fires the <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphIterationCompleted"/>
+             event on the thread from which <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> was
+             called.
+            
+             <para>
+             Note that the <see cref="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32)"/>
+             method can't be used to report completion of an iteration.  That's
+             because <see cref="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32)"/> fires a
+             <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged"/> event asynchronously,
+             meaning that the worker thread gets back to work immediately without
+             waiting for the event handler to return.  Because the worker thread is
+             modifying the Location properties of all the graph's vertices, which is
+             exactly what the event handler wants to read, the vertex locations
+             would not be in a stable state for reading.  Using
+             SynchronizationContext to synchronously Send an event solves this
+             problem, because the worker thread can't get back to work until the
+             event handler returns.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted(System.Object)">
+             <summary>
+             Fires the <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphIterationCompleted"/> event if
+             appropriate.
+             </summary>
+            
+             <param name="oState">
+             Required by the SendOrPostCallback method signature, but not used.
+             </param>
+            
+             <remarks>
+             This method can be called only from the thread on which <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> was called.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphCompleted(System.ComponentModel.AsyncCompletedEventArgs)">
+             <summary>
+             Fires the <see cref="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphCompleted"/> event if appropriate.
+             </summary>
+            
+             <param name="oAsyncCompletedEventArgs">
+             An <see cref="T:System.ComponentModel.AsyncCompletedEventArgs"/> that contains the event data.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.BackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+             <summary>
+             Handles the DoWork event on the BackgroundWorker object.
+             </summary>
+            
+             <param name="sender">
+             Standard event argument.
+             </param>
+            
+             <param name="e">
+             Standard event argument.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.BackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+             <summary>
+             Handles the RunWorkerCompleted event on the BackgroundWorker object.
+             </summary>
+            
+             <param name="sender">
+             Standard event argument.
+             </param>
+            
+             <param name="e">
+             Standard event argument.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.AsyncLayoutBase.m_oBackgroundWorker">
+            BackgroundWorker used by LayOutGraphAsync().
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.AsyncLayoutBase.m_oSynchronizationContext">
+            SynchronizationContext of the thread that called LayOutGraphAsync(), or
+            null if LayOutGraphAsync() hasn't been called.
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.AsyncLayoutBase.IsBusy">
+             <summary>
+             Gets a value indicating whether an asynchronous operation is in
+             progress.
+             </summary>
+            
+             <value>
+             true if an asynchronous operation is in progress.
+             </value>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphIterationCompleted">
+             <summary>
+             Occurs when a layout started by <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             completes one iteration.
+             </summary>
+            
+             <remarks>
+             If the implementation uses an iterative layout algorithm, it should
+             fire this event after each iteration.  The event handler may draw the
+             intermediate graph using the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property
+             on all of the graph's vertices.
+            
+             <para>
+             The event fires on the thread on which <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             was called.  Although the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property is
+             not required to be thread-safe, it is safe to read the property during
+             the event because the implementation's worker thread blocks until the
+             event handler returns.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="E:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphCompleted">
+             <summary>
+             Occurs when a layout started by <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             completes, is cancelled, or ends with an error.
+             </summary>
+            
+             <remarks>
+             The event fires on the thread on which <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>
+             was called.
+             </remarks>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.RandomLayout.AnimationIterations">
+            Number of iterations used to animate the graph.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.RandomLayout.AnimationSleepMs">
+            Number of milliseconds to sleep between animation iterations.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.RandomLayout.#ctor">
+            <summary>
+            Initializes a new instance of the RandomLayout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.RandomLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.RandomLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.LayoutContext">
+            <summary>
+            Provides access to objects needed for laying out a graph.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutContext.#ctor(System.Drawing.Rectangle)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Microsoft.NodeXL.Layouts.LayoutContext"/> class.
+             </summary>
+            
+             <param name="graphRectangle">
+             The <see cref="T:System.Drawing.Rectangle"/> the graph is being laid out
+             within.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayoutContext.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.LayoutContext.m_oGraphRectangle">
+            The Rectangle the graph is being laid out within.
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle">
+             <summary>
+             Gets the <see cref="T:System.Drawing.Rectangle"/> the graph is being
+             laid out within.
+             </summary>
+            
+             <value>
+             The <see cref="T:System.Drawing.Rectangle"/> the graph is being laid out
+             within.
+             </value>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.SugiyamaLayout">
+             <summary>
+             Lays out a graph using the Sugiyama layered layout scheme.
+             </summary>
+            
+             <remarks>
+             This layout uses an algorithm based on Sugiyama's layered layout scheme.
+             It is implemented with the Microsoft Research GLEE (Graph Layout Execution
+             Engine) library.  GLEE was developed by Lev Nachmanson of Microsoft
+             Research and was available on the Microsoft Research download site as of
+             January 2007.
+            
+             <para>
+             The Microsoft.GLEE.dll assembly must be included in the build that uses
+             this class.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SugiyamaLayout.DefaultNodeXLVertexRadius">
+            Radius to use for the vertices, in NodeXL coordinates.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.#ctor">
+            <summary>
+            Initializes a new instance of the SugiyamaLayout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.TransformLayoutCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,Microsoft.NodeXL.Layouts.LayoutContext,System.Drawing.Drawing2D.Matrix)">
+             <summary>
+             Transforms a graph's current layout.
+             </summary>
+            
+             <param name="graph">
+             Graph whose layout needs to be transformed.
+             </param>
+            
+             <param name="originalLayoutContext">
+             <see cref="T:Microsoft.NodeXL.Layouts.LayoutContext"/> object that was passed to the most recent
+             call to <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </param>
+            
+             <param name="newLayoutContext">
+             Provides access to objects needed to transform the graph's layout.
+             </param>
+            
+             <param name="transformationMatrix">
+             Matrix that can be used to transform points from the original graph
+             rectangle to the new graph rectangle.
+             </param>
+            
+             <remarks>
+             After a graph has been laid out by <see cref="M:Microsoft.NodeXL.Layouts.ILayout.LayOutGraph(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>,
+             this method may get called to transform the graph's layout from one
+             rectangle to another.  <paramref name="originalLayoutContext"/>
+             contains the original graph rectangle, and <paramref name="newLayoutContext"/> contains the new graph rectangle.  The
+             base-class implementation transforms all the graph's vertex locations
+             from the original rectangle to the new one.  If the derived <see cref="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)"/> implementation added geometry metadata to the
+             graph, the derived class should override this method, transform the
+             geometry metadata, and call the base-class implementation to transform
+             the graph's vertex locations.
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.OnVertexMoveCore(Microsoft.NodeXL.Core.IVertex)">
+             <summary>
+             Processes a vertex that was moved after the graph was laid out.
+             </summary>
+            
+             <param name="vertex">
+             The vertex that was moved.
+             </param>
+            
+             <remarks>
+             An application may allow the user to move a vertex after the graph has
+             been laid out by <see cref="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)"/>.  This method is called
+             after the application has changed the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/>
+             property on <paramref name="vertex"/>.  If <see cref="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)"/> added geometry metadata to the graph,
+             vertices, or edges, <see cref="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.OnVertexMoveCore(Microsoft.NodeXL.Core.IVertex)"/> should modify the
+             metadata if necessary.
+            
+             <para>
+             The argument has already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GetNodeXLVertexRadius(Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Gets the vertex radius to use, in NodeXL coordinates.
+             </summary>
+            
+             <param name="oLayoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <returns> 
+             The vertex radius to use, in NodeXL coordinates.
+             </returns>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.NodeXLVertexToGleeNode(Microsoft.NodeXL.Core.IVertex)">
+             <summary>
+             Retrieves a GLEE node that has been stored as metadata in a NodeXL
+             vertex. 
+             </summary>
+            
+             <param name="oVertex">
+             NodeXL vertex.
+             </param>
+            
+             <returns>
+             The GLEE node corresponding to <paramref name="oVertex" />.
+             </returns>
+            
+             <remarks>
+             This method assumes that the GLEE node has been stored in the vertex's
+             metadata using the key ReservedMetadataKeys.SugiyamaGleeNode.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.NodeXLEdgeToGleeEdge(Microsoft.NodeXL.Core.IEdge)">
+             <summary>
+             Retrieves a GLEE edge that has been stored as metadata in a NodeXL
+             edge. 
+             </summary>
+            
+             <param name="oEdge">
+             NodeXL edge.
+             </param>
+            
+             <returns>
+             The GLEE edge corresponding to <paramref name="oEdge" />.
+             </returns>
+            
+             <remarks>
+             This method assumes that the GLEE edge has been stored in the edge's
+             metadata using the key ReservedMetadataKeys.SugiyamaGleeEdge.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GetTransformationMatrix(Microsoft.Glee.GleeGraph,System.Drawing.Rectangle)">
+             <summary>
+             Returns a <see cref="T:System.Drawing.Drawing2D.Matrix"/> that will transform coordinates in the
+             graph rectangle computed by the GLEE layout code to coordinates in the
+             NodeXL graph rectangle.
+             </summary>
+            
+             <param name="oGleeGraph">
+             GLEE graph that has been laid out.
+             </param>
+            
+             <param name="oNodeXLGraphRectangle">
+             Rectangle in which the NodeXL graph is being laid out.
+             </param>
+            
+             <returns>
+             A <see cref="T:System.Drawing.Drawing2D.Matrix"/> to transform coordinates.
+             </returns>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GleePointToTransformedPointF(Microsoft.Glee.Splines.Point,System.Drawing.Drawing2D.Matrix)">
+             <summary>
+             Converts a Microsoft.Glee.Splines.Point in GLEE coordinates to a PointF
+             in NodeXL coordinates.
+             </summary>
+            
+             <param name="oGleePoint">
+             Microsoft.Glee.Splines.Point to convert.
+             </param>
+            
+             <param name="oTransformationMatrix">
+             Matrix created by <see cref="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GetTransformationMatrix(Microsoft.Glee.GleeGraph,System.Drawing.Rectangle)"/>.
+             </param>
+            
+             <returns>
+             <paramref name="oGleePoint"/> in GLEE coordinates converted to a
+             PointF in NodeXL coordinates.
+             </returns>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GleePointToPointF(Microsoft.Glee.Splines.Point)">
+             <summary>
+             Converts a Microsoft.Glee.Splines.Point to a PointF.
+             </summary>
+            
+             <param name="oGleePoint">
+             Microsoft.Glee.Splines.Point to convert.
+             </param>
+            
+             <returns>
+             <paramref name="oGleePoint" /> converted to a PointF.
+             </returns>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GleeCurveToTransformedPointFArray(Microsoft.Glee.Splines.Curve,System.Drawing.Drawing2D.Matrix)">
+             <summary>
+             Converts a Microsoft.Glee.Splines.Curve to an array of PointF objects
+             in NodeXL coordinates.
+             </summary>
+            
+             <param name="oCurve">
+             Microsoft.Glee.Splines.Curve to convert.
+             </param>
+            
+             <param name="oTransformationMatrix">
+             Matrix created by <see cref="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GetTransformationMatrix(Microsoft.Glee.GleeGraph,System.Drawing.Rectangle)"/>.
+             </param>
+            
+             <returns>
+             An array of PointF objects suitable for drawing with the following
+             code, where aoCurvePoints is the returned array:
+            
+             <code>
+             GraphicsPath oGraphicsPath = new GraphicsPath();
+             
+             oGraphicsPath.AddBeziers(aoCurvePoints);
+             
+             oGraphics.DrawPath(oPen, oGraphicsPath);
+             </code>
+            
+             </returns>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.GleeCurveToPointFArray(Microsoft.Glee.Splines.Curve)">
+             <summary>
+             Converts a Microsoft.Glee.Splines.Curve to an array of PointF objects.
+             </summary>
+            
+             <param name="oCurve">
+             Microsoft.Glee.Splines.Curve to convert.
+             </param>
+            
+             <returns>
+             An array of PointF objects suitable for drawing with the following
+             code, where aoCurvePoints is the returned array:
+            
+             <code>
+             oTransformationMatrix.TransformPoints(aoCurvePoints);
+            
+             GraphicsPath oGraphicsPath = new GraphicsPath();
+             
+             oGraphicsPath.AddBeziers(aoCurvePoints);
+             
+             oGraphics.DrawPath(oPen, oGraphicsPath);
+             </code>
+            
+             </returns>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SugiyamaLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments">
+             <summary>
+             Stores the arguments passed to <see cref="M:Microsoft.NodeXL.Layouts.IAsyncLayout.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/>.
+             </summary>
+            
+             <remarks>
+             <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.LayOutGraphAsync(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)"/> uses an instance of this
+             class to pass its arguments to <see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.#ctor(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments"/> class.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.m_oGraph">
+            Graph to lay out.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.m_oLayoutContext">
+            Provides access to objects needed to lay out the graph.
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.Graph">
+             <summary>
+             Gets the graph to lay out.
+             </summary>
+            
+             <value>
+             The graph to lay out, as an <see cref="T:Microsoft.NodeXL.Core.IGraph"/>.
+             </value>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.LayoutContext">
+             <summary>
+             Gets the object that provides access to objects needed to lay out the
+             graph.
+             </summary>
+            
+             <value>
+             Object that provides access to objects needed to lay out the graph, as
+             a <see cref="P:Microsoft.NodeXL.Layouts.LayOutGraphAsyncArguments.LayoutContext"/>.
+             </value>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout">
+             <summary>
+             Lays out a graph using the Fruchterman-Reingold layout.
+             </summary>
+            
+             <remarks>
+             For details on the layout algorithm, see
+             http://www.cs.ubc.ca/rr/proceedings/spe91-95/spe/vol21/issue11/spe060tf.pdf.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             By default, the layout is initialized by setting the vertices to random
+             locations.  If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.FruchtermanReingoldLayoutSelectivelyRandomize"/>, however, only those vertices whose <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> is
+             set to  <see cref="F:Microsoft.NodeXL.Layouts.LayoutBase.RandomizeThisLocation"/> are randomized.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with a value of true, it
+             is included in layout calculations but its own location is left unmodified.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.#ctor">
+            <summary>
+            Initializes a new instance of the FruchtermanReingoldLayout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.InitializeMetadata(System.Collections.ICollection)">
+             <summary>
+             Stores required metadata on the graph's vertices before the layout
+             begins.
+             </summary>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.RemoveMetadata(System.Collections.ICollection)">
+             <summary>
+             Removes metadata from the graph's vertices after the layout is
+             complete.
+             </summary>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.CalculateRepulsiveForces(System.Collections.ICollection,System.Single)">
+             <summary>
+             Calculates the repulsive forces between the vertices.
+             </summary>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="k">
+             The "k" constant in the Fruchterman-Reingold algorithm.
+             </param>
+            
+             <remarks>
+             The results are stored in the FruchtermanReingoldVertexInfo object
+             stored in each vertex's Tag.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.CalculateAttractiveForces(System.Collections.ICollection,System.Single)">
+             <summary>
+             Calculates the attractive forces between the vertices.
+             </summary>
+            
+             <param name="edgesToLayOut">
+             Edges to lay out.
+             </param>
+            
+             <param name="k">
+             The "k" constant in the Fruchterman-Reingold algorithm.
+             </param>
+            
+             <remarks>
+             The results are added to the existing FruchtermanReingoldVertexInfo
+             object stored in each vertex's Tag.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.SetVertexLocations(System.Collections.ICollection,Microsoft.NodeXL.Layouts.LayoutContext,System.Single)">
+             <summary>
+             Sets the location of each vertex.
+             </summary>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="fTemperature">
+             Current temperature.  Must be greater than zero.
+             </param>
+            
+             <remarks>
+             This method is called at the end of each layout iteration.  For each
+             vertex, it modifies the vertex's location within an unbounded rectangle
+             based on the repulsive and attractive forces that have been calculated
+             for the vertex, transforms that unbounded location to a point within
+             the bounded graph rectangle, and sets the vertex's <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property to that bounded point.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.m_iIterations">
+            Number of times the algorithm should run.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.m_fC">
+            Gets or sets the constant that determines the strength of the
+            attractive and repulsive forces between the vertices.
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.C">
+             <summary>
+             Gets or sets the constant that determines the strength of the
+             attractive and repulsive forces between the vertices.
+             </summary>
+            
+             <value>
+             The "C" constant in the "Modelling the forces" section of the
+             Fruchterman-Reingold paper.  Must be greater than 0.  The default value
+             is 1.0.
+             </value>
+            
+             <remarks>
+             Increasing C decreases the attractive forces and increases the
+             repulsive forces; decreasing C increases the attractive forces and
+             decreases the repulsive forces.
+             </remarks>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout.Iterations">
+             <summary>
+             Gets or sets the number of times to run the Fruchterman-Reingold
+             algorithm.
+             </summary>
+            
+             <value>
+             The number of times to run the Fruchterman-Reingold algorithm when the
+             graph is laid out, as an Int32.  Must be greater than zero.  The
+             default value is 10.
+             </value>
+        </member>
+        <member name="T:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker">
+             <summary>
+             Contains methods that check method arguments and property values.
+             </summary>
+            
+             <remarks>
+             This can be used by a class that wants to check values passed to its
+             property setters and arguments passed to its methods.  The CheckXXX()
+             methods in this class throw an exception if a parameter value or method
+             argument is invalid.
+            
+             <para>
+             This class is marked internal to avoid compiler error CS0433 ("The
+             type ... exists in both ...") when an executable references two or more
+             assemblies that use this class.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the ArgumentChecker class.
+             </summary>
+            
+             <param name="sOwnerClassName">
+             Class name of the object that created this object.  The class name gets
+             prepended to all exception messages.  Sample: "MyClass".
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyNotNull(System.String,System.Object)">
+             <summary>
+             Throws an exception if a property value is null.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="oPropertyValue">
+             Property value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyNotEmpty(System.String,System.String)">
+             <summary>
+             Throws an exception if a string property value is null or has a length
+             of zero.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the string property.
+             </param>
+            
+             <param name="sPropertyValue">
+             Property value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyPositive(System.String,System.Double)">
+             <summary>
+             Throws an exception if a Double property value is not positive.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="dPropertyValue">
+             Property value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyPositive(System.String,System.Int32)">
+             <summary>
+             Throws an exception if an Int32 property value is not positive.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="iPropertyValue">
+             Property value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyPositive(System.String,System.Decimal)">
+             <summary>
+             Throws an exception if a Decimal property value is not positive.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="decPropertyValue">
+             Property value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyNotNegative(System.String,System.Int32)">
+             <summary>
+             Throws an exception if an Int32 property value is negative.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="iPropertyValue">
+             Property value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyNotEqual(System.String,System.String,System.String)">
+             <summary>
+             Throws an exception if a string property is equal to a specified
+             invalid value.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="sPropertyValue">
+             Property value to check.
+             </param>
+            
+             <param name="sInvalidValue">
+             Invalid value for <paramref name="sPropertyValue" />.  Can't be null.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyNotEqual(System.String,System.Int32,System.Int32)">
+             <summary>
+             Throws an exception if an Int32 property is equal to a specified
+             invalid value.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="iPropertyValue">
+             Property value to check.
+             </param>
+            
+             <param name="iInvalidValue">
+             Invalid value for <paramref name="iPropertyValue" />.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyInRange(System.String,System.Int32,System.Int32,System.Int32)">
+             <summary>
+             Throws an exception if an Int32 property value is not within a
+             specified range.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="iPropertyValue">
+             Property value to check.
+             </param>
+            
+             <param name="iMinimumValidValue">
+             Minimum allowed value.
+             </param>
+            
+             <param name="iMaximumValidValue">
+             Maximum allowed value.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyInRange(System.String,System.Single,System.Single,System.Single)">
+             <summary>
+             Throws an exception if a Single property value is not within a
+             specified range.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="fPropertyValue">
+             Property value to check.
+             </param>
+            
+             <param name="fMinimumValidValue">
+             Minimum allowed value.
+             </param>
+            
+             <param name="fMaximumValidValue">
+             Maximum allowed value.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyInRange(System.String,System.Double,System.Double,System.Double)">
+             <summary>
+             Throws an exception if a Double property value is not within a
+             specified range.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="dPropertyValue">
+             Property value to check.
+             </param>
+            
+             <param name="dMinimumValidValue">
+             Minimum allowed value.
+             </param>
+            
+             <param name="dMaximumValidValue">
+             Maximum allowed value.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckPropertyIsDefined(System.String,System.Object,System.Type)">
+             <summary>
+             Throws an exception if a property value is not defined within a
+             specified enumeration.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property.
+             </param>
+            
+             <param name="oPropertyValue">
+             Property value to check.
+             </param>
+            
+             <param name="oEnumType">
+             Type of the enumeration that <paramref name="oPropertyValue" /> is
+             supposed to be defined within.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentNotNull(System.String,System.String,System.Object)">
+             <summary>
+             Throws an exception if a method argument is null.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="oArgumentValue">
+             Argument to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentNotEmpty(System.String,System.String,System.String)">
+             <summary>
+             Throws an exception if a string method argument is null or has a length
+             of zero.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="sArgumentValue">
+             Argument value to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentPositive(System.String,System.String,System.Int32)">
+             <summary>
+             Throws an exception if an Int32 method argument is not positive.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="iArgumentValue">
+             Argument to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentPositive(System.String,System.String,System.Int64)">
+             <summary>
+             Throws an exception if an Int64 method argument is not positive.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="lArgumentValue">
+             Argument to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentPositive(System.String,System.String,System.Double)">
+             <summary>
+             Throws an exception if a Double method argument is not positive.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="dArgumentValue">
+             Argument to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentNotNegative(System.String,System.String,System.Int32)">
+             <summary>
+             Throws an exception if an Int32 method argument is negative.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="iArgumentValue">
+             Argument to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentNotNegative(System.String,System.String,System.Int64)">
+             <summary>
+             Throws an exception if an Int64 method argument is negative.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="lArgumentValue">
+             Argument to check.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.CheckArgumentIsDefined(System.String,System.String,System.Object,System.Type)">
+             <summary>
+             Throws an exception if a method argument is not defined within a
+             specified enumeration.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the argument to check.
+             </param>
+            
+             <param name="oArgumentValue">
+             Argument value to check.
+             </param>
+            
+             <param name="oEnumType">
+             Type of the enumeration that <paramref name="oArgumentValue" /> is
+             supposed to be defined within.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.ThrowPropertyException(System.String,System.String,System.Exception)">
+             <overloads>
+             Throws a new <see cref="T:System.ApplicationException"/> when the value passed
+             to a property setter is invalid.
+             </overloads>
+            
+             <summary>
+             Throws a new <see cref="T:System.ApplicationException"/> when the value passed
+             to a property setter is invalid and there is an inner exception.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property calling this method.
+             </param>
+            
+             <param name="sMessageDetails">
+             Exception message details.  Gets appended to the class and property
+             names.  See the example below.
+             </param>
+            
+             <param name="oInnerException">
+             Inner exception, or null if there is none.
+             </param>
+            
+             <remarks>
+             Call this method when the value passed to a property setter is invalid.
+             It throws an exception whose message automatically includes the class
+             and property names.
+             </remarks>
+            
+             <example>
+             If the class name that was passed to the <see cref="T:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker"/>
+             constructor is "MyClass", <paramref name="sPropertyName"/> is
+             "MyProperty", and <paramref name="sMessageDetails"/> is "The value
+             can't be null.", then the new exception's message is
+             "MyClass.MyProperty: The value can't be null."
+             </example>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.ThrowPropertyException(System.String,System.String)">
+             <summary>
+             Throws a new <see cref="T:System.ApplicationException"/> when the value passed
+             to a property setter is invalid and there is no inner exception.
+             </summary>
+            
+             <param name="sPropertyName">
+             Name of the property calling this method.
+             </param>
+            
+             <param name="sMessageDetails">
+             Exception message details.  Gets appended to the class and property
+             names.  See the example below.
+             </param>
+            
+             <remarks>
+             Call this method when the value passed to a property setter is invalid.
+             It throws an exception whose message automatically includes the class
+             and property names.
+             </remarks>
+            
+             <example>
+             If the class name that was passed to the <see cref="T:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker"/>
+             constructor is "MyClass", <paramref name="sPropertyName"/> is
+             "MyProperty", and <paramref name="sMessageDetails"/> is "The value
+             can't be null.", then the new exception's message is
+             "MyClass.MyProperty: The value can't be null."
+             </example>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.ThrowArgumentException(System.String,System.String,System.String,System.Exception)">
+             <overloads>
+             Throws a new <see cref="T:System.ArgumentException"/> when a method argument is
+             invalid.
+             </overloads>
+            
+             <summary>
+             Throws a new <see cref="T:System.ArgumentException"/> when a method argument is
+             invalid and there is an inner exception.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the invalid argument.
+             </param>
+            
+             <param name="sMessageDetails">
+             Exception message details.  Gets appended to the class and method
+             names.  See the example below.
+             </param>
+            
+             <param name="oInnerException">
+             Inner exception, or null if there is none.
+             </param>
+            
+             <remarks>
+             Call this method when a method argument is invalid.  It throws an
+             exception whose message automatically includes the class and method
+             names.
+             </remarks>
+            
+             <example>
+             If the class name that was passed to the <see cref="T:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker"/>
+             constructor is "MyClass", <paramref name="sMethodName"/> is
+             "MyMethod", <paramref name="sArgumentName"/> is "TheArgument", and
+             <paramref name="sMessageDetails"/> is "TheArgument can't be empty.",
+             then the new exception's message is "MyClass.MyMethod: TheArgument
+             can't be empty."
+             </example>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.ThrowArgumentException(System.String,System.String,System.String)">
+             <summary>
+             Throws a new <see cref="T:System.ArgumentException"/> when a method argument is
+             invalid and there is no inner exception.
+             </summary>
+            
+             <param name="sMethodName">
+             Name of the method calling this method.
+             </param>
+            
+             <param name="sArgumentName">
+             Name of the invalid argument.
+             </param>
+            
+             <param name="sMessageDetails">
+             Exception message details.  Gets appended to the class and method
+             names.  See the example below.
+             </param>
+            
+             <remarks>
+             Call this method when a method argument is invalid.  It throws an
+             exception whose message automatically includes the class and method
+             names.
+             </remarks>
+            
+             <example>
+             If the class name that was passed to the <see cref="T:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker"/>
+             constructor is "MyClass", <paramref name="sMethodName"/> is
+             "MyMethod", <paramref name="sArgumentName"/> is "TheArgument", and
+             <paramref name="sMessageDetails"/> is "TheArgument can't be empty.",
+             then the new exception's message is "MyClass.MyMethod: TheArgument
+             can't be empty."
+             </example>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Research.CommunityTechnologies.AppLib.ArgumentChecker.m_sOwnerClassName">
+            Class name of the object that created this object.
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.SinusoidHorizontalLayout">
+             <summary>
+             Lays out a graph by placing the vertices on a horizontal sine wave.
+             </summary>
+            
+             <remarks>
+             This layout places a graph's vertices on one cycle of a sine wave that
+             spans the rectangle horizontally from left to right.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with a value of true, it
+             is included in layout calculations but its own location is left unmodified.
+             </para>
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will
+             sort them.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.SinusoidLayout">
+             <summary>
+             Lays out a graph by placing the vertices on a horizontal or vertical sine
+             wave.
+             </summary>
+            
+             <remarks>
+             This layout places a graph's vertices on one cycle of a sine wave that
+             spans the rectangle either horizontally or vertically.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/>, it is included in layout
+             calculations but its own location is left unmodified.
+             </para>
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will
+             sort them.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.SortableLayoutBase">
+             <summary>
+             Base class for layouts that support vertex sorting and selective layout.
+             </summary>
+            
+             <remarks>
+             This is the base class for several layouts that support vertex sorting and
+             the layout of a subset of the graph's vertices.  The derived class must
+             implement the <see cref="M:Microsoft.NodeXL.Layouts.SortableLayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Collections.ICollection,System.ComponentModel.BackgroundWorker)"/> abstract method.
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will sort them.
+             </para>
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SortableLayoutBase.#ctor">
+            <summary>
+            Initializes a new instance of the SortableLayoutBase class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SortableLayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.  The graph is guaranteed to have at least one vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SortableLayoutBase.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Collections.ICollection,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously using specified
+             vertices that may be sorted.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SortableLayoutBase.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SortableLayoutBase.m_oVertexSorter">
+            The vertex sorter to use to sort the vertices before they are laid out,
+            or null if the vertices should not be sorted.
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter">
+             <summary>
+             Gets or sets the vertex sorter to use.
+             </summary>
+            
+             <value>
+             The vertex sorter to use to sort the vertices before they are laid out,
+             as an <see cref="T:Microsoft.NodeXL.Core.IVertexSorter"/>, or null if the vertices should not
+             be sorted.
+             </value>
+            
+             <remarks>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will sort them.  The
+             ByMetadataVertexSorter and ByDelegateVertexSorter classes can be used
+             for this.
+             </remarks>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SinusoidLayout.AnimationIterations">
+            Number of iterations used to animate the graph the first time it is
+            drawn.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SinusoidLayout.AnimationSleepMs">
+            Number of milliseconds to sleep between animation iterations.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SinusoidLayout.#ctor(System.Boolean,System.Double)">
+             <summary>
+             Initializes a new instance of the SinusoidLayout class.
+             </summary>
+            
+             <param name="isHorizontal">
+             true for a sine wave that runs from left to right, false for top to
+             bottom.
+             </param>
+            
+             <param name="cycleLength">
+             Length of the sine wave cycle, in radians.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SinusoidLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Collections.ICollection,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously using specified
+             vertices that may be sorted.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SinusoidLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SinusoidLayout.m_bIsHorizontal">
+            true for a sine wave that runs from left to right, false for top to
+            bottom.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SinusoidLayout.m_dCycleLength">
+            Length of the sine wave cycle, in radians.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SinusoidHorizontalLayout.#ctor">
+            <summary>
+            Initializes a new instance of the SinusoidHorizontalLayout class.
+            </summary>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.SinusoidVerticalLayout">
+             <summary>
+             Lays out a graph by placing the vertices on a vertical sine wave.
+             </summary>
+            
+             <remarks>
+             This layout places a graph's vertices on one cycle of a sine wave that
+             spans the rectangle vertically from top to bottom.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/>, it is included in layout
+             calculations but its own location is left unmodified.
+             </para>
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will
+             sort them.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SinusoidVerticalLayout.#ctor">
+            <summary>
+            Initializes a new instance of the SinusoidVerticalLayout class.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil">
+             <summary>
+             Set of static methods that perform graphics operations not available
+             directly through GDI+.
+             </summary>
+            
+             <remarks>
+             Do not try to instantiate an object of this type.  All methods are static.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.#ctor">
+             <summary>
+             Do not use this contructor.
+             </summary>
+            
+             <remarks>
+             All methods on this class are static, so there is no need to create a
+             GraphicsUtil object.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.PixelsToPoints(System.Drawing.Graphics,System.Single,System.Single,System.Single@,System.Single@)">
+             <summary>
+             Converts a height and width from pixels to points.
+             </summary>
+            
+             <param name="oGraphics">
+             Object that will do the conversion.
+             </param>
+            
+             <param name="fWidthPx">
+             Width in pixels.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fHeightPx">
+             Height in pixels.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fWidthPt">
+             Where the width in points gets stored.
+             </param>
+            
+             <param name="fHeightPt">
+             Where the height in points gets stored.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.PointsToPixels(System.Drawing.Graphics,System.Single,System.Single,System.Single@,System.Single@)">
+             <summary>
+             Converts a height and width from points to pixels.
+             </summary>
+            
+             <param name="oGraphics">
+             Object that will do the conversion.
+             </param>
+            
+             <param name="fWidthPt">
+             Width in points.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fHeightPt">
+             Height in points.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fWidthPx">
+             Where the width in pixels gets stored.
+             </param>
+            
+             <param name="fHeightPx">
+             Where the height in pixels gets stored.
+             </param>
+            
+             <remarks>
+             There are two versions of this method.  This version converts to
+             floating-point pixels.  The other converts to integer pixels.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.PointsToPixels(System.Drawing.Graphics,System.Single,System.Single,System.Int32@,System.Int32@)">
+             <summary>
+             Converts a height and width from points to pixels.
+             </summary>
+            
+             <param name="oGraphics">
+             Object that will do the conversion.
+             </param>
+            
+             <param name="fWidthPt">
+             Width in points.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fHeightPt">
+             Height in points.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="iWidthPx">
+             Where the width in pixels gets stored.
+             </param>
+            
+             <param name="iHeightPx">
+             Where the height in pixels gets stored.
+             </param>
+            
+             <remarks>
+             There are two versions of this method.  This version converts to
+             integer pixels.  The other converts to floating-point pixels.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawCircle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)">
+             <summary>
+             Draws a circle defined by a center point and radius.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oPen">
+             Pen to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the circle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the circle's center.
+             </param>
+            
+             <param name="fRadius">
+             Radius of the circle.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillCircle(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single)">
+             <summary>
+             Fills the interior of a circle defined by a center point and radius.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oBrush">
+             Brush to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the circle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the circle's center.
+             </param>
+            
+             <param name="fRadius">
+             Radius of the circle.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillCircle3D(System.Drawing.Graphics,System.Drawing.Color,System.Single,System.Single,System.Single)">
+             <summary>
+             Fills the interior of a circle defined by a center point and radius
+             using 3-D shading.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oColor">
+             Color to use.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the circle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the circle's center.
+             </param>
+            
+             <param name="fRadius">
+             Radius of the circle.  Must be greater than zero.
+             </param>
+            
+             <remarks>
+             The circle is shaded to make it look as if it's a 3-D sphere.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawSquare(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)">
+             <summary>
+             Draws a square defined by a center point and half-width.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oPen">
+             Pen to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the square's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the square's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square.
+             </param>
+            
+             <remarks>
+             The square is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawCircle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillSquare(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single)">
+             <summary>
+             Fills the interior of a square defined by a center point and
+             half-width.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oBrush">
+             Brush to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the square's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the square's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square.
+             </param>
+            
+             <remarks>
+             The square is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillCircle(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillSquare3D(System.Drawing.Graphics,System.Drawing.Color,System.Single,System.Single,System.Single)">
+             <summary>
+             Fills the interior of a square using 3-D shading.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oColor">
+             Color to use.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the square's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the square's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square.
+             </param>
+            
+             <remarks>
+             The square is shaded to make it look as if it's 3-D.
+            
+             <para>
+             The square is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillCircle(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single)"/>.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawDiamond(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)">
+             <summary>
+             Draws a diamond defined by a center point and half-width.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oPen">
+             Pen to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the diamond.
+             </param>
+            
+             <remarks>
+             The diamond is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawCircle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillDiamond(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single)">
+             <summary>
+             Fills a diamond defined by a center point and half-width.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oBrush">
+             Brush to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the diamond.
+             </param>
+            
+             <remarks>
+             The diamond is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawCircle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawTriangle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)">
+             <summary>
+             Draws an equilateral triangle defined by a center point and half-width.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oPen">
+             Pen to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square that bounds the triangle.
+             </param>
+            
+             <remarks>
+             The triangle is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawCircle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillTriangle(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single)">
+             <summary>
+             Fills an equilateral triangle defined by a center point and half-width.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oBrush">
+             Brush to draw with.
+             </param>
+            
+             <param name="fXCenter">
+             x-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square that bounds the triangle.
+             </param>
+            
+             <remarks>
+             The triangle is specified as a center point and half-width to make this
+             method compatible with <see cref="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawCircle(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.Clear(System.Drawing.Graphics,System.Drawing.Color)">
+             <summary>
+             Clears the entire drawing surface and fills it with the specified
+             background color.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oColor">
+             <see cref="T:System.Drawing.Color"/> structure that represents the background color of
+             the drawing surface. 
+             </param>
+            
+             <remarks>
+             This adds a GDI bug workaround to <see cref="M:System.Drawing.Graphics.Clear(System.Drawing.Color)"/>.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.CreateRoundedRectangleGraphicsPath(System.Drawing.Rectangle,System.Int32)">
+             <summary>
+             Creates a GraphicsPath that describes a rectangle with rounded corners.
+             </summary>
+            
+             <param name="oRectangle">
+             Rectangle to add rounded corners to.
+             </param>
+            
+             <param name="iCornerRadius">
+             Radius of the rectangle's corners.
+             </param>
+            
+             <returns>
+             A new GraphicsPath.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.FillTextRectangle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean)">
+             <summary>
+             Fills the interior of a rectangle that will contain text.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oRectangle">
+             Rectangle to draw on.  If empty, this method does nothing.
+             </param>
+            
+             <param name="bTextIsSelected">
+             true if the text is selected.
+             </param>
+            
+             <remarks>
+             This method fills the interior of a rectangle with either the system
+             window or system highlight color, depending on whether the text is
+             selected.  Call this method before you draw the text.  When you draw
+             the text, use SystemBrushes.HighlightText or SystemBrushes.WindowText
+             as the text color.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.RadiusToArea(System.Double)">
+             <summary>
+             Returns the area of a circle given its radius.
+             </summary>
+            
+             <param name="dRadius">
+             The circle's radius.
+             </param>
+            
+             <returns>
+             The circle's area.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.AreaToRadius(System.Double)">
+             <summary>
+             Returns the radius of a circle given its area.
+             </summary>
+            
+             <param name="dArea">
+             The circle's area.
+             </param>
+            
+             <returns>
+             The circle's radius.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.SquareFromCenterAndHalfWidth(System.Single,System.Single,System.Single)">
+             <summary>
+             Returns a square given a center point and half-width.
+             </summary>
+            
+             <param name="fXCenter">
+             x-coordinate of the square's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the square's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square.
+             </param>
+            
+             <returns>
+             The specified square.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DiamondFromCenterAndHalfWidth(System.Single,System.Single,System.Single)">
+             <summary>
+             Returns an array of points that define a diamond given a center point
+             and half-width.
+             </summary>
+            
+             <param name="fXCenter">
+             x-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the diamond.
+             </param>
+            
+             <returns>
+             The specified diamond.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.GetDiamondEdgeMidpoints(System.Single,System.Single,System.Single)">
+             <summary>
+             Returns an array of points on the midpoints of a diamond's edges given
+             a center point and half-width.
+             </summary>
+            
+             <param name="fXCenter">
+             x-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the diamond's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the diamond.
+             </param>
+            
+             <returns>
+             The midpoints of the specified diamond.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.TriangleFromCenterAndHalfWidth(System.Single,System.Single,System.Single)">
+             <summary>
+             Returns an array of points that define an equilateral triangle given a
+             center point and half-width.
+             </summary>
+            
+             <param name="fXCenter">
+             x-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square that bounds the triangle.
+             </param>
+            
+             <returns>
+             The specified triangle.  The order of the points is top, lower-right,
+             lower-left.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.GetTriangleEdgeMidpoints(System.Single,System.Single,System.Single)">
+             <summary>
+             Returns an array of points on the midpoints of an equilateral
+             triangle's edges given a center point and half-width.
+             </summary>
+            
+             <param name="fXCenter">
+             x-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fYCenter">
+             y-coordinate of the triangle's center.
+             </param>
+            
+             <param name="fHalfWidth">
+             One half the width of the square that bounds the triangle.
+             </param>
+            
+             <returns>
+             The midpoints of the specified triangle.
+             </returns>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.RectangleFToRectangle(System.Drawing.RectangleF,System.Int32)">
+             <summary>
+             Converts a RectangleF to a Rectangle.
+             </summary>
+            
+             <param name="oRectangle">
+             Rectangle to convert.
+             </param>
+             
+             <param name="iPenWidthPx">
+             Width of the pen that will be used to draw the rectangle.
+             </param>
+            
+             <returns>
+             Converted rectangle.
+             </returns>
+            
+             <remarks>
+             This method converts a floating-point RectangleF to an integer
+             Rectangle, compensating for some GDI oddities in the process.
+            
+             <para>
+             If precise rectangle drawing is required, the caller should convert
+             all RectangleF objects to Rectangles using this method, then use the
+             Graphics.DrawRectangle(Pen, Rectangle) method to draw them.  The
+             floating-point version of Graphics.DrawRectangle() should not be used.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.SaveHighQualityImage(System.Drawing.Image,System.String,System.Drawing.Imaging.ImageFormat)">
+             <summary>
+             Saves an Image object to a specified file in a specified format using
+             high quality settings.
+             </summary>
+            
+             <param name="oImage">
+             Image to save.
+             </param>
+             
+             <param name="sFileName">
+             Full path of the file to save to.
+             </param>
+            
+             <param name="eImageFormat">
+             File format.
+             </param>
+            
+             <remarks>
+             Use this instead of Image.Save(filename, format) if you want a high-
+             quality image.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.SaveJpegImage(System.Drawing.Image,System.String,System.Int32)">
+             <summary>
+             Saves an image to a JPEG file with a specified quality level.
+             </summary>
+            
+             <param name="oImage">
+             Image to save.
+             </param>
+             
+             <param name="sFileName">
+             Full path of the file to save to.
+             </param>
+            
+             <param name="iQuality">
+             Quality level to use.  I THINK this can be from 1 to 100; the
+             documentation is not clear.
+             </param>
+            
+             <remarks>
+             Image.Save(..., ImageFormat.Jpeg) uses a low quality by default.  This
+             method allows the quality to be specified.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DrawErrorStringOnGraphics(System.Drawing.Graphics,System.Drawing.Rectangle,System.String)">
+             <summary>
+             Draws an error string on a Graphics object.
+             </summary>
+            
+             <param name="oGraphics">
+             Object to draw on.
+             </param>
+            
+             <param name="oRectangle">
+             Rectangle to draw on.
+             </param>
+            
+             <param name="sString">
+             String to draw.
+             </param>
+            
+             <remarks>
+             This can be used to draw error strings on bitmaps in a uniform manner.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.GetImageCodecInfoForMimeType(System.String)">
+             <summary>
+             Gets the ImageCodecInfo object for a specified MIME type.
+             </summary>
+            
+             <param name="sMimeType">
+             MIME type.
+             </param>
+            
+             <remarks>
+             An exception is thrown if the requested object isn't found.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.ConvertPixelsAndPoints(System.Boolean,System.Drawing.Graphics,System.Single,System.Single,System.Single@,System.Single@)">
+             <summary>
+             Converts a height and width from pixels to points, or vice versa.
+             </summary>
+            
+             <param name="bPixelsToPoints">
+             true to convert pixels to points, false to convert points to pixels.
+             </param>
+            
+             <param name="oGraphics">
+             Object that will do the conversion.
+             </param>
+            
+             <param name="fWidthIn">
+             Input width.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fHeightIn">
+             Input height.  Must be greater than or equal to zero.
+             </param>
+            
+             <param name="fWidthOut">
+             Where the converted width gets stored.
+             </param>
+            
+             <param name="fHeightOut">
+             Where the converted height gets stored.
+             </param>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DisposePen(System.Drawing.Pen@)">
+             <summary>
+             Disposes of a pen.
+             </summary>
+            
+             <param name="oPen">
+             Pen to dispose.  Can be null.  Gets set to null.
+             </param>
+            
+             <remarks>
+             If <paramref name="oPen" /> isn't null, this method calls the Dispose
+             method on <paramref name="oPen" />, then sets it to null.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DisposeSolidBrush(System.Drawing.SolidBrush@)">
+             <summary>
+             Disposes of a solid brush.
+             </summary>
+            
+             <param name="oSolidBrush">
+             SolidBrush to dispose.  Can be null.  Gets set to null.
+             </param>
+            
+             <remarks>
+             If <paramref name="oSolidBrush" /> isn't null, this method calls the
+             Dispose method on <paramref name="oSolidBrush" />, then sets it to
+             null.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DisposeBrush(System.Drawing.Brush@)">
+             <summary>
+             Disposes of a brush.
+             </summary>
+            
+             <param name="oBrush">
+             Brush to dispose.  Can be null.  Gets set to null.
+             </param>
+            
+             <remarks>
+             If <paramref name="oBrush" /> isn't null, this method calls the Dispose
+             method on <paramref name="oBrush" />, then sets it to null.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DisposeGraphics(System.Drawing.Graphics@)">
+             <summary>
+             Disposes of a Graphics object.
+             </summary>
+            
+             <param name="oGraphics">
+             Graphics object to dispose.  Can be null.  Gets set to null.
+             </param>
+            
+             <remarks>
+             If <paramref name="oGraphics" /> isn't null, this method calls the
+             Dispose method on <paramref name="oGraphics" />, then sets it to null.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DisposeGraphicsPath(System.Drawing.Drawing2D.GraphicsPath@)">
+             <summary>
+             Disposes of a GraphicsPath object.
+             </summary>
+            
+             <param name="oGraphicsPath">
+             GraphicsPath object to dispose.  Can be null.  Gets set to null.
+             </param>
+            
+             <remarks>
+             If <paramref name="oGraphicsPath" /> isn't null, this method calls the
+             Dispose method on <paramref name="oGraphicsPath" />, then sets it to
+             null.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.Research.CommunityTechnologies.GraphicsLib.GraphicsUtil.DisposeBitmap(System.Drawing.Bitmap@)">
+             <summary>
+             Disposes of a Bitmap object.
+             </summary>
+            
+             <param name="oBitmap">
+             Bitmap object to dispose.  Can be null.  Gets set to null.
+             </param>
+            
+             <remarks>
+             If <paramref name="oBitmap" /> isn't null, this method calls the
+             Dispose method on <paramref name="oBitmap" />, then sets it to null.
+             </remarks>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.CircleLayout">
+             <summary>
+             Lays out a graph by placing the vertices on a circle.
+             </summary>
+            
+             <remarks>
+             This layout places a graph's vertices on a circle whose diameter is the
+             smaller of the rectangle's dimensions.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with a value of true, it
+             is included in layout calculations but its own location is left unmodified.
+             </para>
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will
+             sort them.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.CircleLayout.AnimationIterations">
+            Number of iterations used to animate the graph the first time it is
+            drawn.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.CircleLayout.AnimationSleepMs">
+            Number of milliseconds to sleep between animation iterations.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.CircleLayout.#ctor">
+            <summary>
+            Initializes a new instance of the CircleLayout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.CircleLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Collections.ICollection,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously using specified
+             vertices that may be sorted.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.CircleLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.SpiralLayout">
+             <summary>
+             Lays out a graph by placing the vertices on a spiral.
+             </summary>
+            
+             <remarks>
+             This layout places a graph's vertices on a spiral scaled to the smaller of
+             the rectangle's dimensions.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with a value of true, it
+             is included in layout calculations but its own location is left unmodified.
+             </para>
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will
+             sort them.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SpiralLayout.MaximumSpiralAngle">
+            Maximum angle of the spiral, in radians.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SpiralLayout.AnimationIterations">
+            Number of iterations used to animate the graph the first time it is
+            drawn.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.SpiralLayout.AnimationSleepMs">
+            Number of milliseconds to sleep between animation iterations.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SpiralLayout.#ctor">
+            <summary>
+            Initializes a new instance of the SpiralLayout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SpiralLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Collections.ICollection,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously using specified
+             vertices that may be sorted.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.SpiralLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.GridLayout">
+             <summary>
+             Lays out a graph by placing the vertices on a grid.
+             </summary>
+            
+             <remarks>
+             This layout places a graph's vertices on a simple grid.
+            
+             <para>
+             If the graph has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LayOutTheseVerticesOnly"/>, only the vertices
+             specified in the value's IVertex array are laid out and all other vertices
+             are completely ignored.
+             </para>
+            
+             <para>
+             If a vertex has a metadata key of <see cref="F:Microsoft.NodeXL.Core.ReservedMetadataKeys.LockVertexLocation"/> with a value of true, it
+             is included in layout calculations but its own location is left unmodified.
+             </para>
+            
+             <para>
+             If you want the vertices to be placed in a certain order, set the <see cref="P:Microsoft.NodeXL.Layouts.SortableLayoutBase.VertexSorter"/> property to an object that will
+             sort them.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.GridLayout.AnimationIterations">
+            Number of iterations used to animate the graph the first time it is
+            drawn.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.GridLayout.AnimationSleepMs">
+            Number of milliseconds to sleep between animation iterations.
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.GridLayout.#ctor">
+            <summary>
+            Initializes a new instance of the GridLayout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.GridLayout.LayOutGraphCore(Microsoft.NodeXL.Core.IGraph,Microsoft.NodeXL.Layouts.LayoutContext,System.Collections.ICollection,System.ComponentModel.BackgroundWorker)">
+             <summary>
+             Lays out a graph synchronously or asynchronously using specified
+             vertices that may be sorted.
+             </summary>
+            
+             <param name="graph">
+             Graph to lay out.
+             </param>
+            
+             <param name="verticesToLayOut">
+             Vertices to lay out.  The collection is guaranteed to have at least one
+             vertex.
+             </param>
+            
+             <param name="layoutContext">
+             Provides access to objects needed to lay out the graph.  The <see cref="P:Microsoft.NodeXL.Layouts.LayoutContext.GraphRectangle"/> is guaranteed to have non-zero
+             width and height.
+             </param>
+            
+             <param name="backgroundWorker">
+             <see cref="T:System.ComponentModel.BackgroundWorker"/> whose worker thread called this method
+             if the graph is being laid out asynchronously, or null if the graph is
+             being laid out synchronously.
+             </param>
+            
+             <returns>
+             true if the layout was successfully completed, false if the layout was
+             cancelled.  The layout can be cancelled only if the graph is being laid
+             out asynchronously.
+             </returns>
+            
+             <remarks>
+             This method lays out the graph <paramref name="graph"/> either
+             synchronously (if <paramref name="backgroundWorker"/> is null) or
+             asynchronously (if (<paramref name="backgroundWorker"/> is not null)
+             by setting the the <see cref="P:Microsoft.NodeXL.Core.IVertex.Location"/> property on all of
+             the graph's vertices and optionally adding geometry metadata to the
+             graph, vertices, or edges.
+            
+             <para>
+             In the asynchronous case, the <see cref="P:System.ComponentModel.BackgroundWorker.CancellationPending"/> property on the
+             <paramref name="backgroundWorker"/> object should be checked before
+             each layout iteration.  If it's true, the method should immediately
+             return false.  Also, <see cref="M:Microsoft.NodeXL.Layouts.AsyncLayoutBase.FireLayOutGraphIterationCompleted"/> should be
+             called after each iteration.
+             </para>
+            
+             <para>
+             The arguments have already been checked for validity.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.GridLayout.GetRowsAndColumns(System.Collections.ICollection,Microsoft.NodeXL.Layouts.LayoutContext,System.Int32@,System.Int32@)">
+             <summary>
+             Gets the number of rows and columns to use in the grid.
+             </summary>
+            
+             <param name="oVerticesToLayOut">
+             Vertices to lay out.
+             </param>
+            
+             <param name="oLayoutContext">
+             Provides access to objects needed to lay out the graph.
+             </param>
+            
+             <param name="iRows">
+             Where the number of grid rows gets stored.  Because the first row of
+             vertices is drawn on the first horizontal grid line and not on the top
+             edge of the rectangle, the number of vertices to draw per column is
+             <paramref name="iRows" /> minus one.
+             </param>
+            
+             <param name="iColumns">
+             Where the number of grid columns gets stored.  Because the first column
+             of vertices is drawn on the first vertical grid line and not on the
+             left edge of the rectangle, the number of vertices to draw per row is
+             <paramref name="iColumns" /> minus one.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.GridLayout.SolveQuadratic(System.Double,System.Double,System.Double,System.Double@,System.Double@)">
+             <summary>
+             Solves a quadratic equation.
+             </summary>
+            
+             <param name="a">
+             See remarks.  Can't be zero.
+             </param>
+            
+             <param name="b">
+             See remarks.
+             </param>
+            
+             <param name="c">
+             See remarks.
+             </param>
+            
+             <param name="x1">
+             Where the first solution gets stored.
+             </param>
+            
+             <param name="x2">
+             Where the second solution gets stored.
+             </param>
+            
+             <remarks>
+             This method solves this quadratic formula:
+            
+             <para>
+               2
+             ax  + bx + c = 0
+             </para>
+            
+             <para>
+             It stores the two values of x at <paramref name="x1" /> and <paramref
+             name="x2" />.
+             </para>
+            
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.GridLayout.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo">
+             <summary>
+             Stores information calculated by <see cref="T:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout"/>
+             for one vertex.
+             </summary>
+            
+             <remarks>
+             <see cref="T:Microsoft.NodeXL.Layouts.FruchtermanReingoldLayout"/> calculates several pieces of
+             information about each vertex in the graph being laid out.  Instead of
+             storing each piece of information in a separate vertex metadata key, which
+             would require multiple key lookups and inefficient boxing and unboxing of
+             value types, it stores all the information for the vertex in one instance
+             of type <see cref="T:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo"/> and stores the
+             instance in a single key.
+             </remarks>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.#ctor(System.Drawing.PointF)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo"/> class.
+             </summary>
+            
+             <param name="initialLocation">
+             The vertex's initial location within the bounded graph rectangle.
+             </param>
+        </member>
+        <member name="M:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.AssertValid">
+            <summary>
+            Asserts if the object is in an invalid state.  Debug-only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.m_fUnboundedLocationX">
+            The vertex's location within an unbounded rectangle.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.m_fUnboundedLocationY">
+            
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.m_fDisplacementX">
+            The vertex's displacement with respect to its current unbounded
+            location.
+        </member>
+        <member name="F:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.m_fDisplacementY">
+            
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.UnboundedLocationX">
+             <summary>
+             Gets or sets the x-coordinate of the vertex's location within an
+             unbounded rectangle.
+             </summary>
+            
+             <value>
+             The x-coordinate of the vertex's location within an unbounded
+             rectangle.
+             </value>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.UnboundedLocationY">
+             <summary>
+             Gets or sets the y-coordinate of the vertex's location within an
+             unbounded rectangle.
+             </summary>
+            
+             <value>
+             The y-coordinate of the vertex's location within an unbounded
+             rectangle.
+             </value>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.DisplacementX">
+             <summary>
+             Gets or sets the vertex's horizontal displacement with respect to its
+             current unbounded location.
+             </summary>
+            
+             <value>
+             The vertex's horizontal displacement with respect to its current
+             unbounded location.  The default value is zero.
+             </value>
+        </member>
+        <member name="P:Microsoft.NodeXL.Layouts.FruchtermanReingoldVertexInfo.DisplacementY">
+             <summary>
+             Gets or sets the vertex's vertical displacement with respect to its
+             current unbounded location.
+             </summary>
+            
+             <value>
+             The vertex's vertical displacement with respect to its current
+             unbounded location.  The default value is zero.
+             </value>
+        </member>
+    </members>
+</doc>

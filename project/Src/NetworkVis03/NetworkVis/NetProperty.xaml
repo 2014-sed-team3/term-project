@@ -1,0 +1,144 @@
+﻿<Window x:Class="NetworkVis.NetProperty"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="NetProperty" Height="720" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        
+            <TabControl Grid.Row="0" >
+            <TabItem Header="General">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="130"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0">
+                        <Label Content="Network Name:"/>
+                        <TextBox x:Name="NetworkNameTextBox" Margin="5,5,5,5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <Label Content="Description:"/>
+                        <TextBox x:Name="NetworkDescTextBox" Height="80" VerticalScrollBarVisibility="Visible" Margin="5,5,5,5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="2">
+                        <Label Content="Author:"/>
+                        <TextBox x:Name="AuthorTextBox" Margin="5,5,5,5"/>
+                    </StackPanel> 
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <Label Content="Security PIN:"/>
+                        <PasswordBox x:Name="PasswordTextBox" Password="1234" Width="60" Height="20" VerticalAlignment="Top" Margin="5,5,5,5"/>
+                    </StackPanel>
+                    
+                </Grid>
+                
+            </TabItem>
+            <TabItem Header="Connection">
+               
+                <StackPanel Orientation="Vertical">
+                 <Label Content="Select a Connection Type: " Margin="5,5,5,5"/>
+                    <ComboBox x:Name="DBType" Height="30" Margin="5,5,5,5" SelectedIndex="0">
+                        <ComboBoxItem Content="ADO.Net"/>
+                    </ComboBox> 
+                    <Label Content="Connection String: " Margin="5,5,5,5"/>
+                <TextBox x:Name="ConnectString" Text="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=H:\\Graph\\InfoMesa\\Firefly\\Associations.mdb" Height="150" Margin="5,5,5,5" />
+                    <Button x:Name="TestConnection" Focusable="False" Content="Test Connection" Margin="5,20,5,5" Width="150" Height="35" Click="FireConnection"/>
+                    <Label Content="Tips:" FontWeight="Bold" Margin="5,5,0,0"/>
+                    <Label Content="For local hard drive/file connections use an extra backslash (i.e. C:\\filename.mdb)" Margin="5,5,0,0"/>
+                    <Label Content="Click here for Connection String References and Formats" Margin="5,5,0,-0"/>
+                    <Label Content="Ensure that all connection libraries are installed." Margin="5,5,0,-0"/>
+                </StackPanel>
+                               
+                
+            </TabItem> 
+            <TabItem Header="Node Mapping">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="220"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions> 
+                    
+               
+        
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+                        <Label Content="Query for Retrieving Nodes:" Margin="5,5,5,5"/>
+                        <TextBox x:Name="NodeSQL" Text="select Id, NodeName from Nodes" Height="140" VerticalScrollBarVisibility="Visible" Margin="5,5,5,5"/>
+                        <Button Content="Load" x:Name="LoadNodesElements" Click="LoadNodes" Width="80"/>
+        </StackPanel> 
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <Label Content="Node Name:" Width="200"/>
+                        <ComboBox x:Name="NodeName" Width="250"/>
+        </StackPanel> 
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Label Content="Node ID (Used for Edge Linkage):" Width="200"/>
+            <ComboBox x:Name="NodeID" Width="250"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <Label Content="Node Label:" Width="200"/>
+            <ComboBox x:Name="NodeLabel" Width="250"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
+            <Label Content="Node Value:" Width="200"/>
+            <ComboBox x:Name="NodeValue" Width="250"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="5">
+            <Label Content="Node Type:" Width="200"/>
+            <ComboBox x:Name="NodeType" Width="250"/>
+        </StackPanel>
+                    
+       
+        </Grid>
+        </TabItem>
+        <TabItem Header="Edge Mapping">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="220"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0">
+                        <Label Content="Query for Retrieval of Edges:"/>
+                        <TextBox x:Name="EdgeSQL" Text="select edgeid, fromid, toid from Edges" Height="150" VerticalScrollBarVisibility="Visible"/>
+                        <Button Content="Load" x:Name="LoadEdgeElements" Click="LoadEdges" Width="80"/>
+                </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <Label Content="Edge ID: (Used for Linkage)" Width="200"/>
+                         <ComboBox x:Name="EdgeID" Width="250"/>
+                    </StackPanel> 
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Label Content="Edge Name:" Width="200"/>
+                        <ComboBox x:Name="EdgeName" Width="250"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <Label Content="Edge Type:" Width="200"/>
+                        <ComboBox x:Name="EdgeType" Width="250"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="4">
+                        <Label Content="From Edge ID:" Width="200"/>
+                        <ComboBox x:Name="FromEdge" Width="250"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="5">
+                        <Label Content="To Edge ID:" Width="200"/>
+                        <ComboBox x:Name="ToEdge" Width="250"/>
+                    </StackPanel>
+                    </Grid> 
+            </TabItem> 
+            <TabItem Header="Actions"/>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button x:Name="SaveNet" Content="Save" Width="90" Height="35" HorizontalAlignment="Right" Margin="5,5,5,5"/>
+        </StackPanel>
+        </Grid>
+</Window>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NetworkVis">
+</Property><Property Name="Solution File" Value="D:\Projects\TextVisualization\NetworkVis\NetworkVis.sln">
+</Property><Property Name="User Options File" Value="D:\Projects\TextVisualization\NetworkVis\NetworkVis.suo">
+</Property><Property Name="Date" Value="2012年4月7日">
+</Property><Property Name="Time" Value="下午 18:54">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="NetworkVis.sln" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis.sln">
+</Event><Event ErrorLevel="0" Project="" Source="NetworkVis.suo" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis.suo">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\NetworkVis.csproj" Description="Project file successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\NetworkVis.csproj">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\NetworkVis.csproj.user" Description="Project user file successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\NetworkVis.csproj.user">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\App.xaml.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\App.xaml.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Window1.xaml.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Window1.xaml.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Animator.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Animator.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Callouts.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Callouts.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\ColorPick.xaml.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\ColorPick.xaml.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\LocalNet.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\LocalNet.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\NetProperty.xaml.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\NetProperty.xaml.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Networkmanager.xaml.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Networkmanager.xaml.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\PadLink.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\PadLink.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\PadPoint.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\PadPoint.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Properties\Resources.Designer.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Properties\Settings.Designer.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Repository.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Repository.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Splash.xaml.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Splash.xaml.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Tween.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Tween.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\UniversePadPoint.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\UniversePadPoint.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Viewpoint.cs" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Viewpoint.cs">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Properties\Settings.settings" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Properties\Resources.resx" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\App.xaml" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\App.xaml">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\ColorPick.xaml" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\ColorPick.xaml">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\NetProperty.xaml" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\NetProperty.xaml">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Networkmanager.xaml" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Networkmanager.xaml">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Splash.xaml" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Splash.xaml">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\Window1.xaml" Description="File successfully backed up as D:\Projects\TextVisualization\NetworkVis\Backup\NetworkVis\Window1.xaml">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\NetworkVis.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="NetworkVis" Source="NetworkVis\NetworkVis.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="NetworkVis.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="NetworkVis.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="NetworkVis" Source="NetworkVis\NetworkVis.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

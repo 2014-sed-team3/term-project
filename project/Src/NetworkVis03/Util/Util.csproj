@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F0DA064-8E3A-45D9-826A-3CCB1A748E47}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Smrf.NodeXL.Util</RootNamespace>
+    <AssemblyName>Smrf.NodeXL.Util</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Common\KeyFile.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Smrf.NodeXL.Util.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\..\Common\Assemblies\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\BinaryHeap.cs">
+      <Link>BinaryHeap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\BinaryHeapItem.cs">
+      <Link>BinaryHeapItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\CollectionUtil.cs">
+      <Link>CollectionUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\ColorUtil.cs">
+      <Link>ColorUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\DateTimeUtil2.cs">
+      <Link>DateTimeUtil2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\EnumUtil.cs">
+      <Link>EnumUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\EventUtil.cs">
+      <Link>EventUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Excel\ExcelColumnFormat.cs">
+      <Link>Excel\ExcelColumnFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Excel\ExcelDateTimeUtil.cs">
+      <Link>Excel\ExcelDateTimeUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\ExceptionUtil.cs">
+      <Link>ExceptionUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\FileUtil.cs">
+      <Link>FileUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\GraphicsUtil.cs">
+      <Link>GraphicsUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\MathUtil.cs">
+      <Link>MathUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\PersistableStringDictionary.cs">
+      <Link>PersistableStringDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SentenceConcatenator.cs">
+      <Link>SentenceConcatenator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\SocialNetwork\Twitter\TwitterStatusTextParser.cs">
+      <Link>SocialNetwork\Twitter\TwitterStatusTextParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\StringUtil.cs">
+      <Link>StringUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TermCounters\CountedTermBase.cs">
+      <Link>TermCounters\CountedTermBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TermCounters\CountedWord.cs">
+      <Link>TermCounters\CountedWord.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TermCounters\CountedWordPair.cs">
+      <Link>TermCounters\CountedWordPair.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TermCounters\TermCounterBase.cs">
+      <Link>TermCounters\TermCounterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TermCounters\WordCounter.cs">
+      <Link>TermCounters\WordCounter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TermCounters\WordPairCounter.cs">
+      <Link>TermCounters\WordPairCounter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\XmlUtil2.cs">
+      <Link>XmlUtil2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\ZipUtil.cs">
+      <Link>ZipUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\AssemblyUtil2.cs">
+      <Link>AssemblyUtil2.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

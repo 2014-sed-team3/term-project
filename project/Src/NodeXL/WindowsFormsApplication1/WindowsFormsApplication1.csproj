@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>5c6551fa-a584-45d2-9adc-e4d13f07c71c</ProjectGuid>
+    <ProjectGuid>{9DAC82D5-7D56-430A-91B4-80DE71270D17}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplication1</RootNamespace>
@@ -52,6 +52,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,6 +76,52 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Adapters\Adapters.csproj">
+      <Project>{49bf210b-2fb1-4955-9553-b4c9db275352}</Project>
+      <Name>Adapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
+      <Project>{1e286552-2364-419b-b8a0-d21b860bc60f}</Project>
+      <Name>Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApplicationUtil\ApplicationUtil.csproj">
+      <Project>{f7845042-b212-4d74-9343-da2052f83234}</Project>
+      <Name>ApplicationUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphDataProviders\GraphDataProviders.csproj">
+      <Project>{64bd817e-c145-413c-bd58-9e053c4b20b5}</Project>
+      <Name>GraphDataProviders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphMLFileProcessor\GraphMLFileProcessor.csproj">
+      <Project>{2ac12919-b90b-4bc5-9390-1b10f1684045}</Project>
+      <Name>GraphMLFileProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layouts\Layouts.csproj">
+      <Project>{76604c5f-9442-4e48-b7a9-212507550a27}</Project>
+      <Name>Layouts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetworkServer\NetworkServer.csproj">
+      <Project>{81f182f8-7f5f-43ca-96be-d25781368f48}</Project>
+      <Name>NetworkServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9f0da064-8e3a-45d9-826a-3ccb1a748e47}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControl\WpfControl.csproj">
+      <Project>{5e12ec39-6ec0-4962-97c6-c8506d0c6c67}</Project>
+      <Name>WpfControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfVisualization\WpfVisualization.csproj">
+      <Project>{3228c440-7166-44e1-a1a2-036ecdd9371f}</Project>
+      <Name>WpfVisualization</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
