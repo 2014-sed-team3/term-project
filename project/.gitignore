@@ -1,5 +1,10 @@
 *.cache
-*.dll
+BuildProcessTemplates/*.dll  
+FB/*.dll  
+NodeXL/*.dll
+obj/
+bin/
+Debug/
 *.suo
 *.exe
 *.exe.manifest

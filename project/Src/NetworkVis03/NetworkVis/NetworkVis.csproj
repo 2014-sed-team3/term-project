@@ -55,9 +55,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.GLEE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f84f738e1fc245c, processorArchitecture=MSIL">
+    <Reference Include="MIConvexHullPlugin, Version=1.0.10.1021, Culture=neutral, PublicKeyToken=7d233ba7875a1b76, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\work\net_msr\NodeXLClassLibraries_1.0.1.76\Microsoft.GLEE.dll</HintPath>
+      <HintPath>..\Layouts\References\MIConvexHullPlugin.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\otherDll\MySql.Data.dll</HintPath>
