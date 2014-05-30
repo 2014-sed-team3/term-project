@@ -102,6 +102,7 @@ namespace facebook_pages_crawler
             int retryTIme = 10 * 1000;
             while (true)
             {
+                if (result != null && result.IsDictionary == false) break;
                 if (result == null || result.Dictionary.ContainsKey("error_msg") || result.Dictionary.ContainsKey("error"))
                 {
                     //若發生error 檢查是何種error 若無error再透過exception離開迴圈
