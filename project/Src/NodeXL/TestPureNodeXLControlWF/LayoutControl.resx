@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="tsMouse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>150, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tsbMouseModeSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAETSURBVDhPndI9SsVAFEDhQKIm5s9GVNAgiKVY2GUDFnYP
+        0ljoDtxACAS0sbANCGJwCS4guAXLgKWNXTrBQq7nFgNBzHtvvPAVU+TMTBKHuUUATxf/GUGDHdhHgiCQ
+        KIo08gT7SBiGkue5BkxkG8tH4jiWsizFdV0TecTykSRJpG1bybLMBOwiaZpK13VSFMU4oB6wOKKBvu+l
+        rmvzMsfusYXpiAaGYZCqqsT3/d+BxRENNE0jnud9sTQPPeMKlzjFAXz8OfrAB+7wNlrPcIRdbGDyGi+4
+        QIES5hQ32IOLuaP3O8Yh9E98hwZecYJ1zJ1VxFiD7nYNDXzjDJuwGj32JzRyjgxWs4J96O76BfRnmhjH
+        +QEVHlim2Ly1jAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbMouseModeSelect.ToolTipText" xml:space="preserve">
+    <value>Select
+
+• Click a vertex to select it.
+
+• Drag a box to select multiple vertices.
+
+• Click a vertex while holding down the Ctrl key to toggle the vertex's selection state.
+
+• Drag a box while holding down the Ctrl key to toggle the selection state of multiple vertices.
+
+• Drag a selected vertex to move it.</value>
+  </data>
+  <data name="tsbMouseModeAddToSelection.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEiSURBVDhPndI7SsRQFIDhgURNzMtGVNAgiKVY2GUDFnYD
+        aSx0B24gBALaWNgGBDG4BBcQ3IJlwNLGLp1gIcf/CFeuj5AZD3zFJbl/bmYyYS7hw9XFf0ZQYwPzR3zf
+        lzAMNXKH+SNBEEiWZRowkXXMHomiSIqiEMdxTOQWs0fiOJamaSRNUxOYL5IkibRtK3me2wF1g/GIBrqu
+        k6qqzI9pu8YahiMa6PteyrIUz/N+BsYjGqjrWlzXfWNpNt3jDKc4xA48/Dm64QVXeLLWU+xhEyswJ9Dr
+        3+YBJ8hRwJziAltwYM+vgL7fPnahX+Iz9KZHHGAZOiZs+5xFRFiCPu0cevEdR1iFPV8bh0aP/Qq98Rgp
+        7BkNLGAb+nT9B/RjGpjJ5ANeN2GdiloKRgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbMouseModeAddToSelection.ToolTipText" xml:space="preserve">
+    <value>Add to Selection
+
+• Click a vertex to add it to the selection.
+
+• Drag a box to add multiple vertices to the selection.
+
+• Click a vertex while holding down the Ctrl key to toggle the vertex's selection state.
+
+• Drag a box while holding down the Ctrl key to toggle the selection state of multiple vertices.
+
+• Drag a selected vertex to move it.</value>
+  </data>
+  <data name="tsbMouseModeSubstractFromSelection.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEWSURBVDhPndI7SsVAFIDhQKIm5mUjKmgQxFIs7LIBC7sL
+        aSx0B24gBALaWNgGBDG4BBcQ3IJlwNLGLp1gIcf/CANBjPeOB75iCPPnNQ5zjQCeLv4zggZbsI8EQSBR
+        FGnkAfaRMAwlz3MNmMgmFo/EcSxlWYrruiZyj8UjSZJI27aSZZkJ2EXSNJWu66QoinFA3WF+RAN930td
+        1+Zjjt1iA9MRDQzDIFVVie/7PwPzIxpomkY8z/tgaTY94gLnOMYefPw6uuENN3gZrWc4wDbWMPkaTzhD
+        gRLmKa6wAxd/jr7fIfahJ/EVGnjGEVahY8Jj37OMGCvQu11CL37iBOuwGn3sd2jkFBmsZgm70LvrH9DD
+        NDGO8wUhSl2hBM+xZQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbMouseModeSubstractFromSelection.ToolTipText" xml:space="preserve">
+    <value>Subtract from Selection
+
+• Click a vertex to subtract it from the selection.
+
+• Drag a box to subtract multiple vertices from the selection.
+
+• Click a vertex while holding down the Ctrl key to toggle the vertex's selection state.
+
+• Drag a box while holding down the Ctrl key to toggle the selection state of multiple vertices.</value>
+  </data>
+  <data name="tsbMouseModeZoomIn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHxSURBVDhPY0AGu3btst+2bduEDRs2HF6+fPmxxYsXT549
+        e7YrVBo3OHbsGOf27dtnHjly9P+Va9f/33v05P/t+4//Hzt19v/ylav/t7W1Le3o6OCHKscEW7dunXP+
+        wsX/n7/9/P/+y/f/bz5++//i3Zf/T958+v/g5Yf/K9dt+l9UVLQOqhwVbNy40ePgwUMomgML1oIxSPOd
+        Z+/+33j85n/PhCn/Y2Njw6HaEGDFihVbbt25h2IzzACY5isPXv3fvPfo/6CgoMNQbQgADKQnz169RbEZ
+        HV+4++L/0Ut3/7u6un6AakOASZMmvXry8i2Kzej4zK1n/w9fuvff0tLyG1QbAgBD+MC5S9fhAQZyNkwj
+        yGaQ5hPXn/xfuf3gf11d3fNQbQhQWVmZPG/hYpQAQ7YZpPnI1Uf/swor/qtpaFRAtaGClJSUXXMXLYMH
+        GLLNIM3lDe3/IyMjvxYUl6+vr69ng2pDgNDQUAkfH59Lbd0T/u86eg6uecP+U/8zC8v/29vb/5w+Y+b/
+        aUCcX1S2DqshFhYWnFZWVqWGhoY3dHR0/quqqv6Xl5e/Jy0t3Wzn6HSmt2/C/+vXr4MNAbpkI1ZDcAFj
+        Y2N+e3vnk9Q3pKh8MlSaOIBsSERE7L309HRpqBTxAGyIk9NSb29voGYGBgC4OaPpPRNS4AAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="tsbMouseModeZoomOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPY0AGu3btst+2bduEDRs2HF6+fPmxxYsXT549
+        e7YrVBo3OHbsGOf27dtnHjly9P+Va9f/33v05P/t+4//Hzt19v/ylav/t7W1Le3o6OCHKscEW7dunXP+
+        wsX/n7/9/P/+y/f/bz5++//i3Zf/T958+v/g5Yf/K9dt+l9UVLQOqhwVbNy40ePgwUM4Nd959u7/jcdv
+        /vdMmPI/NjY2HKoNAVasWLHl1p17eDVfefDq/+a9R/8HBQUdhmpDAGAgPXn26i1Yc2DBWqz4wt0X/49e
+        uvvf1dX1A1QbAkyaNOnVk5dvwTZj0wzCZ249+3/40r3/lpaW36DaEAAYwgfOXbqO1dkgm0GaT1x/8n/l
+        9oP/dXV1z0O1IUBlZWXyvIWL8Wo+cvXR/6zCiv9qGhoVUG2oICUlZdfcRctwai5vaP8fGRn5taC4fH19
+        fT0bVBsChIaGSvj4+Fxq657wf9fRc3DNG/af+p9ZWP7f3t7+5/QZM/9PA+L8orJ1WA2xsLDgtLKyKjU0
+        NLyho6PzX1VV9b+8vPw9aWnpZjtHpzO9fRP+X79+HWwI0CUbsRqCCxgbG/Pb2zufpL4hReWTodLEAWRD
+        IiJi76Wnp0tDpYgHYEOcnJZ6e3sDNTMwAADo+q34P2w1aAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbMouseModeTranslate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKqSURBVDhPbVJLT5NBFP0SfwArVyb+ElesfCzcmBgXYIxE
+        ZQGiIWiABShWBBJagh9BCFAKFL5SaLE8bGlLixQQKCBSHiUUkYdAgcpbxBy/M7RNNN5kcnJn7plz7p2R
+        /g1FUS5YnYOpZsdAQesH93ZLtwdNNpdcb+1trDXbb0TL/h9W51Ci1TWEwclZ1Fvd22vhXWzs7EFvcWB4
+        ah5tjgFUNHXIWn3H5Sjl72iz+0yzoVX8ODhWVd0Cd/YOUW3qwupWBKH1MMr0ZsiNVhRVGnOitPNQHKMJ
+        VNg/OsHRyalQJTJXVYWTbxs7KKluxthsCG/eGZFXWnM7SucFjgSlxytIp7/OhCqRuU5V3Yrsqy52oakw
+        YGZpHV0fx5FdXNEntXR7k4ydLl9DhzOp6b0Lxz9PcXb2W6gSmVM1HDkQbeTpasQFIzNLyCqUIRlsLl9g
+        cQU2zzD07fa4A6rGHGhkQ9xBdkmluGA4EMLj/FJIJLE39lildMZnUFzVLJA5VWMzyNSUYzq0Bt+XRaTm
+        FkGqUrrEdGlPbrSIqXP6e4fH8VfY3KX6+SvMLW9gcmEF3okg7me9gsQnCa5s4uv3bWjrTEKJdtkzkTnJ
+        PGddQFWn/d6RGSQ/yYOkrWsVPfGQCrTJXkkiMuc+z1nnn1uGZ3wenb4p3EnLhVRcZRSbvJn2FtTCxbUt
+        dYUFMuc+z1nXPxlEz9A02jzjuPXoOaSCt3q5vMGCgc9B0RsHRKXYYs592qYyye3eCbQ4R3EzJRPiE6kf
+        4nV+WS1s/X4xXRbznYnMOTD2TNtUJjmntBbX72bI4gLG05e61IwXWlSbHbB/CsChEohUtKlEi6pqcvsF
+        OVdXp5LT5av30i5G6efxIKfwSsozjVCJrdY+PxTXmCByGXoGcS0pPZKY/PCSJEnSH9sm5Y1nLX2ZAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="tsbMouseModeTranslate.ToolTipText" xml:space="preserve">
+    <value>Move Around
+
+• Drag to move around the zoomed-in graph.
+
+• (You can also move around at any time by dragging with the middle mouse button, or by dragging with the left mouse button while holding down the space bar.)</value>
+  </data>
+  <metadata name="tsTop.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="tsbShowGraph.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKWSURBVDhPY8AH4tJbpF1n3DSHckkH0yV5yorDoqdBuaQB
+        37zZ4puUmP/vEmH4n5TUyQsVJg7Y169XcGvbU15vZ15UGBq31r37cBBUijCwqtzgGFC7tscle7KUTkit
+        pUHmnCzvimV+/s3bHaBKUIFu7mKZTDs3x1W8DHExQenJ1pUbk6FSDKrRfe8kfep/+ZTMr/Bt2TnPo36t
+        TOiqVcz2OTM1NLyLc3SCq0wYtDOXy2a5eB66ws/wv8AzeKN66RxeNc9iT7vkCV5uhfNXW6X0d4MMy4tI
+        n7ZJGqgmrXKNWdn6I1oR3f91QpoWgG2qsLER7FUV2OGUPiHZKHnyHJ2Yvv/WKRO2+JUuVvcoWeAGUpMZ
+        ltq6m4/hf35Eertj9+Ewx9xZ601j2jzABoCATUxngEneYlMGhv+MBuHNO5yyp+e75s+qsatcd9Cpaq2R
+        U93m9uCkliSQWr/O7ephbdu80mbOZAVrBgGj1KmONvFdqSC2Q+pEe4f8Geb2uTNSghIaJtab69ZEJlYn
+        Gtdv4gLJ+1etSvGrX+MCYsOBRUK7rnVybw6IbRDeWGKeOvkyyDV1JjqJV1kZ/he5+zeC5EJDVzH7lC8v
+        9StdJgXiw4FZ9EQ+w+RJMcaR9SJa0d0fjOL6fhplznHzja2Lr7I06vRK6SwHqfMoWabnWbo4H6wJHRiF
+        1brrx3UFGsZ17TKL7thtk9yz0jpjcgFIzrZkRbBNYreWbfpEf9+a1WFgDehgrSzDiTob0//qKTMyoEIM
+        NukTtWyzpifYp02qMIrv+68V0/3BOK2DHyqNAKHGxvwztIX+b5BiOAwVQgEWcb3SujE9DwwjJn6yt69n
+        gQojgETynFDt4HofKBcnsEvt93Mvnu8N4TEwAAA75+AeqWbTlQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripLabel1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC7SURBVDhPY8AFeibP+2/qEPx/176j/6FCpAGQ5rsvfvw3
+        t7YnbAA220BskOZVq1bBxXC6iljbcKrDZhsIuETVovBxqcMAMI3oNFaAy192IeX/b99/9h9EQ4XAAEM9
+        ur9AttmHVvx/+eb9f3339P/FLTP+y1uE/5c0CQLLY4QDLn+Z+xf875q+8r+qfTyKOFHhAHIBiFawjADT
+        IBeAaJwAVzjAnA0D9E0H2Gwjyv8wQKyrcAKSbCMfMDAAAKke5BPXzUt4AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="tssbLayout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIfSURBVDhPrdFdSFNhHMfx57qbLryqG8sVEkLQRQQWURQR
+        BFG0wmH0osKiGGoSYYSKFGatMkuKIKGcZZk0PTZQL4IZpaZlYy/M9UIN2ubWXO6cM+++PZsZDF8q6A8/
+        Dpxzfp/z8D/iv48eqEfzVaO5q+T1LJrLzK9Hf57k+BFS0XZmfjh+JzXZiuopR/OeXhpSPRZZtpGa7skC
+        9HiHvP+QKV8d34dMCyOav4ZUrCNT4JkFmg6C3TJ7gli7zCP0cCsTipHw++b5iOaukC8rs0CTEX+eoEgI
+        ZhI93Hb0UnZVwdrpIO67wNiDnUS997KRNJCa6soASdM6zslyIFegR25SZrUjCmXEcdTP1YTeVKI0bswG
+        kqNFpMJtGSAdXS4uXdbDtzCYFMRymYJOCZwhMWHB0WAg+Ko+G/no2C43Lk8RaUP/1iLLLWhBK2rwIuqn
+        CtQPJ1ADJ0l4Sxm4nk+g79T8XTjv5jJs20TUuYuEx0xywow1sJV9/QJzpyDpLyU2ZmLg2hoC/QsAc6PU
+        5xAeOSCBEir9BgpuCMSxNFBC6LURe10OEdedhYGQYuDt/Q1ERvYz7TuKWVmGKBesvSSIuw7xrn0LT2tW
+        LP71yPNVfH1RTMJlIuE+LBEZbzGxcfl7u7fx5PxKvgzWLg6k52XzeiadOwgN7iY2vJfg4B6GbJvpqs0l
+        NNq4dHlueq8U0nd5NY9r8+huyCforPq74r+NED8BOW2mg1k/n+oAAAAASUVORK5CYII=
+</value>
+  </data>
+</root>
