@@ -106,6 +106,11 @@ public class NodeXLApplicationSettingsBase : ApplicationSettingsBase
         // AssertValid();
     }
 
+    public void NotUseWorkbookSettings()
+    {
+        m_bUseWorkbookSettings = false;
+    }
+
     //*************************************************************************
     //  Property: Item[]
     //
