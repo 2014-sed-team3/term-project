@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="facebook_pages_crawler">
+</Property><Property Name="Solution File" Value="D:\iii\c sharp\facebook_pages_crawler_ideas_tech\facebook_pages_crawler.sln">
+</Property><Property Name="User Options File" Value="D:\iii\c sharp\facebook_pages_crawler_ideas_tech\facebook_pages_crawler.suo">
+</Property><Property Name="Date" Value="2012年11月1日">
+</Property><Property Name="Time" Value="上午 09:54">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="facebook_pages_crawler.sln" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler.sln">
+</Event><Event ErrorLevel="0" Project="" Source="facebook_pages_crawler.suo" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler.suo">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\facebook_pages_crawler.csproj" Description="Project file successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\facebook_pages_crawler.csproj">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\DBConnection.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\DBConnection.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\FBGraph.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\FBGraph.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Form1.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Form1.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Form1.Designer.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\JSONObject.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\JSONObject.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Program.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Program.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Properties\Resources.Designer.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Properties\Settings.Designer.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\SearchForm.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\SearchForm.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\SearchForm.Designer.cs" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\SearchForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Properties\Settings.settings" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Form1.resx" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Form1.resx">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\Properties\Resources.resx" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\SearchForm.resx" Description="File successfully backed up as D:\iii\c sharp\facebook_pages_crawler_ideas_tech\Backup\facebook_pages_crawler\SearchForm.resx">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\facebook_pages_crawler.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="facebook_pages_crawler" Source="facebook_pages_crawler\facebook_pages_crawler.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="facebook_pages_crawler.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="facebook_pages_crawler.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="facebook_pages_crawler" Source="facebook_pages_crawler\facebook_pages_crawler.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
