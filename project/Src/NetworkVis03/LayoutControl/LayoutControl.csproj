@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LayoutControls</RootNamespace>
+    <AssemblyName>LayoutControls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\LayoutControls.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.ServerDocument, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="Smrf.NodeXL.Control.Wpf">
+      <HintPath>..\WpfControl\bin\Debug\Smrf.NodeXL.Control.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.NodeXL.Layouts">
+      <HintPath>..\Layouts\bin\Debug\Smrf.NodeXL.Layouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.NodeXL.Util">
+      <HintPath>..\Util\bin\Debug\Smrf.NodeXL.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.WinFormsControls, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\ExcelTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\GeneralUserSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\GeneralUserSettingsDialog.designer.cs">
+      <DependentUpon>GeneralUserSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\LabelUserSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\LabelUserSettingsDialog.designer.cs">
+      <DependentUpon>LabelUserSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\LayoutUserSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\LayoutUserSettingsDialog.Designer.cs">
+      <DependentUpon>LayoutUserSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\MaximumLabelLengthControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialog\MaximumLabelLengthControl.designer.cs">
+      <DependentUpon>MaximumLabelLengthControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\VertexLabelPositionComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Exception\ErrorUtil.cs" />
+    <Compile Include="Exception\ProjectInformation.cs" />
+    <Compile Include="LayoutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LayoutControl.designer.cs">
+      <DependentUpon>LayoutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserSettings\GeneralUserSettings.cs" />
+    <Compile Include="UserSettings\LabelUserSettings.cs" />
+    <Compile Include="UserSettings\LayoutUserSettings.cs" />
+    <Compile Include="UserSettings\NodeXLApplicationSettingsBase.cs" />
+    <Compile Include="ValueConverter\AlphaConverter.cs" />
+    <Compile Include="ValueConverter\EdgeWidthConverter.cs" />
+    <Compile Include="ValueConverter\INumericValueConverter.cs" />
+    <Compile Include="ValueConverter\NumericValueConverterBase.cs" />
+    <Compile Include="ValueConverter\TextValueConverterBase.cs" />
+    <Compile Include="ValueConverter\VertexLabelPositionConverter.cs" />
+    <Compile Include="ValueConverter\VertexRadiusConverter.cs" />
+    <Compile Include="ValueConverter\VertexShapeConverter.cs" />
+    <EmbeddedResource Include="Dialog\GeneralUserSettingsDialog.resx">
+      <DependentUpon>GeneralUserSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\LabelUserSettingsDialog.resx">
+      <DependentUpon>LabelUserSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\MaximumLabelLengthControl.resx">
+      <DependentUpon>MaximumLabelLengthControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutControl.resx">
+      <DependentUpon>LayoutControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Adapters\Adapters.csproj">
+      <Project>{49BF210B-2FB1-4955-9553-B4C9DB275352}</Project>
+      <Name>Adapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
+      <Project>{1E286552-2364-419B-B8A0-D21B860BC60F}</Project>
+      <Name>Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApplicationUtil\ApplicationUtil.csproj">
+      <Project>{F7845042-B212-4D74-9343-DA2052F83234}</Project>
+      <Name>ApplicationUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8BA6250F-0771-43A0-8EE7-EBD24FB1ECCE}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layouts\Layouts.csproj">
+      <Project>{76604C5F-9442-4E48-B7A9-212507550A27}</Project>
+      <Name>Layouts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9F0DA064-8E3A-45D9-826A-3CCB1A748E47}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControl\WpfControl.csproj">
+      <Project>{5E12EC39-6EC0-4962-97C6-C8506D0C6C67}</Project>
+      <Name>WpfControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfVisualization\WpfVisualization.csproj">
+      <Project>{3228c440-7166-44e1-a1a2-036ecdd9371f}</Project>
+      <Name>WpfVisualization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
