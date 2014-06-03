@@ -1132,7 +1132,7 @@ namespace facebook_pages_crawler
                         {
                             shares = post.Dictionary["shares"].Dictionary["count"].String;
                         }
-                        string sql = "insert into allinone (id,datatype,data_id,author,message,picture,url,name,caption,comment_id,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
+                        string sql = "insert into allinone (post_id,datatype,author_id,author,message,picture,url,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
                             "\"" + postID + "\",\"" + datatype + "\",\"" + fromID + "\",?fname,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description," + likes + ",?created_time,?update_time," + comments + "," + shares + ",?updatetime) " +
                             "ON DUPLICATE KEY UPDATE message =?message, likes=" + likes + ",comments=" + comments + ",shares=" + shares + ",updated_time=?update_time,updatetime=?updatetime";
                         //showMessage.AppendText(sql + "\n");
@@ -1332,6 +1332,7 @@ namespace facebook_pages_crawler
 					string type=" ";
 					string object_id=" ";
 					string description=" ";
+					string source=" ";
 					int comments=0;
 					int shares=0;
 					
@@ -1385,8 +1386,8 @@ namespace facebook_pages_crawler
                         "?comment_id,?page_id,?post_id,?from_id,?from_name,?message,?created_time,?post_created_time,?likes,?updatetime) " +
                         "ON DUPLICATE KEY UPDATE likes=?likes,updatetime=?updatetime";*/
                     
-					sql = "insert into allinone (id,datatype,data_id,author,message,picture,url,name,caption,comment_id,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
-                            "?page_id,?datatype,?from_id,?from_name,?message,?picture,?link,?name,?caption,?comment_id,?icon,?type,?object_id,?description,?likes,?created_time,?update_time,?comments,?shares,?updatetime)" ;
+					sql = "insert into allinone (post_id,datatype,author_id,author,message,picture,url,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
+                            "?post_id,?datatype,?from_id,?from_name,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description,?likes,?created_time,?update_time,?comments,?shares,?updatetime)" ;
 				/*	while (true)
                     {
                         try
@@ -1420,10 +1421,9 @@ namespace facebook_pages_crawler
                         {
                             MySqlCommand cmd = new MySqlCommand(sql, conn.conn);
                             
-                            
-							cmd.Parameters.AddWithValue("?page_id", pageID);
+                            cmd.Parameters.AddWithValue("?post_id", commID);
+						//	cmd.Parameters.AddWithValue("?page_id", pageID);
 							cmd.Parameters.AddWithValue("?datatype", datatype);
-                        //    cmd.Parameters.AddWithValue("?post_id", postID);
                             cmd.Parameters.AddWithValue("?from_id", fromID);
                             cmd.Parameters.AddWithValue("?from_name", fromName);
                             cmd.Parameters.AddWithValue("?message", message);
@@ -1431,7 +1431,7 @@ namespace facebook_pages_crawler
 							cmd.Parameters.AddWithValue("?link", link);
 							cmd.Parameters.AddWithValue("?name", name);
 							cmd.Parameters.AddWithValue("?caption", caption);
-							cmd.Parameters.AddWithValue("?comment_id", commID);
+							cmd.Parameters.AddWithValue("?source", source);
 							cmd.Parameters.AddWithValue("?icon", icon);
 							cmd.Parameters.AddWithValue("?type", type);
 							cmd.Parameters.AddWithValue("?object_id", object_id);

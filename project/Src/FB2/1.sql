@@ -20,16 +20,16 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `allinone`;
 CREATE TABLE `allinone` (
-`id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`post_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `datatype`  int(10)  NOT NULL ,
-`data_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`author_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `author` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `message`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `picture`  varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `url`  varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `name`  varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `caption`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`comment_id`  varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+`source`  varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `icon`  varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `type`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `object_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
@@ -40,7 +40,7 @@ CREATE TABLE `allinone` (
 `comments`  int(10)  NOT NULL ,
 `shares`  int(11)  NOT NULL ,
 `updatetime`  datetime DEFAULT NULL ,
-PRIMARY KEY (`id`)
+PRIMARY KEY (`post_id`)
 )
 ENGINE=MyISAM
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
