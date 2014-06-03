@@ -796,7 +796,7 @@ namespace facebook_pages_crawler
                     {
                         get_post(pagesInfoArray[0], access_token, since, null);
                     }
-                    sql = "select count(*) from allinone where page_id = \"" + pagesInfoArray[0] + "\"";
+                    sql = "select count(*) from allinone where id = \"" + pagesInfoArray[0] + "\"";
                     while (true)
                     {
                         try
@@ -1132,7 +1132,7 @@ namespace facebook_pages_crawler
                         {
                             shares = post.Dictionary["shares"].Dictionary["count"].String;
                         }
-                        string sql = "insert into allinone (id,datatype,from_id,from_name,message,picture,link,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
+                        string sql = "insert into allinone (id,datatype,data_id,author,message,picture,url,name,caption,comment_id,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
                             "\"" + postID + "\",\"" + datatype + "\",\"" + fromID + "\",?fname,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description," + likes + ",?created_time,?update_time," + comments + "," + shares + ",?updatetime) " +
                             "ON DUPLICATE KEY UPDATE message =?message, likes=" + likes + ",comments=" + comments + ",shares=" + shares + ",updated_time=?update_time,updatetime=?updatetime";
                         //showMessage.AppendText(sql + "\n");
@@ -1321,6 +1321,20 @@ namespace facebook_pages_crawler
                     string commID = "";
                     string message = "";
                     string likes = "0";
+					
+					//----------------//
+					int datatype=2;
+					string picture=" ";
+					string link=" ";
+					string name=" ";
+					string caption=" ";
+					string icon=" ";
+					string type=" ";
+					string object_id=" ";
+					string description=" ";
+					int comments=0;
+					int shares=0;
+					
                     DateTime created_time = DateTime.Now;
                     if (comment.Dictionary.ContainsKey("id"))
                     {
@@ -1367,10 +1381,13 @@ namespace facebook_pages_crawler
                     {
                         Console.WriteLine("In Comment fetch exception with comment created_time \n");
                     }
-                    sql = "insert ignore into pages_posts_comments (comment_id,page_id,post_id,from_id,from_name,message,created_time,post_created_time,likes,updatetime) values (" +
+				/*	sql = "insert ignore into pages_posts_comments (comment_id,page_id,post_id,from_id,from_name,message,created_time,post_created_time,likes,updatetime) values (" +
                         "?comment_id,?page_id,?post_id,?from_id,?from_name,?message,?created_time,?post_created_time,?likes,?updatetime) " +
-                        "ON DUPLICATE KEY UPDATE likes=?likes,updatetime=?updatetime";
-                    while (true)
+                        "ON DUPLICATE KEY UPDATE likes=?likes,updatetime=?updatetime";*/
+                    
+					sql = "insert into allinone (id,datatype,data_id,author,message,picture,url,name,caption,comment_id,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
+                            "?page_id,?datatype,?from_id,?from_name,?message,?picture,?link,?name,?caption,?comment_id,?icon,?type,?object_id,?description,?likes,?created_time,?update_time,?comments,?shares,?updatetime)" ;
+				/*	while (true)
                     {
                         try
                         {
@@ -1395,7 +1412,51 @@ namespace facebook_pages_crawler
                             conn.closeMySqlConnection();
                             conn.MySqlConnect();
                         }
+                    }*/
+					
+					while (true)
+                    {
+                        try
+                        {
+                            MySqlCommand cmd = new MySqlCommand(sql, conn.conn);
+                            
+                            
+							cmd.Parameters.AddWithValue("?page_id", pageID);
+							cmd.Parameters.AddWithValue("?datatype", datatype);
+                        //    cmd.Parameters.AddWithValue("?post_id", postID);
+                            cmd.Parameters.AddWithValue("?from_id", fromID);
+                            cmd.Parameters.AddWithValue("?from_name", fromName);
+                            cmd.Parameters.AddWithValue("?message", message);
+							cmd.Parameters.AddWithValue("?picture", picture);
+							cmd.Parameters.AddWithValue("?link", link);
+							cmd.Parameters.AddWithValue("?name", name);
+							cmd.Parameters.AddWithValue("?caption", caption);
+							cmd.Parameters.AddWithValue("?comment_id", commID);
+							cmd.Parameters.AddWithValue("?icon", icon);
+							cmd.Parameters.AddWithValue("?type", type);
+							cmd.Parameters.AddWithValue("?object_id", object_id);
+							cmd.Parameters.AddWithValue("?description", description);
+							cmd.Parameters.AddWithValue("?likes", likes);
+                            cmd.Parameters.AddWithValue("?created_time", postCreatedTime);
+							cmd.Parameters.AddWithValue("?update_time", DateTime.Now);
+							cmd.Parameters.AddWithValue("?comments", comments);
+							cmd.Parameters.AddWithValue("?shares", shares);
+							cmd.Parameters.AddWithValue("?updatetime", DateTime.Now);
+                         //   cmd.Parameters.AddWithValue("?post_created_time", postCreatedTime);
+                            
+                            
+                            cmd.ExecuteReader().Close();
+                            //totoalCount++;
+                            break;
+                        }
+                        catch (Exception ce)
+                        {
+                            Console.WriteLine(ce.StackTrace);
+                            conn.closeMySqlConnection();
+                            conn.MySqlConnect();
+                        }
                     }
+					
                 }
                 if (fansName.Count > 0)
                 {
@@ -1653,7 +1714,7 @@ namespace facebook_pages_crawler
                 conn.mysql_query(sql).Close();
             }
             catch { }
-            sql = "delete from allinone where page_id in (" + deleteID + ")";
+            sql = "delete from allinone where id in (" + deleteID + ")";
             try
             {
                 conn.mysql_query(sql).Close();
