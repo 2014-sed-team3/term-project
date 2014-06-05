@@ -1,14 +1,14 @@
-﻿
+﻿//using Smrf.NodeXL.Algorithms;
 using System;
-using System.Drawing;
 using System.Configuration;
 using System.Diagnostics;
+using System.Drawing;
+using LayoutControls.ValueConverter;
 using Smrf.NodeXL.Core;
-using Smrf.NodeXL.Algorithms;
 using Smrf.NodeXL.Visualization.Wpf;
 using Smrf.WpfGraphicsLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.UserSettings
 {
 //*****************************************************************************
 //  Class: GeneralUserSettings
@@ -18,7 +18,7 @@ namespace Smrf.NodeXL.ExcelTemplate
 /// </summary>
 //*****************************************************************************
 
-[ SettingsGroupNameAttribute("GeneralUserSettings4") ]
+[ SettingsGroupName("GeneralUserSettings4") ]
 
 public class GeneralUserSettings : NodeXLApplicationSettingsBase
 {
@@ -50,8 +50,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Undirected") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Undirected") ]
 
     public GraphDirectedness
     NewWorkbookGraphDirectedness
@@ -85,8 +85,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("true") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("true") ]
 
     public Boolean
     ReadVertexLabels
@@ -119,8 +119,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("true") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("true") ]
 
     public Boolean
     ReadEdgeLabels
@@ -153,8 +153,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("true") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("true") ]
 
     public Boolean
     ReadGroupLabels
@@ -188,8 +188,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("false") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("false") ]
 
     public Boolean
     ShowGraphLegend
@@ -223,8 +223,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("false") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("false") ]
 
     public Boolean
     ShowGraphAxes
@@ -258,8 +258,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("true") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("true") ]
 
     public Boolean
     AutoReadWorkbook
@@ -292,8 +292,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute(DefaultFont) ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue(DefaultFont) ]
 
     public Font
     AxisFont
@@ -326,8 +326,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("White") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("White") ]
 
     public Color
     BackColor
@@ -361,8 +361,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("") ]
 
     public String
     BackgroundImageUri
@@ -396,8 +396,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("1") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("1") ]
 
     public Single
     EdgeWidth
@@ -433,8 +433,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Gray") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Gray") ]
 
     public Color
     EdgeColor
@@ -468,8 +468,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("100") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("100") ]
 
     public Single
     EdgeAlpha
@@ -503,8 +503,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Straight") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Straight") ]
 
     public EdgeCurveStyle
     EdgeCurveStyle
@@ -538,8 +538,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("0.2") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("0.2") ]
 
     public Double
     EdgeBezierDisplacementFactor
@@ -575,8 +575,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("0.15") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("0.15") ]
 
     public Single
     EdgeBundlerStraightening
@@ -609,8 +609,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Red") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Red") ]
 
     public Color
     SelectedEdgeColor
@@ -650,8 +650,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </remarks>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("3") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("3") ]
 
     public Single
     RelativeArrowSize
@@ -683,12 +683,12 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     ///
     /// <value>
     /// The shape of the vertices, as a <see cref="VertexShape" />.  The
-    /// default value is <see cref="Visualization.Wpf.VertexShape.Disk" />.
+    /// default value is <see cref="Smrf.NodeXL.Visualization.Wpf.VertexShape.Disk" />.
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Disk") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Disk") ]
 
     public VertexShape
     VertexShape
@@ -728,8 +728,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </remarks>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("1.5") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("1.5") ]
 
     public Single
     VertexRadius
@@ -761,13 +761,13 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     ///
     /// <value>
     /// The effect to apply to all vertices, as a <see
-    /// cref="NodeXL.Visualization.Wpf.VertexEffect" />.  The default value is
-    /// <see cref="NodeXL.Visualization.Wpf.VertexEffect.None" />.
+    /// cref="Smrf.NodeXL.Visualization.Wpf.VertexEffect" />.  The default value is
+    /// <see cref="Smrf.NodeXL.Visualization.Wpf.VertexEffect.None" />.
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("None") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("None") ]
 
     public VertexEffect
     VertexEffect
@@ -797,15 +797,15 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// <value>
     /// The relative size of the outer glow when <see
     /// cref="VertexEffect"/> is set to <see
-    /// cref="NodeXL.Visualization.Wpf.VertexEffect.OuterGlow" />.  Must be
+    /// cref="Smrf.NodeXL.Visualization.Wpf.VertexEffect.OuterGlow" />.  Must be
     /// between <see cref="VertexDrawer.MinimumRelativeOuterGlowSize" /> and
     /// <see cref="VertexDrawer.MaximumRelativeOuterGlowSize" />, inclusive.
     /// The default value is 3.0.
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("3.0") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("3.0") ]
 
     public Double
     VertexRelativeOuterGlowSize
@@ -844,8 +844,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("100.0") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("100.0") ]
 
     public Nullable<Single>
     VertexImageSize
@@ -901,8 +901,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Black") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Black") ]
 
     public Color
     VertexColor
@@ -936,8 +936,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("100") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("100") ]
 
     public Single
     VertexAlpha
@@ -970,8 +970,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Red") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Red") ]
 
     public Color
     SelectedVertexColor
@@ -1003,9 +1003,9 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
+    [ UserScopedSetting() ]
 
-    [ DefaultSettingValueAttribute(
+    [ DefaultSettingValue(
         DefaultFont + "\tWhite\tBottomCenter\t2147483647\t2147483647\tBlack"
         + "\ttrue\t200\tBlack\t86\tMiddleCenter"
         ) ]
@@ -1042,8 +1042,8 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("true") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("true") ]
 
     public Boolean
     AutoSelect

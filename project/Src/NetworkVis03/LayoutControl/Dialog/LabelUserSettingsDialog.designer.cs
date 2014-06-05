@@ -1,5 +1,5 @@
 ﻿
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
     partial class LabelUserSettingsDialog
     {
@@ -36,20 +36,20 @@ namespace Smrf.NodeXL.ExcelTemplate
             this.lblWrapWide = new System.Windows.Forms.Label();
             this.tbVertexLabelWrapMaxTextWidth = new System.Windows.Forms.TrackBar();
             this.chkVertexLabelWrapText = new System.Windows.Forms.CheckBox();
-            this.usrVertexLabelMaximumLength = new Smrf.NodeXL.ExcelTemplate.MaximumLabelLengthControl();
+            this.usrVertexLabelMaximumLength = new MaximumLabelLengthControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxVertexLabelPosition = new Smrf.NodeXL.ExcelTemplate.VertexLabelPositionComboBox();
+            this.cbxVertexLabelPosition = new VertexLabelPositionComboBox();
             this.usrVertexLabelFillColor = new Smrf.AppLib.ColorPicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.usrEdgeLabelTextColor = new Smrf.AppLib.ColorPicker();
-            this.usrEdgeLabelMaximumLength = new Smrf.NodeXL.ExcelTemplate.MaximumLabelLengthControl();
+            this.usrEdgeLabelMaximumLength = new MaximumLabelLengthControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbxGroupLabelPosition = new Smrf.NodeXL.ExcelTemplate.VertexLabelPositionComboBox();
+            this.cbxGroupLabelPosition = new VertexLabelPositionComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblEdgeAlpha = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -376,7 +376,7 @@ namespace Smrf.NodeXL.ExcelTemplate
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFont;
         private Smrf.AppLib.ColorPicker usrVertexLabelFillColor;
-        private Smrf.NodeXL.ExcelTemplate.VertexLabelPositionComboBox cbxVertexLabelPosition;
+        private VertexLabelPositionComboBox cbxVertexLabelPosition;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private MaximumLabelLengthControl usrVertexLabelMaximumLength;

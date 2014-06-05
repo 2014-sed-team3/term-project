@@ -1,9 +1,7 @@
-﻿
-using System;
-using System.Diagnostics;
+﻿using System;
 using Smrf.NodeXL.Visualization.Wpf;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.ValueConverter
 {
 //*****************************************************************************
 //  Class: VertexShapeConverter

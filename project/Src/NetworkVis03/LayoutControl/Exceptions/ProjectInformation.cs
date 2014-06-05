@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Smrf.NodeXL.Common
+namespace LayoutControls.Exceptions
 {
 //*****************************************************************************
 //  Class: ProjectInformation

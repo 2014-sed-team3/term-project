@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkVis", "NetworkVis\NetworkVis.csproj", "{44C14AAD-D815-418A-8620-9CEFF6B4714A}"
 EndProject
@@ -29,6 +29,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControl", "LayoutControl\LayoutControl.csproj", "{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}"
 EndProject
+<<<<<<< HEAD
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLayoutControl", "TestLayoutControl\TestLayoutControl.csproj", "{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLayoutControlWPF", "TestLayoutControlWPF\TestLayoutControlWPF.csproj", "{D11D8341-4A42-4057-8C1F-8418782150EF}"
+EndProject
+>>>>>>> 10fe72e7830420b10757af07261b1622780bcfdc
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +94,17 @@ Global
 		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+=======
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 10fe72e7830420b10757af07261b1622780bcfdc
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

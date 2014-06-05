@@ -1,10 +1,9 @@
-﻿
-using System;
-using Smrf.NodeXL.Visualization.Wpf;
-using Smrf.AppLib;
+﻿using System;
 using System.Diagnostics;
+using Smrf.AppLib;
+using Smrf.NodeXL.Visualization.Wpf;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.ValueConverter
 {
 //*****************************************************************************
 //  Class: VertexRadiusConverter

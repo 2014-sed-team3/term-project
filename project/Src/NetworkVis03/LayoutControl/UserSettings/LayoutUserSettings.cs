@@ -1,11 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Configuration;
 using System.Diagnostics;
-using Smrf.NodeXL.Layouts;
 using Smrf.NodeXL.ApplicationUtil;
+using Smrf.NodeXL.Layouts;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.UserSettings
 {
 //*****************************************************************************
 //  Class: LayoutUserSettings
@@ -16,7 +15,7 @@ namespace Smrf.NodeXL.ExcelTemplate
 /// </summary>
 //*****************************************************************************
 
-[ SettingsGroupNameAttribute("LayoutUserSettings") ]
+[ SettingsGroupName("LayoutUserSettings") ]
 
 public class LayoutUserSettings : NodeXLApplicationSettingsBase
 {
@@ -48,8 +47,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("FruchtermanReingold") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("FruchtermanReingold") ]
 
     public LayoutType
     Layout
@@ -83,8 +82,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("6") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("6") ]
 
     public Int32
     Margin
@@ -117,8 +116,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Normal") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Normal") ]
 
     public LayoutStyle
     LayoutStyle
@@ -151,8 +150,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [UserScopedSettingAttribute()]
-    [DefaultSettingValueAttribute("Treemap")]
+    [UserScopedSetting()]
+    [DefaultSettingValue("Treemap")]
 
     public BoxLayoutAlgorithm
     BoxLayoutAlgorithm
@@ -185,8 +184,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("1.0") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("1.0") ]
 
     public Double
     GroupRectanglePenWidth
@@ -221,8 +220,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("Show") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("Show") ]
 
     public IntergroupEdgeStyle
     IntergroupEdgeStyle
@@ -256,8 +255,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("false") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("false") ]
 
     public Boolean
     ImproveLayoutOfGroups
@@ -291,8 +290,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("3") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("3") ]
 
     public Int32
     MaximumVerticesPerBin
@@ -326,8 +325,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("16") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("16") ]
 
     public Int32
     BinLength
@@ -363,8 +362,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("3.0") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("3.0") ]
 
     public Single
     FruchtermanReingoldC
@@ -399,8 +398,8 @@ public class LayoutUserSettings : NodeXLApplicationSettingsBase
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("10") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("10") ]
 
     public Int32
     FruchtermanReingoldIterations

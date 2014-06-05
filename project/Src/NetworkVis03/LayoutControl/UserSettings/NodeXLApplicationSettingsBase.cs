@@ -5,15 +5,14 @@
 
 using System;
 using System.Configuration;
-using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
 using Smrf.XmlLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.UserSettings
 {
 //*****************************************************************************
 //  Class: NodeXLApplicationSettingsBase

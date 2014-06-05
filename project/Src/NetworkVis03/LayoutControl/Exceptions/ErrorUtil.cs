@@ -1,11 +1,10 @@
-﻿
+﻿//using Microsoft.Office.Interop.Excel;
+
 using System;
 using System.Diagnostics;
-//using Microsoft.Office.Interop.Excel;
-using Smrf.NodeXL.Common;
 using Smrf.AppLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Exceptions
 {
 //*****************************************************************************
 //  Class: ErrorUtil
@@ -42,7 +41,7 @@ public static class ErrorUtil
     public static void
     OnException
     (
-        Exception exception
+        System.Exception exception
     )
     {
         Debug.Assert(exception != null);

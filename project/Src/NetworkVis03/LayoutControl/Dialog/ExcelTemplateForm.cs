@@ -1,12 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Diagnostics;
 using Smrf.AppLib;
 using Smrf.NodeXL.Core;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
 //*****************************************************************************
 //  Class: ExcelTemplateForm

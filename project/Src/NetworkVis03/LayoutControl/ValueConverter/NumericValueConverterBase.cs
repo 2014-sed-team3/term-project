@@ -1,9 +1,8 @@
-﻿
-using System;
-using Smrf.AppLib;
+﻿using System;
 using System.Diagnostics;
+using Smrf.AppLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.ValueConverter
 {
 //*****************************************************************************
 //  Class: NumericValueConverterBase
