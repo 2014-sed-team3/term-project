@@ -120,6 +120,10 @@
       <Project>{8BA6250F-0771-43A0-8EE7-EBD24FB1ECCE}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LayoutControl\LayoutControl.csproj">
+      <Project>{9e0ba17e-30d6-461a-83e9-7d9d7f0fa9c5}</Project>
+      <Name>LayoutControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Layouts\Layouts.csproj">
       <Project>{76604C5F-9442-4E48-B7A9-212507550A27}</Project>
       <Name>Layouts</Name>
