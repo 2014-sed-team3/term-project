@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySql.Data", "MySql.Data\My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyzer.csproj", "{791D67EB-C08B-4672-BB6A-9A213301274C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControl", "LayoutControl\LayoutControl.csproj", "{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

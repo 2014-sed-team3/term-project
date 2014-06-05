@@ -98,6 +98,7 @@
             <TabItem Header="Detail">
                 <Canvas x:Name="FieldBackground" Background="Black" />
             </TabItem>
+            <TabItem Header="NodeXL"/>
         </TabControl>
         <StackPanel Orientation="Vertical" Grid.Column="0" Background="Black">
             
@@ -194,7 +195,7 @@
 
                     </ListBox>
                 </StackPanel> 
-                        <Button x:Name="ExpandDrillDown" Content="Drill Down" Foreground="White" Height="40" FontWeight="Bold" Click="ExpandRetractDrilLDownPanel" Template="{DynamicResource GlassButton}"/>
+                        <Button x:Name="ExpandDrillDown" Content="Drill Down" Foreground="White" Height="40" FontWeight="Bold" Click="ExpandRetractDrilLDownPanel" Template="{DynamicResource GlassButton}" HorizontalAlignment="Right" Width="200"/>
                         <StackPanel x:Name="ExpandDrillDownPanel" Orientation="Vertical" Height="0">
                         <Label x:Name="DrillDetailLabel" Margin="5,5,5,5" Content="Double-Click to Drill:" Foreground="White"/>
                         <ListBox x:Name="DrillDetailList" Margin="5,5,5,5" Height="350"/>
