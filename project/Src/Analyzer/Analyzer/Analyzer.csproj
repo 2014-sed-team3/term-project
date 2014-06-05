@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{791D67EB-C08B-4672-BB6A-9A213301274C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Analyzer</RootNamespace>
+    <AssemblyName>Analyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyzeResult\AnalyzeResultBase.cs" />
+    <Compile Include="AnalyzeResult\VertexDegree.cs" />
+    <Compile Include="Util\ConnectedComponentCalculator.cs" />
+    <Compile Include="Util\DuplicateEdgeDetector.cs" />
+    <Compile Include="AnalyzeResult\EdgeReciprocation.cs" />
+    <Compile Include="AnalyzeResult\FanMotif.cs" />
+    <Compile Include="AnalyzeResult\Community.cs" />
+    <Compile Include="AnalyzeResult\CommunityPair.cs" />
+    <Compile Include="AnalyzeResult\DConnectorMotif.cs" />
+    <Compile Include="AnalyzeResult\DeltaQMaxHeap.cs" />
+    <Compile Include="GroupDetector\CliqueMotifDetector.cs" />
+    <Compile Include="GroupDetector\DConnectorMotifDetector.cs" />
+    <Compile Include="GroupDetector\FanMotifDetector.cs" />
+    <Compile Include="GroupDetector\GroupDetectorBase.cs" />
+    <Compile Include="AnalyzeResult\IGroup.cs" />
+    <Compile Include="AnalyzeResult\Groups.cs" />
+    <Compile Include="AnalyzeResult\Motif.cs" />
+    <Compile Include="OtherCalculators\GroupMetricCalculator.cs" />
+    <Compile Include="AnalyzeResult\GroupsMetric.cs" />
+    <Compile Include="IAnalyzer.cs" />
+    <Compile Include="OtherCalculators\OverallMetricsCalculator\OverallGraphMetricsCalculator.cs" />
+    <Compile Include="AnalyzeResult\OverallMetrics.cs" />
+    <Compile Include="OtherCalculators\OverallMetricsCalculator\OverallReciprocationCalculator.cs" />
+    <Compile Include="Util\SubgraphCalculator.cs" />
+    <Compile Include="VertexMetricsCalculators\ClusteringCoefficientCalculator.cs" />
+    <Compile Include="OtherCalculators\EdgeReciprocationCalculator.cs" />
+    <Compile Include="VertexMetricsCalculators\PageRankCalculator.cs" />
+    <Compile Include="GroupDetector\WakitaTsurumiClusterDetector.cs" />
+    <Compile Include="VertexMetricsCalculators\VertexMetricCalculatorBase.cs" />
+    <Compile Include="AnalyzeResult\MetricBoolean.cs" />
+    <Compile Include="AnalyzeResult\VertexMetricBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VertexMetricsCalculators\ReciprocatedVertexPairRatioCalculator.cs" />
+    <Compile Include="AnalyzeResult\MetricDouble.cs" />
+    <Compile Include="VertexMetricsCalculators\VertexDegreeCalculator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\project1\Src\NodeXL\Core\Core.csproj">
+      <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\project1\Src\NodeXL\Util\Util.csproj">
+      <Project>{9f0da064-8e3a-45d9-826a-3ccb1a748e47}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
