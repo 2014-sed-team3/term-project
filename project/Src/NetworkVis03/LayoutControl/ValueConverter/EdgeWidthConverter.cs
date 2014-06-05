@@ -1,9 +1,7 @@
-﻿
-using System;
+﻿using System;
 using Smrf.NodeXL.Visualization.Wpf;
-using System.Diagnostics;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.ValueConverter
 {
 //*****************************************************************************
 //  Class: EdgeWidthConverter

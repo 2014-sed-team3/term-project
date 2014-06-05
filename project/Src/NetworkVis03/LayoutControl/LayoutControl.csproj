@@ -56,7 +56,6 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />
-    <Reference Include="Smrf.WinFormsControls, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -107,8 +106,8 @@
     <Compile Include="Dialog\VertexLabelPositionComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Exception\ErrorUtil.cs" />
-    <Compile Include="Exception\ProjectInformation.cs" />
+    <Compile Include="Exceptions\ErrorUtil.cs" />
+    <Compile Include="Exceptions\ProjectInformation.cs" />
     <Compile Include="LayoutControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,9 +179,17 @@
       <Project>{76604C5F-9442-4E48-B7A9-212507550A27}</Project>
       <Name>Layouts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9F0DA064-8E3A-45D9-826A-3CCB1A748E47}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfControl\WpfControl.csproj">
       <Project>{5E12EC39-6EC0-4962-97C6-C8506D0C6C67}</Project>
       <Name>WpfControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfVisualization\WpfVisualization.csproj">
+      <Project>{3228c440-7166-44e1-a1a2-036ecdd9371f}</Project>
+      <Name>WpfVisualization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

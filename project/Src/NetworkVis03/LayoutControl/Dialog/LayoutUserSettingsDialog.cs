@@ -1,13 +1,12 @@
-﻿
-
-using System;
+﻿using System;
 using System.Configuration;
-using System.Windows.Forms;
-using Smrf.NodeXL.Layouts;
-using Smrf.AppLib;
 using System.Diagnostics;
+using System.Windows.Forms;
+using LayoutControls.UserSettings;
+using Smrf.AppLib;
+using Smrf.NodeXL.Layouts;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
 //*****************************************************************************
 //  Class: LayoutUserSettingsDialog
@@ -406,7 +405,7 @@ public partial class LayoutUserSettingsDialog : ExcelTemplateForm
 /// </remarks>
 //*****************************************************************************
 
-[ SettingsGroupNameAttribute("LayoutUserSettingsDialog4") ]
+[ SettingsGroupName("LayoutUserSettingsDialog4") ]
 
 public class LayoutUserSettingsDialogUserSettings : FormSettings
 {

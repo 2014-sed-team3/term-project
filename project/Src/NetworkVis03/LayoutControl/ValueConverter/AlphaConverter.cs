@@ -1,8 +1,6 @@
-﻿
-using System;
-using System.Diagnostics;
+﻿using System;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.ValueConverter
 {
 //*****************************************************************************
 //  Class: AlphaConverter

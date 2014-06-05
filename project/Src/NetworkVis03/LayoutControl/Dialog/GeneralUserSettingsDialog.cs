@@ -1,13 +1,14 @@
-﻿
-using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
 using System.Configuration;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+using LayoutControls.UserSettings;
+using LayoutControls.ValueConverter;
 using Smrf.AppLib;
 using Smrf.NodeXL.Visualization.Wpf;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
 //*****************************************************************************
 //  Class: GeneralUserSettingsDialog
@@ -828,7 +829,7 @@ public partial class GeneralUserSettingsDialog : ExcelTemplateForm
 /// </remarks>
 //*****************************************************************************
 
-[ SettingsGroupNameAttribute("GeneralUserSettingsDialog5") ]
+[ SettingsGroupName("GeneralUserSettingsDialog5") ]
 
 public class GeneralUserSettingsDialogUserSettings : FormSettings
 {
@@ -870,8 +871,8 @@ public class GeneralUserSettingsDialogUserSettings : FormSettings
     /// </value>
     //*************************************************************************
 
-    [ UserScopedSettingAttribute() ]
-    [ DefaultSettingValueAttribute("0") ]
+    [ UserScopedSetting() ]
+    [ DefaultSettingValue("0") ]
 
     public Int32
     TabControlSelectedIndex

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using LayoutControls.ValueConverter;
 using Smrf.AppLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
 //*****************************************************************************
 //  Class: VertexLabelPositionComboBox

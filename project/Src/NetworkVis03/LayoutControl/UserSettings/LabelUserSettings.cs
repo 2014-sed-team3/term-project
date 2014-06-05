@@ -1,14 +1,14 @@
-﻿
-using System;
-using System.Drawing;
-using System.Globalization;
+﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
+using LayoutControls.ValueConverter;
+using Smrf.AppLib;
 using Smrf.NodeXL.Visualization.Wpf;
 using Smrf.WpfGraphicsLib;
-using Smrf.AppLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.UserSettings
 {
 //*****************************************************************************
 //  Class: LabelUserSettings
@@ -18,7 +18,7 @@ namespace Smrf.NodeXL.ExcelTemplate
 /// </summary>
 //*****************************************************************************
 
-[ TypeConverterAttribute( typeof(LabelUserSettingsTypeConverter) ) ]
+[ TypeConverter( typeof(LabelUserSettingsTypeConverter) ) ]
 
 public class LabelUserSettings : Object
 {
@@ -129,7 +129,7 @@ public class LabelUserSettings : Object
     /// <value>
     /// The position of a vertex label drawn as an annotation.  The
     /// default value is <see
-    /// cref="Visualization.Wpf.VertexLabelPosition.BottomCenter" />.
+    /// cref="Smrf.NodeXL.Visualization.Wpf.VertexLabelPosition.BottomCenter" />.
     /// </value>
     //*************************************************************************
 
@@ -393,7 +393,7 @@ public class LabelUserSettings : Object
     ///
     /// <value>
     /// The position of group labels.  The default value is <see
-    /// cref="Visualization.Wpf.VertexLabelPosition.MiddleCenter" />.
+    /// cref="Smrf.NodeXL.Visualization.Wpf.VertexLabelPosition.MiddleCenter" />.
     /// </value>
     //*************************************************************************
 

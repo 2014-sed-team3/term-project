@@ -1,5 +1,5 @@
 ﻿
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
     partial class MaximumLabelLengthControl
     {

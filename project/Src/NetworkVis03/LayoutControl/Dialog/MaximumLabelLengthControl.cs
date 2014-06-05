@@ -1,10 +1,9 @@
-﻿
-using System;
-using System.Windows.Forms;
+﻿using System;
 using System.Diagnostics;
+using System.Windows.Forms;
 using Smrf.AppLib;
 
-namespace Smrf.NodeXL.ExcelTemplate
+namespace LayoutControls.Dialog
 {
 //*****************************************************************************
 //  Class: MaximumLabelLengthControl
