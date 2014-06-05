@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkVis", "NetworkVis\NetworkVis.csproj", "{44C14AAD-D815-418A-8620-9CEFF6B4714A}"
 EndProject
@@ -26,6 +26,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySql.Data", "MySql.Data\MySql.Data.csproj", "{E9DF5ED1-4CBD-4226-B931-9A51610AC14D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyzer.csproj", "{791D67EB-C08B-4672-BB6A-9A213301274C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControl", "LayoutControl\LayoutControl.csproj", "{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLayoutControl", "TestLayoutControl\TestLayoutControl.csproj", "{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLayoutControlWPF", "TestLayoutControlWPF\TestLayoutControlWPF.csproj", "{D11D8341-4A42-4057-8C1F-8418782150EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +87,18 @@ Global
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0BA17E-30D6-461A-83E9-7D9D7F0FA9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38F335D-AFFE-4AB7-954B-6E1BA285ECFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11D8341-4A42-4057-8C1F-8418782150EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
