@@ -59,9 +59,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Layouts\References\MIConvexHullPlugin.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\otherDll\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -240,6 +237,10 @@
     <ProjectReference Include="..\Layouts\Layouts.csproj">
       <Project>{76604c5f-9442-4e48-b7a9-212507550a27}</Project>
       <Name>Layouts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySql.Data\MySql.Data.csproj">
+      <Project>{e9df5ed1-4cbd-4226-b931-9a51610ac14d}</Project>
+      <Name>MySql.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{9f0da064-8e3a-45d9-826a-3ccb1a748e47}</Project>

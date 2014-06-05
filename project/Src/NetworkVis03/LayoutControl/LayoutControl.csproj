@@ -56,15 +56,6 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />
-    <Reference Include="Smrf.NodeXL.Control.Wpf">
-      <HintPath>..\WpfControl\bin\Debug\Smrf.NodeXL.Control.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Smrf.NodeXL.Layouts">
-      <HintPath>..\Layouts\bin\Debug\Smrf.NodeXL.Layouts.dll</HintPath>
-    </Reference>
-    <Reference Include="Smrf.NodeXL.Util">
-      <HintPath>..\Util\bin\Debug\Smrf.NodeXL.Util.dll</HintPath>
-    </Reference>
     <Reference Include="Smrf.WinFormsControls, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -174,36 +165,24 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Adapters\Adapters.csproj">
-      <Project>{49BF210B-2FB1-4955-9553-B4C9DB275352}</Project>
+      <Project>{49bf210b-2fb1-4955-9553-b4c9db275352}</Project>
       <Name>Adapters</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
-      <Project>{1E286552-2364-419B-B8A0-D21B860BC60F}</Project>
-      <Name>Algorithms</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ApplicationUtil\ApplicationUtil.csproj">
-      <Project>{F7845042-B212-4D74-9343-DA2052F83234}</Project>
+      <Project>{f7845042-b212-4d74-9343-da2052f83234}</Project>
       <Name>ApplicationUtil</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{8BA6250F-0771-43A0-8EE7-EBD24FB1ECCE}</Project>
+      <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Layouts\Layouts.csproj">
       <Project>{76604C5F-9442-4E48-B7A9-212507550A27}</Project>
       <Name>Layouts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Util\Util.csproj">
-      <Project>{9F0DA064-8E3A-45D9-826A-3CCB1A748E47}</Project>
-      <Name>Util</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WpfControl\WpfControl.csproj">
       <Project>{5E12EC39-6EC0-4962-97C6-C8506D0C6C67}</Project>
       <Name>WpfControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfVisualization\WpfVisualization.csproj">
-      <Project>{3228c440-7166-44e1-a1a2-036ecdd9371f}</Project>
-      <Name>WpfVisualization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
