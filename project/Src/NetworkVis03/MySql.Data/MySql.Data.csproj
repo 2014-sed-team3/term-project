@@ -36,7 +36,7 @@
         <ProductVersion>9.0.30729</ProductVersion>
         <SchemaVersion>2.0</SchemaVersion>
         <Framework>4.5</Framework>
-        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
         <DefineConstants>NET_40_OR_GREATER;NET_45_OR_GREATER</DefineConstants>
       </PropertyGroup>
     </When>
@@ -116,7 +116,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Networkvis.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>123456.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -274,6 +274,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="123456.pfx" />
     <None Include="Networkvis.pfx" />
     <None Include="Properties\keywords.txt" />
   </ItemGroup>

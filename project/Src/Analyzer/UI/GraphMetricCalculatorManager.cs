@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UI
 {
-    class GraphMetricCalculatorManager
+    public class GraphMetricCalculatorManager
     {
         private System.Windows.Forms.CheckedListBox checkedListBox; // manager need to reference this object to know what kind of metrics to be calculated
         private MetricSettingDialog m_oMetricSettingDialog;
@@ -23,7 +23,7 @@ namespace UI
             if(checkedListBox.CheckedItems.Contains("vertex clustering coefficient")){}
             if(checkedListBox.CheckedItems.Contains("vertex pagerank")){}
             if(checkedListBox.CheckedItems.Contains("vertex eigen vector centrality")){}
-            if (checkedListBox.CheckedIndices.Contains("group metrics")) { }
+            if (checkedListBox.CheckedItems.Contains("group metrics")) { }
 
             closeDialog();
 
