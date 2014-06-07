@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+<<<<<<< HEAD
 //using System.Data;
+=======
+>>>>>>> c92f48eac7bf18128aba9cf461e847e8e3463965
 using System.Drawing;
 using System.Linq;
 using System.Text;
