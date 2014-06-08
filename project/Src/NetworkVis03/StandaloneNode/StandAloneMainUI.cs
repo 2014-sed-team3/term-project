@@ -166,10 +166,6 @@ namespace StandaloneNode
         {
             GroupItemSelecter GIS = new GroupItemSelecter();
             GIS.Show(this);
-            //MetricSettingDialog MSD = new MetricSettingDialog();
-            //MSD.Show(this);
-            //MetricsCalculatorManager mcm = new MetricsCalculatorManager();
-            //mcm.calculateMetricsAsync(MSD.chklist);
         }
     }
 }
