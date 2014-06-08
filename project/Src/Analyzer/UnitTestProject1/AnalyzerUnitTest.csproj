@@ -62,11 +62,11 @@
     <Compile Include="DConnectorMotifDetectorTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\project1\Src\NodeXL\Core\Core.csproj">
+    <ProjectReference Include="..\..\NetworkVis03\Core\Core.csproj">
       <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\project1\Src\NodeXL\Util\Util.csproj">
+    <ProjectReference Include="..\..\NetworkVis03\Util\Util.csproj">
       <Project>{9f0da064-8e3a-45d9-826a-3ccb1a748e47}</Project>
       <Name>Util</Name>
     </ProjectReference>

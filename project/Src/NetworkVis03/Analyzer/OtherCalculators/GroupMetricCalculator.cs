@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Analyzer
 {
-    class GroupMetricCalculator : AnalyzerBase
+    public class GroupMetricCalculator : AnalyzerBase
     {
         private BackgroundWorker m_obackgroundWorker;
 

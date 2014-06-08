@@ -59,15 +59,42 @@
       <DependentUpon>FacebookCrawler.cs</DependentUpon>
     </Compile>
     <Compile Include="FBGraph.cs" />
+    <Compile Include="GraphMetricCalculatorManager.cs" />
+    <Compile Include="GroupCalculationProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupCalculationProgressDialog.Designer.cs">
+      <DependentUpon>GroupCalculationProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupCalculatorManager.cs" />
     <Compile Include="GroupItemSelecter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GroupItemSelecter.Designer.cs">
       <DependentUpon>GroupItemSelecter.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupSettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupSettingDialog.Designer.cs">
+      <DependentUpon>GroupSettingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="JSONObject.cs" />
+    <Compile Include="MetricCalculationProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetricCalculationProgressDialog.Designer.cs">
+      <DependentUpon>MetricCalculationProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetricSettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetricSettingDialog.Designer.cs">
+      <DependentUpon>MetricSettingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyListViewSorter.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +111,20 @@
     <EmbeddedResource Include="FacebookCrawler.resx">
       <DependentUpon>FacebookCrawler.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupCalculationProgressDialog.resx">
+      <DependentUpon>GroupCalculationProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupItemSelecter.resx">
       <DependentUpon>GroupItemSelecter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupSettingDialog.resx">
+      <DependentUpon>GroupSettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetricCalculationProgressDialog.resx">
+      <DependentUpon>MetricCalculationProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetricSettingDialog.resx">
+      <DependentUpon>MetricSettingDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

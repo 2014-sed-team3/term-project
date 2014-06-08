@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StandaloneNode
@@ -15,5 +16,16 @@ namespace StandaloneNode
         {
             InitializeComponent();
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            /* TO DO:
+             * logic to set GroupsCheckedList and pass it to 
+             * 
+             * */
+        }
+
+        
+
     }
 }
