@@ -1034,7 +1034,7 @@ namespace facebook_pages_crawler
                 //    //catch { break; }
                 //}
                 DBConnection conn = new DBConnection(dbInfo);
-                conn.MySqlConnect();
+                conn.MySqlConnect(); 
 			/*	MySqlDataReader res=null;
 				
 				string built_DB_sql= "drop table if exist 'allinone'; "+ "CREATE TABLE `allinone` ("+
