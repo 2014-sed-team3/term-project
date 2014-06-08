@@ -17,19 +17,24 @@ namespace Analyzer
         {
             damping_factor = 0.85;
         }
-
-        public override VertexMetricBase Calculate(IGraph graph)
+        public override bool tryCalculate(IGraph graph, BackgroundWorker bgw, out VertexMetricBase metrics)
         {
-            VertexMetricBase graphMetrics;
-            TryCalculateGraphMetrics(graph, this.getBackgroundWorker(), out graphMetrics);
-            return graphMetrics;
+            MetricDouble oMetrics;
+            bool rv = TryCalculateGraphMetrics(graph, bgw, out oMetrics);
+            metrics = oMetrics;
+            return rv;
+        }
+
+        public override string CalculatorDescription()
+        {
+            return "Calculating PageRank";
         }
 
         public Boolean TryCalculateGraphMetrics
         (
             IGraph graph,
             BackgroundWorker backgroundWorker,
-            out VertexMetricBase graphMetrics
+            out MetricDouble graphMetrics
         )
         {
             Debug.Assert(graph != null);
@@ -44,42 +49,26 @@ namespace Analyzer
             graphMetrics = oMetricDouble;
 
             foreach(IVertex oVertex in oVertices){
-                oldPageRanks.Add(oVertex.ID, 1/oVertices.Count);
+                System.Console.WriteLine("V{0}", oVertex.ID);
+                oldPageRanks.Add(oVertex.ID, 1.0/oVertices.Count);
                 newPageRanks.Add(oVertex.ID, 0);
             }
-
+            int ii = 0;
             while (!isConverged(oldPageRanks, newPageRanks)){
+                
+                oldPageRanks = newPageRanks;
+                if (!ReportProgressAndCheckCancellationPending(0, 100, backgroundWorker))
+                {
+                    return (false);
+                }
                 calculateVertexPageRank(oVertices, oldPageRanks, out newPageRanks);
+                ii++;
             }
+            System.Console.WriteLine("ii = {0}", ii);
             
             foreach (KeyValuePair<Int32, Double> p in newPageRanks) {
                 oMetricDouble.Add(p.Key, p.Value);
             }
-            /*
-            graphMetrics = oPageRanks;
-
-            Boolean bGraphIsDirected = (graph.Directedness == GraphDirectedness.Directed);
-
-            Int32 iCalculations = 0;
-
-            foreach (IVertex oVertex in oVertices)
-            {
-                if (
-                    iCalculations % VerticesPerProgressReport == 0
-                    &&
-                    !ReportProgressAndCheckCancellationPending(
-                        iCalculations, iVertices, backgroundWorker)
-                    )
-                {
-                    return (false);
-                }
-
-                oPageRanks.Add(oVertex.ID,
-                    CalculateClusteringCoefficient(oVertex, bGraphIsDirected) );
-
-                iCalculations++;
-            }
-             */
           
 
             return (true);
@@ -90,9 +79,11 @@ namespace Analyzer
         {
             foreach (KeyValuePair<Int32, Double> vpr in oldPageRanks)
             {
+                
                 double newPR;
                 newPageRanks.TryGetValue(vpr.Key, out newPR);
-                if (newPR - vpr.Value > 0.001) return false;
+                System.Console.WriteLine("{0} || {1} || {2}", vpr.Key, newPR, vpr.Value);
+                if (Math.Abs(newPR - vpr.Value) > (newPR + vpr.Value )*0.0005 || newPR == 0) return false;
             }
             return true;
         }
@@ -106,11 +97,15 @@ namespace Analyzer
                 foreach (IVertex adjNode in adjacentNodes) {
                     double adjNodeRank;
                     oldPageRanks.TryGetValue(adjNode.ID, out adjNodeRank);
-                    newRank += adjNodeRank / adjNode.AdjacentVertices.Count;
+                    newRank += damping_factor * adjNodeRank / adjNode.AdjacentVertices.Count;
                 }
                 newPageRanks.Add(node.ID, newRank);
             }
         }
+
+
+
+
 
         
     }

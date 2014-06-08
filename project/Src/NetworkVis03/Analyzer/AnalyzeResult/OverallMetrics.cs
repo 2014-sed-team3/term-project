@@ -55,7 +55,60 @@ namespace Analyzer
 
         public DataTable[] ToDataTable
         {
-            get { throw new NotImplementedException(); }
+            get {
+                DataTable dtb = new DataTable();
+                dtb.Columns.Add("Group_ID", typeof(int));
+                dtb.Columns.Add("UniqueEdges", typeof(int));
+                dtb.Columns.Add("EdgesWithDuplicates", typeof(int));
+                dtb.Columns.Add("Vertices", typeof(int));
+                dtb.Columns.Add("TotalEdges", typeof(int));
+                dtb.Columns.Add("SelfLoops", typeof(int));
+                dtb.Columns.Add("ReciprocatedVertexPairRatio", typeof(double));
+                dtb.Columns.Add("Modularity", typeof(double));
+                dtb.Columns.Add("ConnectedComponents", typeof(int));
+                dtb.Columns.Add("SingleVertexConnectedComponents", typeof(int));
+                dtb.Columns.Add("MaximumConnectedComponentVertices", typeof(int));
+                dtb.Columns.Add("MaximumConnectedComponentEdges", typeof(int));
+                dtb.Columns.Add("MaximumGeodesicDistance", typeof(int));
+                dtb.Columns.Add("AverageGeodesicDistance", typeof(double));
+                dtb.Columns.Add("GraphDensity", typeof(double));
+
+                int iUniqueEdges = UniqueEdges;
+                int iEdgesWithDuplicates = EdgesWithDuplicates;
+                int iVertices = Vertices;
+                int iTotalEdges = TotalEdges;
+                int iSelfLoops = SelfLoops;
+                double dReciprocatedVertexPairRatio = (!ReciprocatedVertexPairRatio.HasValue) ? 0 : ReciprocatedVertexPairRatio.Value;
+                double dModularity = (!Modularity.HasValue) ? 0 : Modularity.Value;
+                int iConnectedComponents = ConnectedComponents;
+                int iSingleVertexConnectedComponents = SingleVertexConnectedComponents;
+                int iMaximumConnectedComponentVertices = MaximumConnectedComponentVertices;
+                int iMaximumConnectedComponentEdges = MaximumConnectedComponentEdges;
+                int iMaximumGeodesicDistance = (!MaximumGeodesicDistance.HasValue) ? 0 : MaximumGeodesicDistance.Value;
+                double dAverageGeodesicDistance = (!AverageGeodesicDistance.HasValue) ? 0 : AverageGeodesicDistance.Value;
+                double dGraphDensity = (!GraphDensity.HasValue) ? 0 : GraphDensity.Value;
+
+                dtb.Rows.Add(
+                        0,
+                        iUniqueEdges,
+                        iEdgesWithDuplicates,
+                        iVertices,
+                        iTotalEdges,
+                        iSelfLoops,
+                        dReciprocatedVertexPairRatio,
+                        dModularity,
+                        iConnectedComponents,
+                        iSingleVertexConnectedComponents,
+                        iMaximumConnectedComponentVertices,
+                        iMaximumConnectedComponentEdges,
+                        iMaximumGeodesicDistance,
+                        dAverageGeodesicDistance,
+                        dGraphDensity
+                        );
+
+                return new DataTable[] { dtb };
+            
+            }
         }
 
         public GraphDirectedness Directedness{

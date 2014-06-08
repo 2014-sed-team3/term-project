@@ -12,19 +12,32 @@ namespace Analyzer
 {
     public class WakitaTsurumiClusterDetector : GroupDetectorBase
     {
-        public override Groups partition(IGraph graph)
+        public WakitaTsurumiClusterDetector() { }
+
+        public override bool tryPartition(IGraph graph, BackgroundWorker bgw, out Groups results)
         {
             ICollection<Community> oGraphMetrics;
             Groups oGroups;
             int i = 0;
-            TryCalculateClustersWakitaTsurumi(graph, getBackgroundWorker(), out oGraphMetrics);
-            oGroups = new Groups(oGraphMetrics.Count);
-            foreach (Community m in oGraphMetrics)
+            bool rv = TryCalculateClustersWakitaTsurumi(graph, bgw, out oGraphMetrics);
+            if (rv == true)
             {
-                oGroups.Add(i, m);
-                i++;
+                oGroups = new Groups(oGraphMetrics.Count);
+                foreach (Community m in oGraphMetrics)
+                {
+                    oGroups.Add(i, m);
+                    i++;
+                }
             }
-            return oGroups;
+            else oGroups = new Groups(1);
+            results = oGroups;
+            return rv;
+
+        }
+
+        public override string getPartitionerDescription()
+        {
+            return "Detecing Clusters by WakitaTsurumi";
         }
 
         public Boolean TryCalculateClustersWakitaTsurumi
@@ -406,6 +419,8 @@ namespace Analyzer
         }
 
         protected const Int32 MergeCyclesPerProgressReport = 100;
+
+
         
     }
 }

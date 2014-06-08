@@ -10,33 +10,34 @@ using System.Threading.Tasks;
 
 namespace Analyzer
 {
-    class GroupMetricCalculator : IAnalyzer
+    class GroupMetricCalculator : AnalyzerBase
     {
         private BackgroundWorker m_obackgroundWorker;
 
 
         public GroupMetricCalculator() { }
 
-        public AnalyzeResultBase analyze(IGraph graph)
+        public override bool tryAnalyze(IGraph graph, BackgroundWorker bgw, out AnalyzeResultBase results)
         {
             Dictionary<int, OverallMetrics> groupsmetric;
-            TryCalculateGraphMetrics(graph, out groupsmetric);
-            GroupsMetric result = new GroupsMetric(groupsmetric.Count);
-            foreach (KeyValuePair<int, OverallMetrics> p in groupsmetric)
-                result.Add(p.Key, p.Value);
-
-            return result;
-
+            GroupsMetric oGroupsMetric;
+            bool rv = TryCalculateGraphMetrics(graph, out groupsmetric);
+            if (rv == true)
+            {
+                oGroupsMetric = new GroupsMetric(groupsmetric.Count);
+                foreach (KeyValuePair<int, OverallMetrics> p in groupsmetric)
+                    oGroupsMetric.Add(p.Key, p.Value);
+            }
+            else
+                oGroupsMetric = new GroupsMetric(1);
+             results = oGroupsMetric;
+             return rv;
         }
 
-        public void setBackgroundWorker(BackgroundWorker b)
-        {
-            m_obackgroundWorker = b;
-        }
 
-        public string GraphMetricDescription
+        public override string AnalyzerDescription
         {
-            get { return "~~~"; }
+            get { return "Calculating groups metrics"; }
         }
 
         public Boolean TryCalculateGraphMetrics
@@ -115,30 +116,6 @@ namespace Analyzer
                 out oOverallMetrics) );
     }
 
-    //*************************************************************************
-    //  Method: CreateGraphMetricColumnWithID()
-    //
-    /// <summary>
-    /// Creates a <see cref="GraphMetricColumnWithID" /> for one column of the
-    /// group table.
-    /// </summary>
-    ///
-    /// <param name="sColumnName">
-    /// Name of the column.
-    /// </param>
-    ///
-    /// <param name="sNumberFormat">
-    /// Number format of the column, or null if the column is not numeric.
-    /// Sample: "0.00".
-    /// </param>
-    ///
-    /// <param name="oGraphMetricValues">
-    /// Graph metric values to include in the column.
-    /// </param>
-    //*************************************************************************
-
-    
-
     public Boolean
     HandlesDuplicateEdges
     {
@@ -165,5 +142,8 @@ namespace Analyzer
     /// Number format for Double columns.
 
     protected const String DoubleNumericFormat = "0.000";
+
+
+    
     }
 }

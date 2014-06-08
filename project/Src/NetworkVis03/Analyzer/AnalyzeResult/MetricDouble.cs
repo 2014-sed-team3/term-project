@@ -36,6 +36,8 @@ namespace Analyzer
         {
             metricname = name;
         }
+
+        public MetricDouble(int count) : base(count) { }
     }
 
 }

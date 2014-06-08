@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Analyzer
 {
-    public class EdgeReciprocationCalculator : IAnalyzer
+    public class EdgeReciprocationCalculator : AnalyzerBase
     {
         private BackgroundWorker m_obackgroundWorker;
 
@@ -18,27 +18,29 @@ namespace Analyzer
         {
         }
 
-        public void setBackgroundWorker(BackgroundWorker b)
-        {
-            m_obackgroundWorker = b;
-        }
-
-
-
-        public string GraphMetricDescription
-        {
-            get { return "~~~"; }
-        }
-
-        public AnalyzeResultBase analyze(IGraph graph)
+        public override bool tryAnalyze(IGraph graph, BackgroundWorker bgw, out AnalyzeResultBase results)
         {
             Dictionary<Int32, Boolean> graphMetrics;
-            TryCalculateGraphMetrics(graph, m_obackgroundWorker, out graphMetrics);
-            EdgeReciprocation result = new EdgeReciprocation(graphMetrics.Count);
-            foreach (KeyValuePair<Int32, Boolean> p in graphMetrics)
-                result.Add(p.Key, p.Value);
-            return result;
+            EdgeReciprocation oEdgeReciprocation;
+            bool rv = TryCalculateGraphMetrics(graph, m_obackgroundWorker, out graphMetrics);
+            if (rv == true)
+            {
+                oEdgeReciprocation = new EdgeReciprocation(graphMetrics.Count);
+                foreach (KeyValuePair<Int32, Boolean> p in graphMetrics)
+                    oEdgeReciprocation.Add(p.Key, p.Value);
+            }
+            else oEdgeReciprocation = new EdgeReciprocation(1);
+            results = oEdgeReciprocation;
+            return rv;
         }
+
+
+        public override string AnalyzerDescription
+        {
+            get { return "Calculating EdgeReciprocation"; }
+        }
+
+        
 
         public Dictionary<Int32, Boolean> CalculateGraphMetrics(IGraph graph)
         {
@@ -110,73 +112,6 @@ namespace Analyzer
             return (CollectionUtil.GetDictionaryKey(oVertex1.ID, oVertex2.ID,
                 true));
         }
-
-        protected Boolean ReportProgressAndCheckCancellationPending
-             (Int32 iCalculationsSoFar, Int32 iTotalCalculations, BackgroundWorker oBackgroundWorker)
-        {
-            Debug.Assert(iCalculationsSoFar >= 0);
-            Debug.Assert(iTotalCalculations >= 0);
-            Debug.Assert(iCalculationsSoFar <= iTotalCalculations);
-
-
-            if (oBackgroundWorker != null)
-            {
-                if (oBackgroundWorker.CancellationPending)
-                {
-                    return (false);
-                }
-
-                ReportProgress(iCalculationsSoFar, iTotalCalculations,
-                    oBackgroundWorker);
-            }
-
-            return (true);
-        }
-
-        protected void ReportProgress
-            (Int32 iCalculationsSoFar, Int32 iTotalCalculations, BackgroundWorker oBackgroundWorker)
-        {
-            Debug.Assert(iCalculationsSoFar >= 0);
-            Debug.Assert(iTotalCalculations >= 0);
-            Debug.Assert(iCalculationsSoFar <= iTotalCalculations);
-
-
-            if (oBackgroundWorker != null)
-            {
-                String sProgress = String.Format(
-
-                    "Calculating {0}."
-                    ,
-                    this.GraphMetricDescription
-                    );
-
-                oBackgroundWorker.ReportProgress(
-
-                    CalculateProgressInPercent(iCalculationsSoFar,
-                        iTotalCalculations),
-
-                    sProgress);
-            }
-        }
-
-        public static Int32 CalculateProgressInPercent
-            (Int32 calculationsCompleted, Int32 totalCalculations)
-        {
-            Debug.Assert(calculationsCompleted >= 0);
-            Debug.Assert(totalCalculations >= 0);
-            Debug.Assert(calculationsCompleted <= totalCalculations);
-
-            Int32 iPercentProgress = 0;
-
-            if (totalCalculations > 0)
-            {
-                iPercentProgress = (Int32)(100F *
-                    (Single)calculationsCompleted / (Single)totalCalculations);
-            }
-
-            return (iPercentProgress);
-        }
-
 
 
         

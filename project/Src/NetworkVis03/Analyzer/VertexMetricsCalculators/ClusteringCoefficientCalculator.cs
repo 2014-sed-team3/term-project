@@ -16,15 +16,24 @@ namespace Analyzer
         {
         }
 
-        public override VertexMetricBase Calculate(IGraph graph)
+        public override bool tryCalculate(IGraph graph, BackgroundWorker bgw, out VertexMetricBase metrics)
         {
-            VertexMetricBase graphMetrics;
-            TryCalculateGraphMetrics(graph, getBackgroundWorker(), out graphMetrics);
-            return graphMetrics;
+            MetricDouble oMetricDouble;
+            bool rv = TryCalculateGraphMetrics(graph, bgw, out oMetricDouble);
+            if (rv == true)
+                metrics = oMetricDouble;
+            else
+                metrics = new MetricDouble(1);
+            return rv;
+        }
+
+        public override string CalculatorDescription()
+        {
+            return "Calculating ClusteringCoefficient";
         }
 
         public bool TryCalculateGraphMetrics
-            (IGraph graph, BackgroundWorker backgroundWorker, out VertexMetricBase graphMetrics)
+            (IGraph graph, BackgroundWorker backgroundWorker, out MetricDouble graphMetrics)
         {
             Debug.Assert(graph != null);
 

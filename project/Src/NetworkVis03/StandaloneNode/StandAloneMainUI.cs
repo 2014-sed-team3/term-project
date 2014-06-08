@@ -134,10 +134,10 @@ namespace StandaloneNode
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //foreach (IVertex oVertex in layoutControl1.SelectedVertices)
-            //{
-            //    AddToStatus(oVertex.ID.ToString());
-            //}
+            foreach (IVertex oVertex in layoutControl1.Graph.Vertices)
+            {
+                RTFDebugOut.AppendText(oVertex.ID.ToString() + "\r\n");
+            }
         }
     }
 }

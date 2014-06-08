@@ -16,12 +16,19 @@ namespace Analyzer
         {
         }
 
-        public override VertexMetricBase Calculate(IGraph graph)
+        public override bool tryCalculate(IGraph graph, BackgroundWorker bgw, out VertexMetricBase metrics)
         {
-            VertexMetricBase graphMetrics;
-            TryCalculateGraphMetrics(graph, this.getBackgroundWorker(), out graphMetrics);
-            return graphMetrics;
+            VertexMetricBase oMetrics;
+            bool rv = TryCalculateGraphMetrics(graph, bgw, out oMetrics);
+            metrics = oMetrics;
+            return rv;
         }
+
+        public override string CalculatorDescription()
+        {
+            return "Calculating VertexDegree";
+        }
+
 
         public Boolean TryCalculateGraphMetrics
             (IGraph graph, BackgroundWorker backgroundWorker, out VertexMetricBase graphMetrics)
@@ -93,7 +100,10 @@ namespace Analyzer
         protected const Int32 VerticesPerProgressReport = 100;
 
 
-        
+        public override bool tryAnalyze(IGraph graph, BackgroundWorker bgw, out AnalyzeResultBase results)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     
