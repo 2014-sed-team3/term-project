@@ -25,7 +25,7 @@ CREATE TABLE `allinone` (
 `author_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `author` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `message`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`picture`  varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+`picture` varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `url`  varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `name`  varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `caption`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
