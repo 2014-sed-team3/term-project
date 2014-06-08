@@ -47,6 +47,7 @@ namespace StandaloneNode
                     // Serializer.Deserialize<Corpus>(cdbOpenModel.FileName, ref cp);
                     oGraphAdapter = new SimpleGraphAdapter();
                     layoutControl1.Graph = oGraphAdapter.LoadGraphFromFile(cdbOpenModel.FileName);
+                    layoutControl1.ShowGraph(true);
                 }
                 catch (Exception ex)
                 {
@@ -72,9 +73,8 @@ namespace StandaloneNode
                     System.IO.StreamReader file = new System.IO.StreamReader(cdbOpenGraphML.FileName);
                     string line = file.ReadToEnd();
                     oGraphMLGraphAdapter = new GraphMLGraphAdapter();
-
                     layoutControl1.Graph = oGraphMLGraphAdapter.LoadGraphFromString(line);
-
+                    layoutControl1.ShowGraph(true);
                 }
                 catch (Exception ex)
                 {
@@ -93,11 +93,17 @@ namespace StandaloneNode
             string line = file.ReadToEnd();
             GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
             layoutControl1.Graph = oGraphMLGraphAdapter.LoadGraphFromString(line);
+            layoutControl1.ShowGraph(true);
         }
 
         private void youTuBeVideoCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GetGraphData(new YouTubeVideoNetworkGraphDataProvider());
+            System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
+            string line = file.ReadToEnd();
+            GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
+            layoutControl1.Graph = oGraphMLGraphAdapter.LoadGraphFromString(line);
+            layoutControl1.ShowGraph(true);
         }
         private void GetGraphData(IGraphDataProvider2 oGraphDataProvider)
         {
@@ -124,6 +130,14 @@ namespace StandaloneNode
 
                 return (Path.Combine(sAssemblyPath, "TempGetGraphData.xml"));
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //foreach (IVertex oVertex in layoutControl1.SelectedVertices)
+            //{
+            //    AddToStatus(oVertex.ID.ToString());
+            //}
         }
     }
 }

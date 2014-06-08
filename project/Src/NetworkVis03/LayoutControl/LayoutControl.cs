@@ -302,7 +302,8 @@ namespace LayoutControls
         }
 
 
-        protected void ShowGraph(Boolean bLayOutGraph)
+        //protected void ShowGraph(Boolean bLayOutGraph)
+        public void ShowGraph(Boolean bLayOutGraph)
         {
             AssertValid();
 
