@@ -6,19 +6,19 @@ using System.Data;
 using System.Windows;
 using MySql.Data.MySqlClient;
 
-namespace NetworkVis
+namespace GraphStorageManagement
 {
-    class DB_Manager
+    public class DB_Manager
     {
         public MySqlConnection RepositoryConnection;
         private List<string> connectionInfo;
-        public DB_Manager()
+        public DB_Manager(String Database)
         {
             this.connectionInfo = new List<string>();
             this.connectionInfo.Add("localhost");
             this.connectionInfo.Add("enricolu");
             this.connectionInfo.Add("111platform!");
-            this.connectionInfo.Add("networkvis");
+            this.connectionInfo.Add(Database);
 
             string dbHost = connectionInfo.ElementAt<string>(0);
             string dbUser = connectionInfo.ElementAt<string>(1);
@@ -64,7 +64,22 @@ namespace NetworkVis
             }
         }
 
+        public DataTable list_network()
+        {
+            String sql = "SELECT NetworkID, MAX(count_Edge) as count_Edge, MAX(count_Vertex) as count_Vertex FROM";
+            String edge_sql = "SELECT NetworkID, count(EdgeID) as count_Edge, NULL as count_Vertex FROM networkvis.edges GROUP by NetworkID";
+            String vertex_sql = "SELECT NetworkID, NULL as count_Edge, count(ID) as count_Vertex FROM networkvis.nodes GROUP by NetworkID";
+            String output = String.Format("{0} ({1} UNION ALL {2}) as uni GROUP by NetworkID",sql,edge_sql,vertex_sql);
+            return mysql_query(output);
+        }
 
+        public void export_to_db(){
+            
+        }
+        public void convert_to_graph()
+        {
+
+        }
     }
 
 }
