@@ -143,16 +143,18 @@ namespace StandaloneNode
 
         private void button1_Click(object sender, EventArgs e)
         {
+            RTFDebugOut.Clear();
             foreach (IVertex oVertex in layoutControl1.Graph.Vertices)
             {
-                RTFDebugOut.Clear();
+                oVertex.SetValue(ReservedMetadataKeys.PerVertexLabel, oVertex.Name);
                 RTFDebugOut.AppendText(oVertex.Name.ToString() + "\r\n");
             }
+            layoutControl1.ShowGraph(true);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool rv = m_oPageRankCalculator.TryCalculateGraphMetrics(layoutControl1.Graph, null, out oPageRankMetricDouble);
+            bool rv = m_oPageRankCalculator.TryCalculateGraphMetrics(layoutControl1.Graph, null, out oPageRankMetricDouble);    
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Smrf.NodeXL.Core.Graph graph2 = new Smrf.NodeXL.Core.Graph();
+            Smrf.NodeXL.Core.Graph graph1 = new Smrf.NodeXL.Core.Graph();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFacebookDataGetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +46,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -53,7 +54,6 @@
             this.RTFDebugOut = new System.Windows.Forms.RichTextBox();
             this.cdbOpenModel = new System.Windows.Forms.OpenFileDialog();
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -154,9 +154,9 @@
             // layoutControl1
             // 
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            graph2.Name = null;
-            graph2.Tag = null;
-            this.layoutControl1.Graph = graph2;
+            graph1.Name = null;
+            graph1.Tag = null;
+            this.layoutControl1.Graph = graph1;
             this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.layoutControl1.Name = "layoutControl1";
@@ -217,6 +217,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ModelControl";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 124);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "ClusteringCoefficientCalculate";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(0, 85);
@@ -233,7 +243,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "ListVertices";
+            this.button1.Text = "ShowLabels";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -269,16 +279,6 @@
             // cdbOpenGraphML
             // 
             this.cdbOpenGraphML.FileName = "openFileDialog1";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(0, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "ClusteringCoefficientCalculate";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // StandAloneMainUI
             // 
