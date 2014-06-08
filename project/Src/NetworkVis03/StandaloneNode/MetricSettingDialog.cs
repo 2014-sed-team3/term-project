@@ -13,6 +13,7 @@ namespace StandaloneNode
     public partial class MetricSettingDialog : Form
     {
         private MetricsCalculatorManager m_ocontroller;
+        public MetricsCheckedList chklist;
         public MetricSettingDialog()
         {
             InitializeComponent();
@@ -32,8 +33,9 @@ namespace StandaloneNode
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            MetricsCheckedList chklist = new MetricsCheckedList();
- 
+            //MetricsCheckedList chklist = new MetricsCheckedList();
+            chklist = new MetricsCheckedList();
+
             if(checkedListBox1.CheckedItems.Contains("overall graph metrics")) chklist.overall_graph_metrics = true;
             if(checkedListBox1.CheckedItems.Contains("vertex degree")) chklist.vertex_degree = true;
             if(checkedListBox1.CheckedItems.Contains("vertex reciprocated pair ratio")) chklist.vertex_reciprocated_pair_ratio = true;

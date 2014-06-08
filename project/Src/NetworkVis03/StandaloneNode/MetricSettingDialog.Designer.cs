@@ -48,16 +48,17 @@
             "vertex eigen vector centrality",
             "group metrics"});
             this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(184, 140);
+            this.checkedListBox1.Size = new System.Drawing.Size(244, 164);
             this.checkedListBox1.TabIndex = 0;
-            
             // 
             // btnSelectAll
             // 
-            this.btnSelectAll.Location = new System.Drawing.Point(197, 12);
+            this.btnSelectAll.Location = new System.Drawing.Point(263, 15);
+            this.btnSelectAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectAll.Name = "btnSelectAll";
-            this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll.Size = new System.Drawing.Size(100, 29);
             this.btnSelectAll.TabIndex = 1;
             this.btnSelectAll.Text = "Select All";
             this.btnSelectAll.UseVisualStyleBackColor = true;
@@ -65,9 +66,10 @@
             // 
             // btnDeselectAll
             // 
-            this.btnDeselectAll.Location = new System.Drawing.Point(197, 41);
+            this.btnDeselectAll.Location = new System.Drawing.Point(263, 51);
+            this.btnDeselectAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeselectAll.Name = "btnDeselectAll";
-            this.btnDeselectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnDeselectAll.Size = new System.Drawing.Size(100, 29);
             this.btnDeselectAll.TabIndex = 2;
             this.btnDeselectAll.Text = "Deselect All";
             this.btnDeselectAll.UseVisualStyleBackColor = true;
@@ -75,9 +77,10 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(197, 79);
+            this.btnCalculate.Location = new System.Drawing.Point(263, 88);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculate.Size = new System.Drawing.Size(100, 29);
             this.btnCalculate.TabIndex = 3;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -86,9 +89,10 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(197, 117);
+            this.btnCancel.Location = new System.Drawing.Point(263, 125);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 29);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -96,15 +100,16 @@
             // 
             // MetricSettingDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(289, 167);
+            this.ClientSize = new System.Drawing.Size(385, 209);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.btnDeselectAll);
             this.Controls.Add(this.btnSelectAll);
             this.Controls.Add(this.checkedListBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MetricSettingDialog";
             this.Text = "MetricSettingDialog";
             this.ResumeLayout(false);

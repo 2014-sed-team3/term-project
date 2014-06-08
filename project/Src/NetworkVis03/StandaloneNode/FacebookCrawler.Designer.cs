@@ -668,8 +668,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "粉絲頁資料擷取";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Shown += new System.EventHandler(this.Form1_Shown);
+            this.Load += new System.EventHandler(this.FacebookCrawler_Load);
+            this.Shown += new System.EventHandler(this.FacebookCrawler_Shown);
             this.dbConnInfo.ResumeLayout(false);
             this.dbConnInfo.PerformLayout();
             this.accessTokenGroup.ResumeLayout(false);

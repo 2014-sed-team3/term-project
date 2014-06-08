@@ -46,6 +46,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.RTFDebugOut = new System.Windows.Forms.RichTextBox();
             this.cdbOpenModel = new System.Windows.Forms.OpenFileDialog();
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
-            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -219,11 +219,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ModelControl";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(0, 163);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(200, 35);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "CalculateAll";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(0, 124);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 23);
+            this.button3.Size = new System.Drawing.Size(200, 33);
             this.button3.TabIndex = 2;
             this.button3.Text = "ClusteringCoefficientCalculate";
             this.button3.UseVisualStyleBackColor = true;
@@ -233,7 +243,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(0, 85);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 23);
+            this.button2.Size = new System.Drawing.Size(200, 33);
             this.button2.TabIndex = 1;
             this.button2.Text = "PageRankCalculate";
             this.button2.UseVisualStyleBackColor = true;
@@ -243,7 +253,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(0, 46);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 23);
+            this.button1.Size = new System.Drawing.Size(200, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "ShowLabels";
             this.button1.UseVisualStyleBackColor = true;
@@ -281,15 +291,6 @@
             // cdbOpenGraphML
             // 
             this.cdbOpenGraphML.FileName = "openFileDialog1";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(0, 163);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // StandAloneMainUI
             // 

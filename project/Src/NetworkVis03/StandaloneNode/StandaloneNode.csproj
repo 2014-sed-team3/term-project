@@ -86,12 +86,6 @@
     <Compile Include="MetricCalculationProgressDialog.Designer.cs">
       <DependentUpon>MetricCalculationProgressDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="MetricSettingDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MetricSettingDialog.Designer.cs">
-      <DependentUpon>MetricSettingDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyListViewSorter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgressState.cs" />
@@ -122,9 +116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MetricCalculationProgressDialog.resx">
       <DependentUpon>MetricCalculationProgressDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MetricSettingDialog.resx">
-      <DependentUpon>MetricSettingDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

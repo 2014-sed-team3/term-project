@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            this.btnDeselectAll = new System.Windows.Forms.Button();
+            this.btnCalculate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkedListBox1
@@ -44,6 +44,7 @@
             "vertex reciprocated pair ratio",
             "vertex clustering coefficient",
             "vertex pagerank",
+            "edge reciprocation",
             "vertex eigen vector centrality",
             "group metrics"});
             this.checkedListBox1.Location = new System.Drawing.Point(24, 12);
@@ -52,51 +53,55 @@
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             // 
-            // button1
+            // btnSelectAll
             // 
-            this.button1.Location = new System.Drawing.Point(295, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Location = new System.Drawing.Point(295, 12);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(120, 44);
+            this.btnSelectAll.TabIndex = 1;
+            this.btnSelectAll.Text = "Select All";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
-            // button2
+            // btnDeselectAll
             // 
-            this.button2.Location = new System.Drawing.Point(295, 51);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeselectAll.Location = new System.Drawing.Point(295, 62);
+            this.btnDeselectAll.Name = "btnDeselectAll";
+            this.btnDeselectAll.Size = new System.Drawing.Size(120, 40);
+            this.btnDeselectAll.TabIndex = 2;
+            this.btnDeselectAll.Text = "Deselect All";
+            this.btnDeselectAll.UseVisualStyleBackColor = true;
+            this.btnDeselectAll.Click += new System.EventHandler(this.btnDeselectAll_Click);
             // 
-            // button3
+            // btnCalculate
             // 
-            this.button3.Location = new System.Drawing.Point(295, 95);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCalculate.Location = new System.Drawing.Point(295, 108);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(120, 37);
+            this.btnCalculate.TabIndex = 3;
+            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
-            // button4
+            // btnClose
             // 
-            this.button4.Location = new System.Drawing.Point(295, 138);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(295, 151);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(120, 41);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // GroupItemSelecter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 250);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(432, 210);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.btnDeselectAll);
+            this.Controls.Add(this.btnSelectAll);
             this.Controls.Add(this.checkedListBox1);
             this.Name = "GroupItemSelecter";
             this.Text = "GroupItemSelecter";
@@ -107,10 +112,10 @@
         #endregion
 
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.Button btnDeselectAll;
+        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Button btnClose;
 
     }
 }

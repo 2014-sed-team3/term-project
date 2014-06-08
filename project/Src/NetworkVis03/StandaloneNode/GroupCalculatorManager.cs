@@ -55,8 +55,7 @@ namespace StandaloneNode
 
         }
 
-        protected void BackgroundWorker_DoWork
-            (object sender, DoWorkEventArgs e)
+        protected void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
 
             Debug.Assert(e.Argument is CalculateGroupsAsyncArgs);
@@ -85,10 +84,8 @@ namespace StandaloneNode
         /* This is invoked when a progress changed event is raised
          * Outter View component will be notified by this method to do corresponding acts.
          * */
-        protected void BackgroundWorker_ProgressChanged
-            (object sender, ProgressChangedEventArgs e)
+        protected void BackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-
             ProgressChangedEventHandler oCalculationProgressChanged =this.CalculationProgressChanged;
 
             if (oCalculationProgressChanged != null)
@@ -113,12 +110,9 @@ namespace StandaloneNode
         /* This is invoked when the BackgroundWorker completes, is cancelled or issues error.
          * This method will forward such event to View, i.e Dialog in this project, so that View can do corresponding acts.
          * */
-        protected void BackgroundWorker_RunWorkerCompleted
-            (object sender, RunWorkerCompletedEventArgs e)
+        protected void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
             wbFlag = true;
-
             RunWorkerCompletedEventHandler oCalculationCompleted = this.CalculationCompleted;
 
             if (oCalculationCompleted != null)
@@ -135,7 +129,6 @@ namespace StandaloneNode
                      */
                 }
             }
-
             oCalculationCompleted(this, e);
         }
 
@@ -155,8 +148,6 @@ namespace StandaloneNode
             public IGraph Graph;
             public AnalyzerBase[] Analyzers;
         };
-
-
     }
 
     public class GroupsCheckedList

@@ -49,8 +49,6 @@ namespace StandaloneNode
             if (checkedlist.vertex_eigenvector_centrality == true) {}
             if (checkedlist.group_metrics == true) { args.Analyzers.AddLast(new GroupMetricCalculator());} 
             
-
-
             // create a new BackgroundWorker
             m_oBackgroundWorker = new BackgroundWorker();
             m_oBackgroundWorker.DoWork += new DoWorkEventHandler(BackgroundWorker_DoWork);
@@ -58,12 +56,10 @@ namespace StandaloneNode
             m_oBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker_RunWorkerCompleted);
 
             m_oBackgroundWorker.RunWorkerAsync(args);
-
         }
 
         protected void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
-        { 
-            
+        {  
             Debug.Assert(e.Argument is CalculateGraphMetricsAsyncArgs);
 
             CalculateGraphMetricsAsyncArgs tmpArgs = (CalculateGraphMetricsAsyncArgs)e.Argument;
@@ -75,13 +71,10 @@ namespace StandaloneNode
                 if (!analyzer.tryAnalyze(graph, m_oBackgroundWorker, out result))
                 {
                     // The user cancelled.
-
                     e.Cancel = true;
-
                     m_oBackgroundWorker.ReportProgress(0, "Cancelled");
                     return;
                 }
-
                 results.AddLast(result);
             }
             e.Result = results;

@@ -35,9 +35,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(445, 180);
+            this.btnCancel.Location = new System.Drawing.Point(428, 91);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 29);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -45,28 +46,31 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(60, 91);
+            this.progressBar1.Location = new System.Drawing.Point(33, 22);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(274, 34);
+            this.progressBar1.Size = new System.Drawing.Size(365, 42);
             this.progressBar1.TabIndex = 1;
             // 
             // lblProcessState
             // 
             this.lblProcessState.AutoSize = true;
-            this.lblProcessState.Location = new System.Drawing.Point(382, 102);
+            this.lblProcessState.Location = new System.Drawing.Point(406, 38);
+            this.lblProcessState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProcessState.Name = "lblProcessState";
-            this.lblProcessState.Size = new System.Drawing.Size(62, 12);
+            this.lblProcessState.Size = new System.Drawing.Size(77, 15);
             this.lblProcessState.TabIndex = 2;
             this.lblProcessState.Text = "process state";
             // 
             // MetricsCalculationProgressDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 228);
+            this.ClientSize = new System.Drawing.Size(559, 136);
             this.Controls.Add(this.lblProcessState);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnCancel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MetricsCalculationProgressDialog";
             this.Text = "WorkProgressDialog";
             this.Load += new System.EventHandler(this.WorkProgressDialog_Load);
