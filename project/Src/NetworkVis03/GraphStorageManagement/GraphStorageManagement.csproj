@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D3A51111-E025-49CD-8ED5-EE8765A6F7B9}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GraphStorageManagement</RootNamespace>
     <AssemblyName>GraphStorageManagement</AssemblyName>
@@ -31,7 +31,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MySql.Data\bin\v4.5\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.NodeXL.Core">
+      <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.NodeXL.Util">
+      <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Util.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,7 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DB_Converter.cs" />
+    <Compile Include="DB_Manager.cs" />
     <Compile Include="GenerateGraph.cs">
       <SubType>Form</SubType>
     </Compile>
