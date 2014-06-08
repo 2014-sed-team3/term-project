@@ -8,24 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI
+namespace GraphStorageManagement
 {
-    public partial class GroupSettingDialog : Form
+    public partial class NetworkID : Form
     {
-        public GroupSettingDialog()
+        public NetworkID()
         {
             InitializeComponent();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /* TO DO:
-             * logic to set GroupsCheckedList and pass it to 
-             * 
-             * */
+
         }
-
-        
-
     }
 }

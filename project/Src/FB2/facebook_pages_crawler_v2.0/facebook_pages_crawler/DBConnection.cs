@@ -96,7 +96,31 @@ namespace facebook_pages_crawler
             sql = "CREATE TABLE IF NOT EXISTS " + dbName + ".`talk_msg_account` ( `Acc` varchar(50) NOT NULL, `FbPw` varchar(50) NOT NULL, `MailPw` varchar(50) NOT NULL, PRIMARY KEY (`Acc`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
             cmd.CommandText = sql;
             cmd.ExecuteReader().Close();
-
+			
+			sql = "CREATE TABLE IF NOT EXISTS " + dbName + 
+			".`allinone` ( `post_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL," + 
+			"`datatype`  int(10)  NOT NULL," + 
+			"`author_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL," + 
+			"`author` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," + 
+			"`message`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,"+
+			"`picture` varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ," +
+			"`url`  varchar(700) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ," +
+			"`name`  varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ," +
+			"`caption`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ," +
+			"`source`  varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ," +
+			"`icon`  varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ," +
+			"`type`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ," +
+			"`object_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ," +
+			"`description`  longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ," +
+			"`likes`  int(10)  NOT NULL ," +
+			"`created_time`  datetime DEFAULT NULL ," +
+			"`updated_time`  datetime DEFAULT NULL ," +
+			"`comments`  int(10)  NOT NULL ," +
+			"`shares`  int(11)  NOT NULL ," +
+			"`updatetime`  datetime DEFAULT NULL, PRIMARY KEY (`post_id`))ENGINE=MyISAM DEFAULT CHARSET=utf8;";
+            cmd.CommandText = sql;
+            cmd.ExecuteReader().Close();
+			
             try
             {
                 conn.Close();

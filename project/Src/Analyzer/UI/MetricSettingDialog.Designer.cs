@@ -44,13 +44,14 @@
             "vertex reciprocated pair ratio",
             "vertex clustering coefficient",
             "vertex pagerank",
+            "edge reciprocation",
             "vertex eigen vector centrality",
             "group metrics"});
             this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(184, 140);
             this.checkedListBox1.TabIndex = 0;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            
             // 
             // btnSelectAll
             // 
@@ -106,7 +107,6 @@
             this.Controls.Add(this.checkedListBox1);
             this.Name = "MetricSettingDialog";
             this.Text = "MetricSettingDialog";
-            this.Load += new System.EventHandler(this.MetricSettingDialog_Load);
             this.ResumeLayout(false);
 
         }

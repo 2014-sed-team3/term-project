@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}</ProjectGuid>
+    <ProjectGuid>{D3A51111-E025-49CD-8ED5-EE8765A6F7B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UI</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <RootNamespace>GraphStorageManagement</RootNamespace>
+    <AssemblyName>GraphStorageManagement</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -29,70 +31,74 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MySql.Data\bin\v4.5\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.NodeXL.Core">
+      <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Smrf.NodeXL.Util">
+      <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Util.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GraphMetricCalculatorManager.cs" />
-    <Compile Include="GroupCalculationProgressDialog.cs">
+    <Compile Include="DB_Converter.cs" />
+    <Compile Include="DB_Manager.cs" />
+    <Compile Include="GenerateGraph.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupCalculationProgressDialog.Designer.cs">
-      <DependentUpon>GroupCalculationProgressDialog.cs</DependentUpon>
+    <Compile Include="GenerateGraph.Designer.cs">
+      <DependentUpon>GenerateGraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupCalculatorManager.cs" />
-    <Compile Include="GroupSettingDialog.cs">
+    <Compile Include="NetworkID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupSettingDialog.Designer.cs">
-      <DependentUpon>GroupSettingDialog.cs</DependentUpon>
+    <Compile Include="NetworkID.Designer.cs">
+      <DependentUpon>NetworkID.cs</DependentUpon>
     </Compile>
-    <Compile Include="MetricSettingDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MetricSettingDialog.Designer.cs">
-      <DependentUpon>MetricSettingDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProgressState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MetricCalculationProgressDialog.cs">
-      <SubType>Form</SubType>
+    <EmbeddedResource Include="GenerateGraph.resx">
+      <DependentUpon>GenerateGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetworkID.resx">
+      <DependentUpon>NetworkID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="MetricCalculationProgressDialog.Designer.cs">
-      <DependentUpon>MetricCalculationProgressDialog.cs</DependentUpon>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GroupCalculationProgressDialog.resx">
-      <DependentUpon>GroupCalculationProgressDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GroupSettingDialog.resx">
-      <DependentUpon>GroupSettingDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MetricSettingDialog.resx">
-      <DependentUpon>MetricSettingDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MetricCalculationProgressDialog.resx">
-      <DependentUpon>MetricCalculationProgressDialog.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\NetworkVis03\Core\Core.csproj">
-      <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Analyzer\Analyzer.csproj">
-      <Project>{791d67eb-c08b-4672-bb6a-9a213301274c}</Project>
-      <Name>Analyzer</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

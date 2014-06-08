@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class GroupSettingDialog : Form
+    public partial class GenerateGraph : Form
     {
-        public GroupSettingDialog()
+        public GenerateGraph()
         {
             InitializeComponent();
         }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            /* TO DO:
-             * logic to set GroupsCheckedList and pass it to 
-             * 
-             * */
-        }
-
-        
-
     }
 }

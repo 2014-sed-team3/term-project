@@ -18,26 +18,6 @@ namespace UI
             InitializeComponent();
         }
 
-        public MetricSettingDialog(MetricsCalculatorManager ctlr) : base(){
-            this.setController(ctlr);
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MetricSettingDialog_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void setController(MetricsCalculatorManager ctlr) {
-            m_ocontroller = ctlr;
-            this.btnCalculate.Click += new System.EventHandler(m_ocontroller.calculateMetricsAsync);
-            
-        }
-
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < this.checkedListBox1.Items.Count; i++)
@@ -52,11 +32,23 @@ namespace UI
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            // create a WorkProgressDialog and pass in checklist
+            MetricsCheckedList chklist = new MetricsCheckedList();
  
-            DialogResult = DialogResult.OK;
-            this.Close();
+            if(checkedListBox1.CheckedItems.Contains("overall graph metrics")) chklist.overall_graph_metrics = true;
+            if(checkedListBox1.CheckedItems.Contains("vertex degree")) chklist.vertex_degree = true;
+            if(checkedListBox1.CheckedItems.Contains("vertex reciprocated pair ratio")) chklist.vertex_reciprocated_pair_ratio = true;
+            if(checkedListBox1.CheckedItems.Contains("vertex clustering coefficient")) chklist.vertex_clustering_coefficient = true;
+            if(checkedListBox1.CheckedItems.Contains("vertex pagerank")) chklist.vertex_pagerank = true;
+            if(checkedListBox1.CheckedItems.Contains("edge reciprocation")) chklist.edge_reciprocation = true;
+            if(checkedListBox1.CheckedItems.Contains("vertex eigen vector centrality")) chklist.vertex_eigenvector_centrality = true;
+            if(checkedListBox1.CheckedItems.Contains("group metrics")) chklist.group_metrics = true;
 
+            MetricsCalculationProgressDialog dg = new MetricsCalculationProgressDialog(chklist);
+            if (dg.ShowDialog() == DialogResult.OK)
+            {
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

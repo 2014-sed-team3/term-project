@@ -13,11 +13,10 @@ namespace UI
     public class MetricsCalculatorManager
     {
         private BackgroundWorker m_oBackgroundWorker;
-        private MetricSettingDialog m_oMetricSettingDialog;
-        private MetricsCalculationProgressDialog m_oWorkProgressDialog;
-
+        private bool wbFlag;
         public MetricsCalculatorManager() {
             m_oBackgroundWorker = null;
+            wbFlag = false;
         }
 
         /* Create analyzers and graph according to a "setting" object provided by outter View component; then pass to a BackgroundWorker.
@@ -40,14 +39,16 @@ namespace UI
             // logic about which calculator should be created 
 
             CalculateGraphMetricsAsyncArgs args = new CalculateGraphMetricsAsyncArgs(); // add analyzer to this object and pass to BackgroundWorker
+            args.Analyzers = new LinkedList<AnalyzerBase>();
 
-            if (checkedListBox.CheckedItems.Contains("overall graph metrics")) { } 
-            if (checkedListBox.CheckedItems.Contains("vertex degree")) { }
-            if (checkedListBox.CheckedItems.Contains("vertex reciprocated pair ratio")) { }
-            if (checkedListBox.CheckedItems.Contains("vertex clustering coefficient")) { }
-            if (checkedListBox.CheckedItems.Contains("vertex pagerank")) { }
-            if (checkedListBox.CheckedItems.Contains("vertex eigen vector centrality")) { }
-            if (checkedListBox.CheckedItems.Contains("group metrics")) { }
+            if (checkedlist.overall_graph_metrics == true) {args.Analyzers.AddLast(new OverallMetricCalculator()); }
+            if (checkedlist.vertex_degree == true) {args.Analyzers.AddLast(new VertexDegreeCalculator()); }
+            if (checkedlist.vertex_reciprocated_pair_ratio == true) {args.Analyzers.AddLast(new ReciprocatedVertexPairRatioCalculator()); }
+            if (checkedlist.vertex_clustering_coefficient == true) {args.Analyzers.AddLast(new ClusteringCoefficientCalculator()); }
+            if (checkedlist.vertex_pagerank == true) { args.Analyzers.AddLast(new PageRankCalculator());}
+            if (checkedlist.vertex_eigenvector_centrality == true) {}
+            if (checkedlist.group_metrics == true) { args.Analyzers.AddLast(new GroupMetricCalculator());} 
+            
 
 
             // create a new BackgroundWorker
@@ -67,9 +68,9 @@ namespace UI
             Debug.Assert(e.Argument is CalculateGraphMetricsAsyncArgs);
 
             CalculateGraphMetricsAsyncArgs tmpArgs = (CalculateGraphMetricsAsyncArgs)e.Argument;
-            AnalyzerBase[] analyzers= tmpArgs.Analyzers;
+            AnalyzerBase[] analyzers = tmpArgs.Analyzers.ToArray();
             IGraph graph = tmpArgs.Graph;
-            LinkedList<AnalyzerBase> results = new LinkedList<AnalyzerBase>();
+            LinkedList<AnalyzeResultBase> results = new LinkedList<AnalyzeResultBase>();
             foreach (AnalyzerBase analyzer in analyzers) {
                 AnalyzeResultBase result;
                 if (!analyzer.tryAnalyze(graph, m_oBackgroundWorker, out result))
@@ -78,14 +79,14 @@ namespace UI
 
                     e.Cancel = true;
 
-                    m_oBackgroundWorker.ReportProgress(0, new GraphMetricProgress("Cancelled.", false));
+                    m_oBackgroundWorker.ReportProgress(0, "Cancelled");
                     return;
                 }
 
                 results.AddLast(result);
             }
             e.Result = results;
-            
+            m_oBackgroundWorker.ReportProgress(100, new ProgressState(100, "Writing Back..", true));
         }
 
         /* This is invoked when a progress changed event is raised
@@ -94,14 +95,10 @@ namespace UI
         protected void BackgroundWorker_ProgressChanged     
             (object sender, ProgressChangedEventArgs e)
         {
-            AssertValid();
 
-            // Forward the event.
+            ProgressChangedEventHandler oCalculationProgressChanged = this.CalculationProgressChanged;
 
-            ProgressChangedEventHandler oGraphMetricCalculationProgressChanged =
-                this.GraphMetricCalculationProgressChanged;
-
-            if (oGraphMetricCalculationProgressChanged != null)
+            if (oCalculationProgressChanged != null)
             {
                 // There are two sources of this event: the graph metric
                 // calculators in the Algorithms namespace, which set e.UserState
@@ -112,11 +109,11 @@ namespace UI
 
                 if (e.UserState is String)
                 {
-                    String sProgressMessage = (String)e.UserStat;
-                    e = new ProgressChangedEventArgs(e.ProgressPercentage, sProgressMessage);
+                    ProgressState oProgressMessage = new ProgressState(e.ProgressPercentage, (string)e.UserState, false);
+                    e = new ProgressChangedEventArgs(e.ProgressPercentage, oProgressMessage);
                 }
 
-                oGraphMetricCalculationProgressChanged(this, e);
+                oCalculationProgressChanged(this, e); //forward event
             }
         }
 
@@ -126,35 +123,42 @@ namespace UI
         protected void BackgroundWorker_RunWorkerCompleted      
             (object sender, RunWorkerCompletedEventArgs e)
         {
-            RunWorkerCompletedEventHandler oGraphMetricCalculationCompleted = this.CalculationCompleted;
 
-            if (oGraphMetricCalculationCompleted != null)
+            wbFlag = true;
+
+            RunWorkerCompletedEventHandler oCalculationCompleted = this.CalculationCompleted;
+
+            if (oCalculationCompleted != null)
             {
                 Debug.Assert(e.Cancelled || e.Error != null ||
                     e.Result is LinkedList<AnalyzerBase>);
-
-                oGraphMetricCalculationCompleted(this, e);  //forward event
+   
                 if (!e.Cancelled) //normally complete
                 {
                     Debug.Assert(e.Result is LinkedList<AnalyzerBase>);
-                    /* write e.Result to data base */
+
+                    /* TO DO
+                     * write e.Result to data base
+                     */
                 }
+
+                oCalculationCompleted(this, e);  //forward event to View component
             }
 
-            oGraphMetricCalculationCompleted(this, e);
+            
         }
 
         /* Allow outter View component to give a "Cancell" command to this manager
          * */
         public void CancelAsyncCalculate() {
-            if (m_oBackgroundWorker != null && m_oBackgroundWorker.IsBusy)
+            if (m_oBackgroundWorker != null && m_oBackgroundWorker.IsBusy && wbFlag == false)
                 m_oBackgroundWorker.CancelAsync();
         }
 
         protected class CalculateGraphMetricsAsyncArgs
         {
             public IGraph Graph;
-            public AnalyzerBase[] Analyzers;
+            public LinkedList<AnalyzerBase> Analyzers;
         };
 
 
@@ -170,6 +174,7 @@ namespace UI
         public bool vertex_pagerank;
         public bool vertex_eigenvector_centrality;
         public bool group_metrics;
+        public bool edge_reciprocation;
   
         public MetricsCheckedList(){
             overall_graph_metrics = false;
@@ -179,6 +184,7 @@ namespace UI
             vertex_pagerank = false;
             vertex_eigenvector_centrality = false;
             group_metrics = false;
+            edge_reciprocation = false;
         }
    
     }
