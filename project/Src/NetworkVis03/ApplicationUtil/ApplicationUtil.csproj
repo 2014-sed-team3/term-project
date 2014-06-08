@@ -67,27 +67,34 @@
     </Compile>
     <Compile Include="..\..\Common\Controls\ColorPicker\ColorPicker.cs">
       <Link>Controls\ColorPicker\ColorPicker.cs</Link>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="..\..\Common\Controls\ComboBoxPlus.cs">
       <Link>Controls\ComboBoxPlus.cs</Link>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\..\Common\Controls\FormPlus.cs">
       <Link>Controls\FormPlus.cs</Link>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="..\..\Common\Controls\HelpLinkLabel.cs">
       <Link>Controls\HelpLinkLabel.cs</Link>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\..\Common\Controls\ListControlUtil.cs">
       <Link>Controls\ListControlUtil.cs</Link>
     </Compile>
     <Compile Include="..\..\Common\Controls\StartProcessLinkLabel.cs">
       <Link>Controls\StartProcessLinkLabel.cs</Link>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\..\Common\Controls\ToolStripPlus.cs">
       <Link>Controls\ToolStripPlus.cs</Link>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\..\Common\Controls\TrackBarWithDelay.cs">
       <Link>Controls\TrackBarWithDelay.cs</Link>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\..\Common\Dialogs\OpenFileDialog2.cs">
       <Link>Dialogs\OpenFileDialog2.cs</Link>

@@ -9,95 +9,29 @@ using System.Threading.Tasks;
 
 namespace Analyzer
 {
-    public abstract class VertexMetricCalculatorBase : IAnalyzer
+    public abstract class VertexMetricCalculatorBase : AnalyzerBase
     {
-        private BackgroundWorker m_obackgroundWorker;
+        public abstract bool tryCalculate(IGraph graph, BackgroundWorker bgw, out VertexMetricBase metrics);
+
+        public override string AnalyzerDescription
+        {
+            get { return CalculatorDescription(); }
+        }
+
+        public override bool tryAnalyze(IGraph graph, BackgroundWorker bgw, out AnalyzeResultBase results)
+        {
+            VertexMetricBase oVertexMetricBase;
+            bool rv = tryCalculate(graph, bgw, out oVertexMetricBase);
+            results = oVertexMetricBase;
+            return rv;
+        }
         
-        public abstract VertexMetricBase Calculate(IGraph graph);
+        public abstract string CalculatorDescription();
 
 
-         public AnalyzeResultBase analyze(IGraph graph)
-         {
-             return Calculate(graph);
-         }
 
 
-         public string GraphMetricDescription
-         {
-             get { return "~~~"; }
-         }
 
-         public void setBackgroundWorker(BackgroundWorker b)
-         {
-             m_obackgroundWorker = b;
-         }
-         protected BackgroundWorker getBackgroundWorker() {
-             return m_obackgroundWorker;
-         }
-
-         protected Boolean ReportProgressAndCheckCancellationPending
-             (Int32 iCalculationsSoFar,Int32 iTotalCalculations,BackgroundWorker oBackgroundWorker)
-         {
-             Debug.Assert(iCalculationsSoFar >= 0);
-             Debug.Assert(iTotalCalculations >= 0);
-             Debug.Assert(iCalculationsSoFar <= iTotalCalculations);
-       
-
-             if (oBackgroundWorker != null)
-             {
-                 if (oBackgroundWorker.CancellationPending)
-                 {
-                     return (false);
-                 }
-
-                 ReportProgress(iCalculationsSoFar, iTotalCalculations,
-                     oBackgroundWorker);
-             }
-
-             return (true);
-         }
-
-         protected void ReportProgress
-             (Int32 iCalculationsSoFar,Int32 iTotalCalculations,BackgroundWorker oBackgroundWorker)
-         {
-             Debug.Assert(iCalculationsSoFar >= 0);
-             Debug.Assert(iTotalCalculations >= 0);
-             Debug.Assert(iCalculationsSoFar <= iTotalCalculations);
-     
-
-             if (oBackgroundWorker != null)
-             {
-                 String sProgress = String.Format(
-
-                     "Calculating {0}."
-                     ,
-                     this.GraphMetricDescription
-                     );
-
-                 oBackgroundWorker.ReportProgress(
-
-                     CalculateProgressInPercent(iCalculationsSoFar,
-                         iTotalCalculations),
-
-                     sProgress);
-             }
-         }
-         public static Int32 CalculateProgressInPercent
-              (Int32 calculationsCompleted, Int32 totalCalculations)
-         {
-             Debug.Assert(calculationsCompleted >= 0);
-             Debug.Assert(totalCalculations >= 0);
-             Debug.Assert(calculationsCompleted <= totalCalculations);
-
-             Int32 iPercentProgress = 0;
-
-             if (totalCalculations > 0)
-             {
-                 iPercentProgress = (Int32)(100F *
-                     (Single)calculationsCompleted / (Single)totalCalculations);
-             }
-
-             return (iPercentProgress);
-         }
+        
     }
 }

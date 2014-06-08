@@ -14,26 +14,38 @@ namespace Analyzer
     {
         private int m_iDMinimum;
         private int m_iDMaximum;
-        public DConnectorMotifDetector(int iDMinimum, int iDMaximum) {
+        public DConnectorMotifDetector(int iDMinimum, int iDMaximum) : this(){
             m_iDMinimum = iDMinimum;
             m_iDMaximum = iDMaximum;
         }
+        public DConnectorMotifDetector() { }
 
-        public override Groups partition(IGraph graph)
+        public override bool tryPartition(IGraph graph, BackgroundWorker bgw, out Groups results)
         {
             ICollection<Motif> oMotifs;
             Groups oGroups;
             int i = 0;
-            TryCalculateDConnectorMotifs(graph, m_iDMinimum, m_iDMaximum, getBackgroundWorker(), out oMotifs);
-            oGroups = new Groups(oMotifs.Count);
-            foreach (Motif m in oMotifs) {
-                oGroups.Add(i, (DConnectorMotif)m);
-                i++;
+            bool rv = TryCalculateDConnectorMotifs(graph, m_iDMinimum, m_iDMaximum, bgw, out oMotifs);
+            if (rv == true)
+            {
+                oGroups = new Groups(oMotifs.Count);
+                foreach (Motif m in oMotifs)
+                {
+                    oGroups.Add(i, (DConnectorMotif)m);
+                    i++;
+                }
             }
-            return oGroups;
+            else oGroups = new Groups(1);
+            results = oGroups;
+            return rv;
         }
 
-        protected Boolean TryCalculateDConnectorMotifs
+        public override string getPartitionerDescription()
+        {
+            return "Detecting DConnectorMotifs";
+        }
+
+        public Boolean TryCalculateDConnectorMotifs
             (IGraph oGraph, Int32 iDMinimum, Int32 iDMaximum, BackgroundWorker oBackgroundWorker, out ICollection<Motif> oMotifs)
         {
             Debug.Assert(oGraph != null);
@@ -54,9 +66,9 @@ namespace Analyzer
             foreach (IVertex oPotentialSpanVertex in oVertices)
             {
                 
-                if ((iCalculationsSoFar % 100 != 0)
-                 ||
-                 ReportProgressAndCheckCancellationPending(
+                if ((iCalculationsSoFar % 100 == 0)
+                 &&
+                 !ReportProgressAndCheckCancellationPending(
                      iCalculationsSoFar, iVertices, oBackgroundWorker))
                 {
                     return (false);
@@ -290,5 +302,7 @@ namespace Analyzer
                 oDConnectorMotif.SpanScale = fSpanScale;
             }
         }
+
+        
     }
 }

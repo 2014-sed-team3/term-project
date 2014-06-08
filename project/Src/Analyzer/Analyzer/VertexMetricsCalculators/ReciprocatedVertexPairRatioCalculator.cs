@@ -17,11 +17,16 @@ namespace Analyzer
         {
         }
 
-        public override VertexMetricBase Calculate(IGraph graph)
+        public override bool tryCalculate(IGraph graph, BackgroundWorker bgw, out VertexMetricBase metrics)
         {
-            MetricDouble graphMetrics;
-            TryCalculateGraphMetrics(graph, this.getBackgroundWorker(), out graphMetrics);
-            return graphMetrics;
+            MetricDouble oMetrics;
+            bool rv = TryCalculateGraphMetrics(graph, bgw, out oMetrics);
+            metrics = oMetrics;
+            return rv;
+        }
+
+        public override string CalculatorDescription() {
+            return "Calculating ReciprocatedVertexPairRatio";
         }
 
 
@@ -64,7 +69,7 @@ namespace Analyzer
 
                     oReciprocatedVertexPairRatios.Add(oVertex.ID,
                         CalculateReciprocatedVertexPairRatio(
-                            oVertex, oVertexIDPairs) );
+                            oVertex, oVertexIDPairs));
 
                     iCalculations++;
                 }

@@ -12,15 +12,14 @@ namespace UI
 {
     public partial class MetricSettingDialog : Form
     {
-        private GraphMetricCalculatorManager m_ocontroller;
+        private MetricsCalculatorManager m_ocontroller;
         public MetricSettingDialog()
         {
             InitializeComponent();
         }
 
-        public MetricSettingDialog(GraphMetricCalculatorManager ctlr) : base(){
+        public MetricSettingDialog(MetricsCalculatorManager ctlr) : base(){
             this.setController(ctlr);
-            m_ocontroller.setCheckedListBox(checkedListBox1);
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -33,9 +32,9 @@ namespace UI
 
         }
 
-        public void setController(GraphMetricCalculatorManager ctlr) {
+        public void setController(MetricsCalculatorManager ctlr) {
             m_ocontroller = ctlr;
-            this.btnCalculate.Click += new System.EventHandler(m_ocontroller.calculateMetrics);
+            this.btnCalculate.Click += new System.EventHandler(m_ocontroller.calculateMetricsAsync);
             
         }
 
@@ -53,6 +52,10 @@ namespace UI
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            // create a WorkProgressDialog and pass in checklist
+ 
+            DialogResult = DialogResult.OK;
+            this.Close();
 
         }
 

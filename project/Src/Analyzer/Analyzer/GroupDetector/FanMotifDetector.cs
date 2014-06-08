@@ -12,22 +12,34 @@ namespace Analyzer
 {
     public class FanMotifDetector : GroupDetectorBase
     {
-        public override Groups partition(IGraph graph)
+        public FanMotifDetector() { }
+
+        public override bool tryPartition(IGraph graph, BackgroundWorker bgw, out Groups results)
         {
             ICollection<Motif> oMotifs;
             Groups oGroups;
             int i = 0;
-            TryCalculateFanMotif(graph, getBackgroundWorker(), out oMotifs);
-            oGroups = new Groups(oMotifs.Count);
-            foreach (Motif m in oMotifs)
+            bool rv = TryCalculateFanMotif(graph, bgw, out oMotifs);
+            if (rv == true)
             {
-                oGroups.Add(i, (FanMotif)m);
-                i++;
+                oGroups = new Groups(oMotifs.Count);
+                foreach (Motif m in oMotifs)
+                {
+                    oGroups.Add(i, (FanMotif)m);
+                    i++;
+                }
             }
-            return oGroups;
+            else oGroups = new Groups(1);
+            results = oGroups;
+            return rv;
         }
 
-        protected Boolean TryCalculateFanMotif 
+        public override string getPartitionerDescription()
+        {
+            return "Detecting FanMotifs";
+        }
+
+        public Boolean TryCalculateFanMotif 
             (IGraph oGraph, BackgroundWorker oBackgroundWorker, out ICollection<Motif> oMotifs)
         {
             Debug.Assert(oGraph != null);
@@ -43,8 +55,8 @@ namespace Analyzer
 
             foreach (IVertex oVertex in oVertices)
             {
-                if ((iCalculationsSoFar % 100 != 0)||
-                    ReportProgressAndCheckCancellationPending(iCalculationsSoFar, iVertices, oBackgroundWorker)
+                if ((iCalculationsSoFar % 100 == 0) &&
+                    !ReportProgressAndCheckCancellationPending(iCalculationsSoFar, iVertices, oBackgroundWorker)
                     )
                 {
                     return (false);
@@ -125,7 +137,12 @@ namespace Analyzer
 
                 oFanMotif.ArcScale = fArcScale;
             }
+
+
         }
+        
+
+
 
         
     }

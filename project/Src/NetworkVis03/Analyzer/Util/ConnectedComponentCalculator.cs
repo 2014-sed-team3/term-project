@@ -11,9 +11,11 @@ namespace Analyzer
     public class ConnectedComponentCalculator
     {
         private bool m_sortAscending;
-        public ConnectedComponentCalculator(bool sortAscending)
-        {
+        public ConnectedComponentCalculator() { }
+        public ConnectedComponentCalculator(bool sortAscending) {
+            m_sortAscending = sortAscending;
         }
+
         public IList<LinkedList<IVertex>>
         CalculateStronglyConnectedComponents
         (
