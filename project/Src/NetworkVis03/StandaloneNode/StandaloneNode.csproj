@@ -128,6 +128,14 @@
       <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GraphDataProviders\GraphDataProviders.csproj">
+      <Project>{64bd817e-c145-413c-bd58-9e053c4b20b5}</Project>
+      <Name>GraphDataProviders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphDataProvider\IGraphDataProvider.csproj">
+      <Project>{d5cf9f04-c046-4dfd-9c44-3a0b06241069}</Project>
+      <Name>IGraphDataProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LayoutControl\LayoutControl.csproj">
       <Project>{9e0ba17e-30d6-461a-83e9-7d9d7f0fa9c5}</Project>
       <Name>LayoutControl</Name>
