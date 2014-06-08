@@ -17,10 +17,15 @@ namespace UI
             InitializeComponent();
         }
 
-        private void GroupSettingDialog_Load(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-
+            /* TO DO:
+             * logic to set GroupsCheckedList and pass it to 
+             * 
+             * */
         }
+
+        
 
     }
 }
