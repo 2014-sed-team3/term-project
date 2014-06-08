@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GraphMetricCalculatorManager.cs" />
+    <Compile Include="GroupCalculatorManager.cs" />
     <Compile Include="GroupSettingDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,12 @@
       <DependentUpon>MetricSettingDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkProgressDialog.Designer.cs">
+      <DependentUpon>WorkProgressDialog.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GroupSettingDialog.resx">
@@ -63,6 +70,19 @@
     <EmbeddedResource Include="MetricSettingDialog.resx">
       <DependentUpon>MetricSettingDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WorkProgressDialog.resx">
+      <DependentUpon>WorkProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\project1\Src\NodeXL\Core\Core.csproj">
+      <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Analyzer\Analyzer.csproj">
+      <Project>{791d67eb-c08b-4672-bb6a-9a213301274c}</Project>
+      <Name>Analyzer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

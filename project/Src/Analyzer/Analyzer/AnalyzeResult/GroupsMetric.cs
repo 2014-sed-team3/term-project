@@ -9,7 +9,7 @@ namespace Analyzer
 {
     class GroupsMetric : Dictionary<int, OverallMetrics>, AnalyzeResultBase
     {
-        private int p;
+       
 
         public GroupsMetric(int count) : base(count){}
 

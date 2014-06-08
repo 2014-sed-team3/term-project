@@ -9,51 +9,30 @@ using System.Threading.Tasks;
 
 namespace Analyzer
 {
-    public class OverallMetricCalculator : IAnalyzer
+    public class OverallMetricCalculator : AnalyzerBase
     {
-        private BackgroundWorker m_obackgroundWorker;
-
         public OverallMetricCalculator()
         {
             // (Do nothing.)
 
         }
 
-        public string GraphMetricDescription
+        
+        public override bool tryAnalyze(IGraph graph, BackgroundWorker bgw, out AnalyzeResultBase results)
         {
-            get { return "~~~"; }
+            OverallMetrics oOverallMetrics;
+            bool rv = TryCalculateGraphMetrics(graph, bgw, out oOverallMetrics);
+            results = oOverallMetrics;
+            return rv;
         }
 
-        public void setBackgroundWorker(BackgroundWorker b)
+        public override string AnalyzerDescription
         {
-            m_obackgroundWorker = b;
-        }
-
-
-        public AnalyzeResultBase analyze(IGraph graph){
-            throw new NotImplementedException();
+            get { return "Calculating OverallMetrics"; }
         }
         
 
-        //*************************************************************************
-        //  Method: CalculateGraphMetrics()
-        //
-        /// <summary>
-        /// Calculate the graph metrics.
-        /// </summary>
-        ///
-        /// <param name="graph">
-        /// The graph to calculate metrics for.  The graph may contain duplicate
-        /// edges and self-loops.
-        /// </param>
-        ///
-        /// <returns>
-        /// The graph metrics.
-        /// </returns>
-        //*************************************************************************
-
-        public OverallMetrics CalculateGraphMetrics
-            (IGraph graph)
+        public OverallMetrics CalculateGraphMetrics (IGraph graph)
         {
             Debug.Assert(graph != null);
 
@@ -148,27 +127,8 @@ namespace Analyzer
             return (true);
         }
 
-        //*************************************************************************
-        //  Method: CountSelfLoops()
-        //
-        /// <summary>
-        /// Counts the number of self-loops in the graph.
-        /// </summary>
-        ///
-        /// <param name="oGraph">
-        /// The graph to calculate metrics for.
-        /// </param>
-        ///
-        /// <returns>
-        /// The number of self-loops in the graph.
-        /// </returns>
-        //*************************************************************************
 
-        protected Int32
-        CountSelfLoops
-        (
-            IGraph oGraph
-        )
+        protected Int32 CountSelfLoops(IGraph oGraph)
         {
             Debug.Assert(oGraph != null);
 
@@ -185,30 +145,6 @@ namespace Analyzer
             return (iSelfLoops);
         }
 
-        //*************************************************************************
-        //  Method: CalculateGraphDensity()
-        //
-        /// <summary>
-        /// Calculates the graph's density.
-        /// </summary>
-        ///
-        /// <param name="oGraph">
-        /// The graph to calculate metrics for.
-        /// </param>
-        ///
-        /// <param name="iVertices">
-        /// The number of vertices in the graph.
-        /// </param>
-        ///
-        /// <param name="iTotalEdgesAfterMergingDuplicatesNoSelfLoops">
-        /// The total number of edges the graph would have if its duplicate edges
-        /// were merged and all self-loops were removed.
-        /// </param>
-        ///
-        /// <returns>
-        /// The graph density, or null if it couldn't be calculated.
-        /// </returns>
-        //*************************************************************************
 
         protected Nullable<Double>
         CalculateGraphDensity
@@ -249,38 +185,9 @@ namespace Analyzer
             return (dGraphDensity);
         }
 
-        //*************************************************************************
-        //  Method: CalculateConnectedComponentMetrics()
-        //
-        /// <summary>
-        /// Calculates the graph's connected component metrics.
-        /// </summary>
-        ///
-        /// <param name="oGraph">
-        /// The graph to calculate metrics for.
-        /// </param>
-        ///
-        /// <param name="iConnectedComponents">
-        /// Where the number of connected components in the graph gets stored.
-        /// </param>
-        ///
-        /// <param name="iSingleVertexConnectedComponents">
-        /// Where the number of connected components in the graph that have one
-        /// vertex gets stored.
-        /// </param>
-        ///
-        /// <param name="iMaximumConnectedComponentVertices">
-        /// Where the maximum number of vertices in a connected component gets
-        /// stored.
-        /// </param>
-        ///
-        /// <param name="iMaximumConnectedComponentEdges">
-        /// Where the maximum number of edges in a connected component gets stored.
-        /// </param>
-        //*************************************************************************
+       
 
-        protected void
-        CalculateConnectedComponentMetrics
+        protected void CalculateConnectedComponentMetrics
         (
             IGraph oGraph,
             out Int32 iConnectedComponents,
@@ -293,7 +200,7 @@ namespace Analyzer
 
 
             ConnectedComponentCalculator oConnectedComponentCalculator =
-                new ConnectedComponentCalculator(true);
+                new ConnectedComponentCalculator();
 
             IList<LinkedList<IVertex>> oConnectedComponents =
                 oConnectedComponentCalculator.CalculateStronglyConnectedComponents(
@@ -324,11 +231,7 @@ namespace Analyzer
         }
 
 
-        protected Int32
-        CountUniqueEdges
-        (
-            LinkedList<IVertex> oConnectedComponent
-        )
+        protected Int32 CountUniqueEdges (LinkedList<IVertex> oConnectedComponent)
         {
             Debug.Assert(oConnectedComponent != null);
         
@@ -345,84 +248,8 @@ namespace Analyzer
 
             return (oUniqueEdgeIDs.Count);
         }
-        protected Boolean ReportProgressAndCheckCancellationPending
-             (Int32 iCalculationsSoFar, Int32 iTotalCalculations, BackgroundWorker oBackgroundWorker)
-        {
-            Debug.Assert(iCalculationsSoFar >= 0);
-            Debug.Assert(iTotalCalculations >= 0);
-            Debug.Assert(iCalculationsSoFar <= iTotalCalculations);
 
 
-            if (oBackgroundWorker != null)
-            {
-                if (oBackgroundWorker.CancellationPending)
-                {
-                    return (false);
-                }
-
-                ReportProgress(iCalculationsSoFar, iTotalCalculations,
-                    oBackgroundWorker);
-            }
-
-            return (true);
-        }
-
-        protected void ReportProgress
-            (Int32 iCalculationsSoFar, Int32 iTotalCalculations, BackgroundWorker oBackgroundWorker)
-        {
-            Debug.Assert(iCalculationsSoFar >= 0);
-            Debug.Assert(iTotalCalculations >= 0);
-            Debug.Assert(iCalculationsSoFar <= iTotalCalculations);
-
-
-            if (oBackgroundWorker != null)
-            {
-                String sProgress = String.Format(
-
-                    "Calculating {0}."
-                    ,
-                    this.GraphMetricDescription
-                    );
-
-                oBackgroundWorker.ReportProgress(
-
-                    CalculateProgressInPercent(iCalculationsSoFar,
-                        iTotalCalculations),
-
-                    sProgress);
-            }
-        }
-
-        protected Boolean ReportProgressIfNecessary
-            (Int32 iCalculationsSoFar, Int32 iTotalCalculations, BackgroundWorker oBackgroundWorker)
-        {
-            Debug.Assert(iCalculationsSoFar >= 0);
-            Debug.Assert(iTotalCalculations >= 0);
-
-            return (
-                (iCalculationsSoFar % 100 != 0)
-                ||
-                ReportProgressAndCheckCancellationPending(
-                    iCalculationsSoFar, iTotalCalculations, oBackgroundWorker)
-                );
-        }
-
-        public static Int32 CalculateProgressInPercent
-            (Int32 calculationsCompleted, Int32 totalCalculations)
-        {
-            Debug.Assert(calculationsCompleted >= 0);
-            Debug.Assert(totalCalculations >= 0);
-            Debug.Assert(calculationsCompleted <= totalCalculations);
-
-            Int32 iPercentProgress = 0;
-
-            if (totalCalculations > 0)
-            {
-                iPercentProgress = (Int32)(100F *
-                    (Single)calculationsCompleted / (Single)totalCalculations);
-            }
-
-            return (iPercentProgress);
-        }
+        
     }
 }
