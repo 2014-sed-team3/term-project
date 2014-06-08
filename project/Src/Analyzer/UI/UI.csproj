@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SelectNetworkID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectNetworkID.Designer.cs">
+      <DependentUpon>SelectNetworkID.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphMetricCalculatorManager.cs" />
     <Compile Include="GroupCalculatorManager.cs" />
     <Compile Include="GroupSettingDialog.cs">
@@ -64,6 +70,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SelectNetworkID.resx">
+      <DependentUpon>SelectNetworkID.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupSettingDialog.resx">
       <DependentUpon>GroupSettingDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,7 +84,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\project1\Src\NodeXL\Core\Core.csproj">
+    <ProjectReference Include="..\..\NetworkVis03\Core\Core.csproj">
       <Project>{8ba6250f-0771-43a0-8ee7-ebd24fb1ecce}</Project>
       <Name>Core</Name>
     </ProjectReference>
