@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graph_setting.cs" />
     <Compile Include="DB_Converter.cs" />
     <Compile Include="DB_Manager.cs" />
     <Compile Include="GenerateGraph.cs">
