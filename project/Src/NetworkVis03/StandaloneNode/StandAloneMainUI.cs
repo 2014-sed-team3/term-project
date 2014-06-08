@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
+
 using InterfaceGraphDataProvider;
+using Analyzer;
 
 using Smrf.NodeXL.Core;
 using Smrf.NodeXL.Adapters;
@@ -21,6 +23,13 @@ namespace StandaloneNode
     {
         IGraphAdapter oGraphAdapter;
         GraphMLGraphAdapter oGraphMLGraphAdapter;
+        ClusteringCoefficientCalculator m_oClusteringCoefficientCalculator = new ClusteringCoefficientCalculator();
+        MetricDouble oClusteringCoefficientDouble;
+        PageRankCalculator m_oPageRankCalculator = new PageRankCalculator();
+        MetricDouble oPageRankMetricDouble;
+        protected IGraph m_oGraph;
+        protected IVertexCollection m_oVertices;
+        protected IEdgeCollection m_oEdges;
 
         public StandAloneMainUI()
         {
@@ -136,8 +145,19 @@ namespace StandaloneNode
         {
             foreach (IVertex oVertex in layoutControl1.Graph.Vertices)
             {
-                RTFDebugOut.AppendText(oVertex.ID.ToString() + "\r\n");
+                RTFDebugOut.Clear();
+                RTFDebugOut.AppendText(oVertex.Name.ToString() + "\r\n");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool rv = m_oPageRankCalculator.TryCalculateGraphMetrics(layoutControl1.Graph, null, out oPageRankMetricDouble);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bool rv = m_oClusteringCoefficientCalculator.TryCalculateGraphMetrics(layoutControl1.Graph, null, out oClusteringCoefficientDouble);
         }
     }
 }

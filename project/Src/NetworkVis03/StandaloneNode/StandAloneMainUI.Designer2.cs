@@ -28,35 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Smrf.NodeXL.Core.Graph graph2 = new Smrf.NodeXL.Core.Graph();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFacebookDataGetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facebookCrawlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.youTuBeUserCrawlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.youTuBeVideoCrawlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGraphMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFromDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.layoutControl1 = new LayoutControls.LayoutControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.RTFDebugOut = new System.Windows.Forms.RichTextBox();
             this.cdbOpenModel = new System.Windows.Forms.OpenFileDialog();
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
+            this.youTuBeUserCrawlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.youTuBeVideoCrawlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -101,20 +96,6 @@
             this.facebookCrawlerToolStripMenuItem.Text = "FacebookCrawler";
             this.facebookCrawlerToolStripMenuItem.Click += new System.EventHandler(this.facebookCrawlerToolStripMenuItem_Click);
             // 
-            // youTuBeUserCrawlerToolStripMenuItem
-            // 
-            this.youTuBeUserCrawlerToolStripMenuItem.Name = "youTuBeUserCrawlerToolStripMenuItem";
-            this.youTuBeUserCrawlerToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
-            this.youTuBeUserCrawlerToolStripMenuItem.Text = "YouTuBeUserCrawler";
-            this.youTuBeUserCrawlerToolStripMenuItem.Click += new System.EventHandler(this.youTuBeUserCrawlerToolStripMenuItem_Click);
-            // 
-            // youTuBeVideoCrawlerToolStripMenuItem
-            // 
-            this.youTuBeVideoCrawlerToolStripMenuItem.Name = "youTuBeVideoCrawlerToolStripMenuItem";
-            this.youTuBeVideoCrawlerToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
-            this.youTuBeVideoCrawlerToolStripMenuItem.Text = "YouTuBeVideoCrawler";
-            this.youTuBeVideoCrawlerToolStripMenuItem.Click += new System.EventHandler(this.youTuBeVideoCrawlerToolStripMenuItem_Click);
-            // 
             // newNetworkToolStripMenuItem
             // 
             this.newNetworkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -151,18 +132,6 @@
             this.loadNetworkToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.loadNetworkToolStripMenuItem.Text = "LoadNetwork";
             // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            graph2.Name = null;
-            graph2.Tag = null;
-            this.layoutControl1.Graph = graph2;
-            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Size = new System.Drawing.Size(926, 535);
-            this.layoutControl1.TabIndex = 1;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -176,7 +145,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.layoutControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -207,8 +175,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(0, 30);
             this.groupBox1.Name = "groupBox1";
@@ -216,26 +182,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ModelControl";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 85);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "PageRankCalculate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ListVertices";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -270,15 +216,29 @@
             // 
             this.cdbOpenGraphML.FileName = "openFileDialog1";
             // 
-            // button3
+            // youTuBeUserCrawlerToolStripMenuItem
             // 
-            this.button3.Location = new System.Drawing.Point(0, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "ClusteringCoefficientCalculate";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.youTuBeUserCrawlerToolStripMenuItem.Name = "youTuBeUserCrawlerToolStripMenuItem";
+            this.youTuBeUserCrawlerToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
+            this.youTuBeUserCrawlerToolStripMenuItem.Text = "YouTuBeUserCrawler";
+            this.youTuBeUserCrawlerToolStripMenuItem.Click += new System.EventHandler(this.youTuBeUserCrawlerToolStripMenuItem_Click);
+            // 
+            // youTuBeVideoCrawlerToolStripMenuItem
+            // 
+            this.youTuBeVideoCrawlerToolStripMenuItem.Name = "youTuBeVideoCrawlerToolStripMenuItem";
+            this.youTuBeVideoCrawlerToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
+            this.youTuBeVideoCrawlerToolStripMenuItem.Text = "YouTuBeVideoCrawler";
+            this.youTuBeVideoCrawlerToolStripMenuItem.Click += new System.EventHandler(this.youTuBeVideoCrawlerToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "ListSelectedVertices";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StandAloneMainUI
             // 
@@ -296,7 +256,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -332,8 +291,6 @@
         private System.Windows.Forms.ToolStripMenuItem youTuBeUserCrawlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem youTuBeVideoCrawlerToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }
 
