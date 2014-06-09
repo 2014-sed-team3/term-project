@@ -12,9 +12,15 @@ namespace StandaloneNode
 {
     public partial class ShowMetricCalculateResult : Form, IDataTableObserver
     {
-        public ShowMetricCalculateResult(DataTable Vertex, DataTable Edge, DataTable Group)
-        {
+
+        public ShowMetricCalculateResult() {
             InitializeComponent();
+            m_oVertexTable = null;
+            m_oEdgeTable = null;
+            m_oGroupTable = null;
+        }
+        public void refreshDisplay(DataTable Vertex, DataTable Edge, DataTable Group)
+        {   
             this.dataGridView1.DataSource = Vertex;
             dataGridView1.Update();
             this.dataGridView2.DataSource = Edge;
@@ -82,7 +88,9 @@ namespace StandaloneNode
                 }
             
             }
-            throw new NotImplementedException();
+            refreshDisplay(m_oVertexTable, m_oEdgeTable, m_oGroupTable);
+            if (!this.Visible)
+                this.Show();
         }
 
         private DataTable m_oVertexTable;

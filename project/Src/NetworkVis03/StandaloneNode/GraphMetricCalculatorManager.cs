@@ -15,7 +15,7 @@ namespace StandaloneNode
     {
         private BackgroundWorker m_oBackgroundWorker;
         private bool wbFlag;
-        private LinkedList<AnalyzeResultBase> oAnalyzeResults;
+        private LinkedList<AnalyzeResultBase> m_oAnalyzeResults;
 
         public MetricsCalculatorManager() {
             m_oBackgroundWorker = null;
@@ -25,7 +25,7 @@ namespace StandaloneNode
         public override List<DataTable> getDataTables {
             get {
                 List<DataTable> tables = new List<DataTable>();
-                foreach (AnalyzeResultBase ar in oAnalyzeResults) {
+                foreach (AnalyzeResultBase ar in m_oAnalyzeResults) {
                     tables.AddRange(ar.ToDataTable);
                 }
                 return tables;
@@ -152,7 +152,7 @@ namespace StandaloneNode
                      * write e.Result to data base
                      */
                 }
-
+                m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
                 oCalculationCompleted(this, e);  //forward event to View component
             }
 

@@ -19,6 +19,7 @@ namespace StandaloneNode
     {
         private MetricsCheckedList m_oMetricsCheckedList;
         private MetricsCalculatorManager m_oGraphMetricCalculatorManager;
+        private ShowMetricCalculateResult m_oShowMetricCalculateResult;
         IGraph m_ograph;
 
         public MetricsCalculationProgressDialog(IGraph graph, MetricsCheckedList chkList)
@@ -30,6 +31,9 @@ namespace StandaloneNode
 
             m_oGraphMetricCalculatorManager.CalculationProgressChanged += new ProgressChangedEventHandler(Manager_ProgressChanged);
             m_oGraphMetricCalculatorManager.CalculationCompleted += new RunWorkerCompletedEventHandler(Manager_WorksCompleted);
+
+            m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
+            m_oGraphMetricCalculatorManager.attach(m_oShowMetricCalculateResult);
 
         }
 
@@ -71,6 +75,7 @@ namespace StandaloneNode
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+            m_oGraphMetricCalculatorManager.notify();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
