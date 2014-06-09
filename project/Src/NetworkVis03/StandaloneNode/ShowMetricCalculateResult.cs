@@ -15,6 +15,7 @@ namespace StandaloneNode
 
         public ShowMetricCalculateResult() {
             InitializeComponent();
+            /*
             m_oVertexTable = new DataTable("Vertex");
             m_oVertexTable.Columns.Add("Vertex_ID", typeof(int));
             m_oVertexTable.PrimaryKey = new DataColumn[] { m_oVertexTable.Columns["Vertex_ID"] };
@@ -24,6 +25,10 @@ namespace StandaloneNode
             m_oGroupTable = new DataTable("Group");
             m_oGroupTable.Columns.Add("Group_ID", typeof(int));
             m_oGroupTable.PrimaryKey = new DataColumn[] { m_oGroupTable.Columns["Group_ID"] };
+             * */
+            m_oVertexTable = null;
+            m_oEdgeTable = null;
+            m_oGroupTable = null;
         }
         public void refreshDisplay(DataTable Vertex, DataTable Edge, DataTable Group)
         {   
@@ -41,6 +46,11 @@ namespace StandaloneNode
 
             foreach (DataTable tb in tbs) {
                 if (tb.TableName == "Vertex") {
+                    if (m_oVertexTable == null)
+                    {
+                        m_oVertexTable = tb;
+                        continue;
+                    }
                     foreach (DataRow dr in tb.Rows)
                     {
                         Debug.Assert(m_oVertexTable.Rows.Contains(dr["Vertex_ID"]));                      
@@ -57,39 +67,48 @@ namespace StandaloneNode
                 }
                 else if (tb.TableName == "Edge")
                 {
+                    if (m_oEdgeTable == null)
+                    {
+                        m_oEdgeTable = tb;
+                        continue;
+                    }
                     foreach (DataRow dr in tb.Rows)
                     {
-                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["Edge_ID"]));
+                        Debug.Assert(m_oEdgeTable.Rows.Contains(dr["Edge_ID"]));
 
                     }
                     foreach (DataColumn dc in tb.Columns)
                     {
-                        if (!m_oVertexTable.Columns.Contains(dc.ColumnName))
-                            m_oVertexTable.Columns.Add(dc.ColumnName, dc.DataType);
+                        if (!m_oEdgeTable.Columns.Contains(dc.ColumnName))
+                            m_oEdgeTable.Columns.Add(dc.ColumnName, dc.DataType);
                         foreach (DataRow dr in tb.Rows)
                         {
                             if (dc.ColumnName != "Edge_ID")
-                                m_oVertexTable.Rows.Find(dr["Edge_ID"])[dc.ColumnName] = dr[dc.ColumnName];
+                                m_oEdgeTable.Rows.Find(dr["Edge_ID"])[dc.ColumnName] = dr[dc.ColumnName];
                         }
                     }
                 }
                 else if (tb.TableName == "Group")
                 {
+                    if (m_oGroupTable == null){
+                        m_oGroupTable = tb;
+                        continue;
+                    }
                     foreach (DataRow dr in tb.Rows)
                     {
-                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["Group_ID"]));
+                        Debug.Assert(m_oGroupTable.Rows.Contains(dr["Group_ID"]));
 
                     }
                     foreach (DataColumn dc in tb.Columns)
                     {
-                        if (!m_oVertexTable.Columns.Contains(dc.ColumnName))
-                            m_oVertexTable.Columns.Add(dc.ColumnName, dc.DataType);
+                        if (!m_oGroupTable.Columns.Contains(dc.ColumnName))
+                            m_oGroupTable.Columns.Add(dc.ColumnName, dc.DataType);
                         foreach (DataRow dr in tb.Rows)
                         {
                             if (dc.ColumnName != "Group_ID")
                             {
-                                Debug.Assert(m_oVertexTable.Rows.Contains(dr["Group_ID"]));
-                                m_oVertexTable.Rows.Find(dr["Group_ID"])[dc.ColumnName] = dr[dc.ColumnName];
+                                Debug.Assert(m_oGroupTable.Rows.Contains(dr["Group_ID"]));
+                                m_oGroupTable.Rows.Find(dr["Group_ID"])[dc.ColumnName] = dr[dc.ColumnName];
                             }
                         }
                     }
