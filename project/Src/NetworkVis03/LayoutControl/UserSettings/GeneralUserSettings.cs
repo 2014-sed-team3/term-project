@@ -1007,7 +1007,7 @@ public class GeneralUserSettings : NodeXLApplicationSettingsBase
 
     [ DefaultSettingValue(
         DefaultFont + "\tWhite\tBottomCenter\t2147483647\t2147483647\tBlack"
-        + "\ttrue\t200\tBlack\t86\tMiddleCenter"
+        + "\tTrue\t200\tBlack\t86\tMiddleCenter"
         ) ]
 
     public LabelUserSettings
