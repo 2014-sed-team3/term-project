@@ -302,8 +302,8 @@ namespace LayoutControls
         }
 
 
-        //protected void ShowGraph(Boolean bLayOutGraph)
-        public void ShowGraph(Boolean bLayOutGraph)
+        protected void ShowGraph(Boolean bLayOutGraph)
+//        public void ShowGraph(Boolean bLayOutGraph)
         {
             AssertValid();
 
@@ -366,6 +366,12 @@ namespace LayoutControls
 
             tsbShowGraph.Text = "Refresh Graph";
 
+        }
+
+        public void SetAndShowGraph(IGraph oGraph)
+        {
+            this.Graph = oGraph;
+            ShowGraph(true);
         }
 
         //*************************************************************************
@@ -517,6 +523,24 @@ namespace LayoutControls
                 ErrorUtil.OnException(e.Error);
             }
         }
+
+        protected void showVertexLabel()
+        {
+            foreach (IVertex oVertex in m_oNodeXLControl.Graph.Vertices)
+            {
+                oVertex.SetValue(ReservedMetadataKeys.PerVertexLabel, oVertex.Name);
+            }
+            ShowGraph(false);
+        }
+        protected void hideVertexLabel()
+        {
+            foreach (IVertex oVertex in m_oNodeXLControl.Graph.Vertices)
+            {
+                oVertex.SetValue(ReservedMetadataKeys.PerVertexLabel, "");
+            }
+            ShowGraph(false);
+        }
+
         //*************************************************************************
         //  Method: MouseModeButton_Click()
         //
@@ -575,17 +599,38 @@ namespace LayoutControls
         {
             ShowGraph(true);
         }
+        private void tsbShowHideLabel_Click(object sender, EventArgs e)
+        {
+            AssertValid();
+            if (tsbShowHideLabel.Text == "Show Label")
+            {
+                showVertexLabel();
+                tsbShowHideLabel.Text = "Hide Label";
+            }
+            else
+            {
+                hideVertexLabel();
+                tsbShowHideLabel.Text = "Show Label";
+            }
+        }
+        private void tssbOption_ButtonClick(object sender, EventArgs e)
+        {
+            tssbOption.ShowDropDown();
+        }
 
-        private void msiLayoutOptions_Click(object sender, EventArgs e)
+        private void tsmiLayoutOption_Click(object sender, EventArgs e)
         {
             AssertValid();
             EditLayoutUserSettings();
         }
-        private void tsbOptions_Click(object sender, EventArgs e)
+
+        private void tsmiGraphOption_Click(object sender, EventArgs e)
         {
             AssertValid();
             EditGeneralUserSettings();
         }
+
+
 
         //*************************************************************************
         //  Method: AssertValid()
@@ -613,6 +658,7 @@ namespace LayoutControls
             // m_oReadabilityMetricsDialog
         }
 
+
         //*************************************************************************
         //  Protected fields
         //*************************************************************************
@@ -633,8 +679,6 @@ namespace LayoutControls
 
         /// true if the LayoutChanged event on a layout manager is being handled.
         protected Boolean m_bHandlingLayoutChanged;
-
-
 
     }
 }
