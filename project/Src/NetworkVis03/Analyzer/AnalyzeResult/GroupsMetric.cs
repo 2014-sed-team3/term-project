@@ -16,7 +16,7 @@ namespace Analyzer
         public DataTable[] ToDataTable
         {
             get {
-                DataTable dtb = new DataTable();
+                DataTable dtb = new DataTable("Group");
                 dtb.Columns.Add("Group_ID", typeof(int));
                 dtb.Columns.Add("UniqueEdges", typeof(int));
                 dtb.Columns.Add("EdgesWithDuplicates", typeof(int));
@@ -30,6 +30,7 @@ namespace Analyzer
                 dtb.Columns.Add("MaximumGeodesicDistance", typeof(int));
                 dtb.Columns.Add("AverageGeodesicDistance", typeof(double));
                 dtb.Columns.Add("GraphDensity", typeof(double));
+                dtb.PrimaryKey = new DataColumn[] { dtb.Columns["Group_ID"] };
 
 
                 foreach (KeyValuePair<int, OverallMetrics> p in this) {

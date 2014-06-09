@@ -15,9 +15,15 @@ namespace StandaloneNode
 
         public ShowMetricCalculateResult() {
             InitializeComponent();
-            m_oVertexTable = null;
-            m_oEdgeTable = null;
-            m_oGroupTable = null;
+            m_oVertexTable = new DataTable("Vertex");
+            m_oVertexTable.Columns.Add("Vertex_ID", typeof(int));
+            m_oVertexTable.PrimaryKey = new DataColumn[] { m_oVertexTable.Columns["Vertex_ID"] };
+            m_oEdgeTable = new DataTable("Edge");
+            m_oEdgeTable.Columns.Add("Edge_ID", typeof(int));
+            m_oEdgeTable.PrimaryKey = new DataColumn[] { m_oEdgeTable.Columns["Edge_ID"] };
+            m_oGroupTable = new DataTable("Group");
+            m_oGroupTable.Columns.Add("Group_ID", typeof(int));
+            m_oGroupTable.PrimaryKey = new DataColumn[] { m_oGroupTable.Columns["Group_ID"] };
         }
         public void refreshDisplay(DataTable Vertex, DataTable Edge, DataTable Group)
         {   
@@ -37,16 +43,15 @@ namespace StandaloneNode
                 if (tb.TableName == "Vertex") {
                     foreach (DataRow dr in tb.Rows)
                     {
-                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["VertexID"]));
-                        
+                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["Vertex_ID"]));                      
                     }
                     foreach (DataColumn dc in tb.Columns)
                     {
                         if (!m_oVertexTable.Columns.Contains(dc.ColumnName))
                             m_oVertexTable.Columns.Add(dc.ColumnName, dc.DataType);
                         foreach (DataRow dr in tb.Rows) {
-                            if (dc.ColumnName != "VertexID")
-                                m_oVertexTable.Rows.Find(dr["VertexID"])[dc.ColumnName] = dr[dc.ColumnName]; 
+                            if (dc.ColumnName != "Vertex_ID")
+                                m_oVertexTable.Rows.Find(dr["Vertex_ID"])[dc.ColumnName] = dr[dc.ColumnName]; 
                         }
                     } 
                 }
@@ -54,7 +59,7 @@ namespace StandaloneNode
                 {
                     foreach (DataRow dr in tb.Rows)
                     {
-                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["VertexID"]));
+                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["Edge_ID"]));
 
                     }
                     foreach (DataColumn dc in tb.Columns)
@@ -63,8 +68,8 @@ namespace StandaloneNode
                             m_oVertexTable.Columns.Add(dc.ColumnName, dc.DataType);
                         foreach (DataRow dr in tb.Rows)
                         {
-                            if (dc.ColumnName != "EdgeID")
-                                m_oVertexTable.Rows.Find(dr["EdgeID"])[dc.ColumnName] = dr[dc.ColumnName];
+                            if (dc.ColumnName != "Edge_ID")
+                                m_oVertexTable.Rows.Find(dr["Edge_ID"])[dc.ColumnName] = dr[dc.ColumnName];
                         }
                     }
                 }
@@ -72,7 +77,7 @@ namespace StandaloneNode
                 {
                     foreach (DataRow dr in tb.Rows)
                     {
-                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["GroupID"]));
+                        Debug.Assert(m_oVertexTable.Rows.Contains(dr["Group_ID"]));
 
                     }
                     foreach (DataColumn dc in tb.Columns)
@@ -81,8 +86,11 @@ namespace StandaloneNode
                             m_oVertexTable.Columns.Add(dc.ColumnName, dc.DataType);
                         foreach (DataRow dr in tb.Rows)
                         {
-                            if (dc.ColumnName != "GroupID")
-                                m_oVertexTable.Rows.Find(dr["GroupID"])[dc.ColumnName] = dr[dc.ColumnName];
+                            if (dc.ColumnName != "Group_ID")
+                            {
+                                Debug.Assert(m_oVertexTable.Rows.Contains(dr["Group_ID"]));
+                                m_oVertexTable.Rows.Find(dr["Group_ID"])[dc.ColumnName] = dr[dc.ColumnName];
+                            }
                         }
                     }
                 }
