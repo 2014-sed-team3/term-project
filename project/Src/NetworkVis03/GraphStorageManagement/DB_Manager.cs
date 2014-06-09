@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Windows;
 using MySql.Data.MySqlClient;
-
+using Smrf.NodeXL.Core;
 namespace GraphStorageManagement
 {
     public class DB_Manager
@@ -85,6 +85,14 @@ namespace GraphStorageManagement
             return mysql_query(output);
         }
 
+        public void get_network(String ID)
+        {
+            String edge_sql = String.Format("SELECT * FROM networkvis.edges WHERE NetworkID = {0}", ID);
+            String vertex_sql = String.Format("SELECT * FROM networkvis.nodes WHERE NetworkID = {0}", ID);
+            /*Get Group information from group table*/
+            /*Call DB_Converter to generate graph */
+        }
+
         public void export_to_db(){
             
         }
@@ -93,5 +101,4 @@ namespace GraphStorageManagement
 
         }
     }
-
 }

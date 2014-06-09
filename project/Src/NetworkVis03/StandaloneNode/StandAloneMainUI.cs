@@ -38,9 +38,9 @@ namespace StandaloneNode
             InitializeComponent();
         }
 
-        public void SetAndShowGraph(IGraph oGraph)
+        public void SetAndShowGraph(object sender, IgraphGenerateEvent e)
         {
-            layoutControl1.SetAndShowGraph(oGraph);
+            layoutControl1.SetAndShowGraph(e.getGraph());
         }
 
         private void facebookCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,9 +179,11 @@ namespace StandaloneNode
 
         private void loadFromDBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DB_Manager dbm = new DB_Manager("test");
-            NetworkID nid = new NetworkID(dbm);
+            EventHandler<IgraphGenerateEvent> handler = new System.EventHandler<IgraphGenerateEvent>(this.SetAndShowGraph);
+            DB_Manager dbm = new DB_Manager("networkvis");
+            NetworkID nid = new NetworkID(dbm, handler);
             nid.Show(this);
         }
+        
     }
 }

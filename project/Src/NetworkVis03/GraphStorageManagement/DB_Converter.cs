@@ -14,47 +14,42 @@ namespace GraphStorageManagement
             Graph oGraph = new Graph(GraphDirectedness.Directed);
             IVertexCollection oVertices = oGraph.Vertices;
             IEdgeCollection oEdges = oGraph.Edges;
-
-            DataRowCollection node_rows = node_table.Rows;
-            DataRowCollection edge_rows = edge_table.Rows;
-
-            add_nodes(node_rows, oVertices);
-            add_edges(edge_rows, oVertices, oEdges);
-
+            /*
+            add_nodes(node_table, oVertices);
+            add_edges(edge_table.Rows, oVertices, oEdges);
+            */
             return oGraph;
         }
 
-        private void add_nodes(DataRowCollection node_rows, IVertexCollection oVertices)
+        private void add_nodes(DataTable node_table, IVertexCollection oVertices)
         {
-            string nodename;
-            double nodeid;
-            double nodecount = 0;
-
+            DataRowCollection node_rows = node_table.Rows;
+            DataColumnCollection node_col = node_table.Columns;
+            
             foreach (DataRow row in node_rows)
             {
                 //Notice: "nodename" and "nodeid" should be edited
-                nodename = row["nodename"].ToString();
-                nodeid = (Double)row["nodeid"];
-
-                // Add a node...
                 IVertex oVertexA = oVertices.Add();
-                oVertexA.Name = nodename;
-                oVertexA.Tag = nodeid;
-
-                nodecount++;
+                oVertexA.Name = row[0].ToString();
+                oVertexA.Tag = row[0].ToString();
+                int i = 0;
+                foreach(DataColumn col in node_col){
+                    oVertexA.SetValue(col.ColumnName, row[i++]);
+                }
+                
             }
         }
 
         private void add_edges(DataRowCollection edge_rows, IVertexCollection oVertices, IEdgeCollection oEdges)
         {
-            double from;
-            double to;
+            String from;
+            String to;
 
             foreach (DataRow row in edge_rows)
             {
                 //Notice: "EdgeFromid" and "EdgeToid" should be edited
-                from = (Double)row["EdgeFromid"];
-                to = (Double)row["EdgeToid"];
+                from = row[0].ToString();
+                to = row[1].ToString();
 
                 // Add an edge
                 IVertex oFrom = null;
@@ -62,12 +57,12 @@ namespace GraphStorageManagement
 
                 foreach (IVertex oVertex in oVertices)
                 {
-                    if (oVertex.Tag.ToString() == from.ToString())
+                    if (oVertex.Tag.ToString() == from)
                     {
                         oFrom = oVertex;
                     }
 
-                    if (oVertex.Tag.ToString() == to.ToString())
+                    if (oVertex.Tag.ToString() == to)
                     {
                         oTo = oVertex;
                     }

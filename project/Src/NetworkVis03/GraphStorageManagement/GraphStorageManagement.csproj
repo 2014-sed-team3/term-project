@@ -57,14 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph_setting.cs" />
-    <Compile Include="DB_Converter.cs" />
-    <Compile Include="DB_Manager.cs" />
     <Compile Include="GenerateGraph.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerateGraph.Designer.cs">
       <DependentUpon>GenerateGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph_setting.cs" />
+    <Compile Include="DB_Converter.cs" />
+    <Compile Include="DB_Manager.cs" />
+    <Compile Include="IgraphGenerateEvent.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="NetworkID.cs">
       <SubType>Form</SubType>
@@ -73,12 +76,6 @@
       <DependentUpon>NetworkID.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GenerateGraph.resx">
-      <DependentUpon>GenerateGraph.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetworkID.resx">
-      <DependentUpon>NetworkID.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

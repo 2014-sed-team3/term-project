@@ -7,18 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Smrf.NodeXL.Core;
 
 namespace GraphStorageManagement
 {
+
+
     public partial class NetworkID : Form
     {
-
-        public NetworkID(DB_Manager db)
+        public event EventHandler<IgraphGenerateEvent> GraphGenerated;
+        public NetworkID(DB_Manager db, EventHandler<IgraphGenerateEvent> _e)
         {
             InitializeComponent();
             loadNetwork(listView1, db.list_network());
+            GraphGenerated = _e;
 
         }
+
 
         private void loadNetwork(ListView view, DataTable result)
         {
@@ -39,7 +44,7 @@ namespace GraphStorageManagement
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            /*Do Nothing*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +52,9 @@ namespace GraphStorageManagement
             if (listView1.SelectedItems.Count > 0)
             {
                 Console.WriteLine(listView1.SelectedItems[0].Text);
+                DB_Converter conv = new DB_Converter();
+                GraphGenerated(this, new IgraphGenerateEvent(conv.convert_to_graph(new DataTable(), new DataTable())));
+                this.Close();
                 /*TODO: Make query to generate graph*/
             }
         }
@@ -57,7 +65,7 @@ namespace GraphStorageManagement
 
         private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            /*Do Nothing*/
         }
     }
 }
