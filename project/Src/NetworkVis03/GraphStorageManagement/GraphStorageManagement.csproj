@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>F:\term-project-master\term-project-master\project\Src\otherDLL\MySql.Data.dll</HintPath>
+      <HintPath>..\otherDLL\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Smrf.NodeXL.Core">
       <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Core.dll</HintPath>
