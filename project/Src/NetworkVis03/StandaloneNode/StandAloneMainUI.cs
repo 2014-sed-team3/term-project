@@ -29,6 +29,7 @@ namespace StandaloneNode
         MetricDouble oClusteringCoefficientDouble;
         PageRankCalculator m_oPageRankCalculator = new PageRankCalculator();
         MetricDouble oPageRankMetricDouble;
+
         protected IGraph m_oGraph;
         protected IVertexCollection m_oVertices;
         protected IEdgeCollection m_oEdges;
@@ -103,22 +104,44 @@ namespace StandaloneNode
 
         private void youTuBeUserCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            File.Delete(TempXmlFileName);
+
             GetGraphData(new YouTubeUserNetworkGraphDataProvider());
-            System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
-            string line = file.ReadToEnd();
-            file.Close();
-            GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
-            layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
+            if (File.Exists(TempXmlFileName))
+            {
+                System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
+                string line = file.ReadToEnd();
+                file.Close();
+                GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
+                layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
+            }
+            else
+            {
+                MessageBox.Show("Error: 請重新選取youTuBe User!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_oGraph = new Graph();
+                layoutControl1.SetAndShowGraph(m_oGraph);
+            }
         }
 
         private void youTuBeVideoCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            File.Delete(TempXmlFileName);
+
             GetGraphData(new YouTubeVideoNetworkGraphDataProvider());
-            System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
-            string line = file.ReadToEnd();
-            file.Close();
-            GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
-            layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
+            if (File.Exists(TempXmlFileName))
+            {
+                System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
+                string line = file.ReadToEnd();
+                file.Close();
+                GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
+                layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
+            }
+            else
+            {
+                MessageBox.Show("Error: 請重新選取youTuBe Video!" , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_oGraph = new Graph();
+                layoutControl1.SetAndShowGraph(m_oGraph);
+            }
         }
         private void GetGraphData(IGraphDataProvider2 oGraphDataProvider)
         {
@@ -183,6 +206,9 @@ namespace StandaloneNode
             DB_Manager dbm = new DB_Manager("networkvis");
             NetworkID nid = new NetworkID(dbm, handler);
             nid.Show(this);
+            //奕軻，記得1. 在NetworkID中宣告一個public 的graph , 然後傳資料到m_oGraph
+            //m_oGraph = nid.ResultGraph;
+            //layoutControl1.SetAndShowGraph(m_oGraph);
         }
         
     }
