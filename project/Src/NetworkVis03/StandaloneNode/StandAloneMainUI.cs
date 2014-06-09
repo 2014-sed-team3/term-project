@@ -17,6 +17,8 @@ using Smrf.NodeXL.Core;
 using Smrf.NodeXL.Adapters;
 using Smrf.NodeXL.GraphDataProviders.YouTube;
 
+using GraphStorageManagement;
+
 namespace StandaloneNode
 {
     public partial class StandAloneMainUI : Form
@@ -165,6 +167,13 @@ namespace StandaloneNode
         {
             GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph);
             GIS.Show(this);
+        }
+
+        private void loadFromDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DB_Manager dbm = new DB_Manager("test");
+            NetworkID nid = new NetworkID(dbm);
+            nid.Show(this);
         }
     }
 }
