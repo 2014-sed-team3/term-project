@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "facebook_pages_crawler", "facebook_pages_crawler\facebook_pages_crawler.csproj", "{2ED9417B-9E57-4DF7-B592-ED0C9C214F1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importer_UnitTest", "Importer_UnitTest\Importer_UnitTest.csproj", "{360FD2A9-84E8-4273-9DD3-A993FD4C7A0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{2ED9417B-9E57-4DF7-B592-ED0C9C214F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED9417B-9E57-4DF7-B592-ED0C9C214F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED9417B-9E57-4DF7-B592-ED0C9C214F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360FD2A9-84E8-4273-9DD3-A993FD4C7A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360FD2A9-84E8-4273-9DD3-A993FD4C7A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360FD2A9-84E8-4273-9DD3-A993FD4C7A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360FD2A9-84E8-4273-9DD3-A993FD4C7A0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

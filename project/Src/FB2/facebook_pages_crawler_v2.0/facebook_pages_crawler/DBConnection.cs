@@ -99,6 +99,7 @@ namespace facebook_pages_crawler
 			
 			sql = "CREATE TABLE IF NOT EXISTS " + dbName + 
 			".`allinone` ( `post_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL," + 
+			"`to_post_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL," +
 			"`datatype`  int(10)  NOT NULL," + 
 			"`author_id`  varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL," + 
 			"`author` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," + 
