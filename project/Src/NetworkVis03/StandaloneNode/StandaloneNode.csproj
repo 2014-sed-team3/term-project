@@ -52,6 +52,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalysisResultManager.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="FacebookCrawler.cs">
       <SubType>Form</SubType>
@@ -80,6 +81,8 @@
     <Compile Include="GroupSettingDialog.Designer.cs">
       <DependentUpon>GroupSettingDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="IDataTableObservable.cs" />
+    <Compile Include="IDataTableObserver.cs" />
     <Compile Include="JSONObject.cs" />
     <Compile Include="MetricCalculationProgressDialog.cs">
       <SubType>Form</SubType>
