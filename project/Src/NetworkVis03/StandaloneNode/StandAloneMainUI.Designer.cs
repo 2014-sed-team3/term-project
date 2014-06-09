@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Smrf.NodeXL.Core.Graph graph2 = new Smrf.NodeXL.Core.Graph();
+            Smrf.NodeXL.Core.Graph graph1 = new Smrf.NodeXL.Core.Graph();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFacebookDataGetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,8 +42,7 @@
             this.loadNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.layoutControl1 = new LayoutControls.LayoutControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,12 +53,9 @@
             this.RTFDebugOut = new System.Windows.Forms.RichTextBox();
             this.cdbOpenModel = new System.Windows.Forms.OpenFileDialog();
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
-            this.layoutControl1 = new LayoutControls.LayoutControl();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -156,7 +152,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 21);
             this.tabControl1.Name = "tabControl1";
@@ -175,25 +170,16 @@
             this.tabPage1.Text = "SocialNetwork";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // layoutControl1
             // 
-            this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(932, 541);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "NodeRelations";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(926, 535);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            graph1.Name = null;
+            graph1.Tag = null;
+            this.layoutControl1.Graph = graph1;
+            this.layoutControl1.Location = new System.Drawing.Point(7, 7);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Size = new System.Drawing.Size(1058, 567);
+            this.layoutControl1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -282,17 +268,6 @@
             // 
             this.cdbOpenGraphML.FileName = "openFileDialog1";
             // 
-            // layoutControl1
-            // 
-            graph2.Name = null;
-            graph2.Tag = null;
-            this.layoutControl1.Graph = graph2;
-            this.layoutControl1.Location = new System.Drawing.Point(7, 7);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Size = new System.Drawing.Size(1058, 567);
-            this.layoutControl1.TabIndex = 0;
-            // 
             // StandAloneMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -310,8 +285,6 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -334,8 +307,6 @@
         private System.Windows.Forms.ToolStripMenuItem loadFromDBToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

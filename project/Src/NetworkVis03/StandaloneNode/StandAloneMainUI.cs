@@ -87,6 +87,7 @@ namespace StandaloneNode
                 {
                     System.IO.StreamReader file = new System.IO.StreamReader(cdbOpenGraphML.FileName);
                     string line = file.ReadToEnd();
+                    file.Close();
                     oGraphMLGraphAdapter = new GraphMLGraphAdapter();
                     layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
                 }
@@ -105,6 +106,7 @@ namespace StandaloneNode
             GetGraphData(new YouTubeUserNetworkGraphDataProvider());
             System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
             string line = file.ReadToEnd();
+            file.Close();
             GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
             layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
         }
@@ -114,6 +116,7 @@ namespace StandaloneNode
             GetGraphData(new YouTubeVideoNetworkGraphDataProvider());
             System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
             string line = file.ReadToEnd();
+            file.Close();
             GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
             layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
         }
