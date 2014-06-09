@@ -12,7 +12,7 @@ namespace StandaloneNode
         public abstract List<DataTable> getDataTables { get; }
         public void notify(){
             foreach (IDataTableObserver ob in m_oDataTableObservers)
-                ob.refresh();
+                ob.refreshwith(this);
         }
         public void attach(IDataTableObserver observer) {
             if (m_oDataTableObservers == null) m_oDataTableObservers = new LinkedList<IDataTableObserver>();

@@ -7,6 +7,6 @@ namespace StandaloneNode
 {
     public interface IDataTableObserver
     {
-        void refresh();
+        void refreshwith( DataTableObservableBase source);
     }
 }
