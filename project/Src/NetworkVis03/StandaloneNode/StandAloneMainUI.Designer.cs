@@ -248,9 +248,10 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.RTFDebugOut);
-            this.groupBox3.Location = new System.Drawing.Point(0, 627);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(0, 632);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1137, 100);
+            this.groupBox3.Size = new System.Drawing.Size(1283, 100);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DebugInformation";
@@ -260,7 +261,7 @@
             this.RTFDebugOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RTFDebugOut.Location = new System.Drawing.Point(3, 21);
             this.RTFDebugOut.Name = "RTFDebugOut";
-            this.RTFDebugOut.Size = new System.Drawing.Size(1131, 76);
+            this.RTFDebugOut.Size = new System.Drawing.Size(1277, 76);
             this.RTFDebugOut.TabIndex = 0;
             this.RTFDebugOut.Text = "";
             // 

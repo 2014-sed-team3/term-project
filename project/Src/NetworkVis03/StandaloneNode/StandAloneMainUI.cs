@@ -53,7 +53,9 @@ namespace StandaloneNode
         private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //SimpleGraphAdapter test, load
+            cdbOpenModel.Filter = "Text Files (*.txt)|*.txt";
             DialogResult d = cdbOpenModel.ShowDialog();
+            
             if (d != DialogResult.Cancel)
             {
                 this.Cursor = Cursors.WaitCursor;
@@ -78,6 +80,7 @@ namespace StandaloneNode
         private void loadGraphMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //GraphMLGraphAdapter test, load
+            cdbOpenGraphML.Filter = "XML Files (*.xml)|*.xml";
             DialogResult d = cdbOpenGraphML.ShowDialog();
             if (d != DialogResult.Cancel)
             {
