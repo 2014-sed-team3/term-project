@@ -1,4 +1,5 @@
 ﻿using Analyzer;
+using Observer_Core;
 using Smrf.NodeXL.Core;
 using System;
 using System.Collections.Generic;

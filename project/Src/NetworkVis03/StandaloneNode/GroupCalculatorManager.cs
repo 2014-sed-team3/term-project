@@ -1,8 +1,10 @@
 ﻿using Analyzer;
+using Observer_Core;
 using Smrf.NodeXL.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -11,16 +13,30 @@ using System.Threading.Tasks;
 namespace StandaloneNode
 {
 
-    class GroupCalculatorManager
+    class GroupCalculatorManager : DataTableObservableBase
     {
 
         private BackgroundWorker m_oBackgroundWorker;
+        private LinkedList<AnalyzeResultBase> m_oAnalyzeResults;
 
         private bool wbFlag;
 
         public GroupCalculatorManager() {
             m_oBackgroundWorker = null;
             wbFlag = false;
+        }
+
+        public override List<DataTable> getDataTables
+        {
+            get
+            {
+                List<DataTable> tables = new List<DataTable>();
+                foreach (AnalyzeResultBase ar in m_oAnalyzeResults)
+                {
+                    tables.AddRange(ar.ToDataTable);
+                }
+                return tables;
+            }
         }
 
         /* Create calculator accoring to the input checkedlist and pass to BackgroundWorker */
@@ -81,6 +97,7 @@ namespace StandaloneNode
                 results.AddLast(result);
             }
             e.Result = results;
+
             m_oBackgroundWorker.ReportProgress(100, new ProgressState(100, "Writing Back..", true));
 
         }
@@ -132,8 +149,10 @@ namespace StandaloneNode
                      * write e.Result to data base 
                      */
                 }
+                m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
+                oCalculationCompleted(this, e);
             }
-            oCalculationCompleted(this, e);
+            
         }
 
         /* Allow outter View component to give a "Cancell" command to this manager
@@ -152,6 +171,8 @@ namespace StandaloneNode
             public IGraph Graph;
             public AnalyzerBase[] Analyzers;
         };
+
+        
     }
 
     public class GroupsCheckedList

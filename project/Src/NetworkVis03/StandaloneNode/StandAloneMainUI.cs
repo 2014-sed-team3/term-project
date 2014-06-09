@@ -33,6 +33,7 @@ namespace StandaloneNode
         protected IGraph m_oGraph;
         protected IVertexCollection m_oVertices;
         protected IEdgeCollection m_oEdges;
+        private ShowMetricCalculateResult m_oShowMetricCalculateResult;
 
         public StandAloneMainUI()
         {
@@ -42,6 +43,7 @@ namespace StandaloneNode
         public void SetAndShowGraph(object sender, IgraphGenerateEvent e)
         {
             layoutControl1.SetAndShowGraph(e.getGraph());
+            m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
         }
 
         private void facebookCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,6 +214,11 @@ namespace StandaloneNode
             //奕軻，記得1. 在NetworkID中宣告一個public 的graph , 然後傳資料到m_oGraph
             //m_oGraph = nid.ResultGraph;
             //layoutControl1.SetAndShowGraph(m_oGraph);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog();
         }
         
     }
