@@ -64,7 +64,7 @@
     <Compile Include="GenerateGraph.Designer.cs">
       <DependentUpon>GenerateGraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="Graph_setting.cs" />
+    <Compile Include="DB_setting.cs" />
     <Compile Include="DB_Converter.cs" />
     <Compile Include="DB_Manager.cs" />
     <Compile Include="IgraphGenerateEvent.cs">
@@ -77,6 +77,12 @@
       <DependentUpon>NetworkID.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GenerateGraph.resx">
+      <DependentUpon>GenerateGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetworkID.resx">
+      <DependentUpon>NetworkID.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Observer_Core\Observer_Core.csproj">
+      <Project>{b03e6f53-6006-49d2-ac3c-8a00d9df2776}</Project>
+      <Name>Observer_Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

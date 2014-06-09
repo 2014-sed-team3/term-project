@@ -44,6 +44,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.layoutControl1 = new LayoutControls.LayoutControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.RTFDebugOut = new System.Windows.Forms.RichTextBox();
             this.cdbOpenModel = new System.Windows.Forms.OpenFileDialog();
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
-            this.button5 = new System.Windows.Forms.Button();
+            this.generateFromDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,7 +120,8 @@
             this.newNetworkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadFileToolStripMenuItem,
             this.loadGraphMLToolStripMenuItem,
-            this.loadFromDBToolStripMenuItem});
+            this.loadFromDBToolStripMenuItem,
+            this.generateFromDBToolStripMenuItem});
             this.newNetworkToolStripMenuItem.Name = "newNetworkToolStripMenuItem";
             this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.newNetworkToolStripMenuItem.Text = "NewNetwork";
@@ -127,21 +129,21 @@
             // loadFileToolStripMenuItem
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
-            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.loadFileToolStripMenuItem.Text = "LoadFile";
             this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFileToolStripMenuItem_Click);
             // 
             // loadGraphMLToolStripMenuItem
             // 
             this.loadGraphMLToolStripMenuItem.Name = "loadGraphMLToolStripMenuItem";
-            this.loadGraphMLToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.loadGraphMLToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.loadGraphMLToolStripMenuItem.Text = "LoadGraphML";
             this.loadGraphMLToolStripMenuItem.Click += new System.EventHandler(this.loadGraphMLToolStripMenuItem_Click);
             // 
             // loadFromDBToolStripMenuItem
             // 
             this.loadFromDBToolStripMenuItem.Name = "loadFromDBToolStripMenuItem";
-            this.loadFromDBToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.loadFromDBToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.loadFromDBToolStripMenuItem.Text = "LoadFromDB";
             this.loadFromDBToolStripMenuItem.Click += new System.EventHandler(this.loadFromDBToolStripMenuItem_Click);
             // 
@@ -156,7 +158,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(2, 17);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(804, 456);
@@ -166,9 +168,9 @@
             // 
             this.tabPage1.Controls.Add(this.layoutControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(796, 430);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SocialNetwork";
@@ -192,97 +194,13 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(150, 473);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ModelControl";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(0, 130);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 28);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "CalculateAll";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(0, 99);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 26);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "ClusteringCoefficientCalculate";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 68);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 26);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "PageRankCalculate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ShowLabels";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(154, 24);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(808, 475);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "GraphDisplay";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.RTFDebugOut);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(0, 506);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(962, 80);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DebugInformation";
-            // 
-            // RTFDebugOut
-            // 
-            this.RTFDebugOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RTFDebugOut.Location = new System.Drawing.Point(2, 17);
-            this.RTFDebugOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.RTFDebugOut.Name = "RTFDebugOut";
-            this.RTFDebugOut.Size = new System.Drawing.Size(958, 61);
-            this.RTFDebugOut.TabIndex = 0;
-            this.RTFDebugOut.Text = "";
-            // 
-            // cdbOpenGraphML
-            // 
-            this.cdbOpenGraphML.FileName = "openFileDialog1";
             // 
             // button5
             // 
@@ -295,6 +213,97 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(0, 130);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 28);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "CalculateAll";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 99);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 26);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "ClusteringCoefficientCalculate";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 68);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 26);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "PageRankCalculate";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 37);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 26);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "ShowLabels";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tabControl1);
+            this.groupBox2.Location = new System.Drawing.Point(154, 24);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(808, 475);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "GraphDisplay";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.RTFDebugOut);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(0, 506);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(962, 80);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DebugInformation";
+            // 
+            // RTFDebugOut
+            // 
+            this.RTFDebugOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RTFDebugOut.Location = new System.Drawing.Point(2, 17);
+            this.RTFDebugOut.Margin = new System.Windows.Forms.Padding(2);
+            this.RTFDebugOut.Name = "RTFDebugOut";
+            this.RTFDebugOut.Size = new System.Drawing.Size(958, 61);
+            this.RTFDebugOut.TabIndex = 0;
+            this.RTFDebugOut.Text = "";
+            // 
+            // cdbOpenGraphML
+            // 
+            this.cdbOpenGraphML.FileName = "openFileDialog1";
+            // 
+            // generateFromDBToolStripMenuItem
+            // 
+            this.generateFromDBToolStripMenuItem.Name = "generateFromDBToolStripMenuItem";
+            this.generateFromDBToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.generateFromDBToolStripMenuItem.Text = "GenerateFromDB";
+            this.generateFromDBToolStripMenuItem.Click += new System.EventHandler(this.generateFromDBToolStripMenuItem_Click);
+            // 
             // StandAloneMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -305,7 +314,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "StandAloneMainUI";
             this.Text = "StandAloneMainUI";
@@ -349,6 +358,7 @@
         private System.Windows.Forms.Button button4;
         private LayoutControls.LayoutControl layoutControl1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripMenuItem generateFromDBToolStripMenuItem;
     }
 }
 

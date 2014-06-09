@@ -226,6 +226,14 @@ namespace StandaloneNode
             GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
             oGroupSettingDialog.Show(this);
         }
+
+        private void generateFromDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EventHandler<IgraphGenerateEvent> handler = new System.EventHandler<IgraphGenerateEvent>(this.SetAndShowGraph);
+            DB_Manager dbm = new DB_Manager("networkvis");
+            GenerateGraph genGraph = new GenerateGraph(dbm, handler);
+            genGraph.Show(this);
+        }
         
     }
 }

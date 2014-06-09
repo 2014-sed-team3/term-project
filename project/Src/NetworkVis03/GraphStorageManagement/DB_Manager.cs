@@ -10,6 +10,7 @@ namespace GraphStorageManagement
 {
     public class DB_Manager
     {
+        public DB_setting setting;
         public MySqlConnection RepositoryConnection;
         private List<string> connectionInfo;
         public DB_Manager(String Database)
@@ -38,6 +39,7 @@ namespace GraphStorageManagement
                 RepositoryConnection.Close();
                 Console.WriteLine("錯啦  " + ex.ToString());
             }
+            setting = new DB_setting();
         }
 
         public DataTable mysql_query(string sql)
@@ -98,13 +100,16 @@ namespace GraphStorageManagement
             /*Call DB_Converter to generate graph */
         }
 
+        public Graph get_network()
+        {
+            /*Use setting to generate sql and get DataTable*/
+            return null;
+        }
+
         public void export_to_db(){
             
         }
-        public void convert_to_graph()
-        {
 
-        }
         public void close()
         {
             RepositoryConnection.Close();
