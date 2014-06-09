@@ -3,6 +3,7 @@ using Smrf.NodeXL.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,25 @@ using System.Threading.Tasks;
 
 namespace StandaloneNode
 {
-    public class MetricsCalculatorManager
+    public class MetricsCalculatorManager : DataTableObservableBase
     {
         private BackgroundWorker m_oBackgroundWorker;
         private bool wbFlag;
+        private LinkedList<AnalyzeResultBase> oAnalyzeResults;
+
         public MetricsCalculatorManager() {
             m_oBackgroundWorker = null;
             wbFlag = false;
+        }
+
+        public override List<DataTable> getDataTables {
+            get {
+                List<DataTable> tables = new List<DataTable>();
+                foreach (AnalyzeResultBase ar in oAnalyzeResults) {
+                    tables.AddRange(ar.ToDataTable);
+                }
+                return tables;
+            }
         }
 
         /* Create analyzers and graph according to a "setting" object provided by outter View component; then pass to a BackgroundWorker.
@@ -162,6 +175,8 @@ namespace StandaloneNode
 
         public event ProgressChangedEventHandler CalculationProgressChanged; // invoked when BackgroundWorker progress changed
         public event RunWorkerCompletedEventHandler CalculationCompleted; // invoked when BackgroundWorker complete works
+
+        
     }
 
     public class MetricsCheckedList {
