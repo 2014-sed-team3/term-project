@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Smrf.NodeXL.Core;
 
 namespace StandaloneNode
 {
@@ -13,9 +14,12 @@ namespace StandaloneNode
     {
         private MetricsCalculatorManager m_ocontroller;
         public MetricsCheckedList chklist = new MetricsCheckedList();
-        public GroupItemSelecter()
+        private IGraph m_oGraph;
+
+        public GroupItemSelecter(IGraph graph)
         {
             InitializeComponent();
+            m_oGraph = graph;
         }
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -123,7 +127,8 @@ namespace StandaloneNode
             //if (checkedListBox1.CheckedItems.Contains("vertex eigen vector centrality")) chklist.vertex_eigenvector_centrality = true;
             //if (checkedListBox1.CheckedItems.Contains("group metrics")) chklist.group_metrics = true;
 
-            MetricsCalculationProgressDialog dg = new MetricsCalculationProgressDialog(chklist);
+            MetricsCalculationProgressDialog dg = new MetricsCalculationProgressDialog(m_oGraph, chklist);
+            //dg.Show(this);
             if (dg.ShowDialog() == DialogResult.OK)
             {
                 DialogResult = DialogResult.OK;

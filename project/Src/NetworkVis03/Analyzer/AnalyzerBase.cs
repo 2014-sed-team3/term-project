@@ -58,10 +58,7 @@ namespace Analyzer
                     );
 
                 oBackgroundWorker.ReportProgress(
-
-                    CalculateProgressInPercent(iCalculationsSoFar,
-                        iTotalCalculations),
-
+                    CalculateProgressInPercent(iCalculationsSoFar,iTotalCalculations),
                     sProgress);
             }
         }

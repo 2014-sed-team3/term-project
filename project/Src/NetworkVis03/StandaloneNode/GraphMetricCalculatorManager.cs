@@ -22,7 +22,7 @@ namespace StandaloneNode
         /* Create analyzers and graph according to a "setting" object provided by outter View component; then pass to a BackgroundWorker.
          * In this project, this is invoked by a Dialog onload event handler.
          * */
-        public void calculateMetricsAsync(MetricsCheckedList checkedlist) {  
+        public void calculateMetricsAsync(IGraph graph, MetricsCheckedList checkedlist) {  
 
             if (m_oBackgroundWorker != null && m_oBackgroundWorker.IsBusy)
             {
@@ -40,6 +40,8 @@ namespace StandaloneNode
 
             CalculateGraphMetricsAsyncArgs args = new CalculateGraphMetricsAsyncArgs(); // add analyzer to this object and pass to BackgroundWorker
             args.Analyzers = new LinkedList<AnalyzerBase>();
+            args.Graph = graph;
+
 
             if (checkedlist.overall_graph_metrics == true) {args.Analyzers.AddLast(new OverallMetricCalculator()); }
             if (checkedlist.vertex_degree == true) {args.Analyzers.AddLast(new VertexDegreeCalculator()); }
@@ -51,6 +53,10 @@ namespace StandaloneNode
             
             // create a new BackgroundWorker
             m_oBackgroundWorker = new BackgroundWorker();
+
+            m_oBackgroundWorker.WorkerReportsProgress = true;
+            m_oBackgroundWorker.WorkerSupportsCancellation = true;
+
             m_oBackgroundWorker.DoWork += new DoWorkEventHandler(BackgroundWorker_DoWork);
             m_oBackgroundWorker.ProgressChanged += new ProgressChangedEventHandler(BackgroundWorker_ProgressChanged);
             m_oBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker_RunWorkerCompleted);
@@ -121,12 +127,13 @@ namespace StandaloneNode
 
             if (oCalculationCompleted != null)
             {
+                
                 Debug.Assert(e.Cancelled || e.Error != null ||
-                    e.Result is LinkedList<AnalyzerBase>);
+                    e.Result is LinkedList<AnalyzeResultBase>);
    
                 if (!e.Cancelled) //normally complete
                 {
-                    Debug.Assert(e.Result is LinkedList<AnalyzerBase>);
+                    Debug.Assert(e.Result is LinkedList<AnalyzeResultBase>);
 
                     /* TO DO
                      * write e.Result to data base

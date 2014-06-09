@@ -163,7 +163,7 @@ namespace StandaloneNode
 
         private void button4_Click(object sender, EventArgs e)
         {
-            GroupItemSelecter GIS = new GroupItemSelecter();
+            GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph);
             GIS.Show(this);
         }
     }

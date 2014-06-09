@@ -99,11 +99,6 @@ namespace Analyzer
 
         protected const Int32 VerticesPerProgressReport = 100;
 
-
-        public override bool tryAnalyze(IGraph graph, BackgroundWorker bgw, out AnalyzeResultBase results)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     

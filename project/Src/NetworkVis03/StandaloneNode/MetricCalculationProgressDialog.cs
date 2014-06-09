@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Analyzer;
+using Smrf.NodeXL.Core;
 using System.Diagnostics;
 
 
@@ -17,11 +19,14 @@ namespace StandaloneNode
     {
         private MetricsCheckedList m_oMetricsCheckedList;
         private MetricsCalculatorManager m_oGraphMetricCalculatorManager;
-        public MetricsCalculationProgressDialog(MetricsCheckedList chkList)
+        IGraph m_ograph;
+
+        public MetricsCalculationProgressDialog(IGraph graph, MetricsCheckedList chkList)
         {
             InitializeComponent();
             m_oMetricsCheckedList = chkList;
             m_oGraphMetricCalculatorManager = new MetricsCalculatorManager();
+            m_ograph = graph;
 
             m_oGraphMetricCalculatorManager.CalculationProgressChanged += new ProgressChangedEventHandler(Manager_ProgressChanged);
             m_oGraphMetricCalculatorManager.CalculationCompleted += new RunWorkerCompletedEventHandler(Manager_WorksCompleted);
@@ -30,7 +35,7 @@ namespace StandaloneNode
 
         private void WorkProgressDialog_Load(object sender, EventArgs e)
         {
-            m_oGraphMetricCalculatorManager.calculateMetricsAsync(m_oMetricsCheckedList);
+            m_oGraphMetricCalculatorManager.calculateMetricsAsync(m_ograph, m_oMetricsCheckedList);
 
         }
 

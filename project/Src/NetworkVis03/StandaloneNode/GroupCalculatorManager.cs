@@ -24,7 +24,7 @@ namespace StandaloneNode
         }
 
         /* Create calculator accoring to the input checkedlist and pass to BackgroundWorker */
-        public void calculateMetricsAsync(GroupsCheckedList checkedlist) {  
+        public void calculateMetricsAsync(IGraph graph, GroupsCheckedList checkedlist) {  
 
             if (m_oBackgroundWorker != null && m_oBackgroundWorker.IsBusy)
             {
@@ -47,6 +47,10 @@ namespace StandaloneNode
 
             // create a new BackgroundWorker
             m_oBackgroundWorker = new BackgroundWorker();
+
+            m_oBackgroundWorker.WorkerReportsProgress = true;
+            m_oBackgroundWorker.WorkerSupportsCancellation = true;
+
             m_oBackgroundWorker.DoWork += new DoWorkEventHandler(BackgroundWorker_DoWork);
             m_oBackgroundWorker.ProgressChanged += new ProgressChangedEventHandler(BackgroundWorker_ProgressChanged);
             m_oBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker_RunWorkerCompleted);
@@ -118,12 +122,12 @@ namespace StandaloneNode
             if (oCalculationCompleted != null)
             {
                 Debug.Assert(e.Cancelled || e.Error != null ||
-                    e.Result is LinkedList<AnalyzerBase>);
+                    e.Result is LinkedList<AnalyzeResultBase>);
 
                 oCalculationCompleted(this, e);  //forward event
                 if (!e.Cancelled) //normally complete
                 {
-                    Debug.Assert(e.Result is LinkedList<AnalyzerBase>);
+                    Debug.Assert(e.Result is LinkedList<AnalyzeResultBase>);
                     /* TO DO:
                      * write e.Result to data base 
                      */
