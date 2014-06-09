@@ -1058,6 +1058,7 @@ namespace facebook_pages_crawler
                     foreach (JSONObject post in fbJSON.Dictionary["data"].Array)
                     {
                         string postID = " ";
+						string toPostID =" ";
                         string fromID = " ";
                         string fromName = " ";
                         string message = " ";
@@ -1150,8 +1151,8 @@ namespace facebook_pages_crawler
                         {
                             shares = post.Dictionary["shares"].Dictionary["count"].String;
                         }
-                        string sql = "insert into allinone (post_id,datatype,author_id,author,message,picture,url,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
-                            "\"" + postID + "\",\"" + datatype + "\",\"" + fromID + "\",?fname,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description," + likes + ",?created_time,?update_time," + comments + "," + shares + ",?updatetime) " +
+                        string sql = "insert into allinone (post_id,to_post_id,datatype,author_id,author,message,picture,url,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
+                            "\"" + postID + "\",\"" + toPostID + "\",\"" + datatype + "\",\"" + fromID + "\",?fname,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description," + likes + ",?created_time,?update_time," + comments + "," + shares + ",?updatetime) " +
                             "ON DUPLICATE KEY UPDATE message =?message, likes=" + likes + ",comments=" + comments + ",shares=" + shares + ",updated_time=?update_time,updatetime=?updatetime";
                         //showMessage.AppendText(sql + "\n");
                         for (int loop = 0; loop < 2; loop++)
@@ -1353,6 +1354,7 @@ namespace facebook_pages_crawler
 					string description=" ";
 					string comments="0";
 					string shares="0";
+					string toPostID=" ";
 					
                     DateTime created_time = DateTime.Now;
                     if (comment.Dictionary.ContainsKey("id"))
@@ -1408,8 +1410,8 @@ namespace facebook_pages_crawler
                 //            "?post_id," + datatype + ",?from_id,?from_name,?message,"+ picture + "," + link +"," + name + "," + caption + ",?source," + icon + "," + type + "," + object_id + "," + description +
 				//			",?likes,?created_time,?updated_time," + comments + "," + shares + ",?updatetime)" ;
 				
-					sql = "insert into allinone (post_id,datatype,author_id,author,message,picture,url,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
-                            "?post_id,?datatype,?from_id,?from_name,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description,?likes,?created_time,?updated_time,?comments,?shares,?updatetime)" ;
+					sql = "insert into allinone (post_id,to_post_id,datatype,author_id,author,message,picture,url,name,caption,source,icon,type,object_id,description,likes,created_time,updated_time,comments,shares,updatetime) values (" +
+                            "?post_id,?to_post_id,?datatype,?from_id,?from_name,?message,?picture,?link,?name,?caption,?source,?icon,?type,?object_id,?description,?likes,?created_time,?updated_time,?comments,?shares,?updatetime)" ;
 					
 				/*	while (true)
                     {
@@ -1445,6 +1447,7 @@ namespace facebook_pages_crawler
                             MySqlCommand cmd = new MySqlCommand(sql, conn.conn);
                             
                             cmd.Parameters.AddWithValue("?post_id", commID);
+							cmd.Parameters.AddWithValue("?to_post_id", postID);
 							cmd.Parameters.AddWithValue("?datatype", datatype);
                             cmd.Parameters.AddWithValue("?from_id", fromID);
                             cmd.Parameters.AddWithValue("?from_name", fromName);
