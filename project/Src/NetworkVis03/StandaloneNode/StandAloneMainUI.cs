@@ -38,6 +38,11 @@ namespace StandaloneNode
             InitializeComponent();
         }
 
+        public void SetAndShowGraph(IGraph oGraph)
+        {
+            layoutControl1.SetAndShowGraph(oGraph);
+        }
+
         private void facebookCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FacebookCrawler FBCrawl = new FacebookCrawler();

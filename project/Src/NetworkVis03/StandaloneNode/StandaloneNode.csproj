@@ -52,7 +52,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalysisResultManager.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="FacebookCrawler.cs">
       <SubType>Form</SubType>
