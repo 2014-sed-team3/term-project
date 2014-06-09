@@ -14,9 +14,10 @@ namespace Analyzer
         {
             get
             {
-                DataTable dtb = new DataTable();
+                DataTable dtb = new DataTable("Edge");
                 dtb.Columns.Add("Edge_ID", typeof(int));
                 dtb.Columns.Add("Reciprocated", typeof(bool));
+                dtb.PrimaryKey = new DataColumn[] { dtb.Columns["Edge_ID"] };
                 foreach (KeyValuePair<int, bool> p in this)
                 {
                     dtb.Rows.Add(p.Key, p.Value);

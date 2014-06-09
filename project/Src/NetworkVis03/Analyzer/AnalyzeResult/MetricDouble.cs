@@ -20,9 +20,12 @@ namespace Analyzer
         }
         public DataTable[] ToDataTable {
             get {
-                DataTable dtb = new DataTable();
+                DataTable dtb = new DataTable("Vertex");
+
                 dtb.Columns.Add("Vertex_ID", typeof(int));
                 dtb.Columns.Add(metricname, typeof(double));
+                dtb.PrimaryKey = new DataColumn[]{dtb.Columns["Vertex_ID"]};
+
                 foreach (KeyValuePair<int, double> p in this) {
                     dtb.Rows.Add(p.Key, p.Value);
                 }

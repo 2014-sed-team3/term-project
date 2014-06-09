@@ -37,11 +37,12 @@ namespace Analyzer
         {
             get
             {
-                DataTable dtb = new DataTable();
+                DataTable dtb = new DataTable("Vertex");
                 dtb.Columns.Add("Vertex_ID", typeof(int));
                 dtb.Columns.Add("InDegree", typeof(int));
                 dtb.Columns.Add("OutDegree", typeof(int));
                 dtb.Columns.Add("TotalDegree", typeof(int));
+                dtb.PrimaryKey = new DataColumn[] { dtb.Columns["Vertex_ID"] };
                 foreach (KeyValuePair<int, Dictionary<string, int>> p in this)
                 {
                     dtb.Rows.Add(p.Key, p.Value["InDegree"], p.Value["OutDegree"], p.Value["TotalDegree"]);
