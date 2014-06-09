@@ -13,6 +13,11 @@ namespace StandaloneNode
 {
     public partial class ShowMetricCalculateResult : Form, IDataTableObserver
     {
+        public DataTableObservableBase m_oDataTableObservableBase;
+
+        private DataTable m_oVertexTable;
+        private DataTable m_oEdgeTable;
+        private DataTable m_oGroupTable;
 
         public ShowMetricCalculateResult() {
             InitializeComponent();
@@ -43,6 +48,7 @@ namespace StandaloneNode
 
         public void refreshwith(DataTableObservableBase source)
         {
+            m_oDataTableObservableBase = source;
             List<DataTable> tbs = source.getDataTables;
 
             foreach (DataTable tb in tbs) {
@@ -124,14 +130,12 @@ namespace StandaloneNode
             if (!this.Visible)
                 this.Show();
         }
-        private void MyFormClosing(object sender, FormClosingEventArgs e) {
+        private void MyFormClosing(object sender, FormClosingEventArgs e) 
+        {
             this.Hide();
             e.Cancel = true;
         }
 
-        private DataTable m_oVertexTable;
-        private DataTable m_oEdgeTable;
-        private DataTable m_oGroupTable;
 
         
     }

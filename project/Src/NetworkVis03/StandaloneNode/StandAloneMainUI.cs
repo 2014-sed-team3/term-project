@@ -18,6 +18,7 @@ using Smrf.NodeXL.Adapters;
 using Smrf.NodeXL.GraphDataProviders.YouTube;
 
 using GraphStorageManagement;
+using Observer_Core;
 
 namespace StandaloneNode
 {
@@ -29,6 +30,7 @@ namespace StandaloneNode
         MetricDouble oClusteringCoefficientDouble;
         PageRankCalculator m_oPageRankCalculator = new PageRankCalculator();
         MetricDouble oPageRankMetricDouble;
+        public DataTableObservableBase m_oResultDataTableObservableBase;
 
         protected IGraph m_oGraph;
         protected IVertexCollection m_oVertices;
@@ -208,6 +210,7 @@ namespace StandaloneNode
             {
                 GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph, m_oShowMetricCalculateResult);
                 GIS.Show(this);
+                m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
             }
             else
             {
@@ -231,6 +234,7 @@ namespace StandaloneNode
             {
                 GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
                 oGroupSettingDialog.Show(this);
+                m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
             }
             else
             {
