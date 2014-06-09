@@ -23,8 +23,10 @@ namespace StandaloneNode
             wbFlag = false;
         }
 
-        public override List<DataTable> getDataTables {
-            get {
+        public override List<DataTable> getDataTables
+        {
+            get
+            {
                 List<DataTable> tables = new List<DataTable>();
                 foreach (AnalyzeResultBase ar in m_oAnalyzeResults) {
                     tables.AddRange(ar.ToDataTable);
@@ -136,7 +138,6 @@ namespace StandaloneNode
         {
 
             wbFlag = true;
-
             RunWorkerCompletedEventHandler oCalculationCompleted = this.CalculationCompleted;
 
             if (oCalculationCompleted != null)

@@ -24,12 +24,12 @@ namespace Analyzer
                 DataTable dtb2 = new DataTable("Group"); // (groupid, groupdescription) granularity to group
                 dtb2.Columns.Add("Group_ID", typeof(int));
                 dtb2.Columns.Add("GroupDescription", typeof(string));
-                dtb1.PrimaryKey = new DataColumn[] { dtb1.Columns["Group_ID"] };
+                dtb2.PrimaryKey = new DataColumn[] { dtb2.Columns["Group_ID"] };
                 
                 foreach (KeyValuePair<int, IGroup> p in this) {
                     dtb2.Rows.Add(p.Key, p.Value.getDescription);
                     foreach (IVertex v in p.Value.getVertexWithin) {
-                        dtb1.Rows.Add(p.Key, v.ID);
+                        dtb1.Rows.Add(v.ID, p.Key);
                     }
                 }
 

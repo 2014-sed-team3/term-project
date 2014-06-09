@@ -31,6 +31,7 @@ namespace StandaloneNode
             get
             {
                 List<DataTable> tables = new List<DataTable>();
+                Debug.Assert(m_oAnalyzeResults != null);
                 foreach (AnalyzeResultBase ar in m_oAnalyzeResults)
                 {
                     tables.AddRange(ar.ToDataTable);
@@ -86,11 +87,12 @@ namespace StandaloneNode
             Debug.Assert(e.Argument is CalculateGroupsAsyncArgs);
 
             CalculateGroupsAsyncArgs tmpArgs = (CalculateGroupsAsyncArgs)e.Argument;
-            LinkedList<AnalyzerBase> analyzers = tmpArgs.Analyzers;
+            AnalyzerBase[] analyzers = tmpArgs.Analyzers.ToArray();
             IGraph graph = tmpArgs.Graph;
             LinkedList<AnalyzeResultBase> results = new LinkedList<AnalyzeResultBase>();
             foreach (AnalyzerBase analyzer in analyzers)
             {
+                
                 AnalyzeResultBase result;
                 if (!analyzer.tryAnalyze(graph, m_oBackgroundWorker, out result)) // The user cancelled.
                 {
@@ -98,11 +100,11 @@ namespace StandaloneNode
                     m_oBackgroundWorker.ReportProgress(0, "Cancelled.");
                     return;
                 }
-
+                
                 results.AddLast(result);
             }
+            Debug.Assert(results != null);
             e.Result = results;
-
             m_oBackgroundWorker.ReportProgress(100, new ProgressState(100, "Writing Back..", true));
 
         }
@@ -143,10 +145,11 @@ namespace StandaloneNode
 
             if (oCalculationCompleted != null)
             {
+                
                 Debug.Assert(e.Cancelled || e.Error != null ||
                     e.Result is LinkedList<AnalyzeResultBase>);
 
-                oCalculationCompleted(this, e);  //forward event
+                
                 if (!e.Cancelled) //normally complete
                 {
                     Debug.Assert(e.Result is LinkedList<AnalyzeResultBase>);
@@ -154,6 +157,9 @@ namespace StandaloneNode
                      * write e.Result to data base 
                      */
                 }
+                
+                Debug.Assert(e.Result != null);
+                
                 m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
                 oCalculationCompleted(this, e);
             }

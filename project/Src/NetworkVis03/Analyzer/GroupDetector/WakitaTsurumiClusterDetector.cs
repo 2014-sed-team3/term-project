@@ -18,7 +18,7 @@ namespace Analyzer
         {
             ICollection<Community> oGraphMetrics;
             Groups oGroups;
-            int i = 0;
+            int i = 1;
             bool rv = TryCalculateClustersWakitaTsurumi(graph, bgw, out oGraphMetrics);
             if (rv == true)
             {

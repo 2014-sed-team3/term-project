@@ -18,7 +18,7 @@ namespace Analyzer
         {
             ICollection<Motif> oMotifs;
             Groups oGroups;
-            int i = 0;
+            int i = 1;
             bool rv = TryCalculateFanMotif(graph, bgw, out oMotifs);
             if (rv == true)
             {

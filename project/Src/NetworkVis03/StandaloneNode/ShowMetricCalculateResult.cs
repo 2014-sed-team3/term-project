@@ -91,6 +91,8 @@ namespace StandaloneNode
                 }
                 else if (tb.TableName == "Group")
                 {
+                    m_oGroupTable = tb;
+                    /*
                     if (m_oGroupTable == null){
                         m_oGroupTable = tb;
                         continue;
@@ -108,11 +110,13 @@ namespace StandaloneNode
                         {
                             if (dc.ColumnName != "Group_ID")
                             {
-                                Debug.Assert(m_oGroupTable.Rows.Contains(dr["Group_ID"]));
+                                Debug.Assert(m_oGroupTable != null);
+                                Debug.Assert(dr[dc.ColumnName] != null);
+                                System.Console.WriteLine("!!!!!!!!!!!!!!!");
                                 m_oGroupTable.Rows.Find(dr["Group_ID"])[dc.ColumnName] = dr[dc.ColumnName];
                             }
                         }
-                    }
+                    }*/
                 }
             
             }
@@ -120,9 +124,15 @@ namespace StandaloneNode
             if (!this.Visible)
                 this.Show();
         }
+        private void MyFormClosing(object sender, FormClosingEventArgs e) {
+            this.Hide();
+            e.Cancel = true;
+        }
 
         private DataTable m_oVertexTable;
         private DataTable m_oEdgeTable;
         private DataTable m_oGroupTable;
+
+        
     }
 }

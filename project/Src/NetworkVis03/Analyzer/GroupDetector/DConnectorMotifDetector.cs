@@ -24,7 +24,7 @@ namespace Analyzer
         {
             ICollection<Motif> oMotifs;
             Groups oGroups;
-            int i = 0;
+            int i = 1;
             bool rv = TryCalculateDConnectorMotifs(graph, m_iDMinimum, m_iDMaximum, bgw, out oMotifs);
             if (rv == true)
             {

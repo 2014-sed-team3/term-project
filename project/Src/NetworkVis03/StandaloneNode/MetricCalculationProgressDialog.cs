@@ -81,6 +81,8 @@ namespace StandaloneNode
         private void btnCancel_Click(object sender, EventArgs e)
         {
             m_oGraphMetricCalculatorManager.CancelAsyncCalculate();
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         

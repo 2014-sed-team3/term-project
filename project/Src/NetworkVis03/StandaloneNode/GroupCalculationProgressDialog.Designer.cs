@@ -70,6 +70,7 @@
             this.Text = "GroupCalculationProgressDialog";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.Load += new System.EventHandler(this.WorkProgressDialog_Load);
 
         }
 
