@@ -44,6 +44,7 @@ namespace StandaloneNode
         {
             layoutControl1.SetAndShowGraph(e.getGraph());
             m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
+            
         }
 
         private void facebookCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,7 +202,9 @@ namespace StandaloneNode
 
         private void button4_Click(object sender, EventArgs e)
         {
-            GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph);
+            if(m_oShowMetricCalculateResult == null)
+                m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
+            GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph, m_oShowMetricCalculateResult);
             GIS.Show(this);
         }
 
@@ -218,7 +221,10 @@ namespace StandaloneNode
 
         private void button5_Click(object sender, EventArgs e)
         {
-            GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog();
+            if (m_oShowMetricCalculateResult == null)
+                m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
+            GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
+            oGroupSettingDialog.Show(this);
         }
         
     }

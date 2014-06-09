@@ -22,7 +22,7 @@ namespace StandaloneNode
         private ShowMetricCalculateResult m_oShowMetricCalculateResult;
         IGraph m_ograph;
 
-        public MetricsCalculationProgressDialog(IGraph graph, MetricsCheckedList chkList)
+        public MetricsCalculationProgressDialog(IGraph graph, MetricsCheckedList chkList, ShowMetricCalculateResult oShowMetricCalculateResult)
         {
             InitializeComponent();
             m_oMetricsCheckedList = chkList;
@@ -32,7 +32,7 @@ namespace StandaloneNode
             m_oGraphMetricCalculatorManager.CalculationProgressChanged += new ProgressChangedEventHandler(Manager_ProgressChanged);
             m_oGraphMetricCalculatorManager.CalculationCompleted += new RunWorkerCompletedEventHandler(Manager_WorksCompleted);
 
-            m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
+            m_oShowMetricCalculateResult = oShowMetricCalculateResult;
             m_oGraphMetricCalculatorManager.attach(m_oShowMetricCalculateResult);
 
         }

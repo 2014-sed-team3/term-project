@@ -16,9 +16,10 @@ namespace StandaloneNode
     {
         private GroupsCheckedList m_oGroupsCheckedList;
         private GroupCalculatorManager m_oGroupCalculatorManager;
+        private ShowMetricCalculateResult m_oShowMetricCalculateResult;
         IGraph m_ograph;
 
-        public GroupCalculationProgressDialog(IGraph graph, GroupsCheckedList chkList)
+        public GroupCalculationProgressDialog(IGraph graph, GroupsCheckedList chkList, ShowMetricCalculateResult oShowMetricCalculateResult)
         {
             InitializeComponent();
             m_oGroupsCheckedList = chkList;
@@ -28,6 +29,8 @@ namespace StandaloneNode
             m_oGroupCalculatorManager.CalculationProgressChanged += new ProgressChangedEventHandler(Manager_ProgressChanged);
             m_oGroupCalculatorManager.CalculationCompleted += new RunWorkerCompletedEventHandler(Manager_WorksCompleted);
 
+            m_oShowMetricCalculateResult = oShowMetricCalculateResult;
+            m_oGroupCalculatorManager.attach(m_oShowMetricCalculateResult);
         }
 
         private void WorkProgressDialog_Load(object sender, EventArgs e)
@@ -68,6 +71,7 @@ namespace StandaloneNode
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+            m_oGroupCalculatorManager.notify();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

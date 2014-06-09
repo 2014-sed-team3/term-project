@@ -12,14 +12,16 @@ namespace StandaloneNode
 {
     public partial class GroupItemSelecter : Form
     {
-        private MetricsCalculatorManager m_ocontroller;
+        //private MetricsCalculatorManager m_ocontroller;
         public MetricsCheckedList chklist = new MetricsCheckedList();
         private IGraph m_oGraph;
+        private ShowMetricCalculateResult m_oShowMetricCalculateResult;
 
-        public GroupItemSelecter(IGraph graph)
+        public GroupItemSelecter(IGraph graph, ShowMetricCalculateResult oShowMetricCalculateResult)
         {
             InitializeComponent();
-            m_oGraph = graph;
+            this.m_oGraph = graph;
+            this.m_oShowMetricCalculateResult = oShowMetricCalculateResult;
         }
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -127,7 +129,7 @@ namespace StandaloneNode
             //if (checkedListBox1.CheckedItems.Contains("vertex eigen vector centrality")) chklist.vertex_eigenvector_centrality = true;
             //if (checkedListBox1.CheckedItems.Contains("group metrics")) chklist.group_metrics = true;
 
-            MetricsCalculationProgressDialog dg = new MetricsCalculationProgressDialog(m_oGraph, chklist);
+            MetricsCalculationProgressDialog dg = new MetricsCalculationProgressDialog(m_oGraph, chklist, m_oShowMetricCalculateResult);
             //dg.Show(this);
             if (dg.ShowDialog() == DialogResult.OK)
             {

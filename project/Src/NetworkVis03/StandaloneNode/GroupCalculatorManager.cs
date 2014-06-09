@@ -55,10 +55,15 @@ namespace StandaloneNode
             }
 
             CalculateGroupsAsyncArgs args = new CalculateGroupsAsyncArgs(); // add analyzer to this object and pass to BackgroundWorker
+            args.Analyzers = new LinkedList<AnalyzerBase>();
+            args.Graph = graph;
 
-            if (checkedlist.Fan_Motif == true) { }
-            if (checkedlist.Dconnector_Motif == true && checkedlist.dMininum > 0 && checkedlist.dMaximum > 0) { }
-            if (checkedlist.WakitaTsurumi_Cluster == true) { }
+
+            if (checkedlist.Fan_Motif == true) { args.Analyzers.AddLast(new FanMotifDetector()); }
+            if (checkedlist.Dconnector_Motif == true && checkedlist.dMininum > 4 && checkedlist.dMaximum < 9999 && checkedlist.dMininum < checkedlist.dMaximum) {
+                args.Analyzers.AddLast(new DConnectorMotifDetector(checkedlist.dMininum, checkedlist.dMaximum));
+            }
+            if (checkedlist.WakitaTsurumi_Cluster == true) { args.Analyzers.AddLast(new WakitaTsurumiClusterDetector());}
             
 
             // create a new BackgroundWorker
@@ -81,7 +86,7 @@ namespace StandaloneNode
             Debug.Assert(e.Argument is CalculateGroupsAsyncArgs);
 
             CalculateGroupsAsyncArgs tmpArgs = (CalculateGroupsAsyncArgs)e.Argument;
-            AnalyzerBase[] analyzers = tmpArgs.Analyzers;
+            LinkedList<AnalyzerBase> analyzers = tmpArgs.Analyzers;
             IGraph graph = tmpArgs.Graph;
             LinkedList<AnalyzeResultBase> results = new LinkedList<AnalyzeResultBase>();
             foreach (AnalyzerBase analyzer in analyzers)
@@ -169,7 +174,7 @@ namespace StandaloneNode
         protected class CalculateGroupsAsyncArgs
         {
             public IGraph Graph;
-            public AnalyzerBase[] Analyzers;
+            public LinkedList<AnalyzerBase> Analyzers;
         };
 
         

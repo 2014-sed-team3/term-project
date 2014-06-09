@@ -52,10 +52,9 @@
             this.panel1.Controls.Add(this.radDConnectorMotif);
             this.panel1.Controls.Add(this.radFanMotif);
             this.panel1.Controls.Add(this.radWakitaTsurumi);
-            this.panel1.Location = new System.Drawing.Point(28, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(21, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(653, 138);
+            this.panel1.Size = new System.Drawing.Size(490, 110);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -65,65 +64,78 @@
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.numericUpDown2);
             this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(261, 69);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(196, 55);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(388, 51);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(291, 41);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.Size = new System.Drawing.Size(43, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "between";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(65, 4);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Location = new System.Drawing.Point(52, 3);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 25);
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 22);
             this.numericUpDown1.TabIndex = 0;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(117, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 15);
+            this.label2.Size = new System.Drawing.Size(22, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "and";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(167, 4);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown2.Location = new System.Drawing.Point(145, 3);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(52, 25);
+            this.numericUpDown2.Size = new System.Drawing.Size(57, 22);
             this.numericUpDown2.TabIndex = 3;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(227, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(208, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 15);
+            this.label3.Size = new System.Drawing.Size(75, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "anchor vertices";
             // 
             // radDConnectorMotif
             // 
             this.radDConnectorMotif.AutoSize = true;
-            this.radDConnectorMotif.Location = new System.Drawing.Point(16, 69);
-            this.radDConnectorMotif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radDConnectorMotif.Location = new System.Drawing.Point(12, 55);
             this.radDConnectorMotif.Name = "radDConnectorMotif";
-            this.radDConnectorMotif.Size = new System.Drawing.Size(193, 19);
+            this.radDConnectorMotif.Size = new System.Drawing.Size(159, 16);
             this.radDConnectorMotif.TabIndex = 2;
             this.radDConnectorMotif.TabStop = true;
             this.radDConnectorMotif.Text = "Group By DConnector Motif";
@@ -132,10 +144,9 @@
             // radFanMotif
             // 
             this.radFanMotif.AutoSize = true;
-            this.radFanMotif.Location = new System.Drawing.Point(16, 42);
-            this.radFanMotif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radFanMotif.Location = new System.Drawing.Point(12, 34);
             this.radFanMotif.Name = "radFanMotif";
-            this.radFanMotif.Size = new System.Drawing.Size(142, 19);
+            this.radFanMotif.Size = new System.Drawing.Size(116, 16);
             this.radFanMotif.TabIndex = 1;
             this.radFanMotif.TabStop = true;
             this.radFanMotif.Text = "Group By FanMotif";
@@ -144,10 +155,9 @@
             // radWakitaTsurumi
             // 
             this.radWakitaTsurumi.AutoSize = true;
-            this.radWakitaTsurumi.Location = new System.Drawing.Point(16, 15);
-            this.radWakitaTsurumi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radWakitaTsurumi.Location = new System.Drawing.Point(12, 12);
             this.radWakitaTsurumi.Name = "radWakitaTsurumi";
-            this.radWakitaTsurumi.Size = new System.Drawing.Size(180, 19);
+            this.radWakitaTsurumi.Size = new System.Drawing.Size(148, 16);
             this.radWakitaTsurumi.TabIndex = 0;
             this.radWakitaTsurumi.TabStop = true;
             this.radWakitaTsurumi.Text = "Group By Wakita Tsurumi";
@@ -155,10 +165,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(456, 159);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Location = new System.Drawing.Point(342, 127);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(100, 29);
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Calculate";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -166,23 +175,22 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(564, 159);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(423, 127);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 29);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // GroupSettingDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 193);
+            this.ClientSize = new System.Drawing.Size(515, 154);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GroupSettingDialog";
             this.Text = "GroupSettingDialog";
             this.panel1.ResumeLayout(false);
