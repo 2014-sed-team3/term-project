@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Observer_Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

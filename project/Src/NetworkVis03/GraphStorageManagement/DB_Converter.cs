@@ -9,15 +9,16 @@ namespace GraphStorageManagement
 {
     class DB_Converter
     {
+        
         public Graph convert_to_graph(DataTable node_table, DataTable edge_table)
         {
             Graph oGraph = new Graph(GraphDirectedness.Directed);
             IVertexCollection oVertices = oGraph.Vertices;
             IEdgeCollection oEdges = oGraph.Edges;
-            /*
+            
             add_nodes(node_table, oVertices);
             add_edges(edge_table.Rows, oVertices, oEdges);
-            */
+            
             return oGraph;
         }
 
@@ -30,8 +31,8 @@ namespace GraphStorageManagement
             {
                 //Notice: "nodename" and "nodeid" should be edited
                 IVertex oVertexA = oVertices.Add();
-                oVertexA.Name = row[0].ToString();
-                oVertexA.Tag = row[0].ToString();
+                oVertexA.Name = row["NodeName"].ToString();
+                oVertexA.Tag = row["ID"].ToString();
                 int i = 0;
                 foreach(DataColumn col in node_col){
                     oVertexA.SetValue(col.ColumnName, row[i++]);
@@ -48,8 +49,8 @@ namespace GraphStorageManagement
             foreach (DataRow row in edge_rows)
             {
                 //Notice: "EdgeFromid" and "EdgeToid" should be edited
-                from = row[0].ToString();
-                to = row[1].ToString();
+                from = row["FromID"].ToString();
+                to = row["ToID"].ToString();
 
                 // Add an edge
                 IVertex oFrom = null;
