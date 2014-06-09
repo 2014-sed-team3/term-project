@@ -5,7 +5,7 @@ using System.Data;
 
 using Smrf.NodeXL.Core;
 
-namespace NetworkVis
+namespace GraphStorageManagement
 {
     class DB_Converter
     {

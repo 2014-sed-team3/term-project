@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Smrf.NodeXL.Core.Graph graph1 = new Smrf.NodeXL.Core.Graph();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFacebookDataGetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +39,6 @@
             this.loadGraphMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFromDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.layoutControl1 = new LayoutControls.LayoutControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -57,7 +55,6 @@
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,7 +68,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1164, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1164, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +79,7 @@
             this.newNetworkToolStripMenuItem,
             this.loadNetworkToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(45, 23);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newFacebookDataGetToolStripMenuItem
@@ -92,7 +89,7 @@
             this.youTuBeUserCrawlerToolStripMenuItem,
             this.youTuBeVideoCrawlerToolStripMenuItem});
             this.newFacebookDataGetToolStripMenuItem.Name = "newFacebookDataGetToolStripMenuItem";
-            this.newFacebookDataGetToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.newFacebookDataGetToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.newFacebookDataGetToolStripMenuItem.Text = "NewDataGet";
             // 
             // facebookCrawlerToolStripMenuItem
@@ -123,7 +120,7 @@
             this.loadGraphMLToolStripMenuItem,
             this.loadFromDBToolStripMenuItem});
             this.newNetworkToolStripMenuItem.Name = "newNetworkToolStripMenuItem";
-            this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.newNetworkToolStripMenuItem.Text = "NewNetwork";
             // 
             // loadFileToolStripMenuItem
@@ -145,24 +142,13 @@
             this.loadFromDBToolStripMenuItem.Name = "loadFromDBToolStripMenuItem";
             this.loadFromDBToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
             this.loadFromDBToolStripMenuItem.Text = "LoadFromDB";
+            this.loadFromDBToolStripMenuItem.Click += new System.EventHandler(this.loadFromDBToolStripMenuItem_Click);
             // 
             // loadNetworkToolStripMenuItem
             // 
             this.loadNetworkToolStripMenuItem.Name = "loadNetworkToolStripMenuItem";
-            this.loadNetworkToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.loadNetworkToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.loadNetworkToolStripMenuItem.Text = "LoadNetwork";
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            graph1.Name = null;
-            graph1.Tag = null;
-            this.layoutControl1.Graph = graph1;
-            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Size = new System.Drawing.Size(926, 535);
-            this.layoutControl1.TabIndex = 1;
             // 
             // tabControl1
             // 
@@ -177,7 +163,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.layoutControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -308,7 +293,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
