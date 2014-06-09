@@ -21,7 +21,7 @@ namespace GraphStorageManagement
             InitializeComponent();
             loadNetwork(listView1, db.list_network());
             GraphGenerated = _e;
-
+            db.close();
         }
 
 
@@ -52,9 +52,11 @@ namespace GraphStorageManagement
             if (listView1.SelectedItems.Count > 0)
             {
                 Console.WriteLine(listView1.SelectedItems[0].Text);
-                DB_Converter conv = new DB_Converter();
-                GraphGenerated(this, new IgraphGenerateEvent(conv.convert_to_graph(new DataTable(), new DataTable())));
+                String ID = listView1.SelectedItems[0].Text;
+                DB_Manager dbm = new DB_Manager("networkvis");
                 this.Close();
+                GraphGenerated(this, new IgraphGenerateEvent(dbm.get_network(ID)));
+                
                 /*TODO: Make query to generate graph*/
             }
         }

@@ -85,10 +85,15 @@ namespace GraphStorageManagement
             return mysql_query(output);
         }
 
-        public void get_network(String ID)
+        public Graph get_network(String ID)
         {
-            String edge_sql = String.Format("SELECT * FROM networkvis.edges WHERE NetworkID = {0}", ID);
-            String vertex_sql = String.Format("SELECT * FROM networkvis.nodes WHERE NetworkID = {0}", ID);
+            String edge_sql = String.Format("SELECT * FROM networkvis.edges WHERE NetworkID = \"{0}\"", ID);
+            String vertex_sql = String.Format("SELECT * FROM networkvis.nodes WHERE NetworkID = \"{0}\"", ID);
+            
+            DataTable edge_table = mysql_query(edge_sql);
+            DataTable vertex_table = mysql_query(vertex_sql);
+            DB_Converter conv = new DB_Converter();
+            return conv.convert_to_graph(vertex_table, edge_table);
             /*Get Group information from group table*/
             /*Call DB_Converter to generate graph */
         }
@@ -99,6 +104,10 @@ namespace GraphStorageManagement
         public void convert_to_graph()
         {
 
+        }
+        public void close()
+        {
+            RepositoryConnection.Close();
         }
     }
 }
