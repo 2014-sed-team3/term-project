@@ -55,8 +55,7 @@ namespace StandaloneNode
                 {
                     // Serializer.Deserialize<Corpus>(cdbOpenModel.FileName, ref cp);
                     oGraphAdapter = new SimpleGraphAdapter();
-                    layoutControl1.Graph = oGraphAdapter.LoadGraphFromFile(cdbOpenModel.FileName);
-                    layoutControl1.ShowGraph(true);
+                    layoutControl1.SetAndShowGraph(oGraphAdapter.LoadGraphFromFile(cdbOpenModel.FileName));
                 }
                 catch (Exception ex)
                 {
@@ -82,8 +81,7 @@ namespace StandaloneNode
                     System.IO.StreamReader file = new System.IO.StreamReader(cdbOpenGraphML.FileName);
                     string line = file.ReadToEnd();
                     oGraphMLGraphAdapter = new GraphMLGraphAdapter();
-                    layoutControl1.Graph = oGraphMLGraphAdapter.LoadGraphFromString(line);
-                    layoutControl1.ShowGraph(true);
+                    layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
                 }
                 catch (Exception ex)
                 {
@@ -101,8 +99,7 @@ namespace StandaloneNode
             System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
             string line = file.ReadToEnd();
             GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
-            layoutControl1.Graph = oGraphMLGraphAdapter.LoadGraphFromString(line);
-            layoutControl1.ShowGraph(true);
+            layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
         }
 
         private void youTuBeVideoCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,8 +108,7 @@ namespace StandaloneNode
             System.IO.StreamReader file = new System.IO.StreamReader(TempXmlFileName);
             string line = file.ReadToEnd();
             GraphMLGraphAdapter oGraphMLGraphAdapter = new GraphMLGraphAdapter();
-            layoutControl1.Graph = oGraphMLGraphAdapter.LoadGraphFromString(line);
-            layoutControl1.ShowGraph(true);
+            layoutControl1.SetAndShowGraph(oGraphMLGraphAdapter.LoadGraphFromString(line));
         }
         private void GetGraphData(IGraphDataProvider2 oGraphDataProvider)
         {
@@ -144,12 +140,15 @@ namespace StandaloneNode
         private void button1_Click(object sender, EventArgs e)
         {
             RTFDebugOut.Clear();
+            /*
             foreach (IVertex oVertex in layoutControl1.Graph.Vertices)
             {
                 oVertex.SetValue(ReservedMetadataKeys.PerVertexLabel, oVertex.Name);
                 RTFDebugOut.AppendText(oVertex.Name.ToString() + "\r\n");
             }
             layoutControl1.ShowGraph(true);
+             */
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
