@@ -42,11 +42,9 @@ namespace StandaloneNode
         /* This is invoked when manager's calculation progress is changed.
          * Then this dialog can refresh its display according to the msg given by manager
          * */
-        private void Manager_ProgressChanged
-            (object sender, ProgressChangedEventArgs e)
+        private void Manager_ProgressChanged (object sender, ProgressChangedEventArgs e)
         {
             Debug.Assert(e.UserState is ProgressState);
-
             ProgressState oProgressState = (ProgressState)e.UserState;
 
             /* TO DO
@@ -66,8 +64,7 @@ namespace StandaloneNode
         /* This is invoked when manager complete its jobs (or being cancelled)
          * In this project, this dialog, as a View component, should just close itself
          * */
-        private void Manager_WorksCompleted
-            (object sender, RunWorkerCompletedEventArgs e)
+        private void Manager_WorksCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             this.DialogResult = DialogResult.OK;
             this.Close();

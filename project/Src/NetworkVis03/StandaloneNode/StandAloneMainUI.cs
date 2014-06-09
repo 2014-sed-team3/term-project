@@ -204,8 +204,15 @@ namespace StandaloneNode
         {
             if(m_oShowMetricCalculateResult == null)
                 m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
-            GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph, m_oShowMetricCalculateResult);
-            GIS.Show(this);
+            if (layoutControl1.Graph.Vertices.Count >0)
+            {
+                GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph, m_oShowMetricCalculateResult);
+                GIS.Show(this);
+            }
+            else
+            {
+                MessageBox.Show("Error: 請先選好讀入的Graph", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void loadFromDBToolStripMenuItem_Click(object sender, EventArgs e)
@@ -214,17 +221,21 @@ namespace StandaloneNode
             DB_Manager dbm = new DB_Manager("networkvis");
             NetworkID nid = new NetworkID(dbm, handler);
             nid.Show(this);
-            //奕軻，記得1. 在NetworkID中宣告一個public 的graph , 然後傳資料到m_oGraph
-            //m_oGraph = nid.ResultGraph;
-            //layoutControl1.SetAndShowGraph(m_oGraph);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             if (m_oShowMetricCalculateResult == null)
                 m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
-            GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
-            oGroupSettingDialog.Show(this);
+            if (layoutControl1.Graph.Vertices.Count > 0)
+            {
+                GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
+                oGroupSettingDialog.Show(this);
+            }
+            else
+            {
+                MessageBox.Show("Error: 請先選好讀入的Graph", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void generateFromDBToolStripMenuItem_Click(object sender, EventArgs e)
