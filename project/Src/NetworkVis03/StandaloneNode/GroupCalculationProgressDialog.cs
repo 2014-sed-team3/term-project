@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Smrf.NodeXL.Core;
 
 namespace StandaloneNode
 {
@@ -15,11 +16,14 @@ namespace StandaloneNode
     {
         private GroupsCheckedList m_oGroupsCheckedList;
         private GroupCalculatorManager m_oGroupCalculatorManager;
-        public GroupCalculationProgressDialog(GroupsCheckedList chkList)
+        IGraph m_ograph;
+
+        public GroupCalculationProgressDialog(IGraph graph, GroupsCheckedList chkList)
         {
             InitializeComponent();
             m_oGroupsCheckedList = chkList;
             m_oGroupCalculatorManager = new GroupCalculatorManager();
+            m_ograph = graph;
 
             m_oGroupCalculatorManager.CalculationProgressChanged += new ProgressChangedEventHandler(Manager_ProgressChanged);
             m_oGroupCalculatorManager.CalculationCompleted += new RunWorkerCompletedEventHandler(Manager_WorksCompleted);
@@ -28,7 +32,7 @@ namespace StandaloneNode
 
         private void WorkProgressDialog_Load(object sender, EventArgs e)
         {
-            m_oGroupCalculatorManager.calculateMetricsAsync(m_oGroupsCheckedList);
+            m_oGroupCalculatorManager.calculateMetricsAsync(m_ograph, m_oGroupsCheckedList);
 
         }
 
