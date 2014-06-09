@@ -50,10 +50,22 @@ namespace GraphStorageManagement
             return dataset.Tables[0];
         }
 
-        public void list_schema()
+        public void list_post_schema()
         {
             DataTable table = mysql_query("select * from allinone limit 1");
             // Use a DataTable object's DataColumnCollection.
+            DataColumnCollection columns = table.Columns;
+
+            // Print the ColumnName and DataType for each column. 
+            foreach (DataColumn column in columns)
+            {
+                Console.WriteLine(column.ColumnName);
+                Console.WriteLine(column.DataType);
+            }
+        }
+        public void list_post_like_schema()
+        {
+            DataTable table = mysql_query("select * from pages_posts_likes limit 1");
             DataColumnCollection columns = table.Columns;
 
             // Print the ColumnName and DataType for each column. 
