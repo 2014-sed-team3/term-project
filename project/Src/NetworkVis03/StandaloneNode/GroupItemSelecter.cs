@@ -128,6 +128,7 @@ namespace StandaloneNode
             //if (checkedListBox1.CheckedItems.Contains("group metrics")) chklist.group_metrics = true;
 
             MetricsCalculationProgressDialog dg = new MetricsCalculationProgressDialog(m_oGraph, chklist);
+            //dg.Show(this);
             if (dg.ShowDialog() == DialogResult.OK)
             {
                 DialogResult = DialogResult.OK;

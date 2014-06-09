@@ -127,12 +127,13 @@ namespace StandaloneNode
 
             if (oCalculationCompleted != null)
             {
+                
                 Debug.Assert(e.Cancelled || e.Error != null ||
-                    e.Result is LinkedList<AnalyzerBase>);
+                    e.Result is LinkedList<AnalyzeResultBase>);
    
                 if (!e.Cancelled) //normally complete
                 {
-                    Debug.Assert(e.Result is LinkedList<AnalyzerBase>);
+                    Debug.Assert(e.Result is LinkedList<AnalyzeResultBase>);
 
                     /* TO DO
                      * write e.Result to data base
