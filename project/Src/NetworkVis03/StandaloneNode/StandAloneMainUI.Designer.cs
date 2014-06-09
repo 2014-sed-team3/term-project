@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Smrf.NodeXL.Core.Graph graph2 = new Smrf.NodeXL.Core.Graph();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFacebookDataGetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +54,10 @@
             this.RTFDebugOut = new System.Windows.Forms.RichTextBox();
             this.cdbOpenModel = new System.Windows.Forms.OpenFileDialog();
             this.cdbOpenGraphML = new System.Windows.Forms.OpenFileDialog();
+            this.layoutControl1 = new LayoutControls.LayoutControl();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,7 +71,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1164, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,7 +82,7 @@
             this.newNetworkToolStripMenuItem,
             this.loadNetworkToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(45, 23);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newFacebookDataGetToolStripMenuItem
@@ -89,7 +92,7 @@
             this.youTuBeUserCrawlerToolStripMenuItem,
             this.youTuBeVideoCrawlerToolStripMenuItem});
             this.newFacebookDataGetToolStripMenuItem.Name = "newFacebookDataGetToolStripMenuItem";
-            this.newFacebookDataGetToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.newFacebookDataGetToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.newFacebookDataGetToolStripMenuItem.Text = "NewDataGet";
             // 
             // facebookCrawlerToolStripMenuItem
@@ -120,7 +123,7 @@
             this.loadGraphMLToolStripMenuItem,
             this.loadFromDBToolStripMenuItem});
             this.newNetworkToolStripMenuItem.Name = "newNetworkToolStripMenuItem";
-            this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.newNetworkToolStripMenuItem.Text = "NewNetwork";
             // 
             // loadFileToolStripMenuItem
@@ -147,7 +150,7 @@
             // loadNetworkToolStripMenuItem
             // 
             this.loadNetworkToolStripMenuItem.Name = "loadNetworkToolStripMenuItem";
-            this.loadNetworkToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.loadNetworkToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.loadNetworkToolStripMenuItem.Text = "LoadNetwork";
             // 
             // tabControl1
@@ -158,15 +161,16 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 21);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(940, 570);
+            this.tabControl1.Size = new System.Drawing.Size(1071, 570);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.layoutControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(932, 541);
+            this.tabPage1.Size = new System.Drawing.Size(1063, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SocialNetwork";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -242,6 +246,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "ShowLabels";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
@@ -249,7 +254,7 @@
             this.groupBox2.Controls.Add(this.tabControl1);
             this.groupBox2.Location = new System.Drawing.Point(206, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(946, 594);
+            this.groupBox2.Size = new System.Drawing.Size(1077, 594);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "GraphDisplay";
@@ -277,11 +282,22 @@
             // 
             this.cdbOpenGraphML.FileName = "openFileDialog1";
             // 
+            // layoutControl1
+            // 
+            graph2.Name = null;
+            graph2.Tag = null;
+            this.layoutControl1.Graph = graph2;
+            this.layoutControl1.Location = new System.Drawing.Point(7, 7);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Size = new System.Drawing.Size(1058, 567);
+            this.layoutControl1.TabIndex = 0;
+            // 
             // StandAloneMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 732);
+            this.ClientSize = new System.Drawing.Size(1283, 732);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -293,6 +309,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -311,7 +328,7 @@
         private System.Windows.Forms.ToolStripMenuItem facebookCrawlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newNetworkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadNetworkToolStripMenuItem;
-        private LayoutControls.LayoutControl layoutControl1;
+        //private LayoutControls.LayoutControl layoutControl1;
         private System.Windows.Forms.ToolStripMenuItem loadFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadGraphMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFromDBToolStripMenuItem;
@@ -331,6 +348,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private LayoutControls.LayoutControl layoutControl1;
     }
 }
 
