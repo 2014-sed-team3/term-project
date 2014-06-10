@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace StandaloneNode
 {
-    class DBConnection
+    public class DBConnection
     {
         public MySqlConnection conn;
         private List<string> connectionInfo;
