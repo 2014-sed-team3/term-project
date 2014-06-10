@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Smrf.NodeXL.Core;
+using Observer_Core;
 
 namespace StandaloneNode
 {
@@ -18,6 +20,7 @@ namespace StandaloneNode
         private GroupCalculatorManager m_oGroupCalculatorManager;
         private ShowMetricCalculateResult m_oShowMetricCalculateResult;
         IGraph m_ograph;
+        public DataTableObservableBase m_oResultDataTableObservableBase;
 
         public GroupCalculationProgressDialog(IGraph graph, GroupsCheckedList chkList, ShowMetricCalculateResult oShowMetricCalculateResult)
         {

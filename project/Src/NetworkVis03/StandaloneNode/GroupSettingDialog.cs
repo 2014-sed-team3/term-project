@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Observer_Core;
+
 namespace StandaloneNode
 {
     public partial class GroupSettingDialog : Form
@@ -16,7 +18,7 @@ namespace StandaloneNode
         private GroupsCheckedList chklist;
         private IGraph m_oGraph;
         private ShowMetricCalculateResult m_oShowMetricCalculateResult;
-
+        public DataTableObservableBase m_oResultDataTableObservableBase;
 
         public GroupSettingDialog(IGraph graph, ShowMetricCalculateResult oShowMetricCalculateResult)
         {
@@ -44,6 +46,7 @@ namespace StandaloneNode
             GroupCalculationProgressDialog gp = new GroupCalculationProgressDialog(m_oGraph, chklist, m_oShowMetricCalculateResult);
             if (gp.ShowDialog() == DialogResult.OK) {
                 DialogResult = DialogResult.OK;
+                m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
                 this.Close();            
             }
         }

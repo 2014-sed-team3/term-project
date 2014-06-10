@@ -11,8 +11,6 @@ using Smrf.NodeXL.Core;
 
 namespace GraphStorageManagement
 {
-
-
     public partial class NetworkID : Form
     {
         public event EventHandler<IgraphGenerateEvent> GraphGenerated;
@@ -23,7 +21,6 @@ namespace GraphStorageManagement
             GraphGenerated = _e;
             db.close();
         }
-
 
         private void loadNetwork(ListView view, DataTable result)
         {

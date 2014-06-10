@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using Smrf.NodeXL.Core;
+using Observer_Core;
 
 namespace StandaloneNode
 {
@@ -16,6 +18,7 @@ namespace StandaloneNode
         public MetricsCheckedList chklist = new MetricsCheckedList();
         private IGraph m_oGraph;
         private ShowMetricCalculateResult m_oShowMetricCalculateResult;
+        public DataTableObservableBase m_oDataTableObservableBase;
 
         public GroupItemSelecter(IGraph graph, ShowMetricCalculateResult oShowMetricCalculateResult)
         {
@@ -134,6 +137,7 @@ namespace StandaloneNode
             if (dg.ShowDialog() == DialogResult.OK)
             {
                 DialogResult = DialogResult.OK;
+                m_oDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
                 this.Close();
             }
         }

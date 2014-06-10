@@ -45,14 +45,13 @@ namespace StandaloneNode
         public void SetAndShowGraph(object sender, IgraphGenerateEvent e)
         {
             layoutControl1.SetAndShowGraph(e.getGraph());
-            m_oShowMetricCalculateResult = new ShowMetricCalculateResult();
-            
+            m_oShowMetricCalculateResult = new ShowMetricCalculateResult();     
         }
 
         private void facebookCrawlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FacebookCrawler FBCrawl = new FacebookCrawler();
-            FBCrawl.Show();
+            FBCrawl.Show(this);
         }
 
         private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,7 +209,8 @@ namespace StandaloneNode
             {
                 GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph, m_oShowMetricCalculateResult);
                 GIS.Show(this);
-                m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
+                m_oResultDataTableObservableBase = GIS.m_oDataTableObservableBase;
+                
             }
             else
             {
