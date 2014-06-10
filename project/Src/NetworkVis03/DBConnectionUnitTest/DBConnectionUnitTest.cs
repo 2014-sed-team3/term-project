@@ -13,7 +13,7 @@ namespace DBConnectionUnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            Console.WriteLine("The UnitTest of Importer ! \n");
+            Console.WriteLine("The UnitTest of Database Connection ! \n");
 
 
             // ==DB Connection==
