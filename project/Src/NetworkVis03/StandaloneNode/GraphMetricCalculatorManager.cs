@@ -153,8 +153,9 @@ namespace StandaloneNode
                     /* TO DO
                      * write e.Result to data base
                      */
+                    m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
                 }
-                m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
+                
                 oCalculationCompleted(this, e);  //forward event to View component
             }
 

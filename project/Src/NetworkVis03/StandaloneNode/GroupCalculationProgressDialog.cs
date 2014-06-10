@@ -50,9 +50,8 @@ namespace StandaloneNode
             Debug.Assert(e.UserState is ProgressState);
             ProgressState oProgressState = (ProgressState)e.UserState;
 
-            /* TO DO
-             * refresh dialog according to oProgressState 
-             */
+            lblProgressState.Text = oProgressState.m_State;
+            progressBar1.Value = e.ProgressPercentage;
 
             if (oProgressState.m_wbFlag == true)
             {
@@ -72,6 +71,7 @@ namespace StandaloneNode
             this.DialogResult = DialogResult.OK;
             this.Close();
             m_oGroupCalculatorManager.notify();
+            m_oGroupCalculatorManager.deattach(m_oShowMetricCalculateResult);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

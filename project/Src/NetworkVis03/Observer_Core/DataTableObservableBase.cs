@@ -21,5 +21,8 @@ namespace Observer_Core
             if (m_oDataTableObservers == null) m_oDataTableObservers = new LinkedList<IDataTableObserver>();
             m_oDataTableObservers.AddLast(observer);
         }
+        public bool deattach(IDataTableObserver observer) {
+            return m_oDataTableObservers.Remove(observer);
+        }
     }
 }

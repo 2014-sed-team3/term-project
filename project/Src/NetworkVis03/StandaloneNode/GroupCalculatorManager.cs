@@ -156,11 +156,12 @@ namespace StandaloneNode
                     /* TO DO:
                      * write e.Result to data base 
                      */
+                    m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
                 }
                 
                 Debug.Assert(e.Result != null);
                 
-                m_oAnalyzeResults = (LinkedList<AnalyzeResultBase>)e.Result;
+                
                 oCalculationCompleted(this, e);
             }
             

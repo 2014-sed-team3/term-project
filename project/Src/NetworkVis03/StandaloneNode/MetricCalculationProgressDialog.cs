@@ -53,10 +53,9 @@ namespace StandaloneNode
 
             ProgressState oProgressState = (ProgressState)e.UserState;
 
-            /* TO DO
-             * refresh dialog according to oProgressState 
-             */
-
+            progressBar1.Value = e.ProgressPercentage;
+            lblProcessState.Text = oProgressState.m_State;
+                
             if (oProgressState.m_wbFlag == true)
             {
                 // Writing to the workbook will occur shortly within the
@@ -76,6 +75,7 @@ namespace StandaloneNode
             this.DialogResult = DialogResult.OK;
             this.Close();
             m_oGraphMetricCalculatorManager.notify();
+            m_oGraphMetricCalculatorManager.deattach(m_oShowMetricCalculateResult);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
