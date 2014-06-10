@@ -37,8 +37,8 @@ namespace GraphStorageManagement
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                RepositoryConnection = null;
                 RepositoryConnection.Close();
+                RepositoryConnection = null;
                 Console.WriteLine("錯啦  " + ex.ToString());
             }
             setting = new DB_setting();

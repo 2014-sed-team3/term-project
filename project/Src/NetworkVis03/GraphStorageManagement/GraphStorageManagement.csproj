@@ -36,6 +36,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Smrf.NodeXL.Core">
       <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Core.dll</HintPath>
     </Reference>
@@ -109,10 +110,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySql.Data\MySql.Data.csproj">
-      <Project>{e9df5ed1-4cbd-4226-b931-9a51610ac14d}</Project>
-      <Name>MySql.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Observer_Core\Observer_Core.csproj">
       <Project>{b03e6f53-6006-49d2-ac3c-8a00d9df2776}</Project>
       <Name>Observer_Core</Name>
