@@ -121,6 +121,7 @@ namespace GraphStorageManagement
             return mysql_query(output);
         }
 
+
         public Graph get_network(String ID)
         {
             String edge_sql = String.Format("SELECT * FROM networkvis.edges WHERE NetworkID = \"{0}\"", ID);
@@ -136,8 +137,21 @@ namespace GraphStorageManagement
 
         public Graph get_network()
         {
+            String edgeCol = setting.edgeCol;
+            String vertexCol = setting.vertexCol;
+            String vertex_sql = String.Format("SELECT DISTINCT {0} FROM networkvis.allinone ", vertexCol);
+            DataTable vertex_table = mysql_query(vertex_sql);
+            vertex_table.Columns.Add("ID", typeof(int));
+            vertex_table.Columns[vertexCol].ColumnName = "NodeName";
+            int i = 0;
+            foreach (DataRow row in vertex_table.Rows)
+            {
+                row["ID"] = i++;
+            }
+            DataTable edge_table = GraphEdgeGen.EdgeGen(this, vertex_table, vertexCol, edgeCol);
             /*Use setting to generate sql and get DataTable*/
-            return null;
+            DB_Converter conv = new DB_Converter();
+            return conv.convert_to_graph(vertex_table,edge_table);
         }
 
         public void export_to_db(){

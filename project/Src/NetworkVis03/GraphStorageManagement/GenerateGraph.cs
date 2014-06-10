@@ -44,18 +44,17 @@ namespace GraphStorageManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String first = dbm.setting.vertexCol;
-            String second = dbm.setting.edgeCol;
-            if (first == null)
+            if (dbm.setting.vertexCol == null)
             {
-                first = listView1.Items[0].Text;
+                dbm.setting.vertexCol = listView1.Items[0].Text;
             }
-            if (second == null)
+            if (dbm.setting.edgeCol == null)
             {
-                second = listView2.Items[0].Text;
+                dbm.setting.edgeCol = listView2.Items[0].Text;
             }
-            Console.WriteLine(first);
-            Console.WriteLine(second);
+            GraphGenerated(this, new IgraphGenerateEvent(dbm.get_network()));
+            this.Close();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

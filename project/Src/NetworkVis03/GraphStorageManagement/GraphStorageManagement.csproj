@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GraphEdgeGen.cs" />
     <Compile Include="PreviewVertex.cs" />
     <Compile Include="GenerateGraph.cs">
       <SubType>Form</SubType>
