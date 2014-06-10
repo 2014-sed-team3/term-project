@@ -208,8 +208,14 @@ namespace StandaloneNode
             if (layoutControl1.Graph.Vertices.Count >0)
             {
                 GroupItemSelecter GIS = new GroupItemSelecter(layoutControl1.Graph, m_oShowMetricCalculateResult);
-                GIS.Show(this);
-                m_oResultDataTableObservableBase = GIS.m_oDataTableObservableBase;
+                if (GIS.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult = DialogResult.OK;
+                    m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
+                    //GIS.Close();
+                }
+                //GIS.Show(this);
+                //m_oResultDataTableObservableBase = GIS.m_oDataTableObservableBase;
                 
             }
             else
@@ -233,8 +239,14 @@ namespace StandaloneNode
             if (layoutControl1.Graph.Vertices.Count > 0)
             {
                 GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
-                oGroupSettingDialog.Show(this);
-                m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
+                //oGroupSettingDialog.Show(this);
+                //m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
+                if (oGroupSettingDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult = DialogResult.OK;
+                    m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
+                    //oGroupSettingDialog.Close();
+                }
             }
             else
             {
