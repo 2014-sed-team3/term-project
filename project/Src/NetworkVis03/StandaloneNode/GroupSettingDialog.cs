@@ -47,7 +47,7 @@ namespace StandaloneNode
             if (gp.ShowDialog() == DialogResult.OK) {
                 DialogResult = DialogResult.OK;
                 m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
-                this.Close();            
+                gp.Close();            
             }
         }
 
