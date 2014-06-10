@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PreviewVertex.cs" />
     <Compile Include="GenerateGraph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,7 @@
     <Compile Include="IgraphGenerateEvent.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PreviewData.cs" />
     <Compile Include="NetworkID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +75,9 @@
       <DependentUpon>NetworkID.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PreviewArticles.cs" />
+    <Compile Include="PreviewComments.cs" />
+    <Compile Include="PreviewLikes.cs" />
     <EmbeddedResource Include="GenerateGraph.resx">
       <DependentUpon>GenerateGraph.cs</DependentUpon>
     </EmbeddedResource>

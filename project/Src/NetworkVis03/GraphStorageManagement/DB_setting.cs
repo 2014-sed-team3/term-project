@@ -8,12 +8,11 @@ namespace GraphStorageManagement
 {
     public class DB_setting
     {
-        public int vertexIdx = 1;
+        public String vertexCol = null;
         public int EdgeDropdown = 1;
-        public int EdgeIdx = -1;
+        public String edgeCol = null;
         public void changeEdgeDropdown(int change){
             EdgeDropdown = change;
-            EdgeIdx = -1;
         }
         
     }

@@ -13,8 +13,10 @@ namespace GraphStorageManagement
         public DB_setting setting;
         public MySqlConnection RepositoryConnection;
         private List<string> connectionInfo;
-        public DB_Manager(String Database)
+        private String Database;
+        public DB_Manager(String _Database)
         {
+            this.Database = _Database;
             this.connectionInfo = new List<string>();
             this.connectionInfo.Add("localhost");
             this.connectionInfo.Add("enricolu");
@@ -51,25 +53,57 @@ namespace GraphStorageManagement
             dataAdapter.Fill(dataset);
             return dataset.Tables[0];
         }
+        private int count_column_repeatness(String ColumnName, String Table)
+        {
+            DataTable res = mysql_query(String.Format("SELECT count(DISTINCT {0}) FROM {1}.{2};", ColumnName, Database, Table));
+            return int.Parse(res.Rows[0][0].ToString());
+        }
 
-        public void list_post_schema()
+        private bool filter_vertex_by_usability(String ColumnName, String Table)
+        {
+            if (count_column_repeatness(ColumnName, Table) < 5)
+                return false;
+            return true;
+        }
+        private void filter_vertex(DataColumnCollection columns, DataTable table, String TableName)
+        {
+            int i = 0;
+            String[] bit_filter = new String[columns.Count];
+            foreach (DataColumn column in columns)
+            {
+                if (!filter_vertex_by_usability(column.ColumnName, TableName))
+                    bit_filter[i++] = column.ColumnName;
+            }
+            int end = i;
+            for (int k = 0; k < end; k++)
+            {
+                Console.WriteLine(bit_filter[k]);
+                table.Columns.Remove(bit_filter[k]);
+            }
+        }
+
+        public String[] list_post_schema()
         {
             DataTable table = mysql_query("select * from allinone limit 1");
             // Use a DataTable object's DataColumnCollection.
             DataColumnCollection columns = table.Columns;
 
             // Print the ColumnName and DataType for each column. 
+            filter_vertex(columns,table, "allinone");
+            int i = 0;
+            String[] result = new String[columns.Count];
             foreach (DataColumn column in columns)
             {
-                Console.WriteLine(column.ColumnName);
-                Console.WriteLine(column.DataType);
+                result[i++] = column.ColumnName;
+               // Console.WriteLine(column.DataType);
             }
+            return result;
         }
         public void list_post_like_schema()
         {
             DataTable table = mysql_query("select * from pages_posts_likes limit 1");
             DataColumnCollection columns = table.Columns;
-
+            filter_vertex(columns, table, "pages_posts_likes");
             // Print the ColumnName and DataType for each column. 
             foreach (DataColumn column in columns)
             {
