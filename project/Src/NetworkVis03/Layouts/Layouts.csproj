@@ -102,15 +102,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Common\ArgumentChecker.cs">
-      <Link>Util\ArgumentChecker.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Common\GraphicsUtil.cs">
-      <Link>Util\GraphicsUtil.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Common\PolarCoordinates.cs">
-      <Link>Util\PolarCoordinates.cs</Link>
-    </Compile>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -135,9 +126,11 @@
     <Compile Include="Layouts\SortableLayoutBase.cs" />
     <Compile Include="Layouts\SpiralLayout.cs" />
     <Compile Include="Layouts\SugiyamaLayout.cs" />
+    <Compile Include="Util\ArgumentChecker.cs" />
     <Compile Include="Util\BoxLayoutAlgorithm.cs" />
     <Compile Include="Util\EdgeBundler.cs" />
     <Compile Include="Util\GraphBinner.cs" />
+    <Compile Include="Util\GraphicsUtil.cs" />
     <Compile Include="Util\Groups\PackedGroupRectangleCalculator.cs" />
     <Compile Include="Util\Groups\FreeSpaceBox.cs" />
     <Compile Include="Util\Groups\GroupLayoutDrawingInfo.cs" />
@@ -148,6 +141,7 @@
     <Compile Include="Util\LayoutMetadataUtil.cs" />
     <Compile Include="Util\LayoutSaver.cs" />
     <Compile Include="Util\LayoutStyle.cs" />
+    <Compile Include="Util\PolarCoordinates.cs" />
     <Compile Include="Util\RectangleBinner.cs" />
     <Compile Include="Util\VertexGridSnapper.cs" />
   </ItemGroup>
