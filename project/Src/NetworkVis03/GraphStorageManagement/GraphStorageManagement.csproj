@@ -36,7 +36,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=575023cdd97dd023, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\otherDLL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Smrf.NodeXL.Core">
       <HintPath>..\Core\bin\Debug\Smrf.NodeXL.Core.dll</HintPath>
     </Reference>

@@ -67,7 +67,6 @@ namespace StandaloneNode
 
                 try
                 {
-                    // Serializer.Deserialize<Corpus>(cdbOpenModel.FileName, ref cp);
                     oGraphAdapter = new SimpleGraphAdapter();
                     layoutControl1.SetAndShowGraph(oGraphAdapter.LoadGraphFromFile(cdbOpenModel.FileName));
                 }
@@ -105,7 +104,6 @@ namespace StandaloneNode
                 }
 
                 this.Cursor = Cursors.Default;
-                //Application.DoEvents();
             }
         }
 
@@ -180,14 +178,6 @@ namespace StandaloneNode
         private void button1_Click(object sender, EventArgs e)
         {
             RTFDebugOut.Clear();
-            /*
-            foreach (IVertex oVertex in layoutControl1.Graph.Vertices)
-            {
-                oVertex.SetValue(ReservedMetadataKeys.PerVertexLabel, oVertex.Name);
-                RTFDebugOut.AppendText(oVertex.Name.ToString() + "\r\n");
-            }
-            layoutControl1.ShowGraph(true);
-             */
             
         }
 
@@ -212,11 +202,7 @@ namespace StandaloneNode
                 {
                     DialogResult = DialogResult.OK;
                     m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
-                    //GIS.Close();
-                }
-                //GIS.Show(this);
-                //m_oResultDataTableObservableBase = GIS.m_oDataTableObservableBase;
-                
+                }                
             }
             else
             {
@@ -239,13 +225,10 @@ namespace StandaloneNode
             if (layoutControl1.Graph.Vertices.Count > 0)
             {
                 GroupSettingDialog oGroupSettingDialog = new GroupSettingDialog(layoutControl1.Graph, m_oShowMetricCalculateResult);
-                //oGroupSettingDialog.Show(this);
-                //m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
                 if (oGroupSettingDialog.ShowDialog() == DialogResult.OK)
                 {
                     DialogResult = DialogResult.OK;
                     m_oResultDataTableObservableBase = m_oShowMetricCalculateResult.m_oDataTableObservableBase;
-                    //oGroupSettingDialog.Close();
                 }
             }
             else

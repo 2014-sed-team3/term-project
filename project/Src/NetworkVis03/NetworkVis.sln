@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkVis", "NetworkVis\NetworkVis.csproj", "{44C14AAD-D815-418A-8620-9CEFF6B4714A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapters", "Adapters\Adapters.csproj", "{49BF210B-2FB1-4955-9553-B4C9DB275352}"
@@ -18,8 +20,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControl", "WpfControl\WpfControl.csproj", "{5E12EC39-6EC0-4962-97C6-C8506D0C6C67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfVisualization", "WpfVisualization\WpfVisualization.csproj", "{3228C440-7166-44E1-A1A2-036ECDD9371F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "..\Analyzer\UI\UI.csproj", "{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyzer.csproj", "{791D67EB-C08B-4672-BB6A-9A213301274C}"
 EndProject
@@ -145,16 +145,6 @@ Global
 		{3228C440-7166-44E1-A1A2-036ECDD9371F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3228C440-7166-44E1-A1A2-036ECDD9371F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3228C440-7166-44E1-A1A2-036ECDD9371F}.Release|Win32.ActiveCfg = Release|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{F154DAAA-7143-49E2-8247-34DD7B4BA1AE}.Release|Win32.ActiveCfg = Release|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{791D67EB-C08B-4672-BB6A-9A213301274C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
