@@ -135,7 +135,7 @@ namespace GraphStorageManagement
             /*Call DB_Converter to generate graph */
         }
 
-        public Graph get_network()
+        public Graph get_network(String NetWorkID, int option)
         {
             String edgeCol = setting.edgeCol;
             String vertexCol = setting.vertexCol;
@@ -149,13 +149,70 @@ namespace GraphStorageManagement
                 row["ID"] = i++;
             }
             DataTable edge_table = GraphEdgeGen.EdgeGen(this, vertex_table, vertexCol, edgeCol);
-            /*Use setting to generate sql and get DataTable*/
+           // export_to_db(vertex_table, NetWorkID, "nodes");
+           // export_to_db(edge_table, NetWorkID, "edges");
+           // /*Use setting to generate sql and get DataTable*/
             DB_Converter conv = new DB_Converter();
             return conv.convert_to_graph(vertex_table,edge_table);
         }
 
-        public void export_to_db(){
+        private static void PrintTableOrView(DataTable table, string label)
+        {
+            System.IO.StringWriter sw;
+            string output;
+
+            Console.WriteLine(label);
+
+            // Loop through each row in the table.
+            foreach (DataRow row in table.Rows)
+            {
+                sw = new System.IO.StringWriter();
+                // Loop through each column.
+                foreach (DataColumn col in table.Columns)
+                {
+                    // Output the value of each column's data.
+                    sw.Write(row[col].ToString() + ", ");
+                }
+                output = sw.ToString();
+                // Trim off the trailing ", ", so the output looks correct.
+                if (output.Length > 2)
+                {
+                    output = output.Substring(0, output.Length - 2);
+                }
+                // Display the row in the console window.
+                Console.WriteLine(output);
+            } //
+            Console.WriteLine();
+        }
+
+        public void export_to_db(DataTable table, String NetworkID, String label){
+            string sQuery = String.Format("Select * from networkvis.{0} WHERE NetWorkID =\"{1}\"",label,NetworkID);
+
+            MySqlDataAdapter myDA = new MySqlDataAdapter(sQuery, RepositoryConnection);
+            MySqlCommandBuilder cmb=new MySqlCommandBuilder(myDA);
+
+            DataTable MyDT = new DataTable();// <- My DataTable
+            myDA.Fill(MyDT);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                DataRow data = table.Rows[i];
+                DataRow new_data = MyDT.NewRow();
+                for (int k = 0; k < table.Columns.Count; k++)
+                {
+                    if (new_data[k].GetType() == typeof(Int32))
+                    {
+                        new_data[k] = int.Parse(data[k].ToString());
+                    }else
+                       new_data[k] = data[k];
+                }
+                MyDT.Rows.Add(new_data);
+            }
+            //PrintTableOrView(MyDT, "test");
             
+            //Add new rows or delete/update existing one
+             //and update the DataTable using 
+
+            myDA.Update(MyDT);
         }
 
         public void close()

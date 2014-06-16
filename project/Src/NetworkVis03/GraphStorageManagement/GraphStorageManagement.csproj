@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AskNetWorkID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskNetWorkID.Designer.cs">
+      <DependentUpon>AskNetWorkID.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphEdgeGen.cs" />
     <Compile Include="PreviewVertex.cs" />
     <Compile Include="GenerateGraph.cs">
@@ -83,6 +89,10 @@
     <Compile Include="PreviewArticles.cs" />
     <Compile Include="PreviewComments.cs" />
     <Compile Include="PreviewLikes.cs" />
+    <Compile Include="statusEventHandler.cs" />
+    <EmbeddedResource Include="AskNetWorkID.resx">
+      <DependentUpon>AskNetWorkID.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerateGraph.resx">
       <DependentUpon>GenerateGraph.cs</DependentUpon>
     </EmbeddedResource>

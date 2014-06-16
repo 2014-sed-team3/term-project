@@ -914,7 +914,7 @@ namespace facebook_pages_crawler
         #region insert post
         public void get_post(string pageID, string access_token, string since, string until)
         {
-            //until = "2013-11-22";
+            //until = "2014-06-08";
             int limit = maxLimit;
             string url = "https://graph.facebook.com/" + pageID + "/feed?access_token=" + access_token + "&limit=" + limit.ToString();
 
@@ -1238,7 +1238,7 @@ namespace facebook_pages_crawler
 
         private DateTime fbDatetimeToDatetime(string fbdate)
         {
-            //EX: 2013-07-28T19:18:24+0000
+            //EX: 2014-06-08T19:18:24+0000
             string[] splitter = { "-", "T", ":", "+" };
             try
             {

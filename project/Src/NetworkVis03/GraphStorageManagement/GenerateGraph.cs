@@ -12,10 +12,7 @@ namespace GraphStorageManagement
 {
     public partial class GenerateGraph : Form
     {
-        public event EventHandler<IgraphGenerateEvent> GraphGenerated;
-        private PreviewVertex preview_vertex;
-        private PreviewArticles preview_articles;
-      
+
         public void loadVertexFields(ListView view){
             preview_vertex = new PreviewVertex(dbm);
             view.Items.AddRange(preview_vertex.show_fields());
@@ -42,7 +39,7 @@ namespace GraphStorageManagement
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void generate_graph(String text)
         {
             if (dbm.setting.vertexCol == null)
             {
@@ -52,9 +49,31 @@ namespace GraphStorageManagement
             {
                 dbm.setting.edgeCol = listView2.Items[0].Text;
             }
-            GraphGenerated(this, new IgraphGenerateEvent(dbm.get_network()));
+            GraphGenerated(this, new IgraphGenerateEvent(dbm.get_network(text, 0)));
             this.Close();
+        }
 
+        private void select_network(object sender, statusEventHandler e)
+        {
+            if (e.getStatus() == 0)
+            {
+                ask_for_network();
+                return;
+            }
+            generate_graph(e.getText());
+        }
+
+        private void ask_for_network()
+        {
+            EventHandler<statusEventHandler> handler = new System.EventHandler<statusEventHandler>(this.select_network);
+            AskNetWorkID ask = new AskNetWorkID(handler);
+            ask.ShowDialog(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            generate_graph("Oops");
+            //ask_for_network();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -119,5 +138,9 @@ namespace GraphStorageManagement
         {
 
         }
+        public event EventHandler<IgraphGenerateEvent> GraphGenerated;
+        private PreviewVertex preview_vertex;
+        private PreviewArticles preview_articles;
+      
     }
 }
